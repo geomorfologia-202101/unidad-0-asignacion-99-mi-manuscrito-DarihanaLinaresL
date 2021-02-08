@@ -1,0 +1,57 @@
+---
+# output: github_document
+output: 
+  pdf_document:
+    keep_tex: true
+    fig_caption: true
+    latex_engine: pdflatex
+    template: svm-latex-ms.tex
+    number_sections: true
+title: | 
+        | Título
+        | Subtítulo
+        | Subtítulo
+author:
+- name: Nombre del estudiante
+  affiliation: Afiliación, normalmente algo tal que "Estudiante, Universidad Autónoma de Santo Domingo (UASD)"
+abstract: "Resumen del manuscrito"
+keywords: "palabra clave 1, palabra clave 2"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+geometry: margin=1in
+fontfamily: mathpazo
+fontsize: 11pt
+# spacing: double
+bibliography: bibliography.bib
+# csl: plos-one.csl
+csl: apa.csl
+header-includes:
+  \usepackage{pdflscape}
+  \newcommand{\blandscape}{\begin{landscape}}
+  \newcommand{\elandscape}{\end{landscape}}
+---
+
+# Introducción
+
+\ldots
+
+# Metodología
+
+\ldots
+
+# Resultados
+
+\ldots
+
+# Discusión
+
+# Agradecimientos
+
+# Información de soporte
+
+\ldots
+
+# *Script* reproducible
+
+\ldots
+
+# Referencias
