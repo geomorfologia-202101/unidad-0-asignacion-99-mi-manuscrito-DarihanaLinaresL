@@ -13,7 +13,7 @@ title: |
         | Subtítulo
 author:
 - name: Darihana Linares Laureano
-  affiliation: Afiliación, normalmente algo tal que "Estudiante de Geografía, Universidad Autónoma de Santo Domingo (UASD)"
+  affiliation: "Estudiante de Lic. en Geografía Mención Recursos Naturales y Ecoturismo, Universidad Autónoma de Santo Domingo (UASD)"
 abstract: "Resumen del manuscrito"
 keywords: "palabra clave 1, palabra clave 2"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
