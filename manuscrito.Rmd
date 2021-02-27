@@ -32,7 +32,11 @@ header-includes:
 
 # Introducción
 
-\ldots
+![Cuenca de Guayubín](Cuenca_de_Guayubín_1sFig.png)
+
+
+
+
 
 # Metodología
 
