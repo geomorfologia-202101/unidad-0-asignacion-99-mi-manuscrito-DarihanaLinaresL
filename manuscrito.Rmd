@@ -32,9 +32,9 @@ header-includes:
 
 # Introducción
 
+![Cuenca de Guayubin](cuenca_de_Guayubin_1sFig.png)
 
-
-![Fotografia de Darihana](Darihana prueba.jpg){width=60%}
+![Fotografia de Darihana](darihana prueba.jpg){width=60%}
 
 
 
