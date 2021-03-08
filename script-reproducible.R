@@ -3,6 +3,9 @@
 # Parte reutilizable del script ----
 # Cargar paquetes
 library(rgrass7)
+library(sp)
+library(sf)
+
 gisdbase <- 'grass-data-test' #Base de datos de GRASS GIS
 wd <- getwd() #Directorio de trabajo
 wd
@@ -12,6 +15,15 @@ loc <- initGRASS(gisBase = "/usr/lib/grass78/",
                  location = 'guayubin',
                  mapset = "PERMANENT",
                  override = TRUE)
+# Imprimir fuentes en la region
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
+
 # Fin de la parte reutilizable
 
 
@@ -89,5 +101,24 @@ unlink_.gislock()
 
 # Video no. 5, Explorar datos espaciales básicos entre GRASS y R ----
 # Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
 
+# Cargar en R el DEM (mapa ráster)
+library(sp)
+use_sp()
+dem_sp <- readRAST('dem')
+op <- par()
+plot(dem_sp)
 
+# Cargar a R el mapa vectorial de una cuenca que se encuentra alojado fuera de GRASS, hacer el plot y representar la cuenca del rio Guayubin superpuesta
+library(sf)
+rutaguayubin <- 'datos-fuente/cuenca_guayubin.geojson'
+guayubin <- st_read(rutaguayubin)
+plot(dem_sp)
+plot(guayubin, add=T, col='transparent', border='black', lwd=5);par(op[c('mfrow','mar')])
