@@ -32,6 +32,7 @@ header-includes:
 
 # Introducción
 
+La geomorfología además de ser descriptiva debe ser cuantificativa, y así dejar la dependencia de métodos pertenecientes a otros campos científicos, como lo hace con la Física (hubp2010gutierrez).
 
 ![Cuenca de Guayubin](cuenca_de_Guayubin_1sFig.png)
 
