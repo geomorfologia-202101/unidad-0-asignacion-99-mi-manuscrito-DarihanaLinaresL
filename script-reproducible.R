@@ -1,5 +1,5 @@
 
-# Intro a Grass, video no. 3
+# Intro a Grass, video no. 3 ----
 # Parte reutilizable del script ----
 # Cargar paquetes
 library(rgrass7)
@@ -15,6 +15,7 @@ loc <- initGRASS(gisBase = "/usr/lib/grass78/",
                  location = 'guayubin',
                  mapset = "PERMANENT",
                  override = TRUE)
+
 # Imprimir fuentes en la region
 execGRASS(
   'g.list',
@@ -23,6 +24,20 @@ execGRASS(
     type = c('raster', 'vector')
   )
 )
+
+# Limpiar archivo de bloqueo del conjunto de mapas de GRASS
+unlink_.gislock()
+
+# Retomar región de Grass Gis creada en pasos previos ----
+
+{r; include=FALSE}
+source(
+  knitr::purl(
+    'proyection-importar-fuente-extension.Rmd',
+    output=tempfile()
+  )
+)
+
 
 # Fin de la parte reutilizable
 
@@ -122,3 +137,66 @@ rutaguayubin <- 'datos-fuente/cuenca_guayubin.geojson'
 guayubin <- st_read(rutaguayubin)
 plot(dem_sp)
 plot(guayubin, add=T, col='transparent', border='black', lwd=5);par(op[c('mfrow','mar')])
+
+# Analizar el DEM dentro de la cuenca de guayubin
+library(raster)
+dem_r0 <- raster(dem_sp)
+dem_r1 <- crop(dem_r0, guayubin)
+dem_guayu <- mask(dem_r1, guayubin)
+plot(dem_guayu)
+summary(dem_guayu)
+hist(dem_guayu)
+
+# Obtener variables de terreno básicas con el paquete raster dentro de R
+pend_guayu <- terrain(x = dem_guayu, opt = 'slope', unit = 'degrees')
+plot(pend_guayu)
+summary(pend_guayu)
+hist(pend_guayu)
+
+# Obtener la misma variable de terreno con GRASS GIS
+writeVECT(as_Spatial(guayubin), 'guayubin', v.in.ogr_flags='quiet')
+execGRASS(
+  "g.region",
+  parameters=list(
+    vector = "guayubin"
+  )
+)
+
+execGRASS(
+  "r.mask",
+  flags = c('verbose','overwrite','quiet'),
+  parameters = list(
+    vector = 'guayubin'
+  )
+)
+
+execGRASS(
+  cmd = 'r.slope.aspect',
+  flags = c('overwrite','quiet'),
+  parameters = list(
+    elevation='dem',
+    slope='slope',
+    aspect='aspect',
+    pcurvature='pcurv',
+    tcurvature='tcurv')
+)
+
+pend_guayu_g <- readRAST('slope')
+plot(pend_guayu_g);par(op[c('mfrow','mar')])
+summary(pend_guayu_g)
+summary(pend_guayu)
+gmeta()
+
+execGRASS(
+  "g.region",
+  parameters=list(
+    raster = "dem"
+  )
+)
+
+execGRASS(
+  "r.mask",
+  flags = c('r','quiet')
+)
+
+gmeta()
