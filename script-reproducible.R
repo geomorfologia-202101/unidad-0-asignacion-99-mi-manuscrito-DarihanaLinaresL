@@ -200,3 +200,63 @@ execGRASS(
 )
 
 gmeta()
+
+
+# Video 6. Calcular parámetros hidrográficos con r.watershed. Visualizar con leaflet ----
+
+# Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa 
+# Está en el archivo reusable como (# Imprimir fuentes en la region)
+
+# Calcular parámetros hidrográficos de interés usando r.watershed
+execGRASS(
+  "r.watershed",
+  flags = c('overwrite','quiet'),
+  parameters = list(
+    elevation = "dem",
+    accumulation = "accum-de-rwshed",
+    stream = "stream-de-rwshed",
+    drainage = "drainage-dir-de-rwshed",
+    basin = 'basins',
+    half_basin = 'half-basins',
+    threshold = 80
+  )
+)
+
+## Traer capas a R
+
+# Usar Spatial*
+library(sp)
+use_sp()
+# Paquete manejo de los raster
+library(raster)
+# DEM
+dem <- raster(readRAST('dem'))
+# Basins
+basins <- raster(readRAST('basins'))
+# Stream network
+stream <- raster(readRAST('stream-de-rwshed'))
+stream3857 <- projectRaster(stream, crs = CRS("+init=epsg:3857"), method = 'ngb')
+# Generar un vectorial de extensión de capa en EPSG:4326
+e <- extent(stream)
+e <- as(e, 'SpatialPolygons')
+proj4string(e) <- CRS("+init=epsg:32619")
+e <- spTransform(e, CRSobj = CRS("+init=epsg:4326"))
+
+# Visualizar capas con leaflet
+library(leaflet)
+library(leafem)
+leaflet() %>%
+  addProviderTiles(providers$Stamen.Terrain, group = 'terrain') %>%
+  addRasterImage(dem, group='DEM', opacity = 0.5) %>%
+  addRasterImage(
+    ratify(basins),
+    group='basins', opacity = 0.7,
+    colors = sample(rep(RColorBrewer::brewer.pal(12, 'Set3'),1000))) %>% 
+  addRasterImage(stream3857, project = F, group='str', opacity = 0.7, method = 'ngb', colors = 'blue') %>% 
+  addLayersControl(
+    overlayGroups = c('terrain','DEM','basins','str'),
+    options = layersControlOptions(collapsed=FALSE)) %>% 
+  addHomeButton(extent(e), 'Ver todo')
+
+
+
