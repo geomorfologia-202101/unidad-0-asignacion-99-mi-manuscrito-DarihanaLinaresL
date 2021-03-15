@@ -28,15 +28,7 @@ execGRASS(
 # Limpiar archivo de bloqueo del conjunto de mapas de GRASS
 unlink_.gislock()
 
-# Retomar región de Grass Gis creada en pasos previos ----
 
-{r; include=FALSE}
-source(
-  knitr::purl(
-    'proyection-importar-fuente-extension.Rmd',
-    output=tempfile()
-  )
-)
 
 
 # Fin de la parte reutilizable
@@ -259,4 +251,5 @@ leaflet() %>%
   addHomeButton(extent(e), 'Ver todo')
 
 
-
+# Video 7, Extraer una cuenca de drenaje con r.water.outlet. Visualizar con mapview y leaflet ----
+# 
