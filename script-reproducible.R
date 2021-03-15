@@ -253,3 +253,4 @@ leaflet() %>%
 
 # Video 7, Extraer una cuenca de drenaje con r.water.outlet. Visualizar con mapview y leaflet ----
 # 
+
