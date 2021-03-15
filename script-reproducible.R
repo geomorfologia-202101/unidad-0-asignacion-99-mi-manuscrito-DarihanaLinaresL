@@ -252,5 +252,12 @@ leaflet() %>%
 
 
 # Video 7, Extraer una cuenca de drenaje con r.water.outlet. Visualizar con mapview y leaflet ----
-# 
+# Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa (está en el reproducible)
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
 
