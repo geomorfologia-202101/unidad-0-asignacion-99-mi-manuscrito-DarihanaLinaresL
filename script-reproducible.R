@@ -4,7 +4,9 @@
 # Cargar paquetes
 library(rgrass7)
 library(sp)
+use_sp()
 library(sf)
+library(mapview)
 
 gisdbase <- 'grass-data-test' #Base de datos de GRASS GIS
 wd <- getwd() #Directorio de trabajo
@@ -198,7 +200,13 @@ gmeta()
 
 # Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa 
 # Está en el archivo reusable como (# Imprimir fuentes en la region)
-
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
 # Calcular parámetros hidrográficos de interés usando r.watershed
 execGRASS(
   "r.watershed",
@@ -251,7 +259,7 @@ leaflet() %>%
   addHomeButton(extent(e), 'Ver todo')
 
 
-# Video 7, Extraer una cuenca de drenaje con r.water.outlet. Visualizar con mapview y leaflet ----
+# Video 7, Extraer una cuenca con r.water.outlet. Visualizar con mapview y leaflet ----
 # Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa (está en el reproducible)
 execGRASS(
   'g.list',
@@ -261,3 +269,126 @@ execGRASS(
   )
 )
 
+# Obtener las coordenadas de la desembocadura de la cuenca de interés
+library(mapview)
+mapview(
+  stream3857, method='ngb', col.regions = 'blue',
+  legend = FALSE, label = FALSE, maxpixels =  910425
+)
+
+# Convertir las coordenadas lat/lon a EPSG:32619
+my_trans <- function(coords = NULL) {
+  require(sp)
+  pt <- SpatialPoints(matrix(coords, ncol = 2), CRS("+init=epsg:4326"))
+  foo <- spTransform(pt, CRSobj = CRS("+init=epsg:32619"))
+  bar <- as.vector(coordinates(foo))
+  return(bar)
+}
+guayu_out <- my_trans(coords = c(-71.40246,19.67306))
+guayu_out
+
+# Extraer la cuenca de interés
+execGRASS(
+  "r.water.outlet",
+  flags = c('overwrite','quiet'),
+  parameters = list(
+    input = 'drainage-dir-de-rwshed',
+    output = 'guayubin-basin',
+    coordinates = guayu_out
+  )
+)
+
+# Convertir la cuenca a vectorial en GRASS
+execGRASS(
+  "r.to.vect",
+  flags = c('overwrite','quiet'),
+  parameters = list(
+    input = 'guayubin-basin',
+    output = 'guayubin_basin',
+    type = 'area'
+  )
+)
+
+# Mostrar lista nuevamente
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
+
+# Traer a R la cuenca del rio guayubin
+guayu_bas <- readVECT('guayubin_basin')
+guayu_bas
+plot(guayu_bas)
+guayu_bas4326 <- spTransform(guayu_bas, CRSobj = CRS("+init=epsg:4326"))
+leaflet() %>% 
+  addProviderTiles(providers$Stamen.Terrain) %>%
+  addRasterImage(stream, opacity = 0.7, method = 'ngb', colors = 'blue') %>% 
+  addPolygons(data = guayu_bas4326) %>% 
+  leafem::addHomeButton(extent(guayu_bas4326), 'Ver cuenca')
+
+# Video 8, Extraer una red drenaje con r.stream.extract. Visualizar con leaflet ----
+# Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
+
+# Usar la cuenca del rio guayubin como máscara
+execGRASS(
+  "r.mask",
+  flags = c('verbose','overwrite','quiet'),
+  parameters = list(
+    vector = 'guayubin_basin'
+  )
+)
+
+# Extraer la red de drenaje de la cuenca de interés
+execGRASS(
+  "r.stream.extract",
+  flags = c('overwrite','quiet'),
+  parameters = list(
+    elevation = 'dem',
+    threshold = 80,
+    stream_raster = 'guayubin-stream-de-rstr',
+    stream_vector = 'guayubin_stream_de_rstr'
+  )
+)
+
+# Mostrar lista nuevamente
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
+
+# Traer a R la red de drenaje del rio guayubin
+guayu_net <- readVECT('guayubin_stream_de_rstr', ignore.stderr = T)
+guayu_net
+plot(guayu_net)
+guayu_net4326 <- spTransform(guayu_net, CRSobj = CRS("+init=epsg:4326"))
+guayu_net4326
+guayu_centroid <- coordinates(rgeos::gCentroid(guayu_bas4326))
+guayu_centroid
+guayu_net_r <- raster(readRAST('guayubin-stream-de-rstr'))
+guayu_net_r
+guayu_net_r3857 <- projectRaster(guayu_net_r, crs = CRS("+init=epsg:3857"), method = 'ngb')
+guayu_net_r3857
+leaflet() %>% 
+  setView(lng = guayu_centroid[1], lat = guayu_centroid[2], zoom = 11) %>%
+  addProviderTiles(providers$Stamen.Terrain, group = 'terrain') %>%
+  addRasterImage(guayu_net_r3857, opacity = 0.7, method = 'ngb', colors = 'grey20', group = 'str_raster') %>% 
+  addPolylines(data = guayu_net4326, weight = 3, opacity = 0.7, group = 'str_vect') %>% 
+  leafem::addHomeButton(extent(guayu_net4326), 'Ver todo') %>% 
+  addLayersControl(
+    overlayGroups = c('terrain','str_vect','str_raster'),
+    options = layersControlOptions(collapsed=FALSE)) 
+
+# Video 9, Orden de red y razón de bifurcación explicados ----
