@@ -392,3 +392,12 @@ leaflet() %>%
     options = layersControlOptions(collapsed=FALSE)) 
 
 # Video 9, Orden de red y razón de bifurcación explicados ----
+# Video 10,  Orden de red y análisis hortoniano usando r.stream*. Visualizar con leaflet ----
+# Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa (está en el reproducible)
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
