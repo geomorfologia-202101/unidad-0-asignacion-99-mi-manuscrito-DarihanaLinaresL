@@ -6,7 +6,11 @@ library(rgrass7)
 library(sp)
 use_sp()
 library(sf)
+library(raster)
+library(leaflet)
+library(leafem)
 library(mapview)
+
 
 gisdbase <- 'grass-data-test' #Base de datos de GRASS GIS
 wd <- getwd() #Directorio de trabajo
@@ -512,8 +516,8 @@ sapply(
       )
     )
   }
-)
 
+)
 # Representar las cuencas con leaflet
 sapply(
   min(minmaxord):max(minmaxord),
