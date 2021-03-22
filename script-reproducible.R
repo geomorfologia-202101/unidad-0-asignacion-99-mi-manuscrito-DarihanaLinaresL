@@ -284,7 +284,7 @@ my_trans <- function(coords = NULL) {
   bar <- as.vector(coordinates(foo))
   return(bar)
 }
-guayu_out <- my_trans(coords = c(-71.40246,19.67306))
+guayu_out <- my_trans(coords = c(-71.40021,19.66387))
 guayu_out
 
 # Extraer la cuenca de interés
