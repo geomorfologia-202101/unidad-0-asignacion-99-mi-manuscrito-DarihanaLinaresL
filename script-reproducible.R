@@ -395,7 +395,7 @@ leaflet() %>%
     overlayGroups = c('terrain','str_vect','str_raster'),
     options = layersControlOptions(collapsed=FALSE)) 
 
-# Video 9, Orden de red y razón de bifurcación explicados ----
+
 # Video 10,  Orden de red y análisis hortoniano usando r.stream*. Visualizar con leaflet ----
 # Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa (está en el reproducible)
 execGRASS(
@@ -473,6 +473,7 @@ leaflet() %>%
     options = layersControlOptions(collapsed=FALSE))
 
 # Delimitar cuencas según orden de red de Strahler
+
 # Obtener órdenes de red mínimo y máximo
 # Estadísticas para obtener los valores mínimo y máximo del orden de red de Strahler
 rinfo.ordstra <- execGRASS(
