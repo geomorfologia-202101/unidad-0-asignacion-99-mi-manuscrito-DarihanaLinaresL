@@ -1,3 +1,3 @@
 COMMAND: r.to.vect --overwrite --quiet input="r-stream-basins-2" output="r_stream_basins_2" type="area" column="value"
 GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
-LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Mon Mar 22 15:25:04 2021
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Sun Mar 28 22:29:35 2021
