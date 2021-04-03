@@ -32,29 +32,27 @@ header-includes:
 
 # Introducción
 
-La geomorfología como ciencia estudia las diferentes formas que constituyen el relieve; estas formas muestran las distintas características espaciales de una extensión, poniendo de manifiesto la desigualdad en la estructura de lo que conoce como paisaje.
-Así como la forma del relieve es el objeto de estudio de la Geomorfología, se entiende que estas formas se producen por el efecto de una serie o series de acciones sucesivas y regulares (@christofoletti1988geomorfologia). 
+Desde hace siglos atrás el hombre ha buscado la manera de explicar y entender las distintas formas que el paisaje terrestre (relieve) posee. Autores numerosos han investigado la génesis de estas nociones geomorfológicas, remontándose a tres siglos atrás. Autores como Hutton, Playfair y Lyell, sirvieron de antecesores o bases para la ciencia geomorfológica. Tras su consolidación como ciencia en francia numerosos autores fueron demostrando la importancia de esta ciencia, incluso ramificándola (climática, eólica, litoral, glaciar, estructural, tectónica, kárstica y fluvial; siendo la última de interés para esta investigación), para mayor eficacia en sus estudios.
 
-Por lo que la Geomorfología es considerada la ciencia que estudia los procesos que intervienen en la formación del relieve.
-En geomorfología es posible distinguir la que estudia el relieve o geomorfología estructural, y la que geomorfología que tiene su interés en la forma del terreno considerando la acción erosiva o geomorfología climática (@arroyo2012esbozo). 
+Los estudios en la geomorfología fluvial a nivel mundial son numerosos y han servido para explicar cómo los drenajes de los ríos y sus redes hidrográficas son importantes para la geomorfología, ya que estas redes fluviales son parte de los procesos de modelado más activos en la formación del relieve y que permiten mensurar la configuración del mismo.
+Para los estudios en geomorfología fluvial, se hace uso del análisis morfométrico de cuencas hidrográficas. La morfometría de cuenca se ha convertido en la técnica cuantitativa para el estudio de las cuencas de manera detallada y ordenada. Actualmente en la República Dominicana el uso del análisis morfométrico para estudiar cuencas hidrográficas es poco e insuficiente, pero no innecesario. En ese mismo contexto, es importante decir que la República Dominicana goza de una diversa y extensa red de cuencas hidrograficas, ricas y aprovechales para la aplicacion de diversas tecnicas con el fin de explicar y enterder las propiedades del relive y su relacion con las cuencas fluviales. Por lo que, este estudio es un aporte para dar a conocer la configuracion y modelado de la cuenca hidrografica del rio Guayubin, con el fin de establecer parametros que permitan evaluar estas redes fluviales, identificando el aspecto general de la cuenca y de la red, orden de red y análisis hortoniano, perfiles longitudinales e índice de concavidad de cursos más largos, y morfometría de cuenca.
 
-Según @gutierrez2008geomorfologia, la geomorfología además de ser descriptiva debe ser cuantitativa, y así dejar la dependencia de métodos pertenecientes a otros campos científicos, como lo hace con la Física.
-La geomorgfologia posee varias ramas: Geomorfologia climática, Geomorfología eólica, Geomorfología glaciar, Geomorfología estructural y Geomorfología fluvial, esta última es en la que se basa la investigación.
+2.1 Revisión bibliográfica 
 
-La geomorfología fluvial, según Christofoletti (citado por, @morais2010geomorfologia), tiene una inclinación por el análisis de los distintos procesos y formas interconectadas con el drenaje de los ríos. Para él investigar las escorrentías fluviales, son cruciales en geomorfología y en el estudio de las distintas redes hidrográficas, al momento de entender los cauntiosos problemas geomorfológicos, debido a que las vías fluviales forman los procesos morfogenéticos entre los más activos al momento de esculpir el paisaje terrestre.
+Aspecto general de la cuenca y de la red
+es el aspecto fisico de la cuenca 
+Orden de red y análisis hortoniano
 
-Para Richards (como citó @gutierrez2008geomorfologia), describe la conexión existente entre los distintos procesos de circulación de los conductos del cauce, el movimiento y equilibrio de la conduccion de sedimentos empujados por el flujo y el modelado de los conductos aluviales productos del traslado de sedimentos. 
+Perfiles longitudinales e índice de concavidad de cursos más largos
 
-@morais2010geomorfologia, afirman que para poder estudiar y comprender las propiedades de una cuenca hidrográfica es necesario el análisis morfométrico,considerandolo como una herramienta necesaria, debido a que con este es posible mensurar la configuración del relieve. 
-
-La morfometría fluvial 
+Morfometría de cuenca
 
 
-
-![Cuenca de Guayubin](cuenca_de_Guayubin_1sFig.png)
-
-
-
+preguntas de investigacion y explicacion de por que se hace el estudio
+Aspecto general de la cuenca y de la red
+Orden de red y análisis hortoniano
+Perfiles longitudinales e índice de concavidad de cursos más largos
+Morfometría de cuenca
 
 
 # Metodología

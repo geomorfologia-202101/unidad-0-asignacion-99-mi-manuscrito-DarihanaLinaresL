@@ -533,7 +533,9 @@ sapply(
 paleta <- RColorBrewer::brewer.pal(12, 'Set3')
 leaflet() %>% 
   addProviderTiles(providers$Stamen.Terrain, group = 'terrain') %>%
-  addPolygons(data = orden4, stroke = T, weight = 2,
+  addPolygons(data = orden5, stroke = T, weight = 2,
+              color = ~paleta, fillOpacity = 0.4, group = 'O5') %>% 
+   addPolygons(data = orden4, stroke = T, weight = 2,
               color = ~paleta, fillOpacity = 0.4, group = 'O4') %>% 
   addPolygons(data = orden3, stroke = T, weight = 2,
               color = ~paleta, fillOpacity = 0.4, group = 'O3') %>%
@@ -546,7 +548,7 @@ leaflet() %>%
     opacity = 0.7, group = 'str_order') %>%
   leafem::addHomeButton(extent(order4326), 'Ver todo') %>% 
   addLayersControl(
-    overlayGroups = c('terrain','O1','O2','O3','O4','str_order'),
+    overlayGroups = c('terrain','O1','O2','O3','O4','O5','str_order'),
     options = layersControlOptions(collapsed=FALSE))
 
 # Estadísticas de red resumidas por orden de red
