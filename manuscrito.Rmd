@@ -50,11 +50,13 @@ El orden de red hace referencia al orden en el que se clasifican los cursos de a
 Para @bowden1964effect, el orden de red sostiene una relación entre las rocas con la configuración de la red fluvial y con los procesos tanto hidrológicos como erosivos.
 La clasificación de la red se hace de manera jerarquica. Hoy dia existen múltiples normas para determinar la jerarquia de una red: Strahler (1952), Horton (1945), Shreve (1967), Scheidegger (1970), Leopold et al. (1964) Hack (1957) y Topological. 
 
-El análisis hortoniano
+El análisis hortoniano para los años 40 sentó las bases de la morfometría fluvial (@pinilla1993symposium). Para @horton1945erosional, la razón de bifurcación resulta ser la conexión entre el número de redes fluviales de una jerarquia asignada entre el numero de redes de jerarquia mayor proxima. 
+
 2.1.3 Perfiles longitudinales e índice de concavidad de cursos más largos
+El perfil longitudinal de un curso de agua es una linea adquirida al representar las diversas alturas que se presentan desde el nacimiento de este hasta donde desagua (@gutierrez2008geomorfologia). Según @pedraza1996geomorfologia, por medio de estos es posible definir en segmentos con geometría heterogénea (cóncavo, convexo y rectilíneo), o pendiente. @gutierres2008geomorfologia, dice que el perfil longitudinal es generalmente cóncavo, aunque esta concavidad no este clara para muchos cursos fluviales.
 
 2.1.4 Morfometría de cuenca
-
+El análisis morfométrico abarca un conjunto de índices morfológicos que apuntan a un análisis detallado y cuantitativo de cuencas hidrográficas (@morais2010geomorfologia). El análisis morfométrico de cuencas hidrográficas se inicia por la ordenación de canales fluviales, con la finalidad de establecer una jerarquía fluvial. Esta, a su vez, consiste en el proceso de establecer la clasificación de determinado curso de agua (o el área drenada que le pertenece) en el conjunto total de la cuenca hidrográfica en la que se encuentra. Aunque según el autor, esto se logra con la función de facilitar y volver más objetivos los estudios morfométricos sobre las cuencas hidrográficas (@christofoletti1988geomorfologia)
 
 preguntas de investigacion y explicacion de por que se hace el estudio
 Aspecto general de la cuenca y de la red
