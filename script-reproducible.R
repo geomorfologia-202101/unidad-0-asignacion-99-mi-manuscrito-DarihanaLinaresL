@@ -595,7 +595,7 @@ mapview(order, col.regions = 'blue', legend = FALSE)
 ## Obtener cursos más largos (cargar función propia)
 devtools::source_url('https://raw.githubusercontent.com/geofis/rgrass/master/lfp_network.R') #Cargada como función "LfpNetwork"
 LfpNetwork(
-  xycoords = my_trans(c(-71.40047,19.66275)),
+  xycoords = my_trans(c(-71.40047,19.66270)),
   suffix = 'Gyb',
   stream_vect = 'order_all',
   direction = 'drainage-dir-de-rstr'
@@ -643,7 +643,7 @@ execGRASS(
 ## Obtención de perfiles longitudinales e índices de concavidad
 source('lfp_profiles_concavity.R') #Cargado como función "LfpProfilesConcavity"
 guaybin_conv_prof <- LfpProfilesConcavity(
-  xycoords = my_trans(c(-71.40047,19.66275)),
+  xycoords = my_trans(c(-71.40047,19.66270)),
   network = 'LfpNetwork_lfp_all_final_Gyb',
   prefix = 'Ptl',
   dem = 'dem',
