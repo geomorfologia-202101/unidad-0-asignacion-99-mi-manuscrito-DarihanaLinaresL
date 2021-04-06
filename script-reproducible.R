@@ -595,13 +595,13 @@ mapview(order, col.regions = 'blue', legend = FALSE)
 ## Obtener cursos más largos (cargar función propia)
 devtools::source_url('https://raw.githubusercontent.com/geofis/rgrass/master/lfp_network.R') #Cargada como función "LfpNetwork"
 LfpNetwork(
-  xycoords = my_trans(c(-71.40047,19.662755)),
-  suffix = 'Gua',
+  xycoords = my_trans(c(-71.40047,19.66275)),
+  suffix = 'Gyb',
   stream_vect = 'order_all',
   direction = 'drainage-dir-de-rstr'
 )
 
-##Imprimir lista de mapas ráster y vectoriales
+## Imprimir lista de mapas ráster y vectoriales
 execGRASS(
   'g.list',
   flags = 't',
@@ -611,7 +611,7 @@ execGRASS(
 )
 
 ## Representar con leaflet
-lfp <- readVECT('LfpNetwork_lfp_all_final_Gua')
+lfp <- readVECT('LfpNetwork_lfp_all_final_Gyb')
 lfp4326 <- spTransform(lfp, CRSobj = CRS("+init=epsg:4326"))
 leaflet() %>%
   addProviderTiles(providers$Stamen.Terrain, group = 'terrain') %>%
@@ -633,7 +633,7 @@ execGRASS(
   'v.out.ogr',
   flags = c('overwrite','quiet'),
   parameters = list(
-    input = 'LfpNetwork_lfp_all_final_Gua',
+    input = 'LfpNetwork_lfp_all_final_Gyb',
     output = 'lfp_kml.kml',
     format = 'KML',
     dsco = 'NameField=cat'
@@ -643,16 +643,17 @@ execGRASS(
 ## Obtención de perfiles longitudinales e índices de concavidad
 source('lfp_profiles_concavity.R') #Cargado como función "LfpProfilesConcavity"
 guaybin_conv_prof <- LfpProfilesConcavity(
-  xycoords = my_trans(c(-71.40047,19.662755)),
-  network = 'LfpNetwork_lfp_all_final_Gua',
-  prefix = 'Gyb',
+  xycoords = my_trans(c(-71.40047,19.66275)),
+  network = 'LfpNetwork_lfp_all_final_Gyb',
+  prefix = 'Ptl',
   dem = 'dem',
   direction = 'drainage-dir-de-rstr',
   crs = '+init=epsg:32619',
   smns = 0.5,
   nrow = 3)
 
-##Mostrar resultados
+## Mostrar resultados
+
 guayubin_conv_prof$profiles
 guayubin_conv_prof$concavityindex
 guayubin_conv_prof$dimensionlessprofiles
