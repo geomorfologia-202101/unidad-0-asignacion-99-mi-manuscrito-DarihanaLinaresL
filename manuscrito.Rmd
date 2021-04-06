@@ -63,7 +63,7 @@ Se estudia la geometría que posee cada segmento de los cursos, en este caso el 
 
 # Metodología
 
-2.1 Área de estudio
+## Área de estudio
 La cuenca del río Guayubín, abarca  
 
 

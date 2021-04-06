@@ -1,0 +1,11 @@
+COMMAND: v.patch --overwrite input="LfpNetwork_lfp_Gua,LfpNetwork_lfp_tmp_all_tributaries_Gua" output="LfpNetwork_lfp_all_final_Gua"
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Mon Apr  5 20:12:04 2021
+---------------------------------------------------------------------------------
+COMMAND: v.category --overwrite input="LfpNetwork_lfp_all_final_Gua" layer="1" type="point,line,centroid,face" output="LfpNetwork_lfp_tmp_Guaall_final_" option="del" cat=-1 step=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Mon Apr  5 20:12:04 2021
+---------------------------------------------------------------------------------
+COMMAND: v.category --overwrite input="LfpNetwork_lfp_tmp_Guaall_final_" layer="1" type="point,line,centroid,face" output="LfpNetwork_lfp_all_final_Gua" option="add" cat=1 step=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Mon Apr  5 20:12:04 2021

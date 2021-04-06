@@ -1,7 +1,7 @@
 
 # Intro a Grass, video no. 3 ----
-# Parte reutilizable del script ----
-# Cargar paquetes
+## Parte reutilizable del script ----
+## Cargar paquetes
 library(rgrass7)
 library(sp)
 use_sp()
@@ -22,7 +22,7 @@ loc <- initGRASS(gisBase = "/usr/lib/grass78/",
                  mapset = "PERMANENT",
                  override = TRUE)
 
-# Imprimir fuentes en la region
+## Imprimir fuentes en la region
 execGRASS(
   'g.list',
   flags = 't',
@@ -31,30 +31,26 @@ execGRASS(
   )
 )
 
-# Limpiar archivo de bloqueo del conjunto de mapas de GRASS
+## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
 unlink_.gislock()
 
-
-
-
-# Fin de la parte reutilizable
-
+## Fin de la parte reutilizable
 
 # Video no. 4, Definir proyección de la región de GRASS GIS, importar fuente y utilizarla para definir extensión y resolución. Cómo ver la ayuda de las funciones ----
-# Muestra la definición de la región
+## Muestra la definición de la región
 gmeta()
 
-# Definir ruta del DEM
+## Definir ruta del DEM
 dem <- 'datos-fuente/srtm_dem_cuenca_guayubin.tif'
 execGRASS(
   cmd = 'g.proj',
   flags = c('t','c'),
   georef = dem)
 
-# Muestra la definición de la región modificada
+## Muestra la definición de la región modificada
 gmeta()
 
-#r.in.gdal importa la fuente a GRASS
+## r.in.gdal importa la fuente a GRASS
 execGRASS(
   cmd = 'r.in.gdal',
   flags=c('overwrite','quiet'),
@@ -64,7 +60,7 @@ execGRASS(
   )
 )
 
-# Actualizar la extensión de la región al DEM, sólo por precaución
+## Actualizar la extensión de la región al DEM, sólo por precaución
 execGRASS(
   cmd = 'g.region',
   parameters=list(
@@ -73,10 +69,10 @@ execGRASS(
   )
 )
 
-# Muestra la región de Grass again
+## Muestra la región de Grass again
 gmeta()
 
-# Importar vectorial a la región de Grass
+## Importar vectorial a la región de Grass
 demext <- 'datos-fuente/srtm_dem_cuenca_guayubin.geojson'
 execGRASS(
   cmd = 'v.in.ogr',
@@ -87,7 +83,7 @@ execGRASS(
   )
 )
 
-# Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa
+## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa
 execGRASS(
   'g.list',
   flags = 't',
@@ -96,24 +92,23 @@ execGRASS(
   )
 )
 
-# Ver los addons disponibles en el repositorio oficial de GRASS GIS, incluyendo descripción
+## Ver los addons disponibles en el repositorio oficial de GRASS GIS, incluyendo descripción
 execGRASS(
   cmd = 'g.extension',
   flags = 'c'
 )
 
-# Consultar la ayuda de una función
+## Consultar la ayuda de una función
 parseGRASS("r.in.gdal")
 
-# Consultar la ayuda de una función. Segunda alternativa
+## Consultar la ayuda de una función. Segunda alternativa
 system('r.in.gdal --help')
 
-# Limpiar archivo de bloqueo del conjunto de mapas de GRASS
+## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
 unlink_.gislock()
 
-
 # Video no. 5, Explorar datos espaciales básicos entre GRASS y R ----
-# Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa
+## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa
 execGRASS(
   'g.list',
   flags = 't',
@@ -122,21 +117,21 @@ execGRASS(
   )
 )
 
-# Cargar en R el DEM (mapa ráster)
+## Cargar en R el DEM (mapa ráster)
 library(sp)
 use_sp()
 dem_sp <- readRAST('dem')
 op <- par()
 plot(dem_sp)
 
-# Cargar a R el mapa vectorial de una cuenca que se encuentra alojado fuera de GRASS, hacer el plot y representar la cuenca del rio Guayubin superpuesta
+## Cargar a R el mapa vectorial de una cuenca que se encuentra alojado fuera de GRASS, hacer el plot y representar la cuenca del rio Guayubin superpuesta
 library(sf)
 rutaguayubin <- 'datos-fuente/cuenca_guayubin.geojson'
 guayubin <- st_read(rutaguayubin)
 plot(dem_sp)
 plot(guayubin, add=T, col='transparent', border='black', lwd=5);par(op[c('mfrow','mar')])
 
-# Analizar el DEM dentro de la cuenca de guayubin
+## Analizar el DEM dentro de la cuenca de guayubin
 library(raster)
 dem_r0 <- raster(dem_sp)
 dem_r1 <- crop(dem_r0, guayubin)
@@ -145,13 +140,13 @@ plot(dem_guayu)
 summary(dem_guayu)
 hist(dem_guayu)
 
-# Obtener variables de terreno básicas con el paquete raster dentro de R
+## Obtener variables de terreno básicas con el paquete raster dentro de R
 pend_guayu <- terrain(x = dem_guayu, opt = 'slope', unit = 'degrees')
 plot(pend_guayu)
 summary(pend_guayu)
 hist(pend_guayu)
 
-# Obtener la misma variable de terreno con GRASS GIS
+## Obtener la misma variable de terreno con GRASS GIS
 writeVECT(as_Spatial(guayubin), 'guayubin', v.in.ogr_flags='quiet')
 execGRASS(
   "g.region",
@@ -202,8 +197,8 @@ gmeta()
 
 # Video 6. Calcular parámetros hidrográficos con r.watershed. Visualizar con leaflet ----
 
-# Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa 
-# Está en el archivo reusable como (# Imprimir fuentes en la region)
+## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa 
+## Está en el archivo reusable como (# Imprimir fuentes en la region)
 execGRASS(
   'g.list',
   flags = 't',
@@ -211,7 +206,7 @@ execGRASS(
     type = c('raster', 'vector')
   )
 )
-# Calcular parámetros hidrográficos de interés usando r.watershed
+## Calcular parámetros hidrográficos de interés usando r.watershed
 execGRASS(
   "r.watershed",
   flags = c('overwrite','quiet'),
@@ -228,25 +223,25 @@ execGRASS(
 
 ## Traer capas a R
 
-# Usar Spatial*
+## Usar Spatial*
 library(sp)
 use_sp()
-# Paquete manejo de los raster
+## Paquete manejo de los raster
 library(raster)
-# DEM
+## DEM
 dem <- raster(readRAST('dem'))
-# Basins
+## Basins
 basins <- raster(readRAST('basins'))
-# Stream network
+## Stream network
 stream <- raster(readRAST('stream-de-rwshed'))
 stream3857 <- projectRaster(stream, crs = CRS("+init=epsg:3857"), method = 'ngb')
-# Generar un vectorial de extensión de capa en EPSG:4326
+## Generar un vectorial de extensión de capa en EPSG:4326
 e <- extent(stream)
 e <- as(e, 'SpatialPolygons')
 proj4string(e) <- CRS("+init=epsg:32619")
 e <- spTransform(e, CRSobj = CRS("+init=epsg:4326"))
 
-# Visualizar capas con leaflet
+## Visualizar capas con leaflet
 library(leaflet)
 library(leafem)
 leaflet() %>%
@@ -264,7 +259,7 @@ leaflet() %>%
 
 
 # Video 7, Extraer una cuenca con r.water.outlet. Visualizar con mapview y leaflet ----
-# Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa (está en el reproducible)
+## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa (está en el reproducible)
 execGRASS(
   'g.list',
   flags = 't',
@@ -273,14 +268,14 @@ execGRASS(
   )
 )
 
-# Obtener las coordenadas de la desembocadura de la cuenca de interés
+## Obtener las coordenadas de la desembocadura de la cuenca de interés
 library(mapview)
 mapview(
   stream3857, method='ngb', col.regions = 'blue',
   legend = FALSE, label = FALSE, maxpixels =  910425
 )
 
-# Convertir las coordenadas lat/lon a EPSG:32619
+## Convertir las coordenadas lat/lon a EPSG:32619
 my_trans <- function(coords = NULL) {
   require(sp)
   pt <- SpatialPoints(matrix(coords, ncol = 2), CRS("+init=epsg:4326"))
@@ -291,7 +286,7 @@ my_trans <- function(coords = NULL) {
 guayu_out <- my_trans(coords = c(-71.40021,19.66387))
 guayu_out
 
-# Extraer la cuenca de interés
+## Extraer la cuenca de interés
 execGRASS(
   "r.water.outlet",
   flags = c('overwrite','quiet'),
@@ -302,7 +297,7 @@ execGRASS(
   )
 )
 
-# Convertir la cuenca a vectorial en GRASS
+## Convertir la cuenca a vectorial en GRASS
 execGRASS(
   "r.to.vect",
   flags = c('overwrite','quiet'),
@@ -313,7 +308,7 @@ execGRASS(
   )
 )
 
-# Mostrar lista nuevamente
+## Mostrar lista nuevamente
 execGRASS(
   'g.list',
   flags = 't',
@@ -322,7 +317,7 @@ execGRASS(
   )
 )
 
-# Traer a R la cuenca del rio guayubin
+## Traer a R la cuenca del rio guayubin
 guayu_bas <- readVECT('guayubin_basin')
 guayu_bas
 plot(guayu_bas)
@@ -334,7 +329,7 @@ leaflet() %>%
   leafem::addHomeButton(extent(guayu_bas4326), 'Ver cuenca')
 
 # Video 8, Extraer una red drenaje con r.stream.extract. Visualizar con leaflet ----
-# Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa
+## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa
 execGRASS(
   'g.list',
   flags = 't',
@@ -343,7 +338,7 @@ execGRASS(
   )
 )
 
-# Usar la cuenca del rio guayubin como máscara
+## Usar la cuenca del rio guayubin como máscara
 execGRASS(
   "r.mask",
   flags = c('verbose','overwrite','quiet'),
@@ -352,7 +347,7 @@ execGRASS(
   )
 )
 
-# Extraer la red de drenaje de la cuenca de interés
+## Extraer la red de drenaje de la cuenca de interés
 execGRASS(
   "r.stream.extract",
   flags = c('overwrite','quiet'),
@@ -364,7 +359,7 @@ execGRASS(
   )
 )
 
-# Mostrar lista nuevamente
+## Mostrar lista nuevamente
 execGRASS(
   'g.list',
   flags = 't',
@@ -373,7 +368,7 @@ execGRASS(
   )
 )
 
-# Traer a R la red de drenaje del rio guayubin
+## Traer a R la red de drenaje del rio guayubin
 guayu_net <- readVECT('guayubin_stream_de_rstr', ignore.stderr = T)
 guayu_net
 plot(guayu_net)
@@ -397,7 +392,7 @@ leaflet() %>%
 
 
 # Video 10,  Orden de red y análisis hortoniano usando r.stream*. Visualizar con leaflet ----
-# Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa (está en el reproducible)
+## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa (está en el reproducible)
 execGRASS(
   'g.list',
   flags = 't',
@@ -406,7 +401,7 @@ execGRASS(
   )
 )
 
-# Crear mapa de dirección de flujo a partir de r.stream
+## Crear mapa de dirección de flujo a partir de r.stream
 execGRASS(
   "r.stream.extract",
   flags = c('overwrite','quiet'),
@@ -417,7 +412,7 @@ execGRASS(
   )
 )
 
-# Crear mapas de órdenes de red
+## Crear mapas de órdenes de red
 execGRASS(
   "r.stream.order",
   flags = c('overwrite','quiet'),
@@ -435,9 +430,8 @@ execGRASS(
   )
 )
 
-# Visualizar la red con leaflet
-
-# Simbología única
+## Visualizar la red con leaflet
+## Simbología única
 order <- readVECT('order_all')
 order4326 <- spTransform(order, CRSobj = CRS("+init=epsg:4326"))
 leaflet() %>% 
@@ -458,7 +452,7 @@ leaflet() %>%
     overlayGroups = c('terrain','order'),
     options = layersControlOptions(collapsed=FALSE))
 
-# Simbología aplicando grosor según orden de red
+## Simbología aplicando grosor según orden de red
 leaflet() %>% 
   addProviderTiles(providers$Stamen.Terrain, group = 'terrain') %>%
   addPolylines(
@@ -472,10 +466,10 @@ leaflet() %>%
     overlayGroups = c('terrain','order'),
     options = layersControlOptions(collapsed=FALSE))
 
-# Delimitar cuencas según orden de red de Strahler
+## Delimitar cuencas según orden de red de Strahler
 
-# Obtener órdenes de red mínimo y máximo
-# Estadísticas para obtener los valores mínimo y máximo del orden de red de Strahler
+## Obtener órdenes de red mínimo y máximo
+## Estadísticas para obtener los valores mínimo y máximo del orden de red de Strahler
 rinfo.ordstra <- execGRASS(
   'r.info',
   flags = 'r',
@@ -484,7 +478,7 @@ rinfo.ordstra <- execGRASS(
   )
 )
 
-# Órdenes de red mínimo y máximo
+## Órdenes de red mínimo y máximo
 minmaxord <- as.numeric(
   stringr::str_extract_all(
     attributes(rinfo.ordstra)$resOut,
@@ -493,7 +487,7 @@ minmaxord <- as.numeric(
 )
 minmaxord
 
-# Delimitar cuencas, convertirlas de ráster a vectorial
+## Delimitar cuencas, convertirlas de ráster a vectorial
 sapply(
   min(minmaxord):max(minmaxord),
   function(x){
@@ -519,7 +513,7 @@ sapply(
   }
 
 )
-# Representar las cuencas con leaflet
+## Representar las cuencas con leaflet
 sapply(
   min(minmaxord):max(minmaxord),
   function(x){
@@ -551,7 +545,7 @@ leaflet() %>%
     overlayGroups = c('terrain','O1','O2','O3','O4','O5','str_order'),
     options = layersControlOptions(collapsed=FALSE))
 
-# Estadísticas de red resumidas por orden de red
+## Estadísticas de red resumidas por orden de red
 execGRASS(
   "r.stream.stats",
   flags = c('overwrite','quiet','o'),
@@ -571,7 +565,7 @@ text(2, 20, 'logN=2.064-0.544u')
 rb <- 1/10^mod$coefficients[[2]]
 rb
 
-# Estadísticas de red ampliadas
+## Estadísticas de red ampliadas
 execGRASS(
   "r.stream.stats",
   flags = c('overwrite','quiet'),
@@ -583,3 +577,86 @@ execGRASS(
   )
 )
 file.show('guayu_stats_expanded.txt')
+
+
+# Video 11, Calcular índices de concavidad y perfiles longitudinales de cursos fluviales----
+## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
+
+## Obtener coordenada
+mapview(order, col.regions = 'blue', legend = FALSE)
+
+## Obtener cursos más largos (cargar función propia)
+devtools::source_url('https://raw.githubusercontent.com/geofis/rgrass/master/lfp_network.R') #Cargada como función "LfpNetwork"
+LfpNetwork(
+  xycoords = my_trans(c(-71.40047,19.662755)),
+  suffix = 'Gua',
+  stream_vect = 'order_all',
+  direction = 'drainage-dir-de-rstr'
+)
+
+##Imprimir lista de mapas ráster y vectoriales
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
+
+## Representar con leaflet
+lfp <- readVECT('LfpNetwork_lfp_all_final_Gua')
+lfp4326 <- spTransform(lfp, CRSobj = CRS("+init=epsg:4326"))
+leaflet() %>%
+  addProviderTiles(providers$Stamen.Terrain, group = 'terrain') %>%
+  addPolylines(
+    data = lfp4326, weight = 3, opacity = 0.7, group = 'order',
+    label = ~as.character(cat),
+    highlightOptions = highlightOptions(color = "white",
+                                        weight = 5, bringToFront = F, opacity = 1),
+    labelOptions = labelOptions(noHide = T,
+                                style = list(
+                                  "font-size" = "8px",
+                                  "background" = "rgba(255, 255, 255, 0.5)",
+                                  "background-clip" = "padding-box",
+                                  "padding" = "1px"))) %>% 
+  leafem::addHomeButton(extent(lfp4326), 'Ver todo')
+
+## Exportar a KML
+execGRASS(
+  'v.out.ogr',
+  flags = c('overwrite','quiet'),
+  parameters = list(
+    input = 'LfpNetwork_lfp_all_final_Gua',
+    output = 'lfp_kml.kml',
+    format = 'KML',
+    dsco = 'NameField=cat'
+  )
+)
+
+## Obtención de perfiles longitudinales e índices de concavidad
+source('lfp_profiles_concavity.R') #Cargado como función "LfpProfilesConcavity"
+guaybin_conv_prof <- LfpProfilesConcavity(
+  xycoords = my_trans(c(-71.40047,19.662755)),
+  network = 'LfpNetwork_lfp_all_final_Gua',
+  prefix = 'Gyb',
+  dem = 'dem',
+  direction = 'drainage-dir-de-rstr',
+  crs = '+init=epsg:32619',
+  smns = 0.5,
+  nrow = 3)
+
+##Mostrar resultados
+guayubin_conv_prof$profiles
+guayubin_conv_prof$concavityindex
+guayubin_conv_prof$dimensionlessprofiles
+
+## Tabla dx/dy, tanto en metros como adimensional. Útiles para construir perfiles por cuenta propia
+guayubin_conv_prof$lengthzdata %>% tibble::as.tibble()
+guayubin_conv_prof$lengthzdatadmnls %>% tibble::as.tibble()
