@@ -642,7 +642,7 @@ execGRASS(
 
 ## Obtención de perfiles longitudinales e índices de concavidad
 source('lfp_profiles_concavity.R') #Cargado como función "LfpProfilesConcavity"
-guaybin_conv_prof <- LfpProfilesConcavity(
+guayubin_conv_prof <- LfpProfilesConcavity(
   xycoords = my_trans(c(-71.40047,19.6626)),
   network = 'LfpNetwork_lfp_all_final_Gyb',
   prefix = 'Ptl',

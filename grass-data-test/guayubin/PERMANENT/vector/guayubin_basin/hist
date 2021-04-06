@@ -1,3 +1,0 @@
-COMMAND: r.to.vect --overwrite --quiet input="guayubin-basin" output="guayubin_basin" type="area" column="value"
-GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
-LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Mon Apr  5 22:00:39 2021
