@@ -1,3 +1,0 @@
-COMMAND: v.in.ogr --overwrite input="/home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test/guayubin/PERMANENT/.tmp/rstudio-ubuntu-s-1vcpu-2gb-nyc3-01/710.0.gpkg" layer="LfpNetwork_outlet_Ptl" output="LfpNetwork_outlet_Ptl" min_area=0.0001 type="" snap=-1
-GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
-LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr  6 10:22:00 2021
