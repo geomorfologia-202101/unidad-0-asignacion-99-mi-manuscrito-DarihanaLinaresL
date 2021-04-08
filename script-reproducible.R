@@ -661,3 +661,6 @@ guayubin_conv_prof$dimensionlessprofiles
 ## Tabla dx/dy, tanto en metros como adimensional. Útiles para construir perfiles por cuenta propia
 guayubin_conv_prof$lengthzdata %>% tibble::as.tibble()
 guayubin_conv_prof$lengthzdatadmnls %>% tibble::as.tibble()
+
+## Revisar en QGIS/Google Earth relación litología/concavidad
+## Descargar archivo lfp_kml.kml localmente, superponer al mapa geológico usando QGIS y GoogleEarth, evaluar los índices de concavidad y formas del perfil longitudinal de los cursos más largos en relación con la litología, las fallas, el orden de red, entre otras variables.
