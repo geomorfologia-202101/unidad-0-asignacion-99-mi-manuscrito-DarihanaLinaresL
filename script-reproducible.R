@@ -10,7 +10,7 @@ library(raster)
 library(leaflet)
 library(leafem)
 library(mapview)
-
+library(readr)
 
 gisdbase <- 'grass-data-test' #Base de datos de GRASS GIS
 wd <- getwd() #Directorio de trabajo
@@ -664,3 +664,201 @@ guayubin_conv_prof$lengthzdatadmnls %>% tibble::as.tibble()
 
 ## Revisar en QGIS/Google Earth relación litología/concavidad
 ## Descargar archivo lfp_kml.kml localmente, superponer al mapa geológico usando QGIS y GoogleEarth, evaluar los índices de concavidad y formas del perfil longitudinal de los cursos más largos en relación con la litología, las fallas, el orden de red, entre otras variables.
+
+
+# Video 12, Parámetros de cuenca con r.basin ----
+## Convertir a números enteros la extensión y la resolución del DEM
+rutadem <- 'data/dem.tif'
+rawextent <- extent(raster(rutadem))
+rawextent
+devtools::source_url('https://raw.githubusercontent.com/geofis/rgrass/master/integerextent.R')
+devtools::source_url('https://raw.githubusercontent.com/geofis/rgrass/master/xyvector.R')
+newextent <- intext(e = rawextent, r = 90, type = 'inner')
+newextent
+gdalUtils::gdalwarp(
+  srcfile = 'data/dem.tif',
+  dstfile = 'data/demint.tif',
+  te = xyvector(newextent),
+  tr = c(90,90),
+  r = 'bilinear',
+  overwrite = T
+)
+
+## Importar a sesión de GRASS
+rutademint <- 'data/demint.tif'
+execGRASS(
+  "g.proj",
+  flags = c('t','c'),
+  georef=rutademint)
+
+gmeta()
+
+execGRASS(
+  "r.in.gdal",
+  flags='overwrite',
+  parameters=list(
+    input=rutademint,
+    output="demint"
+  )
+)
+
+execGRASS(
+  "g.region",
+  parameters=list(
+    raster = "demint",
+    align = "demint"
+  )
+)
+
+gmeta()
+
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
+
+## Generar red de drenaje para obtener coordenada posteriormente
+execGRASS(
+  "r.stream.extract",
+  flags = c('overwrite','quiet'),
+  parameters = list(
+    elevation = 'demint',
+    threshold = 80,
+    stream_raster = 'stream-de-rstr',
+    stream_vector = 'stream_de_rstr'
+  )
+)
+
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
+
+## Obtener coordenada
+library(sp)
+use_sp()
+library(mapview)
+netw <- spTransform(
+  readVECT('stream_de_rstr'),
+  CRSobj = CRS("+init=epsg:4326"))
+
+mapview(netw, col.regions = 'blue', legend = FALSE)
+
+## Transformar coordenada a EPSG:32619 como número entero
+source('my-trans.R')
+outlet <- as.integer(my_trans(c(-70.77398,18.90123)))
+
+## Ejecutar r.basin
+pref <- 'rbasin_guay'
+execGRASS(
+  "r.basin",
+  flags = 'overwrite',
+  parameters = list(
+    map = 'demint',
+    prefix = pref,
+    coordinates = outlet,
+    threshold = 80,
+    dir = 'salidas-rbasin/guayubin'
+  )
+)
+
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
+
+## Si r.basin arrojara error (sólo en el caso de error, no en caso de advertencia), ejecutar este bloque para borrar las salidas anteriores y reejecutar el r.basin:
+  execGRASS(
+    "g.remove",
+    flags = 'f',
+    parameters = list(
+      type = c('raster','vector'),
+      pattern = paste0(pref, '*')
+    )
+  )
+  
+## Cargar los vectoriales transformados a EPSG:4326 para visualizar en leaflet
+  rbnetw <- spTransform(
+    readVECT('rbasin_guay_demint_network'),
+    CRSobj = CRS("+init=epsg:4326"))
+  rbnetw
+  rbmain <- spTransform(
+    readVECT('rbasin_guay_demint_mainchannel'),
+    CRSobj = CRS("+init=epsg:4326"))
+  rbmain
+  rbbasin <- spTransform(
+    readVECT('rbasin_guay_demint_basin'),
+    CRSobj = CRS("+init=epsg:4326"))
+  rbbasin
+
+leaflet() %>%
+    addProviderTiles(providers$Stamen.Terrain, group = 'terrain') %>%
+    addPolylines(data = rbnetw, weight = 3, opacity = 0.7) %>% 
+    addPolylines(data = rbmain, weight = 3, opacity = 0.7, color = 'red') %>% 
+    addPolygons(data = rbbasin) %>% 
+    leafem::addHomeButton(extent(rbbasin), 'Ver cuenca')
+  
+## Explorar los parámetros de cuenca
+library(readr)
+rbguaypar1 <- read_csv("salidas-rbasin/guayubin/rbasin_guay_demint_parametersT.csv")
+rbguaypar1 %>% tibble::as_tibble()
+rbguaypar2 <- read_csv(
+  "salidas-rbasin/guayubin/rbasin_guay_demint_parameters.csv",
+  skip=2, col_names = c('Parameter', 'Value'))
+rbguaypar2 %>% print(n=Inf)
+
+
+# Video 13, Curva e integral hipsométrica ----
+## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
+
+## Representar cuencas
+library(sp)
+use_sp()
+library(mapview)
+bas2 <- readVECT('r_stream_basins_2')
+bas3 <- readVECT('r_stream_basins_3')
+
+## Curva e integral hipsométrica
+source('integral_hypsometric_curve.R') #Cargada como función "HypsoIntCurve"
+HypsoBasinsOrder2 <- HypsoIntCurve(
+  basins = 'r_stream_basins_2',
+  dem = 'dem',
+  labelfield = 'cat',
+  nrow = 2,
+  labelsize = 4
+)
+
+HypsoBasinsOrder2$HypsoInt
+HypsoBasinsOrder2$HypsoCurve
+mapview(bas2, zcol='cat', col.regions = 'blue', legend = FALSE) %>%
+  addStaticLabels(label = bas2$cat)
+
+HypsoBasinsOrder3 <- HypsoIntCurve(
+  basins = 'r_stream_basins_3',
+  dem = 'dem',
+  labelfield = 'cat',
+  nrow = 1,
+  labelsize = 4
+)
+
+HypsoBasinsOrder3$HypsoInt
+HypsoBasinsOrder3$HypsoCurve
+
+mapview(bas3, zcol='cat', col.regions = 'blue', legend = FALSE) %>%
+  addStaticLabels(label = bas3$cat)
