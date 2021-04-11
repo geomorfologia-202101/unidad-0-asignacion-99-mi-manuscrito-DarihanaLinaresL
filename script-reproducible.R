@@ -687,7 +687,6 @@ execGRASS(
 )
 
 ## Convertir a números enteros la extensión y la resolución del DEM
-
 library(raster)
 rutadem <- 'datos-fuente/srtm_dem_cuenca_guayubin.tif'
 rawextent <- extent(raster(rutadem))
@@ -697,8 +696,8 @@ devtools::source_url('https://raw.githubusercontent.com/geofis/rgrass/master/xyv
 newextent <- intext(e = rawextent, r = 90, type = 'inner')
 newextent
 gdalUtils::gdalwarp(
-  srcfile = 'data/dem.tif',
-  dstfile = 'data/demint.tif',
+  srcfile = 'datos-fuente/srtm_dem_cuenca_guayubin.tif',
+  dstfile = 'datos-fuente/demint.tif',
   te = xyvector(newextent),
   tr = c(90,90),
   r = 'bilinear',
@@ -706,7 +705,7 @@ gdalUtils::gdalwarp(
 )
 
 ## Importar a sesión de GRASS
-rutademint <- 'data/demint.tif'
+rutademint <- 'datos-fuente//demint.tif'
 execGRASS(
   "g.proj",
   flags = c('t','c'),
