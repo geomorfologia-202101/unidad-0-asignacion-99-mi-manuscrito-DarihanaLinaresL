@@ -689,7 +689,7 @@ execGRASS(
 ## Convertir a números enteros la extensión y la resolución del DEM
 
 library(raster)
-rutadem <- 'data/dem.tif'
+rutadem <- 'datos-fuente/srtm_dem_cuenca_guayubin.tif'
 rawextent <- extent(raster(rutadem))
 rawextent
 devtools::source_url('https://raw.githubusercontent.com/geofis/rgrass/master/integerextent.R')
