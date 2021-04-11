@@ -697,7 +697,7 @@ newextent <- intext(e = rawextent, r = 90, type = 'inner')
 newextent
 gdalUtils::gdalwarp(
   srcfile = 'datos-fuente/srtm_dem_cuenca_guayubin.tif',
-  dstfile = 'datos-fuente/demint.tif',
+  dstfile = 'demint.tif',
   te = xyvector(newextent),
   tr = c(90,90),
   r = 'bilinear',
@@ -705,14 +705,12 @@ gdalUtils::gdalwarp(
 )
 
 ## Importar a sesión de GRASS
-rutademint <- 'datos-fuente//demint.tif'
+rutademint <- 'demint.tif'
 execGRASS(
   "g.proj",
   flags = c('t','c'),
   georef=rutademint)
-
 gmeta()
-
 execGRASS(
   "r.in.gdal",
   flags='overwrite',
@@ -772,7 +770,7 @@ mapview(netw, col.regions = 'blue', legend = FALSE)
 
 ## Transformar coordenada a EPSG:32619 como número entero
 source('my-trans.R')
-outlet <- as.integer(my_trans(c(-70.77398,18.90123)))
+outlet <- as.integer(my_trans(c(-71.40009,19.66390)))
 
 ## Ejecutar r.basin
 pref <- 'rbasin_guay'
@@ -819,7 +817,8 @@ execGRASS(
     readVECT('rbasin_guay_demint_basin'),
     CRSobj = CRS("+init=epsg:4326"))
   rbbasin
-
+ 
+library(leaflet)
 leaflet() %>%
     addProviderTiles(providers$Stamen.Terrain, group = 'terrain') %>%
     addPolylines(data = rbnetw, weight = 3, opacity = 0.7) %>% 
@@ -831,6 +830,8 @@ leaflet() %>%
 library(readr)
 rbguaypar1 <- read_csv("salidas-rbasin/guayubin/rbasin_guay_demint_parametersT.csv")
 rbguaypar1 %>% tibble::as_tibble()
+# para vizualizar la tabla mejor traer a r, usar View(rbguaypar1)
+
 rbguaypar2 <- read_csv(
   "salidas-rbasin/guayubin/rbasin_guay_demint_parameters.csv",
   skip=2, col_names = c('Parameter', 'Value'))

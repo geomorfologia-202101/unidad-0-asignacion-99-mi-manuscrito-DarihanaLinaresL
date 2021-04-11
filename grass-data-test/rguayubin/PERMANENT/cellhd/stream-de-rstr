@@ -8,11 +8,5 @@ cols:       364
 rows:       520
 e-w resol:  90
 n-s resol:  90
-top:        1.000000000000000
-bottom:     0.000000000000000
-cols3:      364
-rows3:      520
-depths:     1
-e-w resol3: 90
-n-s resol3: 90
-t-b resol:  1
+format:     1
+compressed: 5
