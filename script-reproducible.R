@@ -650,7 +650,7 @@ guayubin_conv_prof <- LfpProfilesConcavity(
   direction = 'drainage-dir-de-rstr',
   crs = '+init=epsg:32619',
   smns = 0.5,
-  nrow = 3)
+  nrow = 4)
 
 ## Mostrar resultados
 
@@ -861,7 +861,7 @@ HypsoBasinsOrder2 <- HypsoIntCurve(
   basins = 'r_stream_basins_2',
   dem = 'dem',
   labelfield = 'cat',
-  nrow = 2,
+  nrow = 4,
   labelsize = 4
 )
 
@@ -874,7 +874,7 @@ HypsoBasinsOrder3 <- HypsoIntCurve(
   basins = 'r_stream_basins_3',
   dem = 'dem',
   labelfield = 'cat',
-  nrow = 1,
+  nrow = 3,
   labelsize = 4
 )
 
@@ -883,3 +883,6 @@ HypsoBasinsOrder3$HypsoCurve
 
 mapview(bas3, zcol='cat', col.regions = 'blue', legend = FALSE) %>%
   addStaticLabels(label = bas3$cat)
+
+## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
+unlink_.gislock()
