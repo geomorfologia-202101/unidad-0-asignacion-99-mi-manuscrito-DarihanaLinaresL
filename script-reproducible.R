@@ -667,7 +667,28 @@ guayubin_conv_prof$lengthzdatadmnls %>% tibble::as.tibble()
 
 
 # Video 12, Parámetros de cuenca con r.basin ----
+library(rgrass7)
+gisdbase <- 'grass-data-test' #Base de datos de GRASS GIS
+wd <- getwd() #Directorio de trabajo
+wd
+loc <- initGRASS(gisBase = "/usr/lib/grass78/",
+                 home = wd,
+                 gisDbase = paste(wd, gisdbase, sep = '/'),
+                 location = 'rguayubin',
+                 mapset = "PERMANENT",
+                 override = TRUE)
+gmeta()
+execGRASS(
+  'g.list',
+  flags = 't',
+  parameters = list(
+    type = c('raster', 'vector')
+  )
+)
+
 ## Convertir a números enteros la extensión y la resolución del DEM
+
+library(raster)
 rutadem <- 'data/dem.tif'
 rawextent <- extent(raster(rutadem))
 rawextent

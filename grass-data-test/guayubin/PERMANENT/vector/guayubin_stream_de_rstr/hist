@@ -1,0 +1,3 @@
+COMMAND: r.stream.extract --overwrite --quiet elevation="dem" threshold=80 mexp=0 stream_length=0 memory=300 stream_raster="guayubin-stream-de-rstr" stream_vector="guayubin_stream_de_rstr"
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Sun Apr 11 14:48:21 2021
