@@ -15,7 +15,7 @@ author:
 - name: Darihana Linares Laureano
   affiliation: "Estudiante de Lic. en Geografía Mención Recursos Naturales y Ecoturismo, Universidad Autónoma de Santo Domingo (UASD)"
 abstract: "Resumen del manuscrito"
-keywords: "Geomorfología fluvial, Morfometria"
+keywords: "Geomorfología fluvial, Morfometria de cuencas"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 geometry: margin=1in
 fontfamily: mathpazo
