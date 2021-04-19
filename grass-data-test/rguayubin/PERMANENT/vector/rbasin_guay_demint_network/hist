@@ -1,3 +1,0 @@
-COMMAND: r.to.vect input="rbasin_guay_demint_stream_e_thin" output="rbasin_guay_demint_network" type="line" column="value"
-GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
-LOCATION: rguayubin MAPSET: PERMANENT USER: darihanalinares DATE: Sun Apr 11 16:22:45 2021

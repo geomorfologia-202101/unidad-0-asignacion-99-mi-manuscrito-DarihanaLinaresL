@@ -1,3 +1,0 @@
-COMMAND: r.lfp --overwrite input=drainage-dir-de-rstr coordinates=248310.397243094,2175928.98036932 output=LfpNetwork_lfp_Gyb
-GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
-LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Mon Apr 19 12:20:49 2021
