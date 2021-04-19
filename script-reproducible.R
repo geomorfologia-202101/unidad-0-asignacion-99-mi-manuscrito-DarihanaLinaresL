@@ -795,14 +795,14 @@ execGRASS(
 )
 
 ## Si r.basin arrojara error (sólo en el caso de error, no en caso de advertencia), ejecutar este bloque para borrar las salidas anteriores y reejecutar el r.basin:
-  execGRASS(
-    "g.remove",
-    flags = 'f',
-    parameters = list(
-      type = c('raster','vector'),
-      pattern = paste0(pref, '*')
-    )
-  )
+##  execGRASS(
+##    "g.remove",
+##    flags = 'f',
+##    parameters = list(
+##      type = c('raster','vector'),
+##      pattern = paste0(pref, '*')
+##    )
+##  )
   
 ## Cargar los vectoriales transformados a EPSG:4326 para visualizar en leaflet
   rbnetw <- spTransform(
