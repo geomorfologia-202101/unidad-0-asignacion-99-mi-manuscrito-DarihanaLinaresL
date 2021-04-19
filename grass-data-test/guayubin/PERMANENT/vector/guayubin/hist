@@ -1,8 +1,0 @@
-COMMAND: v.in.ogr --quiet input="/home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test/guayubin/PERMANENT/.tmp/rstudio-ubuntu-s-1vcpu-2gb-nyc3-01/212.0.gpkg" layer="guayubin" output="guayubin" min_area=0.0001 type="" snap=-1
-GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
-LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Mon Apr 19 19:11:48 2021
------------------------------------------------------
-1 input polygons
-Total area: 7.6973E+08 (1 areas)
-Overlapping area: 0 (0 areas)
-Area without category: 0 (0 areas)
