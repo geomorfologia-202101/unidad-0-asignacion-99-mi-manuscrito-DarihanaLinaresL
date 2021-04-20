@@ -2,33 +2,33 @@ Morphometric parameters of basin:
  
 Easting Centroid of basin,246465.00
 Northing Centroid of basin,2151675.00
-Rectangle containing basin N-W,"('230220', '2175930')"
+Rectangle containing basin N-W,"('230220', '2176110')"
 Rectangle containing basin S-E,"('261000', '2131290')"
-Area of basin [km^2],773.5631625
-Perimeter of basin [km],156.122652506552
+Area of basin [km^2],774.1949625
+Perimeter of basin [km],155.27912003637
 Max Elevation [m s.l.m.],1396.72540740785
 Min Elevation [m s.l.m.],30.9651954818271
 Elevation Difference [m],1365.760211926023
-Mean Elevation,276.7019
+Mean Elevation,276.6867
 Mean Slope,5.17
 Length of Directing Vector [km],24.460893544594807
 "Prevalent Orientation [degree from north, counterclockwise]",1.4935760627096282
-Compactness Coefficient,4.974655054098116
-Circularity Ratio,0.3988171279899944
-Topological Diameter,84.0
-Elongation Ratio,0.5064682945330589
-Shape Factor,12.483750895456415
-"Concentration Time (Giandotti, 1934) [hr]",6.906840311938352
-Length of Mainchannel [km],61.965603846
-Mean slope of mainchannel [percent],1.9669190473941982
-Mean hillslope length [m],250.4986
-Magnitudo,223.0
+Compactness Coefficient,4.945757649265387
+Circularity Ratio,0.40349121422737083
+Topological Diameter,80.0
+Elongation Ratio,0.502949196537692
+Shape Factor,12.402071475877651
+"Concentration Time (Giandotti, 1934) [hr]",6.931666695397473
+Length of Mainchannel [km],62.424649302
+Mean slope of mainchannel [percent],2.3170305503785467
+Mean hillslope length [m],291.7948
+Magnitudo,228.0
 Max order (Strahler),        5 
-Number of streams,        343 
-Total Stream Length [km],     662.2185 
-First order stream frequency,0.2882763952710843
-Drainage Density [km/km^2],0.8560626101427108
-Bifurcation Ratio (Horton),  3.8876 
-Length Ratio (Horton),  2.2966 
-Area ratio (Horton),   4.3704 
-Slope ratio (Horton),  1.4689 
+Number of streams,        350 
+Total Stream Length [km],     677.6762 
+First order stream frequency,0.29449946207832634
+Drainage Density [km/km^2],0.8753301594880889
+Bifurcation Ratio (Horton),  3.9158 
+Length Ratio (Horton),  2.2931 
+Area ratio (Horton),   4.4062 
+Slope ratio (Horton),  1.4707 
