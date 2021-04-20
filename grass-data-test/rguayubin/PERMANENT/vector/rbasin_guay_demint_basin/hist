@@ -1,11 +1,11 @@
 COMMAND: r.to.vect -s -v input="rbasin_guay_demint_basin" output="rbasin_guay_demint_basin" type="area" column="value"
 GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
-LOCATION: rguayubin MAPSET: PERMANENT USER: darihanalinares DATE: Mon Apr 19 20:14:35 2021
+LOCATION: rguayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 12:17:32 2021
 ---------------------------------------------------------------------------------
 COMMAND: v.db.addcolumn map=rbasin_guay_demint_basin 'columns=area double precision'
 GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
-LOCATION: rguayubin MAPSET: PERMANENT USER: darihanalinares DATE: Mon Apr 19 20:14:35 2021
+LOCATION: rguayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 12:17:33 2021
 ---------------------------------------------------------------------------------
 COMMAND: v.db.addcolumn map=rbasin_guay_demint_basin 'columns=perimeter double precision'
 GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
-LOCATION: rguayubin MAPSET: PERMANENT USER: darihanalinares DATE: Mon Apr 19 20:14:36 2021
+LOCATION: rguayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 12:17:33 2021

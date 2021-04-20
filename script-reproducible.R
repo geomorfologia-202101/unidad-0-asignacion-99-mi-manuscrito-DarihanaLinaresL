@@ -194,6 +194,8 @@ execGRASS(
 
 gmeta()
 
+## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
+unlink_.gislock()
 
 # Video 6. Calcular parámetros hidrográficos con r.watershed. Visualizar con leaflet ----
 
@@ -257,6 +259,8 @@ leaflet() %>%
     options = layersControlOptions(collapsed=FALSE)) %>% 
   addHomeButton(extent(e), 'Ver todo')
 
+## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
+unlink_.gislock()
 
 # Video 7, Extraer una cuenca con r.water.outlet. Visualizar con mapview y leaflet ----
 ## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa (está en el reproducible)
@@ -328,6 +332,9 @@ leaflet() %>%
   addPolygons(data = guayu_bas4326) %>% 
   leafem::addHomeButton(extent(guayu_bas4326), 'Ver cuenca')
 
+## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
+unlink_.gislock()
+
 # Video 8, Extraer una red drenaje con r.stream.extract. Visualizar con leaflet ----
 ## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa
 execGRASS(
@@ -389,6 +396,8 @@ leaflet() %>%
   addLayersControl(
     overlayGroups = c('terrain','str_vect','str_raster'),
     options = layersControlOptions(collapsed=FALSE)) 
+## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
+unlink_.gislock()
 
 
 # Video 10,  Orden de red y análisis hortoniano usando r.stream*. Visualizar con leaflet ----
@@ -578,6 +587,8 @@ execGRASS(
 )
 file.show('guayu_stats_expanded.txt')
 
+## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
+unlink_.gislock()
 
 # Video 11, Calcular índices de concavidad y perfiles longitudinales de cursos fluviales----
 ## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa
@@ -665,6 +676,8 @@ guayubin_conv_prof$lengthzdatadmnls %>% tibble::as.tibble()
 ## Revisar en QGIS/Google Earth relación litología/concavidad
 ## Descargar archivo lfp_kml.kml localmente, superponer al mapa geológico usando QGIS y GoogleEarth, evaluar los índices de concavidad y formas del perfil longitudinal de los cursos más largos en relación con la litología, las fallas, el orden de red, entre otras variables.
 
+## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
+unlink_.gislock()
 
 # Video 12, Parámetros de cuenca con r.basin ----
 library(rgrass7)
@@ -794,15 +807,6 @@ execGRASS(
   )
 )
 
-# Si r.basin arrojara error (sólo en el caso de error, no en caso de advertencia), ejecutar este bloque para borrar las salidas anteriores y reejecutar el r.basin:
-#  execGRASS(
-#    "g.remove",
-#    flags = 'f',
-#    parameters = list(
-#      type = c('raster','vector'),
-#      pattern = paste0(pref, '*')
-#    )
-#  )
   
 ## Cargar los vectoriales transformados a EPSG:4326 para visualizar en leaflet
   rbnetw <- spTransform(
@@ -837,6 +841,8 @@ rbguaypar2 <- read_csv(
   skip=2, col_names = c('Parameter', 'Value'))
 rbguaypar2 %>% print(n=Inf)
 
+## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
+unlink_.gislock()
 
 # Video 13, Curva e integral hipsométrica ----
 ## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa

@@ -1,7 +1,7 @@
 COMMAND: r.stream.order --overwrite --quiet stream_rast="guayubin-stream-de-rstr" direction="drainage-dir-de-rstr" elevation="dem" accumulation="accum-de-rwshed" stream_vect="order_all" strahler="order-strahler" horton="order-horton" shreve="order-shreve" hack="order-hack-gravelius" topo="order-topology" memory=300
 GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
-LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Mon Apr 19 19:48:23 2021
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 12:13:17 2021
 ---------------------------------------------------------------------------------
 COMMAND: v.select --overwrite -c ainput="order_all" alayer="1" atype="point,line,area" binput="LfpNetwork_lfp_Gyb" blayer="1" btype="point,line,area" output="LfpNetwork_tributaries_Gyb" operator="touches"
 GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
-LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Mon Apr 19 19:48:39 2021
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 12:13:37 2021
