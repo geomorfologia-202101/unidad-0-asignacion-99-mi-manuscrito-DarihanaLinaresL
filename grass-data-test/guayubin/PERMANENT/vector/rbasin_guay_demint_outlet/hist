@@ -1,3 +1,3 @@
 COMMAND: v.in.ascii input="-" output="rbasin_guay_demint_outlet" format="point" skip=0 x=1 y=2 z=0 cat=0
 GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
-LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:09 2021
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:51:34 2021
