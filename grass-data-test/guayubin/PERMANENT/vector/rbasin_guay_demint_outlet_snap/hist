@@ -1,0 +1,147 @@
+COMMAND: r.stream.snap input="rbasin_guay_demint_outlet" output="rbasin_guay_demint_outlet_snap" stream_rast="rbasin_guay_demint_stream_e" threshold=-1 radius=30 memory=300
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:09 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.connect --quiet map="rbasin_guay_demint_outlet_snap" driver="sqlite" database="$GISDBASE/$LOCATION_NAME/$MAPSET/sqlite/sqlite.db" table="rbasin_guay_demint_outlet_snap" key="cat" layer="1" separator="pipe"
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:12 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addtable map=rbasin_guay_demint_outlet_snap
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:12 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=x double precision,y double precision'
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:12 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Easting_Centroid_basin TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:45 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Northing_Centroid_basin TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:45 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Rectangle_containing_basin_N_W TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:45 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Rectangle_containing_basin_S_E TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:46 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Area_of_basin_km2 TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:46 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Perimeter_of_basin_km TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:46 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Max_Elevation TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:47 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Min_Elevation TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:47 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Elevation_Difference TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:47 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Mean_Elevation TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:47 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Mean_Slope TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:48 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Length_of_Directing_Vector_km TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:48 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Prevalent_Orientation_deg_from_north_ccw TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:48 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Compactness_Coefficient TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:48 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Circularity_Ratio TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:49 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Topological_Diameter TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:49 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Elongation_Ratio TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:49 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Shape_Factor TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:50 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Concentration_Time_hr TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:50 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Length_of_Mainchannel_km TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:50 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Mean_slope_of_mainchannel_percent TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:51 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Mean_hillslope_length_m TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:51 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Magnitudo TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:51 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Max_order_Strahler TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:52 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Number_of_streams TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:52 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Total_Stream_Length_km TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:52 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=First_order_stream_frequency TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:53 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Drainage_Density_km_over_km2 TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:53 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Bifurcation_Ratio_Horton TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:53 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Length_Ratio_Horton TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:53 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Area_ratio_Horton TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:54 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.addcolumn map=rbasin_guay_demint_outlet_snap 'columns=Slope_ratio_Horton TEXT' layer=1
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:54 2021
+---------------------------------------------------------------------------------
+COMMAND: v.db.join map=rbasin_guay_demint_outlet_snap otable=rbasin_summary column=y ocolumn=y
+GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 20 13:19:54 2021

@@ -687,7 +687,7 @@ wd
 loc <- initGRASS(gisBase = "/usr/lib/grass78/",
                  home = wd,
                  gisDbase = paste(wd, gisdbase, sep = '/'),
-                 location = 'rguayubin',
+                 location = 'guayubin',
                  mapset = "PERMANENT",
                  override = TRUE)
 gmeta()
