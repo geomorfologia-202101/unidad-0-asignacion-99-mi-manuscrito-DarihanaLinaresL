@@ -35,14 +35,15 @@ header-includes:
 Desde hace siglos atrás el hombre ha buscado la manera de explicar y entender las distintas formas que el paisaje terrestre (relieve) posee. Autores numerosos han investigado la génesis de estas nociones geomorfológicas, remontándose a tres siglos atrás. Autores como Hutton, Playfair y Lyell, sirvieron de antecesores o bases para la ciencia geomorfológica. Tras su consolidación como ciencia en Francia numerosos autores fueron demostrando la importancia de esta ciencia, incluso ramificándola (climática, eólica, litoral, glaciar, estructural, tectónica, kárstica y fluvial; siendo la última de interés para esta investigación), para mayor eficacia en sus estudios.
 
 Los estudios en la geomorfología fluvial a nivel mundial son numerosos y han servido para explicar cómo los drenajes de los ríos y sus redes hidrográficas son importantes para la geomorfología, ya que estas redes fluviales son parte de los procesos de modelado más activos en la formación del relieve y que permiten mensurar la configuración del mismo.
-Para los estudios en geomorfología fluvial, se hace uso del análisis morfométrico de cuencas hidrográficas. La morfometría de cuenca se ha convertido en la técnica cuantitativa para el estudio de las cuencas de manera detallada y ordenada. Actualmente en la República Dominicana el uso del análisis morfométrico para estudiar cuencas hidrográficas es poco e insuficiente, pero no innecesario, a pesar de que la República Dominicana goza de una diversa y extensa red de cuencas hidrográficas, ricas y aprovechables para la aplicación de diversas técnicas con el fin de explicar y entender las propiedades del relieve y su relación con las cuencas fluviales. Por lo que, este estudio es un aporte para dar a conocer la configuración y modelado de la cuenca hidrográfica del rio Guayubín, con el fin de fijar parámetros que permitan evaluar esta cuenca fluvial; identificando el aspecto general de la cuenca y de la red, el orden de red y análisis hortoniano, los perfiles longitudinales e índice de concavidad de cursos más largos, y la morfometría de cuenca.
+Para los estudios en geomorfología fluvial, se hace uso del análisis morfométrico de cuencas hidrográficas. La morfometría de cuenca se ha convertido en la técnica cuantitativa para el estudio de las cuencas de manera detallada y ordenada. Actualmente en la República Dominicana el uso del análisis morfométrico para estudiar cuencas hidrográficas es poco e insuficiente, a pesar de que la República Dominicana goza de una diversa y extensa red de cuencas hidrográficas, ricas y aprovechables para la aplicación de diversas técnicas con el fin de explicar y entender las propiedades del relieve y su relación con las cuencas fluviales. Por lo que, este estudio es un aporte para dar a conocer la configuración y modelado de la cuenca hidrográfica del rio Guayubín, con el fin de fijar parámetros que permitan evaluar esta cuenca fluvial; identificando el aspecto general de la cuenca y de la red, el orden de red y análisis hortoniano, los perfiles longitudinales e índice de concavidad de cursos más largos, y la morfometría de cuenca.
 En ese mismo orden es imprescindible conocer el concepto de cuenca fluvial o de drenaje, que no es más que el conjunto de cuerpos de agua con un área determinada que fluyen por distintos canales y escurren en un mismo desagüe. Según los autores Gregory y Walling, 1973; y Chorley, 1969 (como citó @gutierrez2008geomorfologia), una cuenca fluvial compone el espacio determinado en el que se suministran las aguas que discurren por la superficie, el mismo está delimitado tanto por su relieve y su hidrología. También considerada como una unidad imprescindible en geomorfológica.
 
 ## Revisión bibliográfica 
 
 Aspecto general de la cuenca y de la red
 
-El aspecto general de la cuenca y de la red alude la acumulación de flujos y cálculo de su umbral. Según @castillo2015delimitacion, la acumulación de flujos señala a todas las celdas que desaguan a una singularmente, la misma se adquiere partiendo de la dirección de la corriente o flujo. @venkatachalam2001automatic dicen que la acumulación de fluji de una celda se instituye de acuerdo a la sumatoria de los valores de la acumulación de flujo de las celdas proximas que drenan en ella. También se refiere a la forma que adquiere la cuenca y a la forma de su red de drenaje, según la conformación de sus ríos y el material rocoso que la compone (patrones de drenaje). Varios autores expresan que existe una conexión entre la estructura que posee la red de drenaje con el material rocoso (@pedraza1996geomorfologia, @gutierrez2008geomorfologia, @howard1967drainage, @gregory1973drainage). 
+El aspecto general de la cuenca y de la red se refiere a los parametros hidrogrñaficos que posee la cuenca (la acumulación de flujos y cálculo de su umbral, elevación, depresión, y otros). Según @castillo2015delimitacion, la acumulación de flujos señala a todas las celdas que desaguan en una en particular, la misma se adquiere partiendo de la dirección de la corriente o flujo. @venkatachalam2001automatic dicen que la acumulación de flujo de una celda se instituye de acuerdo a la sumatoria de los valores de la acumulación de flujo de las celdas proximas que drenan en ella.En cuanto al umbral, según @ESRI2012, se es necesario un raster de acumulación de flujo y la `porción mínima de celdas que componen una corriente de agua.
+También se refiere a la forma que adquiere la cuenca y a la forma de su red de drenaje, según la conformación de sus ríos y el material rocoso que la compone (patrones de drenaje). Varios autores expresan que existe una conexión entre la estructura que posee la red de drenaje con el material rocoso (@pedraza1996geomorfologia, @gutierrez2008geomorfologia, @howard1967drainage, @gregory1973drainage). 
 
 Orden de red y análisis hortoniano
 
@@ -71,13 +72,13 @@ Para el estudio morfométrico de la cuenca Guayubín se usó softwares de códig
 ## Área de estudio
 
 La cuenca del río Guayubín se encuentra entre las morforegiones Cordillera Central y Valle del Cibao Occidental, en la República Dominicana (latitud 19.46$^\circ$N, longitud -71.41$^\circ$W), entre las provincias Santiago Rodríguez, Monte Cristi y Dajabón. En la provincia Dajabón engloba de forma completa el municipio El Pino, y de manera parcial los municipios Loma de Cabrera y Partido; en la provincia Monte Cristi contiene parcialmente los municipios Las Matas de Santa Cruz y Guayubín; y en la provincia Santiago Rodríguez comprende los municipios Villa Los Almácigos y San Ignacio de Sabaneta. Los munipicpios más poblados en el interior de la cuenca son Guayubín (35,923 hab.), San Ignacio de Sabaneta (34,540 hab.), y Loma de Cabrera (15,624 hab.).
-La cuenca del río Guayubín, según @Mmar2015cuenca, abarca una área de 770.35 km2, y tiene un perimetro de 156.12 km. 
+La cuenca del río Guayubín, según @Mmar2015cuenca, abarca una área de 770.35 km\textsuperscript{2}, y tiene un perimetro de 156.12 km. 
 De acuerdo con el @TopoMap, la cabecera del rio Guayubñin se ubica en las inmediaciones de loma escondida, mientras que sus aguas se vierten en el río Yaque del Norte, localidad Guayubín.
 
-## Materiales y métodos
+## Materiales
 RStudio. Donde se redactó el manuscrito, se procesaron los datos que ofrece el DEM de la cuenca a traves de un script en el que se usaron paquetes que produjeran los resultados. Se usaron las siguientes colecciones de funciones y conjunto de datos en el script: 
 
-library(rgrass7): es una interfaz que permite establecer una conexión entre la version 7 del sistema de infromacion geográfica GRASS, y R, que crea un entorno GRASS desechable dentro de R. 
+library(rgrass7): es una interfaz que permite establecer una conexión entre la version 7 del sistema de infromacion geográfica GRASS, y R, que crea un entorno GRASS desechable dentro de R.
 
 library(sp): este paquete sirve para la importación, manipulación y exportación de datos espaciales en R, y para métodos que incluyen imprimir / mostrar, trazar, entre otros.
 
@@ -97,26 +98,39 @@ QGIS with GRASS. Para la visualización de vectores y rasters generados con RStu
 
 Google Earth. Para observar datos en formato kml generados y exportados de RStudio y asi como la representacion del relieve del lugar de estudio.
 
+## Metodología
+Los parametros de la cuenca fueron calculados por medio de el addon `r.watershed` (@), utilizando el Dem de la misma, los parametros calculados fueron acumulación, elevación, depresión, drenaje, flujo, cuenca y media cuenca, con un umbral de acumulación de flujo de 80 celdas necesarias para que exista una red de agua.
 
+Se usó el addon `r.water.outlet` (@) para la extraccion de la cuenca a traves de un mapa de direccion de drenajes (creado con el addon r.watershed), y de coordenadas de desembocaduras de la cuenca (obtenidas con el paquete `Mapview`). Asi tambien se uso el addon `r.to.vect` (@), para convertir un raster en vectorial.
+
+Para estraer la red de drenaje se hizo uso de el addon `r.stream.extract` (@), donde se utilizo un raster como capa de entrada y se genero un archivo en formato vectorial, ademas, del raster, es necesario el umbral de acumulacion de flujo.
+
+En cuanto al orden de red y el analisis hortoniano, se uso el addon `r.stream` (@). Se creo un mapa de direccion de flujo con `r.stream.extract` (@), que sirvio en la creacion de mapas de ordenes de redes generados con `r.stream.order` (@). ademas de el mapa de direccion de flujo, se uso un raster de red de la cuenca, flujo de acumulacion y un modelo de elevacion. Se calcularon los ordenes de redes segun las clasificaciones de Strahler, Horton, Shreve, Hack y Topo, pero, se uso la red de orden segun Strahler para delimitar la cuenca. Mientras que se usaron los addons `r.info` para obtener los valores minimos y maximos del orden de red segun Strahler; para delimitar la cuenca a traves de la red de drenaje se utilizo `r.stream.basins` (@); y para calcular las estadisticas de red de Horton ordenadas para redes de orden de Strahler y Horton se uso `r.stream.stats` (@).
+
+Para calcular los indices de concavidad y los perfiles longitudinales, primero, se obtuvieron los cursos mas largos de la cuenca a traves de la funcion `LfpNetwork` (@), usando coordenadas de desembocadura de la cuenca obtenidas con `Mapview`, vectores de ordenes de red y mapa de flujo de direccion. Segundo, para producir los perfiles longitudinales e indices de cocavidad se empleo la funcion `LfpProfilesConcavity` (@), utilizando la red de cursos de agua mas largos, coordenadas de desembocadura, un dem y un mapa de flujos de drenaje.
+
+Para la obtencion de los parametros morfometricos de la cuenca se uso el addon `r.basin` (@), por medio de un modelo de elevacion y coordenadas proyectadas de la salida de la cuenca, obtenidas en geograficas con `Mapview` y transformadas a proyectadas con la funcion `My_Trans` (@). 
+
+Respecto al calculo de la curva e integral hipsométrica, se utilizo la funcion `HypsoIntCurve` (@),
 
 # Resultados
 
-\ldots
+
 
 # Discusión
 
-\ldots
+
 
 # Agradecimientos
 
-\ldots
+
 
 # Información de soporte
 
-\ldots
+
 
 # *Script* reproducible
 
-\ldots
+
 
 # Referencias
