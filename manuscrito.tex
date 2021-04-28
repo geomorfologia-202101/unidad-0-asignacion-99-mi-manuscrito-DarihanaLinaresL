@@ -38,6 +38,7 @@
 
 \setcounter{secnumdepth}{3}
 
+\usepackage{longtable,booktabs}
 
 
 \title{Título\\
@@ -330,110 +331,214 @@ Cruz y Guayubín; y en la provincia Santiago Rodríguez comprende los
 municipios Villa Los Almácigos y San Ignacio de Sabaneta. Los
 munipicpios más poblados en el interior de la cuenca son Guayubín
 (35,923 hab.), San Ignacio de Sabaneta (34,540 hab.), y Loma de Cabrera
-(15,624 hab.). La cuenca del río Guayubín, según MMARN (2015), abarca
-una área de 770.35 km\textsuperscript{2}, y tiene un perimetro de 156.12
-km. De acuerdo con el s.a. (s.f.), la cabecera del rio Guayubñin se
-ubica en las inmediaciones de loma escondida, mientras que sus aguas se
-vierten en el río Yaque del Norte, localidad Guayubín.
+(15,624 hab.). La cuenca del río Guayubín, según Medio Ambiente y
+Recurso Naturales (2015), abarca una área de 770.35
+km\textsuperscript{2}, y tiene un perimetro de 156.12 km. De acuerdo con
+el s.a. (s.f.), la cabecera del rio Guayubñin se ubica en las
+inmediaciones de loma escondida, mientras que sus aguas se vierten en el
+río Yaque del Norte, localidad Guayubín.
 
 \subsection{Materiales}\label{materiales}
 
-RStudio. Donde se redactó el manuscrito, se procesaron los datos que
-ofrece el DEM de la cuenca a traves de un script en el que se usaron
-paquetes que produjeran los resultados. Se usaron las siguientes
-colecciones de funciones y conjunto de datos en el script:
-
-library(rgrass7): es una interfaz que permite establecer una conexión
-entre la version 7 del sistema de infromacion geográfica GRASS, y R, que
-crea un entorno GRASS desechable dentro de R.
-
-library(sp): este paquete sirve para la importación, manipulación y
-exportación de datos espaciales en R, y para métodos que incluyen
-imprimir / mostrar, trazar, entre otros.
-
-library(sf): crea caracteristicas simples (simple features), que amplían
-los objetos tipo data.frame con una columna de lista de características
-simples.
-
-library(raster): este paquete proporciona clases y funciones para
-manipular datos geográficos (espaciales) en formato `ráster'.
-
-library(leaflet): esta función crea un widget de mapa de folletos
-utilizando htmlwidgets. El widget se puede representar en páginas HTML
-generadas a partir de R Markdown, y otros.
-
-library(leafem): es un paquete que provee una extensión para leaflet
-uasados para paquetes mapview, permite mostrar las coordenadas de la
-posición del puntero del mouse, consultar valores de imagen a través de
-puntero del mouse y botones de zoom a capa.
-
-library(mapview): el paquete proporciona funcionalidad para ver objetos
-espaciales de forma interactiva.
-
-library(readr): el objetivo de `readr' es proporcionar una forma rápida
-y amigable de leer datos rectangulares (como `csv', `tsv' y `fwf').
-
-QGIS with GRASS. Para la visualización de vectores y rasters generados
-con RStudio en una región de GRASS,como la visualización de los mapas
-Topológicos y Geológicos de la República Dominicana, tambien, para la
-creación de algunos mapas de localización.
-
-Google Earth. Para observar datos en formato kml generados y exportados
-de RStudio y asi como la representacion del relieve del lugar de
-estudio.
+\begin{longtable}[]{@{}cc@{}}
+\toprule
+\begin{minipage}[b]{0.07\columnwidth}\centering\strut
+Materiales\strut
+\end{minipage} & \begin{minipage}[b]{0.88\columnwidth}\centering\strut
+Uso\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+RStudio\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+donde se redactó el manuscrito, se procesaron los datos que ofrece el
+DEM de la cuenca a traves de un script en el que se usaron paquetes que
+produjeran los resultados.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+library rgrass7\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+es una interfaz que permite establecer una conexión entre la version 7
+del sistema de infromacion geográfica GRASS, y R, que crea un entorno
+GRASS desechable dentro de R.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+library sp\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+este paquete sirve para la importación, manipulación y exportación de
+datos espaciales en R, y para métodos que incluyen imprimir / mostrar,
+trazar, entre otros.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+library sf\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+crea caracteristicas simples (simple features), que amplían los objetos
+tipo data.frame con una columna de lista de características
+simples.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+library raster\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+este paquete proporciona clases y funciones para manipular datos
+geográficos (espaciales) en formato `ráster'.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+library leaflet\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+esta función crea un widget de mapa de folletos utilizando htmlwidgets.
+El widget se puede representar en páginas HTML generadas a partir de R
+Markdown, y otros.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+library leafem\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+es un paquete que provee una extensión para leaflet uasados para
+paquetes mapview, permite mostrar las coordenadas de la posición del
+puntero del mouse, consultar valores de imagen a través de puntero del
+mouse y botones de zoom a capa.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+library mapview\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+el paquete proporciona funcionalidad para ver objetos espaciales de
+forma interactiva.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+library readr\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+el objetivo de `readr' es proporcionar una forma rápida y amigable de
+leer datos rectangulares (como `csv', `tsv' y `fwf').\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+QGIS with GRASS\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+para la visualización de vectores y rasters generados con RStudio en una
+región de GRASS,como la visualización de los mapas Topológicos y
+Geológicos de la República Dominicana, tambien, para la creación de
+algunos mapas de localización.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+Google Earth\strut
+\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+para observar datos en formato kml generados y exportados de RStudio y
+asi como la representacion del relieve del lugar de estudio.\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
 
 \subsection{Metodología}\label{metodologuxeda}
 
-Los parametros de la cuenca fueron calculados por medio de el addon
-\texttt{r.watershed} (@), utilizando el Dem de la misma, los parametros
-calculados fueron acumulación, elevación, depresión, drenaje, flujo,
-cuenca y media cuenca, con un umbral de acumulación de flujo de 80
-celdas necesarias para que exista una red de agua.
+Los parametros de la cuenca fueron calculados por medio de el addon de
+GRASS GIS \texttt{r.watershed} (Charles Ehlschlaeger (2003--2021b)),
+utilizando el Dem de la misma, los parametros calculados fueron
+acumulación, elevación, depresión, drenaje, flujo, cuenca y media
+cuenca, con un umbral de acumulación de flujo de 80 celdas necesarias
+para que exista una red de agua.
 
-Se usó el addon \texttt{r.water.outlet} (@) para la extraccion de la
-cuenca a traves de un mapa de direccion de drenajes (creado con el addon
-r.watershed), y de coordenadas de desembocaduras de la cuenca (obtenidas
-con el paquete \texttt{Mapview}). Asi tambien se uso el addon
-\texttt{r.to.vect} (@), para convertir un raster en vectorial.
+Se usó el addon \texttt{r.water.outlet} (Charles Ehlschlaeger
+(2003--2021a)) para la extraccion de la cuenca a traves de un mapa de
+direccion de drenajes (creado con el addon r.watershed), y de
+coordenadas de desembocaduras de la cuenca (obtenidas con el paquete
+\texttt{Mapview}). Asi tambien se uso el addon \texttt{r.to.vect} (Team
+(2003--2021)), para convertir un raster en vectorial.
 
 Para estraer la red de drenaje se hizo uso de el addon
-\texttt{r.stream.extract} (@), donde se utilizo un raster como capa de
-entrada y se genero un archivo en formato vectorial, ademas, del raster,
-es necesario el umbral de acumulacion de flujo.
+\texttt{r.stream.extract} (Metz (2003--2021)), donde se utilizo un
+raster como capa de entrada y se genero un archivo en formato vectorial,
+ademas, del raster, es necesario el umbral de acumulación de flujo.
 
-En cuanto al orden de red y el analisis hortoniano, se uso el addon
-\texttt{r.stream} (@). Se creo un mapa de direccion de flujo con
-\texttt{r.stream.extract} (@), que sirvio en la creacion de mapas de
-ordenes de redes generados con \texttt{r.stream.order} (@). ademas de el
-mapa de direccion de flujo, se uso un raster de red de la cuenca, flujo
-de acumulacion y un modelo de elevacion. Se calcularon los ordenes de
-redes segun las clasificaciones de Strahler, Horton, Shreve, Hack y
-Topo, pero, se uso la red de orden segun Strahler para delimitar la
-cuenca. Mientras que se usaron los addons \texttt{r.info} para obtener
-los valores minimos y maximos del orden de red segun Strahler; para
-delimitar la cuenca a traves de la red de drenaje se utilizo
-\texttt{r.stream.basins} (@); y para calcular las estadisticas de red de
-Horton ordenadas para redes de orden de Strahler y Horton se uso
-\texttt{r.stream.stats} (@).
+En cuanto al orden de red y el analisis hortoniano, se usó el addon
+\texttt{r.stream.extract} (@ referenciar), para producir un mapa de
+dirección de flujo el cual sirvió para la creacion de mapas de ordenes
+de redes generados con \texttt{r.stream.order} (Jasiewicz (2003--2021)).
+Además de el mapa de direccion de flujo, se uso un raster de red de la
+cuenca, flujo de acumulacion y un modelo de elevacion. Se calcularon los
+ordenes de redes segun las clasificaciones de Strahler, Horton, Shreve,
+Hack y Topo, pero, se uso la red de orden segun Strahler para delimitar
+la cuenca. Mientras que se usaron los addons \texttt{r.info} para
+obtener los valores minimos y maximos del orden de red segun Strahler;
+para delimitar la cuenca a traves de la red de drenaje se utilizo
+\texttt{r.stream.basins} (Jarek Jasiewicz \& Institute (2003--2021a)); y
+para calcular las estadisticas de red de Horton ordenadas para redes de
+orden de Strahler y Horton se uso \texttt{r.stream.stats} (Jarek
+Jasiewicz \& Institute (2003--2021b)).
 
 Para calcular los indices de concavidad y los perfiles longitudinales,
 primero, se obtuvieron los cursos mas largos de la cuenca a traves de la
-funcion \texttt{LfpNetwork} (@), usando coordenadas de desembocadura de
-la cuenca obtenidas con \texttt{Mapview}, vectores de ordenes de red y
-mapa de flujo de direccion. Segundo, para producir los perfiles
-longitudinales e indices de cocavidad se empleo la funcion
+funcion \texttt{LfpNetwork} (Batlle (2018)), usando coordenadas de
+desembocadura de la cuenca obtenidas con \texttt{Mapview}, vectores de
+ordenes de red y mapa de flujo de direccion. Segundo, para producir los
+perfiles longitudinales e indices de cocavidad se empleo la funcion
 \texttt{LfpProfilesConcavity} (@), utilizando la red de cursos de agua
 mas largos, coordenadas de desembocadura, un dem y un mapa de flujos de
 drenaje.
 
 Para la obtencion de los parametros morfometricos de la cuenca se uso el
-addon \texttt{r.basin} (@), por medio de un modelo de elevacion y
-coordenadas proyectadas de la salida de la cuenca, obtenidas en
-geograficas con \texttt{Mapview} y transformadas a proyectadas con la
-funcion \texttt{My\_Trans} (@).
+addon \texttt{r.basin} (Margherita Di Leo (2003--2021)), por medio de un
+modelo de elevacion y coordenadas proyectadas de la salida de la cuenca,
+obtenidas en geograficas con \texttt{Mapview} y transformadas a
+proyectadas con la funcion \texttt{My\_Trans} (@).
 
 Respecto al calculo de la curva e integral hipsométrica, se utilizo la
-funcion \texttt{HypsoIntCurve} (@), \# Resultados
+funcion \texttt{HypsoIntCurve} (@),
+
+\section{Resultados}\label{resultados}
 
 \section{Discusión}\label{discusiuxf3n}
 
@@ -448,6 +553,10 @@ reproducible}{Script reproducible}}\label{script-reproducible}
 \addcontentsline{toc}{section}{Referencias}
 
 \hypertarget{refs}{}
+\hypertarget{ref-lfpnetjose}{}
+Batlle, J. R. M. (2018). \emph{Función lfpNetwork}. Retrieved from
+\url{https://github.com/geofis/rgrass/blob/master/lfp_network.R}
+
 \hypertarget{ref-bowden1964effect}{}
 Bowden, K. L., \& Wallis, J. R. (1964). Effect of stream-ordering
 technique on horton's laws of drainage composition. \emph{Geological
@@ -458,12 +567,22 @@ Castillo, F. A. J. (2015). Delimitación automática de microcuencas
 utilizando datos srtm de la nasa. \emph{Enfoque UTE}, \emph{6}(4),
 81--97.
 
+\hypertarget{ref-wateroutlet}{}
+Charles Ehlschlaeger, U. A. C. E. R. L. (2003--2021a). \emph{Addon
+r.water.outlet}. Retrieved from
+\url{https://grass.osgeo.org/grass78/manuals/r.water.outlet.html}
+
+\hypertarget{ref-watershedcharles}{}
+Charles Ehlschlaeger, U. A. C. E. R. L. (2003--2021b). \emph{Addon
+r.watershed}. Retrieved from
+\url{https://grass.osgeo.org/grass79/manuals/r.watershed.html}
+
 \hypertarget{ref-christofoletti1988geomorfologia}{}
 Christofoletti, A. (1988). \emph{Geomorfologia}. Editora Blucher.
 
 \hypertarget{ref-ESRI2012}{}
 ESRI, E. S. R. I. (2012). ArcGIS resources: Definir cuencas
-hidrográficas, tipo @ONLINE. Retrieved from
+hidrográficas. Retrieved from
 \url{https://help.arcgis.com/es/arcgisdesktop/10.0/help/index.html\#//009z00000068000000}
 
 \hypertarget{ref-garzonmorfologia}{}
@@ -493,10 +612,33 @@ drainage basins; hydrophysical approach to quantitative morphology.
 Howard, A. D. (1967). Drainage analysis in geologic interpretation: A
 summation. \emph{AAPG Bulletin}, \emph{51}(11), 2246--2259.
 
+\hypertarget{ref-streambasinsjareck}{}
+Jarek Jasiewicz, G., Adam Mickiewicz University, \& Institute, G.
+(2003--2021a). \emph{Addon r.stream.basins}. Retrieved from
+\url{https://grass.osgeo.org/grass78/manuals/addons/r.stream.basins.html}
+
+\hypertarget{ref-streamstats}{}
+Jarek Jasiewicz, G., Adam Mickiewicz University, \& Institute, G.
+(2003--2021b). \emph{Addon r.stream.stats}. Retrieved from
+\url{https://grass.osgeo.org/grass78/manuals/addons/r.stream.stats.html}
+
+\hypertarget{ref-streamorder}{}
+Jasiewicz, J. (2003--2021). \emph{Addon r.stream.order}. Retrieved from
+\url{https://grass.osgeo.org/grass78/manuals/addons/r.stream.order.html}
+
+\hypertarget{ref-basinmargherita}{}
+Margherita Di Leo, M. D. S. (2003--2021). \emph{Addon r.basin}.
+Retrieved from
+\url{https://grass.osgeo.org/grass78/manuals/addons/r.basin.html\#morphometric-parameters-of-basin}
+
 \hypertarget{ref-Mmar2015cuenca}{}
-MMARN, M. de M. A. y R. N. (2015). \emph{Cuenca río yaque del norte y su
-zona costera}.
+Medio Ambiente y Recurso Naturales, M. de. (2015). \emph{Cuenca río
+yaque del norte y su zona costera}.
 urlhttp://ambiente.gob.do/wp-content/uploads/2016/11/Yaque-del-Norte-Subcuencas-Hidrograficas-1.pdf.
+
+\hypertarget{ref-streamnextractmarkus}{}
+Metz, M. (2003--2021). \emph{Addon r.stream.extract}. Retrieved from
+\url{https://grass.osgeo.org/grass78/manuals/r.stream.extract.html}
 
 \hypertarget{ref-morais2010geomorfologia}{}
 Morais, F., \& Almeida, L. M. (2010). Geomorfologia fluvial da bacia
@@ -515,6 +657,10 @@ Pinilla, A. (1993). \emph{Symposium sobre la raña en españa y portugal}
 s.a. (s.f.). \emph{Topo map of the dominican republic 1:50k}.
 urlhttps://geofis.xyz/lm/index.php/view/map/?repository=mtnrd50k\&project=mtnrd50k.
 
+\hypertarget{ref-tovect}{}
+Team, G. D. (2003--2021). \emph{Addon r.to.vect}. Retrieved from
+\url{https://grass.osgeo.org/grass76/manuals/r.to.vect.html}
+
 \hypertarget{ref-venkatachalam2001automatic}{}
 Venkatachalam, P., Mohan, B., Kotwal, A., Mishra, V., Muthuramakrishnan,
 V., \& Pandya, M. (2001). Automatic delineation of watersheds for
@@ -523,7 +669,7 @@ remote sensing, 5-9 november 2001, singapore. vol}, \emph{2},
 1096--1101.
 
 \hypertarget{ref-wikipedia2020stream}{}
-Wikipedia, C. (2020). Stream order, tipo @ONLINE. Retrieved from
+Wikipedia, C. (2020). Stream order. Retrieved from
 \url{https://en.wikipedia.org/wiki/Stream_order}
 
 

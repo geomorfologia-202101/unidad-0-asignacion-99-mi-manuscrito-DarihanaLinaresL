@@ -410,7 +410,7 @@ execGRASS(
   )
 )
 
-## Crear mapa de dirección de flujo a partir de r.stream
+## Crear mapa de dirección de flujo a partir de r.stream.extract
 execGRASS(
   "r.stream.extract",
   flags = c('overwrite','quiet'),

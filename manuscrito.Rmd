@@ -76,42 +76,46 @@ La cuenca del río Guayubín, según @Mmar2015cuenca, abarca una área de 770.35
 De acuerdo con el @TopoMap, la cabecera del rio Guayubñin se ubica en las inmediaciones de loma escondida, mientras que sus aguas se vierten en el río Yaque del Norte, localidad Guayubín.
 
 ## Materiales
-RStudio. Donde se redactó el manuscrito, se procesaron los datos que ofrece el DEM de la cuenca a traves de un script en el que se usaron paquetes que produjeran los resultados. Se usaron las siguientes colecciones de funciones y conjunto de datos en el script: 
 
-library(rgrass7): es una interfaz que permite establecer una conexión entre la version 7 del sistema de infromacion geográfica GRASS, y R, que crea un entorno GRASS desechable dentro de R.
-
-library(sp): este paquete sirve para la importación, manipulación y exportación de datos espaciales en R, y para métodos que incluyen imprimir / mostrar, trazar, entre otros.
-
-library(sf): crea caracteristicas simples (simple features), que amplían los objetos tipo data.frame con una columna de lista de características simples.
-
-library(raster): este paquete proporciona clases y funciones para manipular datos geográficos (espaciales) en formato 'ráster'.
-
-library(leaflet): esta función crea un widget de mapa de folletos utilizando htmlwidgets. El widget se puede representar en páginas HTML generadas a partir de R Markdown, y otros.
-
-library(leafem): es un paquete que provee una extensión para leaflet uasados para paquetes mapview, permite mostrar las coordenadas de la posición del puntero del mouse, consultar valores de imagen a través de puntero del mouse y botones de zoom a capa.
-
-library(mapview): el paquete proporciona funcionalidad para ver objetos espaciales de forma interactiva.
-
-library(readr): el objetivo de 'readr' es proporcionar una forma rápida y amigable de leer datos rectangulares (como 'csv', 'tsv' y 'fwf').
-
-QGIS with GRASS. Para la visualización de vectores y rasters generados con RStudio en una región de GRASS,como la visualización de los mapas Topológicos y Geológicos de la República Dominicana, tambien, para la creación de algunos mapas de localización.
-
-Google Earth. Para observar datos en formato kml generados y exportados de RStudio y asi como la representacion del relieve del lugar de estudio.
+|    Materiales   	|                                                                                                                      Uso                                                                                                                     	|
+|:---------------:	|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:	|
+|                 	|                                                                                                                                                                                                                                              	|
+|     RStudio     	| donde se redactó el manuscrito, se procesaron los datos que ofrece el DEM de la cuenca a traves de un script en el que se usaron paquetes que produjeran los resultados.                                                                     	|
+|                 	|                                                                                                                                                                                                                                              	|
+| library rgrass7 	| es una interfaz que permite establecer una conexión entre la version 7 del sistema de infromacion geográfica GRASS, y R, que crea un entorno GRASS desechable dentro de R.                                                                   	|
+|                 	|                                                                                                                                                                                                                                              	|
+|    library sp   	| este paquete sirve para la importación, manipulación y exportación de datos espaciales en R, y para métodos que incluyen imprimir / mostrar, trazar, entre otros.                                                                            	|
+|                 	|                                                                                                                                                                                                                                              	|
+|    library sf   	| crea caracteristicas simples (simple features), que amplían los objetos tipo data.frame con una columna de lista de características simples.                                                                                                 	|
+|                 	|                                                                                                                                                                                                                                              	|
+|  library raster 	| este paquete proporciona clases y funciones para manipular datos geográficos (espaciales) en formato 'ráster'.                                                                                                                               	|
+|                 	|                                                                                                                                                                                                                                              	|
+| library leaflet 	| esta función crea un widget de mapa de folletos utilizando htmlwidgets. El widget se puede representar en páginas HTML generadas a partir de R Markdown, y otros.                                                                            	|
+|                 	|                                                                                                                                                                                                                                              	|
+|  library leafem 	| es un paquete que provee una extensión para leaflet uasados para paquetes mapview, permite mostrar las coordenadas de la posición del puntero del mouse, consultar valores de imagen a través de puntero del mouse y botones de zoom a capa. 	|
+|                 	|                                                                                                                                                                                                                                              	|
+| library mapview 	| el paquete proporciona funcionalidad para ver objetos espaciales de forma interactiva.                                                                                                                                                       	|
+|                 	|                                                                                                                                                                                                                                              	|
+|  library readr  	| el objetivo de 'readr' es proporcionar una forma rápida y amigable de leer datos rectangulares (como 'csv', 'tsv' y 'fwf').                                                                                                                  	|
+|                 	|                                                                                                                                                                                                                                              	|
+| QGIS with GRASS 	| para la visualización de vectores y rasters generados con RStudio en una región de GRASS,como la visualización de los mapas Topológicos y Geológicos de la República Dominicana, tambien, para la creación de algunos mapas de localización. 	|
+|                 	|                                                                                                                                                                                                                                              	|
+|   Google Earth  	| para observar datos en formato kml generados y exportados de RStudio y asi como la representacion del relieve del lugar de estudio.                                                                                                          	|
 
 ## Metodología
-Los parametros de la cuenca fueron calculados por medio de el addon `r.watershed` (@), utilizando el Dem de la misma, los parametros calculados fueron acumulación, elevación, depresión, drenaje, flujo, cuenca y media cuenca, con un umbral de acumulación de flujo de 80 celdas necesarias para que exista una red de agua.
+Los parametros de la cuenca fueron calculados por medio de el addon de GRASS GIS `r.watershed` (@watershedcharles), utilizando el Dem de la misma, los parametros calculados fueron acumulación, elevación, depresión, drenaje, flujo, cuenca y media cuenca, con un umbral de acumulación de flujo de 80 celdas necesarias para que exista una red de agua.
 
-Se usó el addon `r.water.outlet` (@) para la extraccion de la cuenca a traves de un mapa de direccion de drenajes (creado con el addon r.watershed), y de coordenadas de desembocaduras de la cuenca (obtenidas con el paquete `Mapview`). Asi tambien se uso el addon `r.to.vect` (@), para convertir un raster en vectorial.
+Se usó el addon `r.water.outlet` (@wateroutlet) para la extraccion de la cuenca a traves de un mapa de direccion de drenajes (creado con el addon r.watershed), y de coordenadas de desembocaduras de la cuenca (obtenidas con el paquete `Mapview`). Asi tambien se uso el addon `r.to.vect` (@tovect), para convertir un raster en vectorial.
 
-Para estraer la red de drenaje se hizo uso de el addon `r.stream.extract` (@), donde se utilizo un raster como capa de entrada y se genero un archivo en formato vectorial, ademas, del raster, es necesario el umbral de acumulacion de flujo.
+Para estraer la red de drenaje se hizo uso de el addon `r.stream.extract` (@streamnextractmarkus), donde se utilizo un raster como capa de entrada y se genero un archivo en formato vectorial, ademas, del raster, es necesario el umbral de acumulación de flujo.
 
-En cuanto al orden de red y el analisis hortoniano, se uso el addon `r.stream` (@). Se creo un mapa de direccion de flujo con `r.stream.extract` (@), que sirvio en la creacion de mapas de ordenes de redes generados con `r.stream.order` (@). ademas de el mapa de direccion de flujo, se uso un raster de red de la cuenca, flujo de acumulacion y un modelo de elevacion. Se calcularon los ordenes de redes segun las clasificaciones de Strahler, Horton, Shreve, Hack y Topo, pero, se uso la red de orden segun Strahler para delimitar la cuenca. Mientras que se usaron los addons `r.info` para obtener los valores minimos y maximos del orden de red segun Strahler; para delimitar la cuenca a traves de la red de drenaje se utilizo `r.stream.basins` (@); y para calcular las estadisticas de red de Horton ordenadas para redes de orden de Strahler y Horton se uso `r.stream.stats` (@).
+En cuanto al orden de red y el analisis hortoniano, se usó el addon `r.stream.extract` (@ referenciar), para producir un mapa de dirección de flujo el cual sirvió para la creacion de mapas de ordenes de redes generados con `r.stream.order` (@streamorder). Además de el mapa de direccion de flujo, se uso un raster de red de la cuenca, flujo de acumulacion y un modelo de elevacion. Se calcularon los ordenes de redes segun las clasificaciones de Strahler, Horton, Shreve, Hack y Topo, pero, se uso la red de orden segun Strahler para delimitar la cuenca. Mientras que se usaron los addons `r.info` para obtener los valores minimos y maximos del orden de red segun Strahler; para delimitar la cuenca a traves de la red de drenaje se utilizo `r.stream.basins` (@streambasinsjareck); y para calcular las estadisticas de red de Horton ordenadas para redes de orden de Strahler y Horton se uso `r.stream.stats` (@streamstats).
 
-Para calcular los indices de concavidad y los perfiles longitudinales, primero, se obtuvieron los cursos mas largos de la cuenca a traves de la funcion `LfpNetwork` (@), usando coordenadas de desembocadura de la cuenca obtenidas con `Mapview`, vectores de ordenes de red y mapa de flujo de direccion. Segundo, para producir los perfiles longitudinales e indices de cocavidad se empleo la funcion `LfpProfilesConcavity` (@), utilizando la red de cursos de agua mas largos, coordenadas de desembocadura, un dem y un mapa de flujos de drenaje.
+Para calcular los indices de concavidad y los perfiles longitudinales, primero, se obtuvieron los cursos mas largos de la cuenca a traves de la funcion `LfpNetwork` (@lfpnetjose), usando coordenadas de desembocadura de la cuenca obtenidas con `Mapview`, vectores de ordenes de red y mapa de flujo de direccion. Segundo, para producir los perfiles longitudinales e indices de cocavidad se empleo la funcion `LfpProfilesConcavity` (@lfpconcajose), utilizando la red de cursos de agua mas largos, coordenadas de desembocadura, un dem y un mapa de flujos de drenaje.
 
-Para la obtencion de los parametros morfometricos de la cuenca se uso el addon `r.basin` (@), por medio de un modelo de elevacion y coordenadas proyectadas de la salida de la cuenca, obtenidas en geograficas con `Mapview` y transformadas a proyectadas con la funcion `My_Trans` (@). 
+Para la obtencion de los parametros morfometricos de la cuenca se uso el addon `r.basin` (@basinmargherita), por medio de un modelo de elevacion y coordenadas proyectadas de la salida de la cuenca, obtenidas en geograficas con `Mapview` y transformadas a proyectadas con la funcion `My_Trans` (@Mytransjose). 
 
-Respecto al calculo de la curva e integral hipsométrica, se utilizo la funcion `HypsoIntCurve` (@),
+Respecto al cálculo de la curva e integral hipsométrica, se utilizó la función `HypsoIntCurve` (@Hypsocjose),
 
 # Resultados
 
