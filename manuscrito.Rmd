@@ -42,8 +42,7 @@ En ese mismo orden es imprescindible conocer el concepto de cuenca fluvial o de 
 
 Aspecto general de la cuenca y de la red
 
-El aspecto general de la cuenca y de la red se refiere a los parametros hidrogrñaficos que posee la cuenca (la acumulación de flujos y cálculo de su umbral, elevación, depresión, y otros). Según @castillo2015delimitacion, la acumulación de flujos señala a todas las celdas que desaguan en una en particular, la misma se adquiere partiendo de la dirección de la corriente o flujo. @venkatachalam2001automatic dicen que la acumulación de flujo de una celda se instituye de acuerdo a la sumatoria de los valores de la acumulación de flujo de las celdas proximas que drenan en ella.En cuanto al umbral, según @ESRI2012, se es necesario un raster de acumulación de flujo y la `porción mínima de celdas que componen una corriente de agua.
-También se refiere a la forma que adquiere la cuenca y a la forma de su red de drenaje, según la conformación de sus ríos y el material rocoso que la compone (patrones de drenaje). Varios autores expresan que existe una conexión entre la estructura que posee la red de drenaje con el material rocoso (@pedraza1996geomorfologia, @gutierrez2008geomorfologia, @howard1967drainage, @gregory1973drainage). 
+El aspecto general de la cuenca y de la red se refiere a los parametros hidrogrñaficos que posee la cuenca (la acumulación de flujos y cálculo de su umbral, elevación, depresión, y otros). Según @castillo2015delimitacion, la acumulación de flujos señala a todas las celdas que desaguan en una en particular, la misma se adquiere partiendo de la dirección de la corriente o flujo. @venkatachalam2001automatic dicen que la acumulación de flujo de una celda se instituye de acuerdo a la sumatoria de los valores de la acumulación de flujo de las celdas proximas que drenan en ella.En cuanto al umbral, según @ESRI2012, se es necesario un raster de acumulación de flujo y la `porción mínima de celdas que componen una corriente de agua. También se refiere a la forma que adquiere la cuenca y a la forma de su red de drenaje, según la conformación de sus ríos y el material rocoso que la compone (patrones de drenaje). Varios autores expresan que existe una conexión entre la estructura que posee la red de drenaje con el material rocoso (@pedraza1996geomorfologia, @gutierrez2008geomorfologia, @howard1967drainage, @gregory1973drainage). 
 
 Orden de red y análisis hortoniano
 
@@ -59,7 +58,7 @@ El perfil longitudinal de un curso de agua es una línea adquirida al representa
 
 Morfometría de cuenca
 
-El análisis morfométrico abarca un conjunto de índices morfológicos que apuntan a un análisis detallado y cuantitativo de cuencas hidrográficas (@morais2010geomorfologia). El análisis morfométrico de cuencas hidrográficas se inicia por la ordenación de canales fluviales, con la finalidad de establecer una jerarquía fluvial. Esta, a su vez, consiste en el proceso de establecer la clasificación de determinado curso de agua (o el área drenada que le pertenece) en el conjunto total de la cuenca hidrográfica en la que se encuentra. Aunque, según el autor, esto se logra con la función de facilitar y volver más objetivos los estudios morfométricos sobre las cuencas hidrográficas (@christofoletti1988geomorfologia)
+El análisis morfométrico abarca un conjunto de índices morfológicos que apuntan a un análisis detallado y cuantitativo de cuencas hidrográficas (@morais2010geomorfologia). El análisis morfométrico de cuencas hidrográficas se inicia por la ordenación de canales fluviales, con la finalidad de establecer una jerarquía fluvial. Esta, a su vez, consiste en el proceso de establecer la clasificación de determinado curso de agua (o el área drenada que le pertenece) en el conjunto total de la cuenca hidrográfica en la que se encuentra. Aunque, según el autor, esto se logra con la función de facilitar y volver más objetivos los estudios morfométricos sobre las cuencas hidrográficas (@christofoletti1988geomorfologia). En cuanto a la curva hipsométrica de una cuenca @strahler1952hypsometric dice que el porcentaje de la curva hipsométrica no es mas que la relación entre el área de la sección diagonal horizontal de una red de drenaje con una altitud relativa sobre la boca de la cuenca, e incluso estas curvas pueden ser explicadas y relacionadas a través del uso de parámetros bidimensionales. Y referenter a la integral Hipsométrica, @fernandez2016analise expresa que el cálculo de este índice mide como esta distribuida la altitud del en una cuenca fluvial.
 
 Este estudio proporciona nueva información sobre la cuenca del río Guayubín en el campo de Morfometría fluvial, sabiendo que este es el primer estudio morfométrico que se realiza a la cuenca; y además este posee un script lo cual permite su reproducción sin coste alguno.
 En específico, se indaga sobre el umbral de acumulación de flujo en numero de celdas, la forma que posee la cuenca y su red de drenaje, considerando la relación que tiene la forma de la cuenca y la forma de su red de drenaje con el material rocoso y el relieve (hidrología-topografía-litología). También, se analiza la forma en la que se organiza o clasifica el orden de red asignado a cada curso fluvial en la cuenca, así como la razón de bifurcación de los órdenes de red fluvial. 
@@ -67,7 +66,7 @@ Se estudia la geometría que posee cada segmento de los cursos, en este caso el 
 
 # Localización y Metodología
 
-Para el estudio morfométrico de la cuenca Guayubín se usó softwares de código abierto como medio para procesar datos estadísticos y modelos digitales con la finalidad de generar las informaciones ha analizada.
+Para el estudio morfométrico de la cuenca Guayubín se usó softwares de código abierto como medio para procesar datos estadísticos y modelos digitales con la finalidad de generar las informaciones ha analizar.
 
 ## Área de estudio
 
@@ -115,7 +114,7 @@ Para calcular los indices de concavidad y los perfiles longitudinales, primero, 
 
 Para la obtencion de los parametros morfometricos de la cuenca se uso el addon `r.basin` (@basinmargherita), por medio de un modelo de elevacion y coordenadas proyectadas de la salida de la cuenca, obtenidas en geograficas con `Mapview` y transformadas a proyectadas con la funcion `My_Trans` (@Mytransjose). 
 
-Respecto al cálculo de la curva e integral hipsométrica, se utilizó la función `HypsoIntCurve` (@Hypsocjose),
+Respecto al cálculo de la curva e integral hipsométrica, se utilizó la función `HypsoIntCurve` (@Hypsocjose), a través de vectores de arroyos de cuenca de orden 2 y 3.
 
 # Resultados
 
