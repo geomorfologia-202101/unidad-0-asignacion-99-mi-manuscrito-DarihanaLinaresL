@@ -1,6 +1,6 @@
 COMMAND: v.in.ogr --overwrite --quiet input="datos-fuente/srtm_dem_cuenca_guayubin.geojson" output="dem_extent" min_area=0.0001 type="" snap=-1
 GISDBASE: /home/darihanalinares/geomorfologia/unidad-0-asignacion-99-mi-manuscrito-DarihanaLinaresL/grass-data-test
-LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Tue Apr 27 23:18:01 2021
+LOCATION: guayubin MAPSET: PERMANENT USER: darihanalinares DATE: Fri May  7 21:40:14 2021
 -----------------------------------------------------
 1 input polygons
 Total area: 1.53824E+09 (1 areas)

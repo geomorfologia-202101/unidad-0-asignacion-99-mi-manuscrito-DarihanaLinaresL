@@ -40,6 +40,15 @@
 
 \usepackage{longtable,booktabs}
 
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
 \title{Título\\
 Subtítulo\\
@@ -249,11 +258,12 @@ Hoy día existen múltiples normas para determinar la jerarquía de una
 red: Strahler (1952), Horton (1945), Shreve (1967), Scheidegger (1970),
 Leopold et al. (1964) Hack (1957) y Topological.
 
-El análisis hortoniano para los años 40 sentó las bases de la
-morfometría fluvial (Pinilla (1993)). Para Horton (1945), la razón de
-bifurcación resulta ser la conexión entre el número de redes fluviales
-de una jerarquía asignada entre el número de redes de jerarquía mayor
-próxima.
+Dice Pinilla (1993) que para los años 40 el análisis hortoniano habia
+sentado las bases de lo que hoy es la morfometría fluvial; por lo que la
+aplicación del analisis hortoniano al estudio de cuencas hidrográficas
+son imprecindibles. Para Horton (1945), la razón de bifurcación resulta
+ser la conexión entre el número de redes fluviales de una jerarquía
+asignada entre el número de redes de jerarquía mayor próxima.
 
 Perfiles longitudinales e índice de concavidad de cursos más largos
 
@@ -285,38 +295,48 @@ en el proceso de establecer la clasificación de determinado curso de
 agua (o el área drenada que le pertenece) en el conjunto total de la
 cuenca hidrográfica en la que se encuentra. Aunque, según el autor, esto
 se logra con la función de facilitar y volver más objetivos los estudios
-morfométricos sobre las cuencas hidrográficas (Christofoletti (1988))
+morfométricos sobre las cuencas hidrográficas (Christofoletti (1988)).
+En cuanto a la curva hipsométrica de una cuenca Strahler (1952) dice que
+el porcentaje de la curva hipsométrica no es mas que la relación entre
+el área de la sección diagonal horizontal de una red de drenaje con una
+altitud relativa sobre la boca de la cuenca, e incluso estas curvas
+pueden ser explicadas y relacionadas a través del uso de parámetros
+bidimensionales. Y referenter a la integral Hipsométrica, Fernandez \&
+Rocha (2016) expresa que el cálculo de este índice mide como esta
+distribuida la altitud del en una cuenca fluvial.
 
 Este estudio proporciona nueva información sobre la cuenca del río
 Guayubín en el campo de Morfometría fluvial, sabiendo que este es el
 primer estudio morfométrico que se realiza a la cuenca; y además este
 posee un script lo cual permite su reproducción sin coste alguno. En
-específico, se indaga sobre el umbral de acumulación de flujo en numero
-de celdas, la forma que posee la cuenca y su red de drenaje,
-considerando la relación que tiene la forma de la cuenca y la forma de
-su red de drenaje con el material rocoso y el relieve
-(hidrología-topografía-litología). También, se analiza la forma en la
-que se organiza o clasifica el orden de red asignado a cada curso
-fluvial en la cuenca, así como la razón de bifurcación de los órdenes de
-red fluvial. Se estudia la geometría que posee cada segmento de los
-cursos, en este caso el de los más largos; tomando en consideración las
-diversas alturas presentes en el curso. Y, por último, nos interesa
-examinar la cuenca de forma cuantitativa, para conocer sus medidas
-básicas (área, perímetro, numero de orden de redes, pendiente, etc.). El
-interés de este estudio es indar e interpretar lo siguiente: rango de
-umbral de acumulación, forma de la cuenca, forma de su red de drenaje,
-fenómenos que pueden afectar a la cuenca, si existe un patrón en la
-cuenca acorde a su red drenaje, si existe la relación litología-perfil
-longitudinal e índice de concavidad de los cursos de aguas más largos,
-y, por último, conocer la relación de las características litológicas y
-estructurales de la cuenca.
+específico, se indaga en el aspecto general de la cuenca y de la red, el
+umbral de acumulación de flujo en numero de celdas, la forma que posee
+la cuenca y su red de drenaje, considerando la relación que tiene la
+forma de la cuenca y la forma de su red de drenaje con el material
+rocoso y el relieve (hidrología-topografía-litología). También, en el
+orden de red y la implementación del analisis hortoniano se tiene
+interes en la forma en la que se organiza o clasifica el orden de red
+asignado a cada curso fluvial en la cuenca, así como la razón de
+bifurcación de los órdenes de red fluvial. En cuanto a los perfiles
+longitudinales y sus indices de concavidad se estudia la geometría que
+posee cada segmento de los cursos, en este caso el de los más largos;
+tomando en consideración las diversas alturas presentes en el curso. Y,
+por último, nos interesa examinar la cuenca de forma cuantitativa, para
+conocer sus medidas básicas (área, perímetro, numero de orden de redes,
+pendiente, etc.). El interés de este estudio es indar e interpretar lo
+siguiente: rango de umbral de acumulación, forma de la cuenca, forma de
+su red de drenaje, fenómenos que pueden afectar a la cuenca, si existe
+un patrón en la cuenca acorde a su red drenaje, si existe la relación
+litología-perfil longitudinal e índice de concavidad de los cursos de
+aguas más largos, y, por último, conocer la relación de las
+características litológicas y estructurales de la cuenca.
 
 \section{Localización y
 Metodología}\label{localizaciuxf3n-y-metodologuxeda}
 
 Para el estudio morfométrico de la cuenca Guayubín se usó softwares de
 código abierto como medio para procesar datos estadísticos y modelos
-digitales con la finalidad de generar las informaciones ha analizada.
+digitales con la finalidad de generar las informaciones ha analizar.
 
 \subsection{Área de estudio}\label{uxe1rea-de-estudio}
 
@@ -331,153 +351,116 @@ Cruz y Guayubín; y en la provincia Santiago Rodríguez comprende los
 municipios Villa Los Almácigos y San Ignacio de Sabaneta. Los
 munipicpios más poblados en el interior de la cuenca son Guayubín
 (35,923 hab.), San Ignacio de Sabaneta (34,540 hab.), y Loma de Cabrera
-(15,624 hab.). La cuenca del río Guayubín, según Medio Ambiente y
-Recurso Naturales (2015), abarca una área de 770.35
-km\textsuperscript{2}, y tiene un perimetro de 156.12 km. De acuerdo con
-el s.a. (s.f.), la cabecera del rio Guayubñin se ubica en las
-inmediaciones de loma escondida, mientras que sus aguas se vierten en el
-río Yaque del Norte, localidad Guayubín.
+(15,624 hab.). (ver figura \ref {mapacuenca}) La cuenca del río
+Guayubín, según Medio Ambiente y Recurso Naturales (2015), abarca una
+área de 770.35 km\textsuperscript{2}, y tiene un perimetro de 156.12 km.
+De acuerdo con el mapa de Medio Ambiente y Recurso Naturales (2015), la
+cabecera del rio Guayubín se ubica en la vertiente noroeste de el Cerro
+La Pelada, mientras que sus aguas se vierten en el río Yaque del Norte,
+localidad Guayubín.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.90000\textwidth]{Mapa final.png}
+\caption{Cuenca del río Guayubín\label{mapacuenca}}
+\end{figure}
 
 \subsection{Materiales}\label{materiales}
 
 \begin{longtable}[]{@{}cc@{}}
 \toprule
-\begin{minipage}[b]{0.07\columnwidth}\centering\strut
+\begin{minipage}[b]{0.11\columnwidth}\centering\strut
 Materiales\strut
-\end{minipage} & \begin{minipage}[b]{0.88\columnwidth}\centering\strut
+\end{minipage} & \begin{minipage}[b]{0.83\columnwidth}\centering\strut
 Uso\strut
 \end{minipage}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\begin{minipage}[t]{0.11\columnwidth}\centering\strut
 RStudio\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\end{minipage} & \begin{minipage}[t]{0.83\columnwidth}\centering\strut
 donde se redactó el manuscrito, se procesaron los datos que ofrece el
 DEM de la cuenca a traves de un script en el que se usaron paquetes que
 produjeran los resultados.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\begin{minipage}[t]{0.11\columnwidth}\centering\strut
 library rgrass7\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\end{minipage} & \begin{minipage}[t]{0.83\columnwidth}\centering\strut
 es una interfaz que permite establecer una conexión entre la version 7
 del sistema de infromacion geográfica GRASS, y R, que crea un entorno
 GRASS desechable dentro de R.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\begin{minipage}[t]{0.11\columnwidth}\centering\strut
 library sp\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\end{minipage} & \begin{minipage}[t]{0.83\columnwidth}\centering\strut
 este paquete sirve para la importación, manipulación y exportación de
 datos espaciales en R, y para métodos que incluyen imprimir / mostrar,
 trazar, entre otros.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\begin{minipage}[t]{0.11\columnwidth}\centering\strut
 library sf\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\end{minipage} & \begin{minipage}[t]{0.83\columnwidth}\centering\strut
 crea caracteristicas simples (simple features), que amplían los objetos
 tipo data.frame con una columna de lista de características
 simples.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\begin{minipage}[t]{0.11\columnwidth}\centering\strut
 library raster\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\end{minipage} & \begin{minipage}[t]{0.83\columnwidth}\centering\strut
 este paquete proporciona clases y funciones para manipular datos
 geográficos (espaciales) en formato `ráster'.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\begin{minipage}[t]{0.11\columnwidth}\centering\strut
 library leaflet\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\end{minipage} & \begin{minipage}[t]{0.83\columnwidth}\centering\strut
 esta función crea un widget de mapa de folletos utilizando htmlwidgets.
 El widget se puede representar en páginas HTML generadas a partir de R
 Markdown, y otros.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\begin{minipage}[t]{0.11\columnwidth}\centering\strut
 library leafem\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\end{minipage} & \begin{minipage}[t]{0.83\columnwidth}\centering\strut
 es un paquete que provee una extensión para leaflet uasados para
 paquetes mapview, permite mostrar las coordenadas de la posición del
 puntero del mouse, consultar valores de imagen a través de puntero del
 mouse y botones de zoom a capa.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\begin{minipage}[t]{0.11\columnwidth}\centering\strut
 library mapview\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\end{minipage} & \begin{minipage}[t]{0.83\columnwidth}\centering\strut
 el paquete proporciona funcionalidad para ver objetos espaciales de
 forma interactiva.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\begin{minipage}[t]{0.11\columnwidth}\centering\strut
 library readr\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\end{minipage} & \begin{minipage}[t]{0.83\columnwidth}\centering\strut
 el objetivo de `readr' es proporcionar una forma rápida y amigable de
 leer datos rectangulares (como `csv', `tsv' y `fwf').\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\begin{minipage}[t]{0.11\columnwidth}\centering\strut
 QGIS with GRASS\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\end{minipage} & \begin{minipage}[t]{0.83\columnwidth}\centering\strut
 para la visualización de vectores y rasters generados con RStudio en una
 región de GRASS,como la visualización de los mapas Topológicos y
 Geológicos de la República Dominicana, tambien, para la creación de
 algunos mapas de localización.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.07\columnwidth}\centering\strut
+\begin{minipage}[t]{0.11\columnwidth}\centering\strut
 Google Earth\strut
-\end{minipage} & \begin{minipage}[t]{0.88\columnwidth}\centering\strut
+\end{minipage} & \begin{minipage}[t]{0.83\columnwidth}\centering\strut
 para observar datos en formato kml generados y exportados de RStudio y
 asi como la representacion del relieve del lugar de estudio.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.11\columnwidth}\centering\strut
+Mapa Topológico de RD\strut
+\end{minipage} & \begin{minipage}[t]{0.83\columnwidth}\centering\strut
+para hacer comparaciones y obtener referencias sobre el relieve.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.11\columnwidth}\centering\strut
+Mapa Geológico Nacional de RD\strut
+\end{minipage} & \begin{minipage}[t]{0.83\columnwidth}\centering\strut
+para hacer comparaciones y obtener referencias sobre la composición
+rocosa y los años que datan estas.\strut
 \end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}
@@ -494,7 +477,7 @@ para que exista una red de agua.
 Se usó el addon \texttt{r.water.outlet} (Charles Ehlschlaeger
 (2003--2021a)) para la extraccion de la cuenca a traves de un mapa de
 direccion de drenajes (creado con el addon r.watershed), y de
-coordenadas de desembocaduras de la cuenca (obtenidas con el paquete
+coordenadas de desembocadura de la cuenca (obtenidas con
 \texttt{Mapview}). Asi tambien se uso el addon \texttt{r.to.vect} (Team
 (2003--2021)), para convertir un raster en vectorial.
 
@@ -505,7 +488,7 @@ ademas, del raster, es necesario el umbral de acumulación de flujo.
 
 En cuanto al orden de red y el analisis hortoniano, se usó el addon
 \texttt{r.stream.extract} (@ referenciar), para producir un mapa de
-dirección de flujo el cual sirvió para la creacion de mapas de ordenes
+dirección de flujo el cual sirvió para la creación de mapas de ordenes
 de redes generados con \texttt{r.stream.order} (Jasiewicz (2003--2021)).
 Además de el mapa de direccion de flujo, se uso un raster de red de la
 cuenca, flujo de acumulacion y un modelo de elevacion. Se calcularon los
@@ -521,26 +504,89 @@ Jasiewicz \& Institute (2003--2021b)).
 
 Para calcular los indices de concavidad y los perfiles longitudinales,
 primero, se obtuvieron los cursos mas largos de la cuenca a traves de la
-funcion \texttt{LfpNetwork} (Batlle (2018)), usando coordenadas de
+funcion \texttt{LfpNetwork} (Batlle (2018b)), usando coordenadas de
 desembocadura de la cuenca obtenidas con \texttt{Mapview}, vectores de
 ordenes de red y mapa de flujo de direccion. Segundo, para producir los
 perfiles longitudinales e indices de cocavidad se empleo la funcion
-\texttt{LfpProfilesConcavity} (@), utilizando la red de cursos de agua
-mas largos, coordenadas de desembocadura, un dem y un mapa de flujos de
-drenaje.
+\texttt{LfpProfilesConcavity} (Batlle (2018c)), utilizando la red de
+cursos de agua mas largos, coordenadas de desembocadura, un dem y un
+mapa de flujos de drenaje.
 
 Para la obtencion de los parametros morfometricos de la cuenca se uso el
 addon \texttt{r.basin} (Margherita Di Leo (2003--2021)), por medio de un
 modelo de elevacion y coordenadas proyectadas de la salida de la cuenca,
 obtenidas en geograficas con \texttt{Mapview} y transformadas a
-proyectadas con la funcion \texttt{My\_Trans} (@).
+proyectadas con la funcion \texttt{My\_Trans} (Batlle (2020)).
 
-Respecto al calculo de la curva e integral hipsométrica, se utilizo la
-funcion \texttt{HypsoIntCurve} (@),
+Respecto al cálculo de la curva e integral hipsométrica, se utilizó la
+función \texttt{HypsoIntCurve} (Batlle (2018a)), a través de vectores de
+arroyos de cuenca de orden 2 y 3.
 
 \section{Resultados}\label{resultados}
 
+Aspecto general de la cuenca y de la red de drenaje. Tras cálcular los
+parámetros hidrograficos de la cuenca con \texttt{r.watershed} se obtuvo
+tres grupos de capas (DEM, basins y str), que con la ayuda de
+\texttt{leaflet} se generó un mapa que muestra las subcuencas, las redes
+fluviales y el DEM, de la cuenca sin delimitar. La cuenca extraida con
+\texttt{r.water.outlet} produjo un raster de cuenca delimitada que se
+transformó a vector con \texttt{r.to.vect}. En cuanto a la red de
+drenaje extraida con \texttt{r.stream.extract} se generó un raster y un
+vector con redes fluviales formadas a partir de un umbral de 80 celdas.
+
+Orden de red analisis hortoniano Con \texttt{r.stream.extract} se
+crearon mapas basados en las clasificaciones de Strahler, Horton,
+Shreve, Hack y Topo. Se ordenó y clasificó cada tramo fluvial de la
+cuenca según Strahler donde el orden máximo de red es 5 y el minimo es
+de 1. Según la clasificación de Strahler usada para analizar la red,
+obtenidas con \texttt{r.stream.stats}, se produjeron 367 redes fluviales
+de las cuales 284 redes eran de orden 1, mientras que de orden 2 se
+produjeron 61 redes, 17 redes de orden 3, 4 redes de orden 4, y 1 red de
+orden 5. (ver figura\ref {grafnro}).
+
+\begin{figure}
+\centering
+\includegraphics[width=0.80000\textwidth]{Numero de red segun su orden.png}
+\caption{Número de redes segun su orden\label{grafnro}}
+\end{figure}
+
+En cuanto al área de cuenca resultante de esta operación fue de 773.2235
+km\textsuperscript{2}. De manera mas detallada los resultados del area
+de cuenca encontrados segun orden de red fueron los siguientes:
+
+\begin{longtable}[]{@{}cc@{}}
+\toprule
+Orden & Area total (km\textsuperscript{2})\tabularnewline
+\midrule
+\endhead
+1 & 488.1383\tabularnewline
+2 & 444.7173\tabularnewline
+3 & 539.4576\tabularnewline
+4 & 590.9969\tabularnewline
+5 & 773.2235\tabularnewline
+\bottomrule
+\end{longtable}
+
+Mientras que los resultados de la razón de bifurcación obtenidas para de
+cada orden de red fueron:
+
+\begin{longtable}[]{@{}cc@{}}
+\toprule
+Orden & Razón de Bifurcación\tabularnewline
+\midrule
+\endhead
+1 & 4.6557\tabularnewline
+2 & 3.5882\tabularnewline
+3 & 4.2500\tabularnewline
+4 & 4.0000\tabularnewline
+5 & 0.0000\tabularnewline
+\bottomrule
+\end{longtable}
+
 \section{Discusión}\label{discusiuxf3n}
+
+De acuerdo con el s.a. (s.f.), la cabecera del rio Guayubin se ubica en
+las inmediaciones de loma escondida
 
 \section{Agradecimientos}\label{agradecimientos}
 
@@ -549,13 +595,26 @@ funcion \texttt{HypsoIntCurve} (@),
 \section{\texorpdfstring{\emph{Script}
 reproducible}{Script reproducible}}\label{script-reproducible}
 
-\section*{Referencias}\label{referencias}
-\addcontentsline{toc}{section}{Referencias}
+\section*{Referencia}\label{referencia}
+\addcontentsline{toc}{section}{Referencia}
 
 \hypertarget{refs}{}
+\hypertarget{ref-Hypsocjose}{}
+Batlle, J. R. M. (2018a). \emph{Función hypsointcurve}. Retrieved from
+\url{https://github.com/geofis/rgrass/blob/master/integral_hypsometric_curve.R}
+
 \hypertarget{ref-lfpnetjose}{}
-Batlle, J. R. M. (2018). \emph{Función lfpNetwork}. Retrieved from
+Batlle, J. R. M. (2018b). \emph{Función lfpnetwork}. Retrieved from
 \url{https://github.com/geofis/rgrass/blob/master/lfp_network.R}
+
+\hypertarget{ref-lfpconcajose}{}
+Batlle, J. R. M. (2018c). \emph{Función lfpprofilesconcavity}. Retrieved
+from
+\url{https://github.com/geofis/rgrass/blob/master/lfp_profiles_concavity.R}
+
+\hypertarget{ref-Mytransjose}{}
+Batlle, J. R. M. (2020). \emph{Función my-trans}. Retrieved from
+\url{https://github.com/geomorfologia-master/unidad-4-asignacion-1-procesos-fluviales/blob/master/my-trans.R}
 
 \hypertarget{ref-bowden1964effect}{}
 Bowden, K. L., \& Wallis, J. R. (1964). Effect of stream-ordering
@@ -584,6 +643,13 @@ Christofoletti, A. (1988). \emph{Geomorfologia}. Editora Blucher.
 ESRI, E. S. R. I. (2012). ArcGIS resources: Definir cuencas
 hidrográficas. Retrieved from
 \url{https://help.arcgis.com/es/arcgisdesktop/10.0/help/index.html\#//009z00000068000000}
+
+\hypertarget{ref-fernandez2016analise}{}
+Fernandez, O. V. Q., \& Rocha, A. S. da. (2016). Análise preliminar da
+aplicação da integral hipsométrica à caracterização das unidades de
+paisagem na bacia do paraná iii, oeste do paraná. \emph{Anais VIII
+SIMPGEO-as Fronteiras Da Ciência Geográfica: Avanços E Possibilidades.
+Marechal Cândido Rondon, N. November}, 497--506.
 
 \hypertarget{ref-garzonmorfologia}{}
 Garzón Heydt, G., Ortega, J., Garrote, J., \& others. (n.d.).
@@ -653,9 +719,10 @@ y aplicaciones}.
 Pinilla, A. (1993). \emph{Symposium sobre la raña en españa y portugal}
 (Vol. 2). Editorial CSIC-CSIC Press.
 
-\hypertarget{ref-TopoMap}{}
-s.a. (s.f.). \emph{Topo map of the dominican republic 1:50k}.
-urlhttps://geofis.xyz/lm/index.php/view/map/?repository=mtnrd50k\&project=mtnrd50k.
+\hypertarget{ref-strahler1952hypsometric}{}
+Strahler, A. N. (1952). Hypsometric (area-altitude) analysis of
+erosional topography. \emph{Geological Society of America Bulletin},
+\emph{63}(11), 1117--1142.
 
 \hypertarget{ref-tovect}{}
 Team, G. D. (2003--2021). \emph{Addon r.to.vect}. Retrieved from
