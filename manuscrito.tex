@@ -302,13 +302,13 @@ el área de la sección diagonal horizontal de una red de drenaje con una
 altitud relativa sobre la boca de la cuenca, e incluso estas curvas
 pueden ser explicadas y relacionadas a través del uso de parámetros
 bidimensionales. Y referenter a la integral Hipsométrica, Fernandez \&
-Rocha (2016) expresa que el cálculo de este índice mide como esta
+Rocha (2016) expresa que el cálculo de este índice mide como está
 distribuida la altitud del en una cuenca fluvial.
 
 Este estudio proporciona nueva información sobre la cuenca del río
 Guayubín en el campo de Morfometría fluvial, sabiendo que este es el
 primer estudio morfométrico que se realiza a la cuenca; y además este
-posee un script lo cual permite su reproducción sin coste alguno. En
+posee un script el cual permite su reproducción sin coste alguno. En
 específico, se indaga en el aspecto general de la cuenca y de la red, el
 umbral de acumulación de flujo en numero de celdas, la forma que posee
 la cuenca y su red de drenaje, considerando la relación que tiene la
@@ -331,14 +331,7 @@ litología-perfil longitudinal e índice de concavidad de los cursos de
 aguas más largos, y, por último, conocer la relación de las
 características litológicas y estructurales de la cuenca.
 
-\section{Localización y
-Metodología}\label{localizaciuxf3n-y-metodologuxeda}
-
-Para el estudio morfométrico de la cuenca Guayubín se usó softwares de
-código abierto como medio para procesar datos estadísticos y modelos
-digitales con la finalidad de generar las informaciones ha analizar.
-
-\subsection{Área de estudio}\label{uxe1rea-de-estudio}
+\section{Área de estudio}\label{uxe1rea-de-estudio}
 
 La cuenca del río Guayubín se encuentra entre las morforegiones
 Cordillera Central y Valle del Cibao Occidental, en la República
@@ -351,19 +344,22 @@ Cruz y Guayubín; y en la provincia Santiago Rodríguez comprende los
 municipios Villa Los Almácigos y San Ignacio de Sabaneta. Los
 munipicpios más poblados en el interior de la cuenca son Guayubín
 (35,923 hab.), San Ignacio de Sabaneta (34,540 hab.), y Loma de Cabrera
-(15,624 hab.). (ver figura \ref {mapacuenca}) La cuenca del río
-Guayubín, según Medio Ambiente y Recurso Naturales (2015), abarca una
-área de 770.35 km\textsuperscript{2}, y tiene un perimetro de 156.12 km.
-De acuerdo con el mapa de Medio Ambiente y Recurso Naturales (2015), la
-cabecera del rio Guayubín se ubica en la vertiente noroeste de el Cerro
-La Pelada, mientras que sus aguas se vierten en el río Yaque del Norte,
-localidad Guayubín.
+(15,624 hab.). (ver figura \ref {mapacuenca})
 
-\begin{figure}
-\centering
+La cuenca del río Guayubín, según Medio Ambiente y Recurso Naturales
+(2015), abarca una área de 770.35 km\textsuperscript{2}. De acuerdo con
+el mapa de Medio Ambiente y Recurso Naturales (2015), la cabecera del
+rio Guayubín se ubica en la vertiente noroeste de el Cerro La Pelada, en
+un paraje denominado Palo Amarillo; mientras que sus aguas se vierten en
+el río Yaque del Norte, localidad Guayubín.
 \includegraphics[width=0.90000\textwidth]{Mapa final.png}
-\caption{Cuenca del río Guayubín\label{mapacuenca}}
-\end{figure}
+
+\section{Materiales y Metodología}\label{materiales-y-metodologuxeda}
+
+Para el estudio morfométrico de la cuenca Guayubín se usó softwares de
+código abierto como medio para procesar datos estadísticos y modelos
+digitales con la finalidad de generar las informaciones ha analizar e
+interpretar.
 
 \subsection{Materiales}\label{materiales}
 
@@ -467,18 +463,19 @@ rocosa y los años que datan estas.\strut
 
 \subsection{Metodología}\label{metodologuxeda}
 
-Los parametros de la cuenca fueron calculados por medio de el addon de
-GRASS GIS \texttt{r.watershed} (Charles Ehlschlaeger (2003--2021b)),
-utilizando el Dem de la misma, los parametros calculados fueron
-acumulación, elevación, depresión, drenaje, flujo, cuenca y media
-cuenca, con un umbral de acumulación de flujo de 80 celdas necesarias
-para que exista una red de agua.
+Aspecto de la cuenca y de la red de drenaje. Los parametros de la cuenca
+fueron calculados por medio de el addon de GRASS GIS
+\texttt{r.watershed} (Charles Ehlschlaeger (2003--2021b)), utilizando un
+Dem , los parametros calculados fueron acumulación, elevación,
+depresión, drenaje, flujo, cuenca y media cuenca, con un umbral de
+acumulación de flujo de 80 celdas necesarias para que exista una red de
+agua.
 
 Se usó el addon \texttt{r.water.outlet} (Charles Ehlschlaeger
 (2003--2021a)) para la extraccion de la cuenca a traves de un mapa de
-direccion de drenajes (creado con el addon r.watershed), y de
+direccion de drenajes (creado con el addon \texttt{r.watershed}), y de
 coordenadas de desembocadura de la cuenca (obtenidas con
-\texttt{Mapview}). Asi tambien se uso el addon \texttt{r.to.vect} (Team
+\texttt{Mapview}). Asi tambien, se usó el addon \texttt{r.to.vect} (Team
 (2003--2021)), para convertir un raster en vectorial.
 
 Para estraer la red de drenaje se hizo uso de el addon
@@ -487,7 +484,7 @@ raster como capa de entrada y se genero un archivo en formato vectorial,
 ademas, del raster, es necesario el umbral de acumulación de flujo.
 
 En cuanto al orden de red y el analisis hortoniano, se usó el addon
-\texttt{r.stream.extract} (@ referenciar), para producir un mapa de
+\texttt{r.stream.extract} (Metz (2003--2021)), para producir un mapa de
 dirección de flujo el cual sirvió para la creación de mapas de ordenes
 de redes generados con \texttt{r.stream.order} (Jasiewicz (2003--2021)).
 Además de el mapa de direccion de flujo, se uso un raster de red de la
