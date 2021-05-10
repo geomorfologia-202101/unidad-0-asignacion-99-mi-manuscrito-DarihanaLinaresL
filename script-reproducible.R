@@ -661,7 +661,7 @@ guayubin_conv_prof <- LfpProfilesConcavity(
   direction = 'drainage-dir-de-rstr',
   crs = '+init=epsg:32619',
   smns = 0.5,
-  nrow = 4)
+  nrow = 5)
 
 ## Mostrar resultados
 
@@ -876,7 +876,7 @@ HypsoBasinsOrder2 <- HypsoIntCurve(
   basins = 'r_stream_basins_2',
   dem = 'dem',
   labelfield = 'cat',
-  nrow = 4,
+  nrow = 5,
   labelsize = 4
 )
 
