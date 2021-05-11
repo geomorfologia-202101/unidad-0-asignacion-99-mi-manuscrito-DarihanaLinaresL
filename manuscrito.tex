@@ -301,9 +301,9 @@ el porcentaje de la curva hipsométrica no es mas que la relación entre
 el área de la sección diagonal horizontal de una red de drenaje con una
 altitud relativa sobre la boca de la cuenca, e incluso estas curvas
 pueden ser explicadas y relacionadas a través del uso de parámetros
-bidimensionales. Y referenter a la integral Hipsométrica, Fernandez \&
+bidimensionales. Y referente a la integral Hipsométrica, Fernandez \&
 Rocha (2016) expresa que el cálculo de este índice mide como está
-distribuida la altitud del en una cuenca fluvial.
+distribuida la altitud en una cuenca fluvial.
 
 Este estudio proporciona nueva información sobre la cuenca del río
 Guayubín en el campo de Morfometría fluvial, sabiendo que este es el
@@ -564,7 +564,7 @@ cson transformados a EPGS (MappingGis (2016)), y asi visualizar con la
 \texttt{librería\ Leaflet}. Y para poder explorar los parámetros de la
 cuenca se usó la \texttt{librería\ Readr}. Finalmente, para el cálculo
 de la curva y la integral hipsométrica, lo primero fue representar las
-cuencas con las librerías \texttt{Sp} \texttt{Mapview}; y segundo,
+cuencas con las librerías \texttt{Sp} y \texttt{Mapview}; y segundo,
 calcular la integral y curva hipsométrica utilizando la función
 \texttt{HypsoIntCurve} (Batlle (2018a)), usando de parámetros los
 vectores de arroyos de cuenca de orden 2 y 3, un modelo de elevación, un
@@ -584,11 +584,11 @@ Tras cálcular los parámetros hidrograficos de la cuenca con
 \texttt{r.watershed} se obtuvo un raster de tres grupos de capas (DEM,
 basins y str), que con la ayuda de \texttt{leaflet} se visualiza un mapa
 mostrando las subcuencas, las redes fluviales y el DEM, de la cuenca sin
-delimitar. (Ver figura\ref{capas}).
+delimitar (Ver figura\ref{capas}).
 
 \begin{figure}
 \centering
-\includegraphics[width=0.60000\textwidth]{capas.png}
+\includegraphics[width=0.80000\textwidth]{capas.png}
 \caption{Capas generadas al calcular los parámetros hidrográficos de la
 cuenca\label{capas}}
 \end{figure}
@@ -598,18 +598,17 @@ cuenca delimitada denominado \texttt{guayubin-basin}, que luego paso a
 ser un vector llamado \texttt{guayubin\_basin} usando el addon
 \texttt{r.to.vect}. (Ver figura\ref{cuencavectorial}). Tras ser llevada
 la cuenca ser llevada a R como vector, obtuvo el nombre
-\texttt{guayu\_bas}. Aqui representada con \texttt{leaflet} (ver
-figura\ref{cuenca delimitada})
+\texttt{guayu\_bas} (ver figura\ref{cuenca delimitada})
 
 \begin{figure}
 \centering
 \includegraphics[width=0.50000\textwidth]{cuenca extraida.png}
-\caption{Vectorial de la cuenca del río Guayubín\label{cuencavectorial}}
+\caption{Cuenca del río Guayubín\label{cuencavectorial}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.50000\textwidth]{cuenca delimitada.png}
+\includegraphics[width=0.70000\textwidth]{cuenca delimitada.png}
 \caption{Cuenca del río Guayubín delimitada\label{cuenca delimitada}}
 \end{figure}
 
@@ -618,8 +617,8 @@ generó un raster y un vector con redes fluviales formadas a partir de un
 umbral de 80 celdas, denominados \texttt{guayubin-stream-de-rstr} y
 \texttt{guayubin\_stream\_de\_rstr}, respectivamente. Estos productos
 tras ser llevados a R, como \texttt{guayu\_net} para el vector y
-\texttt{guayu\_net\_r} para el raster. Estos pueden ser visualizados con
-\texttt{leaflet} (ver figura\ref{red de drenaje extraida}).
+\texttt{guayu\_net\_r} para el raster (ver
+figura\ref{red de drenaje extraida}).
 
 \begin{figure}
 \centering
@@ -636,21 +635,20 @@ que con el addons \texttt{r.stream.order} se generaró un vector que
 contiene los atributos de la red (\texttt{order\_all}), y mapas rasters
 de ordenes de red basados en las clasificaciones de Strahler, Horton,
 Shreve, Hack y Topo (Jasiewicz (2003--2021)). Aqui visualizada la capa
-vectorial de todos los ordenes con simbologia unica, en \texttt{leaflet}
-(ver figura\ref{unica}). Aqui visualizada en \texttt{leaflet} con
-simbologia que aplica grosor segun su orden de red (ver
-figura\ref{grosor}).
+vectorial de todos los ordenes con simbologia unica, (ver
+figura\ref{unica}). Y con simbologia que aplica grosor segun su orden de
+red (ver figura\ref{grosor}).
 
 \begin{figure}
 \centering
-\includegraphics[width=0.50000\textwidth]{ordenes de red.png}
+\includegraphics[width=1.00000\textwidth]{ordenes de red.png}
 \caption{Ordenes de red del rio Guayubin con simbologia
 unica\label{unica}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=0.50000\textwidth]{orden de red mapa 2.png}
+\includegraphics[width=0.80000\textwidth]{orden de red mapa 2.png}
 \caption{Ordenes de red del rio Guayubin con simbologia aplicando grosor
 segun su orden\label{grosor}}
 \end{figure}
@@ -658,8 +656,7 @@ segun su orden\label{grosor}}
 Se ordenó y clasificó cada tramo fluvial de la cuenca según Strahler
 donde usando el addon \texttt{r.info}, se obtuvo el orden de red máximo
 es 5 y el minimo es de 1 . Despues de delimitar las cuencas con
-\texttt{r.basin}, se genero un raster que se transformo a vectorial.
-Aqui se visualizan las cuencas delimitadas y los ordenes de red (ver
+\texttt{r.basin}, se generó un raster que se transformo a vectorial (ver
 figura\ref{subcuencas}).
 
 \begin{figure}
@@ -671,13 +668,13 @@ figura\ref{subcuencas}).
 Las estadísticas de red resumidas por orden de red según la
 clasificación de Strahler, obtenidas con \texttt{r.stream.stats}, se
 produjo un documento resumido de sobre los ordenes de red, con esto
-mismo fue posible calcular la razon de bifurcacion (4.064346). (ver
+mismo se calculaó la razón de bifurcación equivalente a 4.064346 (ver
 figura\ref {grafnumero}).
 
 \begin{figure}
 \centering
 \includegraphics[width=0.80000\textwidth]{Numero de red segun su orden.png}
-\caption{Número de redes segun su orden y Razon de bifurcacion por medio
+\caption{Número de redes según su orden y Razon de bifurcacion por medio
 de coeficientes de regresion\label{grafnumero}}
 \end{figure}
 
@@ -934,7 +931,7 @@ vectorial resultante de la operación anterior (ver figura\ref{lfpnet}).
 
 \begin{figure}
 \centering
-\includegraphics[width=0.60000\textwidth]{cursos mas largos.png}
+\includegraphics[width=1.00000\textwidth]{cursos mas largos.png}
 \caption{Cursos fluviales mas largos de la cuenca del rio
 Guayubin\label{lfpnet}}
 \end{figure}
@@ -943,74 +940,6 @@ Mientras tanto, el producto de aplicar la funcion
 \texttt{LfpProfilesConcavity} fueron los perfiles longitudinales (ver
 figura\ref{plongitudinal}), y sus indices de concavidad, bajo el prefijo
 \texttt{Gyb} (ver figura\ref{indicec}).
-
-\begin{longtable}[]{@{}ccc@{}}
-\toprule
-stream & stream & ci\tabularnewline
-\midrule
-\endhead
-1 & Gyb-1 & 0.59688059\tabularnewline
-2 & Gyb-2 & 0.03127299\tabularnewline
-3 & Gyb-3 & 0.29980801\tabularnewline
-4 & Gyb-4 & 0.29916212\tabularnewline
-5 & Gyb-5 & 0.17766577\tabularnewline
-6 & Gyb-6 & 0.28394390\tabularnewline
-7 & Gyb-7 & 0.19284167\tabularnewline
-8 & Gyb-8 & -0.10206344\tabularnewline
-9 & Gyb-9 & 0.08282423\tabularnewline
-10 & Gyb-10 & 0.20654655\tabularnewline
-11 & Gyb-11 & 0.18245774\tabularnewline
-12 & Gyb-12 & 0.41931839\tabularnewline
-13 & Gyb-13 & -0.25074216\tabularnewline
-14 & Gyb-14 & 0.38778387\tabularnewline
-15 & Gyb-15 & 0.09593430\tabularnewline
-16 & Gyb-16 & -0.00514126\tabularnewline
-17 & Gyb-17 & 0.38870710\tabularnewline
-18 & Gyb-18 & -0.12838671\tabularnewline
-19 & Gyb-19 & 0.45559497\tabularnewline
-20 & Gyb-20 & 0.30800052\tabularnewline
-21 & Gyb-21 & 0.31322918\tabularnewline
-22 & Gyb-22 & -0.10635769\tabularnewline
-23 & Gyb-23 & 0.01957733\tabularnewline
-24 & Gyb-24 & 0.44752299\tabularnewline
-25 & Gyb-25 & 0.17774471\tabularnewline
-26 & Gyb-26 & 0.42982725\tabularnewline
-27 & Gyb-27 & 0.15705975\tabularnewline
-28 & Gyb-28 & 0.18432963\tabularnewline
-29 & Gyb-29 & 0.19728723\tabularnewline
-30 & Gyb-30 & 0.59437845\tabularnewline
-31 & Gyb-31 & 0.21676465\tabularnewline
-32 & Gyb-32 & -0.01923832\tabularnewline
-33 & Gyb-33 & 0.31131545\tabularnewline
-34 & Gyb-34 & 0.10937291\tabularnewline
-35 & Gyb-35 & -0.01857437\tabularnewline
-36 & Gyb-36 & 0.38463884\tabularnewline
-37 & Gyb-37 & 0.56058882\tabularnewline
-38 & Gyb-38 & -0.01128950\tabularnewline
-39 & Gyb-39 & 0.33855144\tabularnewline
-40 & Gyb-40 & 0.16757638\tabularnewline
-41 & Gyb-41 & 0.43546641\tabularnewline
-42 & Gyb-42 & 0.08664117\tabularnewline
-43 & Gyb-43 & 0.50047621\tabularnewline
-44 & Gyb-44 & 0.16043136\tabularnewline
-45 & Gyb-45 & 0.05523892\tabularnewline
-46 & Gyb-46 & 0.43059893\tabularnewline
-47 & Gyb-47 & 0.23599474\tabularnewline
-48 & Gyb-48 & 0.51288891\tabularnewline
-49 & Gyb-49 & 0.62294206\tabularnewline
-50 & Gyb-50 & 0.14796424\tabularnewline
-51 & Gyb-51 & 0.28259012\tabularnewline
-52 & Gyb-52 & 0.50952086\tabularnewline
-53 & Gyb-53 & 0.34383993\tabularnewline
-54 & Gyb-54 & 0.39314762\tabularnewline
-55 & Gyb-55 & 0.54157833\tabularnewline
-56 & Gyb-56 & 0.47292848\tabularnewline
-57 & Gyb-57 & 0.26080951\tabularnewline
-58 & Gyb-58 & 0.03618367\tabularnewline
-59 & Gyb-59 & -0.14210268\tabularnewline
-60 & Gyb-60 & 0.19188075\tabularnewline
-\bottomrule
-\end{longtable}
 
 \begin{figure}
 \centering
@@ -1035,7 +964,7 @@ red de drenaje. Luego, los vectoriales fueron transformados a
 
 \begin{figure}
 \centering
-\includegraphics[width=0.50000\textwidth]{cuenca-red de drenaje-curso mas largo.png}
+\includegraphics[width=0.60000\textwidth]{cuenca-red de drenaje-curso mas largo.png}
 \caption{Cuenca del rio Guayubin con su red de drenaje y su curso mas
 largo\label{vectoresrbasin}}
 \end{figure}
@@ -1214,12 +1143,206 @@ Slope ratio (Horton)\strut
 \bottomrule
 \end{longtable}
 
+Para la curva e integral hysometrica, cálculada con la funcion
+\texttt{HypsoIntCurve}, se obtuvieron los datos para las cuencas de red
+de drenaje de orden 2 (ver figura\ref{hypsob2} y figura\ref{hypb2}), y
+cuencas de red de drenaje de orden 3 (ver figura\ref{hypsob3} y
+figura\ref{hypb3}).
+
+Integral hipsometrica en las cuencas de red de orden 2.
+
+\begin{longtable}[]{@{}cc@{}}
+\toprule
+Categoría & Integral hipsométrica\tabularnewline
+\midrule
+\endhead
+1 & 1 0.23784092\tabularnewline
+2 & 2 0.29691935\tabularnewline
+3 & 3 0.31478851\tabularnewline
+4 & 4 0.25845620\tabularnewline
+5 & 5 0.18914104\tabularnewline
+6 & 6 0.38449116\tabularnewline
+7 & 7 0.25087104\tabularnewline
+8 & 9 0.26943542\tabularnewline
+9 & 10 0.19779399\tabularnewline
+10 & 11 0.19287436\tabularnewline
+11 & 12 0.17808813\tabularnewline
+12 & 13 0.22437828\tabularnewline
+13 & 14 0.40595651\tabularnewline
+14 & 15 0.25477715\tabularnewline
+15 & 16 0.19777159\tabularnewline
+16 & 17 0.25313336\tabularnewline
+17 & 18 0.22679929\tabularnewline
+18 & 19 0.30597060\tabularnewline
+19 & 20 0.30564285\tabularnewline
+20 & 21 0.24773997\tabularnewline
+21 & 22 0.21800099\tabularnewline
+22 & 23 0.33229314\tabularnewline
+23 & 24 0.40758028\tabularnewline
+24 & 25 0.27096759\tabularnewline
+25 & 26 0.17485732\tabularnewline
+26 & 28 0.25721054\tabularnewline
+27 & 29 0.27907973\tabularnewline
+28 & 30 0.23545394\tabularnewline
+29 & 32 0.24544610\tabularnewline
+30 & 33 0.18990261\tabularnewline
+31 & 34 0.22303577\tabularnewline
+32 & 35 0.14436574\tabularnewline
+33 & 36 0.30229714\tabularnewline
+34 & 37 0.30742281\tabularnewline
+35 & 38 0.34876647\tabularnewline
+36 & 39 0.39371293\tabularnewline
+37 & 40 0.14419677\tabularnewline
+38 & 41 0.36397062\tabularnewline
+39 & 42 0.45795809\tabularnewline
+40 & 43 0.07642614\tabularnewline
+41 & 45 0.48672629\tabularnewline
+42 & 46 0.29182502\tabularnewline
+43 & 47 0.47300056\tabularnewline
+44 & 48 0.22892086\tabularnewline
+45 & 49 0.50910119\tabularnewline
+46 & 50 0.16011357\tabularnewline
+47 & 51 0.14325914\tabularnewline
+48 & 52 0.30243670\tabularnewline
+49 & 53 0.22622911\tabularnewline
+50 & 54 0.27985062\tabularnewline
+51 & 55 0.16980308\tabularnewline
+52 & 57 0.38363564\tabularnewline
+53 & 58 0.29000326\tabularnewline
+54 & 59 0.23691203\tabularnewline
+55 & 60 0.30564446\tabularnewline
+56 & 61 0.30401039\tabularnewline
+57 & 62 0.25939942\tabularnewline
+58 & 63 0.16711030\tabularnewline
+59 & 64 0.14693431\tabularnewline
+60 & 65 0.19359746\tabularnewline
+61 & 66 0.17854689\tabularnewline
+\bottomrule
+\end{longtable}
+
+Integral hipsometrica en las cuencas de red de orden 3.
+
+\begin{longtable}[]{@{}cc@{}}
+\toprule
+Categoría & Integral hipsométrica\tabularnewline
+\midrule
+\endhead
+1 & 1 0.28106607\tabularnewline
+2 & 2 0.24855493\tabularnewline
+3 & 4 0.12697883\tabularnewline
+4 & 5 0.21021494\tabularnewline
+5 & 6 0.18586633\tabularnewline
+6 & 8 0.40849637\tabularnewline
+7 & 9 0.33264116\tabularnewline
+8 & 10 0.15880640\tabularnewline
+9 & 11 0.34507681\tabularnewline
+10 & 12 0.32371339\tabularnewline
+11 & 13 0.33707592\tabularnewline
+12 & 15 0.32319904\tabularnewline
+13 & 16 0.06673204\tabularnewline
+14 & 17 0.15091492\tabularnewline
+15 & 18 0.14111015\tabularnewline
+16 & 19 0.29051932\tabularnewline
+17 & 20 0.15859746\tabularnewline
+19 & 20 0.30564285\tabularnewline
+20 & 21 0.24773997\tabularnewline
+21 & 22 0.21800099\tabularnewline
+22 & 23 0.33229314\tabularnewline
+23 & 24 0.40758028\tabularnewline
+24 & 25 0.27096759\tabularnewline
+25 & 26 0.17485732\tabularnewline
+26 & 28 0.25721054\tabularnewline
+27 & 29 0.27907973\tabularnewline
+28 & 30 0.23545394\tabularnewline
+29 & 32 0.24544610\tabularnewline
+30 & 33 0.18990261\tabularnewline
+31 & 34 0.22303577\tabularnewline
+32 & 35 0.14436574\tabularnewline
+33 & 36 0.30229714\tabularnewline
+34 & 37 0.30742281\tabularnewline
+35 & 38 0.34876647\tabularnewline
+36 & 39 0.39371293\tabularnewline
+37 & 40 0.14419677\tabularnewline
+38 & 41 0.36397062\tabularnewline
+39 & 42 0.45795809\tabularnewline
+40 & 43 0.07642614\tabularnewline
+41 & 45 0.48672629\tabularnewline
+42 & 46 0.29182502\tabularnewline
+43 & 47 0.47300056\tabularnewline
+44 & 48 0.22892086\tabularnewline
+45 & 49 0.50910119\tabularnewline
+46 & 50 0.16011357\tabularnewline
+47 & 51 0.14325914\tabularnewline
+48 & 52 0.30243670\tabularnewline
+49 & 53 0.22622911\tabularnewline
+50 & 54 0.27985062\tabularnewline
+51 & 55 0.16980308\tabularnewline
+52 & 57 0.38363564\tabularnewline
+53 & 58 0.29000326\tabularnewline
+54 & 59 0.23691203\tabularnewline
+55 & 60 0.30564446\tabularnewline
+56 & 61 0.30401039\tabularnewline
+57 & 62 0.25939942\tabularnewline
+58 & 63 0.16711030\tabularnewline
+59 & 64 0.14693431\tabularnewline
+60 & 65 0.19359746\tabularnewline
+61 & 66 0.17854689\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.00000\textwidth]{HypsoBasinOrder2.png}
+\caption{Curva e integral hipsométrica para las cuencas de orden
+2\label{hypsob2}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.90000\textwidth]{Mapview_hypsobasinorder2.png}
+\caption{Cuencas de red de drenaje orden 2\label{hypb2}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.00000\textwidth]{HypsoBasinOrder3.png}
+\caption{Curva e integral hipsométrica para las cuencas de orden
+3\label{hysob3}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.90000\textwidth]{Mapview_hypsobasinorder3.png}
+\caption{Cuencas de red de drenaje orden 3\label{hypb2}}
+\end{figure}
+
 \section{Discusión}\label{discusiuxf3n}
 
-De acuerdo con el s.a. (s.f.), la cabecera del rio Guayubin se ubica en
-las inmediaciones de loma escondida
-
 \section{Agradecimientos}\label{agradecimientos}
+
+A Dios por la fuerza y la salud que me ha dado durante todo este tiempo,
+sin dejarme caer.
+
+A mi maestro \texttt{Jose\ Martinez\ Battle} por el apoyo incondicional,
+tanto emocional como tecnico, por ser guia durante todo el trayecto, por
+ser paciente, y sobre todo por su disponibilidad para colaborar.
+
+A mi companero de carrera y amigo \texttt{Welifer\ Lebron} por su
+asesoramiento.
+
+A mis companeros
+\texttt{Saderis\ Carmona,\ Franklin\ Gomez,\ Randy\ Mueses,\ Frank\ de\ la\ Cruz\ y\ Cinthia\ Vanderpool}
+quienes estuvieron presente en este nuevo reto en el que nos embarcamos
+tres meses atras, y de los cuales he recibido apoyo emocional y tecnico,
+tambien por sus maneras de ayudarnos entre si a liberar estres.
+
+A mi madre \texttt{Denny\ Laureano}, mis hermanos
+\texttt{Darleny\ Linares,\ Dihana\ Carolina\ Linares\ y\ Jose\ Daniel\ Linares}
+por la comprension y el apoyo tanto moral como emocional durante este
+tiempo.
+
+A mis amistades por el apoyo, comprension y motivacion para que continue
+mis proyectos.
 
 \section{Información de soporte}\label{informaciuxf3n-de-soporte}
 

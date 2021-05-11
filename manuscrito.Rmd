@@ -40,7 +40,7 @@ En ese mismo orden es imprescindible conocer el concepto de cuenca fluvial o de 
 ## Revisión bibliográfica 
 Aspecto general de la cuenca y de la red
 
-El aspecto general de la cuenca y de la red se refiere a los parametros hidrogrñaficos que posee la cuenca (la acumulación de flujos y cálculo de su umbral, elevación, depresión, y otros). Según @castillo2015delimitacion, la acumulación de flujos señala a todas las celdas que desaguan en una en particular, la misma se adquiere partiendo de la dirección de la corriente o flujo. @venkatachalam2001automatic dicen que la acumulación de flujo de una celda se instituye de acuerdo a la sumatoria de los valores de la acumulación de flujo de las celdas proximas que drenan en ella.En cuanto al umbral, según @ESRI2012, se es necesario un raster de acumulación de flujo y la `porción mínima de celdas que componen una corriente de agua. También se refiere a la forma que adquiere la cuenca y a la forma de su red de drenaje, según la conformación de sus ríos y el material rocoso que la compone (patrones de drenaje). Varios autores expresan que existe una conexión entre la estructura que posee la red de drenaje con el material rocoso (@pedraza1996geomorfologia, @gutierrez2008geomorfologia, @howard1967drainage, @gregory1973drainage). 
+El aspecto general de la cuenca y de la red se refiere a los parámetros hidrográficos que posee la cuenca (la acumulación de flujos y cálculo de su umbral, elevación, depresión, y otros). Según @castillo2015delimitacion, la acumulación de flujos señala a todas las celdas que desaguan en una en particular, la misma se adquiere partiendo de la dirección de la corriente o flujo. @venkatachalam2001automatic dicen que la acumulación de flujo de una celda se instituye de acuerdo con la sumatoria de los valores de la acumulación de flujo de las celdas próximas que drenan en ella. En cuanto al umbral, según @ESRI2012, se es necesario un ráster de acumulación de flujo y la `porción mínima de celdas que componen una corriente de agua. También se refiere a la forma que adquiere la cuenca y a la forma de su red de drenaje, según la conformación de sus ríos y el material rocoso que la compone (patrones de drenaje). Varios autores expresan que existe una conexión entre la estructura que posee la red de drenaje con el material rocoso (@pedraza1996geomorfologia, @gutierrez2008geomorfologia, @howard1967drainage, @gregory1973drainage). 
 
 Orden de red y análisis hortoniano
 
@@ -48,24 +48,24 @@ El orden de red hace referencia al orden en el que se clasifican los cursos de a
 Para @bowden1964effect, el orden de red sostiene una relación entre las rocas con la configuración de la red fluvial y con los procesos tanto hidrológicos como erosivos.
 La clasificación de la red se hace de manera jerárquica. Hoy día existen múltiples normas para determinar la jerarquía de una red: Strahler (1952), Horton (1945), Shreve (1967), Scheidegger (1970), Leopold et al. (1964) Hack (1957) y Topological. 
 
-Dice @pinilla1993symposium que para los años 40 el análisis hortoniano habia sentado las bases de lo que hoy es la morfometría fluvial; por lo que la aplicación del analisis hortoniano al estudio de cuencas hidrográficas son imprecindibles. Para @horton1945erosional, la razón de bifurcación resulta ser la conexión entre el número de redes fluviales de una jerarquía asignada entre el número de redes de jerarquía mayor próxima.
+Dice @pinilla1993symposium que para los años 40 el análisis hortoniano había sentado las bases de lo que hoy es la morfometría fluvial; por lo que la aplicación del análisis hortoniano al estudio de cuencas hidrográficas son imprescindibles. Para @horton1945erosional, la razón de bifurcación resulta ser la conexión entre el número de redes fluviales de una jerarquía asignada entre el número de redes de jerarquía mayor próxima.
 
 Perfiles longitudinales e índice de concavidad de cursos más largos
 
-El perfil longitudinal de un curso de agua es una línea adquirida al representar las diversas alturas que se presentan desde el nacimiento de este hasta donde desagua (@gutierrez2008geomorfologia). Según @pedraza1996geomorfologia, por medio de los perfiles longitudinales es posible fundamentar definiciones en segmentos con geometría heterogénea (cóncavo, convexo y rectilíneo), o pendiente; las acomodaciones para cada parte a una función matematica; e incluso análisis geométricos basados en elementos físicos o evolutivos. @gutierrez2008geomorfologia, dice que el perfil longitudinal es generalmente cóncavo, aunque esta concavidad no está clara para muchos cursos fluviales. En cuanto al índice de concavidad, este no es más que un indicador que hace posible la evaluación del nivel de torcedura o curvatura del perfil longitudinal (@garzonmorfologia). Se calcula así, la superficie debajo del perfil longitudinal es extraída del total del área debajo del segmento que conecta los dos límites del perfil (@goldrick2007regional).
+El perfil longitudinal de un curso de agua es una línea adquirida al representar las diversas alturas que se presentan desde el nacimiento de este hasta donde desagua (@gutierrez2008geomorfologia). Según @pedraza1996geomorfologia, por medio de los perfiles longitudinales es posible fundamentar definiciones en segmentos con geometría heterogénea (cóncavo, convexo y rectilíneo), o pendiente; las acomodaciones para cada parte a una función matemática; e incluso análisis geométricos basados en elementos físicos o evolutivos. @gutierrez2008geomorfologia, dice que el perfil longitudinal es generalmente cóncavo, aunque esta concavidad no está clara para muchos cursos fluviales. En cuanto al índice de concavidad, este no es más que un indicador que hace posible la evaluación del nivel de torcedura o curvatura del perfil longitudinal (@garzonmorfologia). Se calcula así, la superficie debajo del perfil longitudinal es extraída del total del área debajo del segmento que conecta los dos límites del perfil (@goldrick2007regional).
 
 Morfometría de cuenca
 
-El análisis morfométrico abarca un conjunto de índices morfológicos que apuntan a un análisis detallado y cuantitativo de cuencas hidrográficas (@morais2010geomorfologia). El análisis morfométrico de cuencas hidrográficas se inicia por la ordenación de canales fluviales, con la finalidad de establecer una jerarquía fluvial. Esta, a su vez, consiste en el proceso de establecer la clasificación de determinado curso de agua (o el área drenada que le pertenece) en el conjunto total de la cuenca hidrográfica en la que se encuentra. Aunque, según el autor, esto se logra con la función de facilitar y volver más objetivos los estudios morfométricos sobre las cuencas hidrográficas (@christofoletti1988geomorfologia). En cuanto a la curva hipsométrica de una cuenca @strahler1952hypsometric dice que el porcentaje de la curva hipsométrica no es mas que la relación entre el área de la sección diagonal horizontal de una red de drenaje con una altitud relativa sobre la boca de la cuenca, e incluso estas curvas pueden ser explicadas y relacionadas a través del uso de parámetros bidimensionales. Y referenter a la integral Hipsométrica, @fernandez2016analise expresa que el cálculo de este índice mide como está distribuida la altitud del en una cuenca fluvial.
+El análisis morfométrico abarca un conjunto de índices morfológicos que apuntan a un análisis detallado y cuantitativo de cuencas hidrográficas (@morais2010geomorfologia). El análisis morfométrico de cuencas hidrográficas se inicia por la ordenación de canales fluviales, con la finalidad de establecer una jerarquía fluvial. Esta, a su vez, consiste en el proceso de establecer la clasificación de determinado curso de agua (o el área drenada que le pertenece) en el conjunto total de la cuenca hidrográfica en la que se encuentra. Aunque, según el autor, esto se logra con la función de facilitar y volver más objetivos los estudios morfométricos sobre las cuencas hidrográficas (@christofoletti1988geomorfologia). En cuanto a la curva hipsométrica de una cuenca @strahler1952hypsometric dice que el porcentaje de la curva hipsométrica no es más que la relación entre el área de la sección diagonal horizontal de una red de drenaje con una altitud relativa sobre la boca de la cuenca, e incluso estas curvas pueden ser explicadas y relacionadas a través del uso de parámetros bidimensionales. Y referente a la integral Hipsométrica, @fernandez2016analise expresa que el cálculo de este índice mide como está distribuida la altitud en una cuenca fluvial.
 
 Este estudio proporciona nueva información sobre la cuenca del río Guayubín en el campo de Morfometría fluvial, sabiendo que este es el primer estudio morfométrico que se realiza a la cuenca; y además este posee un script el cual permite su reproducción sin coste alguno.
-En específico, se indaga en el aspecto general de la cuenca y de la red, el umbral de acumulación de flujo en numero de celdas, la forma que posee la cuenca y su red de drenaje, considerando la relación que tiene la forma de la cuenca y la forma de su red de drenaje con el material rocoso y el relieve (hidrología-topografía-litología). 
-También, en el orden de red y la implementación del analisis hortoniano se tiene interes en la forma en la que se organiza o clasifica el orden de red asignado a cada curso fluvial en la cuenca, así como la razón de bifurcación de los órdenes de red fluvial. 
-En cuanto a los perfiles longitudinales y sus indices de concavidad se estudia la geometría que posee cada segmento de los cursos, en este caso el de los más largos; tomando en consideración las diversas alturas presentes en el curso. Y, por último, nos interesa examinar la cuenca de forma cuantitativa, para conocer sus medidas básicas (área, perímetro, numero de orden de redes, pendiente, etc.).
-El interés de este estudio es indar e interpretar lo siguiente: rango de umbral de acumulación, forma de la cuenca, forma de su red de drenaje, fenómenos que pueden afectar a la cuenca, si existe un patrón en la cuenca acorde a su red drenaje, si existe la relación litología-perfil longitudinal e índice de concavidad de los cursos de aguas más largos, y, por último, conocer la relación de las características litológicas y estructurales de la cuenca. 
+En específico, se indaga en el aspecto general de la cuenca y de la red, el umbral de acumulación de flujo en número de celdas, la forma que posee la cuenca y su red de drenaje, considerando la relación que tiene la forma de la cuenca y la forma de su red de drenaje con el material rocoso y el relieve (hidrología-topografía-litología). 
+También, en el orden de red y la implementación del análisis hortoniano se tiene interés en la forma en la que se organiza o clasifica el orden de red asignado a cada curso fluvial en la cuenca, así como la razón de bifurcación de los órdenes de red fluvial. 
+En cuanto a los perfiles longitudinales y sus índices de concavidad se estudia la geometría que posee cada segmento de los cursos, en este caso el de los más largos; tomando en consideración las diversas alturas presentes en el curso. Y, por último, nos interesa examinar la cuenca de forma cuantitativa, para conocer sus medidas básicas (área, perímetro, número de orden de redes, pendiente, etc.).
+El interés de este estudio es indagar e interpretar lo siguiente: rango de umbral de acumulación, forma de la cuenca, forma de su red de drenaje, fenómenos que pueden afectar a la cuenca, si existe un patrón en la cuenca acorde a su red drenaje, si existe la relación litología-perfil longitudinal e índice de concavidad de los cursos de aguas más largos, y, por último, conocer la relación de las características litológicas y estructurales de la cuenca. 
 
 # Área de estudio
-La cuenca del río Guayubín se encuentra entre las morforegiones Cordillera Central y Valle del Cibao Occidental, en la República Dominicana (latitud 19.46$^\circ$N, longitud -71.41$^\circ$W), entre las provincias Santiago Rodríguez, Monte Cristi y Dajabón. En la provincia Dajabón engloba de forma completa el municipio El Pino, y de manera parcial los municipios Loma de Cabrera y Partido; en la provincia Monte Cristi contiene parcialmente los municipios Las Matas de Santa Cruz y Guayubín; y en la provincia Santiago Rodríguez comprende los municipios Villa Los Almácigos y San Ignacio de Sabaneta. Los munipicpios más poblados en el interior de la cuenca son Guayubín (35,923 hab.), San Ignacio de Sabaneta (34,540 hab), y Loma de Cabrera (15,624 hab). (Ver figura \ref {mapacuenca}).
+La cuenca del río Guayubín se encuentra entre las morforegiones Cordillera Central y Valle del Cibao Occidental, en la República Dominicana (latitud 19.46$^\circ$N, longitud -71.41$^\circ$W), entre las provincias Santiago Rodríguez, Monte Cristi y Dajabón. En la provincia Dajabón engloba de forma completa el municipio El Pino, y de manera parcial los municipios Loma de Cabrera y Partido; en la provincia Monte Cristi contiene parcialmente los municipios Las Matas de Santa Cruz y Guayubín; y en la provincia Santiago Rodríguez comprende los municipios Villa Los Almácigos y San Ignacio de Sabaneta. Los municipios más poblados en el interior de la cuenca son Guayubín (35,923 hab.), San Ignacio de Sabaneta (34,540 hab), y Loma de Cabrera (15,624 hab). (Ver figura \ref {mapacuenca}).
 
 La cuenca del río Guayubín, según @Mmar2015cuenca, abarca una área de 770.35 km\textsuperscript{2}. 
 De acuerdo con el mapa de @Mmar2015cuenca, la cabecera del rio Guayubín se ubica en la vertiente noroeste de el Cerro La Pelada, en un paraje denominado Palo Amarillo; mientras que sus aguas se vierten en el río Yaque del Norte, en la localidad Guayubín. 
@@ -73,47 +73,47 @@ De acuerdo con el mapa de @Mmar2015cuenca, la cabecera del rio Guayubín se ubic
 ![Cuenca del río Guayubín\label{mapacuenca}](Mapa final.png){width=100%}
 
 # Materiales y Metodología
-Para el estudio morfométrico de la cuenca Guayubín se usó softwares de código abierto como medio para procesar datos estadísticos y modelos digitales con la finalidad de generar las informaciones ha analizar e interpretar.
+Para el estudio morfométrico de la cuenca Guayubín se usó softwares de código abierto como medio para procesar datos estadísticos y modelos digitales con la finalidad de generar las informaciones a analizar e interpretar.
 
 ## Materiales
 
 |           Materiales          	|                                                                                                                      Uso                                                                                                                     	|
 |:-----------------------------:	|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:	|
-|            RStudio            	| donde se redactó el manuscrito, se procesaron los datos que ofrece el DEM de la cuenca a traves de un script en el que se usaron paquetes que produjeran los resultados.                                                                     	|
-|        library rgrass7        	| es una interfaz que permite establecer una conexión entre la version 7 del sistema de infromacion geográfica GRASS, y R, que crea un entorno GRASS desechable dentro de R.                                                                   	|
-|           library sp          	| este paquete sirve para la importación, manipulación y exportación de datos espaciales en R, y para métodos que incluyen imprimir / mostrar, trazar, entre otros.                                                                            	|
-|           library sf          	| crea caracteristicas simples (simple features), que amplían los objetos tipo data.frame con una columna de lista de características simples.                                                                                                 	|
-|         library raster        	| este paquete proporciona clases y funciones para manipular datos geográficos (espaciales) en formato 'ráster'.                                                                                                                               	|
-|        library leaflet        	| esta función crea un widget de mapa de folletos utilizando htmlwidgets. El widget se puede representar en páginas HTML generadas a partir de R Markdown, y otros.                                                                            	|
-|         library leafem        	| es un paquete que provee una extensión para leaflet uasados para paquetes mapview, permite mostrar las coordenadas de la posición del puntero del mouse, consultar valores de imagen a través de puntero del mouse y botones de zoom a capa. 	|
-|        library mapview        	| el paquete proporciona funcionalidad para ver objetos espaciales de forma interactiva.                                                                                                                                                       	|
-|         library readr         	| el objetivo de 'readr' es proporcionar una forma rápida y amigable de leer datos rectangulares (como 'csv', 'tsv' y 'fwf').                                                                                                                  	|
-|        QGIS with GRASS        	| para la visualización de vectores y rasters generados con RStudio en una región de GRASS,como la visualización de los mapas Topológicos y Geológicos de la República Dominicana, tambien, para la creación de algunos mapas de localización. 	|
+|            RStudio            	| se redactó el manuscrito, se procesaron los datos que extraídos del DEM de la cuenca a través de un script.                                                                     	|
+|        library rgrass7        	| se creó una interfaz que permitió establecer una conexión entre la version 7 del sistema de infromacion geográfica GRASS, y R, que crea un entorno GRASS desechable dentro de R.                                                                   	|
+|           library sp          	| este paquete se utilizó para la importación, manipulación y exportación de datos espaciales en R, y para imprimir / mostrar de los mismos.                                                                            	|
+|           library sf          	| con esto se crearon caracteristicas simples (simple features), que amplían los objetos tipo data.frame con una columna de lista de características simples.                                                                                                 	|
+|         library raster        	| este paquete se usó para manipular datos geográficos (espaciales) en formato 'ráster'.                                                                                                                               	|
+|        library leaflet        	| esta función se utilizó para representar los vectores y rásters                                                                        	|
+|         library leafem        	|  se usó para proveer una extensión para leaflet usados para paquetes mapview, permite mostrar las coordenadas de la posición del puntero del mouse, consultar valores de imagen a través de puntero del mouse y botones de zoom a capa. 	|
+|        library mapview        	| el paquete permitió ver los objetos espaciales de forma interactiva.                                                                                                                                                       	|
+|         library readr         	| se utilizó pata leer datos rectangulares (como 'csv', 'tsv' y 'fwf').                                                                                                                  	|
+|        QGIS with GRASS        	| se usó para la visualización de vectores y rasters generados con RStudio en una región de GRASS, y la visualización de los mapas Topológicos y Geológicos de la República Dominicana, tambien, para la creación de algunos mapas de localización. 	|
 |          Google Earth         	| para observar datos en formato kml generados y exportados de RStudio y asi como la representacion del relieve del lugar de estudio.                                                                                                          	|
-|     Mapa Topológico de RD     	| para hacer comparaciones y obtener referencias sobre el relieve.                                                                                                                                                                             	|
-| Mapa Geológico Nacional de RD 	| para hacer comparaciones y obtener referencias sobre la composición rocosa y los años que datan estas.                                                                                                                                       	|
+|     Mapa Topológico de RD     	| se utilizó para hacer comparaciones y obtener referencias sobre el relieve.                                                                                                                                                                             	|
+| Mapa Geológico Nacional de RD 	| se usó para hacer comparaciones y obtener referencias sobre la composición rocosa y los años que datan estas.                                                                                                                                       	|
 
 ## Metodología
-Para el desarrolo del estudio lo primero a realizar fue crear una region de GRASS en R,  importar fuentes y definir la extensión y resolución (DEM). Luego, explorar básicos entre GRASS y R.
+Para el desarrollo del estudio lo primero a realizar fue crear una región de GRASS en R, importar fuentes y definir la extensión y resolución (DEM). Luego, explorar básicos entre GRASS y R.
 
 ### Aspecto de la cuenca y de la red de drenaje.
-Los parametros de la cuenca fueron calculados por medio de el addon de GRASS GIS `r.watershed` (@watershedcharles), utilizando un Dem. Los parametros calculados fueron acumulación, elevación, depresión, drenaje, flujo, cuenca y media cuenca, con un umbral de acumulación de flujo de 80 celdas necesarias para que exista una red de agua. Luego, las capas generadas fueron ingresadas a R con la `librería sp` y manejadas con la `librería raster`.
-Se usó el addon `r.water.outlet` (@wateroutlet) para la extraccion de la cuenca se usaron los parametros siguientes: de entrada un mapa de direccion de drenajes (creado con el addon `r.watershed`), de coordenadas de desembocadura de la cuenca (obtenidas con la `librería Mapview`), y de salida el nombre de la cuenca. Asi mismo, se usó el addon `r.to.vect` (@tovect), para convertir el raster resultante en vectorial, con los parametros a continuación: de entrada el mapa raster de la cuenca, de salida el nombre del vectorial y para la característica de salida se usó el área. Al final de la operación los resultados fueron llevados a R.
-Para estraer la red de drenaje se aplico el addon `r.stream.extract` (@streamnextractmarkus), usando los parametros: elevación, umbral de acumulación, mapa raster de flujos y mapa vectorial de flujos. Luego los resultados de este procedimiento fueron llevados a R.
+Los parámetros de la cuenca fueron calculados por medio del addon de GRASS GIS `r.watershed` (@watershedcharles), utilizando un Dem. Los parámetros calculados fueron acumulación, elevación, depresión, drenaje, flujo, cuenca y media cuenca, con un umbral de acumulación de flujo de 80 celdas necesarias para que exista una red de agua. Luego, las capas generadas fueron ingresadas a R con la `librería sp` y manejadas con la `librería raster`.
+Se usó el addon `r.water.outlet` (@wateroutlet) para la extracción de la cuenca se usaron los parámetros siguientes: de entrada un mapa de dirección de drenajes (creado con el addon `r.watershed`), de coordenadas de desembocadura de la cuenca (obtenidas con la `librería Mapview`), y de salida el nombre de la cuenca. Así mismo, se usó el addon `r.to.vect` (@tovect), para convertir el ráster resultante en vectorial, con los parámetros a continuación: de entrada el mapa ráster de la cuenca, de salida el nombre del vectorial y para la característica de salida se usó el área. Al final de la operación los resultados fueron llevados a R.
+Para extraer la red de drenaje se aplicó el addon `r.stream.extract` (@streamnextractmarkus), usando los parámetros: elevación, umbral de acumulación, mapa ráster de flujos y mapa vectorial de flujos. Luego los resultados de este procedimiento fueron llevados a R.
 
 ### Orden de red y análisis hortoniano.
-En cuanto al orden de red y el análisis hortoniano, se usó el addon `r.stream.extract` (@streamnextractmarkus), para producir un mapa de dirección de flujo con los parametros: de entrada un modelo de elevación, un umbral de acumulación y de sálida el nombre del mapa. Para la creación de mapas de ordenes de redes generados con `r.stream.order` (@streamorder) se usaron los parametros: de entrada un mapa raster de red de arroyos, un modelo de elevación, un mapa de direccion de flujos, un mapa de acumulación, de sálida un vector con todos los atributos de los fliujos, y a sálida de los vectores con los ordenes de redes según Strahler, Horton, Shreve, Hack y Topo.
-Para analizar el orden de red de la cuenca se utilizó la clasificación de Strahler. Mientras que se usaron los addons `r.info` (@rinfo), para obtener los valores minimos y maximos del orden de red segun Strahler a partir de un raster; para delimitar la cuenca a traves de la red de drenaje se utilizo `r.stream.basins` (@streambasinsjareck), los parametros usados son: de entrada un mapa de direccion de flujos, un mapa mascara de flujos, rango de valores de categorias, y de sálida el nombre del mapa.
-En cuanto a las estadísticas según orden de red de Horton para las redes de Strahler y Horton se uso el addon `r.stream.stats` (@streamstats), para resumir las estadisticas; los parámetros a usados fueron: de entrada un  raster de red de arroyos, un raster de dirección de flujos, un modelo de elevación y de sálida el nombre del archivo.
+En cuanto al orden de red y el análisis hortoniano, se usó el addon `r.stream.extract` (@streamnextractmarkus), para producir un mapa de dirección de flujo con los parámetros: de entrada un modelo de elevación, un umbral de acumulación y de salida el nombre del mapa. Para la creación de mapas de ordenes de redes generados con `r.stream.order` (@streamorder) se usaron los parámetros: de entrada un mapa ráster de red de arroyos, un modelo de elevación, un mapa de dirección de flujos, un mapa de acumulación, de salida un vector con todos los atributos de los flujos, y a salida de los vectores con los órdenes de redes según Strahler, Horton, Shreve, Hack y Topo.
+Para analizar el orden de red de la cuenca se utilizó la clasificación de Strahler. Mientras que se usaron los addons `r.info` (@rinfo), para obtener los valores mínimos y máximos del orden de red según Strahler a partir de un ráster; para delimitar la cuenca a través de la red de drenaje se utilizó `r.stream.basins` (@streambasinsjareck), los parámetros usados son: de entrada un mapa de dirección de flujos, un mapa mascara de flujos, rango de valores de categorías, y de salida el nombre del mapa.
+En cuanto a las estadísticas según orden de red de Horton para las redes de Strahler y Horton se usó el addon `r.stream.stats` (@streamstats), para resumir las estadísticas; los parámetros a usados fueron: de entrada un  ráster de red de arroyos, un ráster de dirección de flujos, un modelo de elevación y de salida el nombre del archivo.
 
 ### Índices de concavidad y perfiles longitudinales.
-Para calcular los índices de concavidad y los perfiles longitudinales, primero, se obtuvieron los cursos mas largos de la cuenca a traves de la función `LfpNetwork` (@lfpnetjose), usando coordenadas de desembocadura de la cuenca obtenidas con la  `librería Mapview`, vectores de ordenes de red, mapa de flujo de dirección y un sufijo de sálida para los resultados que se generen.
-Segundo, para producir los perfiles longitudinales e índices de cocavidad se empleo la función `LfpProfilesConcavity` (@lfpconcajose), utilizando como parámetro la red de cursos de agua más largos, coordenadas de desembocadura, un dem, un mapa de flujos de drenaje, un prefijo, un sistema de referencia de coordenadas, un parametro de suavizado y un número de filas de los perfiles.
+Para calcular los índices de concavidad y los perfiles longitudinales, primero, se obtuvieron los cursos más largos de la cuenca a través de la función `LfpNetwork` (@lfpnetjose), usando coordenadas de desembocadura de la cuenca obtenidas con la `librería Mapview`, vectores de ordenes de red, mapa de flujo de dirección y un sufijo de salida para los resultados que se generen.
+Segundo, para producir los perfiles longitudinales e índices de concavidad se empleó la función `LfpProfilesConcavity` (@lfpconcajose), utilizando como parámetro la red de cursos de agua más largos, coordenadas de desembocadura, un dem, un mapa de flujos de drenaje, un prefijo, un sistema de referencia de coordenadas, un parámetro de suavizado y un número de filas de los perfiles.
 
 ### Morfometría de cuenca.
-Tras crear una nueva región de GRASS en R, se continuó con convertir a números enteros la extensión y la resolución del DEM con las funciones `integerextent` (@intext), y `xyvector` (@xyvector). Tambien, se usó la herramienta `gdalwarp` (@gdalwarp), para reproyectar y deformar raster. Se utilizaron los addons `g.proj` (@gproj), y `r.in.gdal` (@ringdal), para importar a la sesion de GRASS.
+Tras crear una nueva región de GRASS en R, se continuó con convertir a números enteros la extensión y la resolución del DEM con las funciones `integerextent` (@intext), y `xyvector` (@xyvector). También, se usó la herramienta `gdalwarp` (@gdalwarp), para reproyectar y deformar ráster. Se utilizaron los addons `g.proj` (@gproj), y `r.in.gdal` (@ringdal), para importar a la sesión de GRASS.
 Se usó el addon `r.stream.extract` (@streamnextractmarkus), para generar una red de drenaje y obtener coordenadas a continuación, y que serían, luego, transformadas a EPSG (@EPSG), como número entero con la función `My_Trans` (@Mytransjose).
-En cuanto a la obtención de los parámetros morfométricos de la cuenca se usa el addon `r.basin` (@basinmargherita), con los parámetros siguientes: un modelo de elevación, un prefijo de sálida, coordenadas de la sálida de la cuenca, umbral de acumulación, y un directorio donde se ubicará el archivo de salida. Los vectores obtenidos cson transformados a EPGS (@EPSG), y asi visualizar con la `librería Leaflet`. Y para poder explorar los parámetros de la cuenca se usó la `librería Readr`. 
+En cuanto a la obtención de los parámetros morfométricos de la cuenca se usa el addon `r.basin` (@basinmargherita), con los parámetros siguientes: un modelo de elevación, un prefijo de salida, coordenadas de la salida de la cuenca, umbral de acumulación, y un directorio donde se ubicará el archivo de salida. Los vectores obtenidos son transformados a EPGS (@EPSG), y asi visualizar con la `librería Leaflet`. Y para poder explorar los parámetros de la cuenca se usó la `librería Readr`. 
 Finalmente, para el cálculo de la curva y la integral hipsométrica, lo primero fue representar las cuencas con las librerías `Sp` y `Mapview`; y segundo, calcular la integral y curva hipsométrica utilizando la función `HypsoIntCurve` (@Hypsocjose), usando de parámetros los vectores de arroyos de cuenca de orden 2 y 3, un modelo de elevación, un asignador de campos, el número de filas y una etiqueta de tamaño.
 
 # Resultados
@@ -121,38 +121,37 @@ El fruto del estudio realizado a la cuenca del río Guayubín aplicando la metod
 
 ## Aspecto general de la cuenca y de la red de drenaje. 
 
-Tras cálcular los parámetros hidrograficos de la cuenca con `r.watershed` se obtuvo un raster de tres grupos de capas (DEM, basins y str), que con la ayuda de `leaflet` se visualiza un mapa mostrando las subcuencas, las redes fluviales y el DEM, de la cuenca sin delimitar. (Ver figura\ref{capas}).
+Tras cálcular los parámetros hidrográficos de la cuenca con `r.watershed` se obtuvó un ráster de tres grupos de capas (DEM, basins y str), que con la ayuda de `leaflet` se visualiza un mapa mostrando las subcuencas, las redes fluviales y el DEM, de la cuenca sin delimitar (Ver figura\ref{capas}).
 
-![Capas generadas al calcular los parámetros hidrográficos de la cuenca\label{capas}](capas.png){width=60%}
+![Capas generadas al calcular los parámetros hidrográficos de la cuenca\label{capas}](capas.png){width=80%}
 
-La cuenca extraida con `r.water.outlet` produjo un raster de cuenca delimitada denominado `guayubin-basin`, que luego paso a ser un vector llamado `guayubin_basin` usando el addon `r.to.vect`. (Ver figura\ref{cuencavectorial}).  Tras ser llevada la cuenca ser llevada a R como vector, obtuvo el nombre `guayu_bas`. Aqui representada con `leaflet` (ver figura\ref{cuenca delimitada})
+La cuenca extraída con `r.water.outlet` produjo un ráster de cuenca delimitada denominado `guayubin-basin`, que luego, paso a ser un vector llamado `guayubin_basin` usando el addon `r.to.vect`. (Ver figura\ref{cuencavectorial}).  Tras la cuenca ser llevada  a R como vector, obtuvó el nombre `guayu_bas` (ver figura\ref{cuenca delimitada})
 
-![Vectorial de la cuenca del río Guayubín\label{cuencavectorial}](cuenca extraida.png){width=50%}
+![Cuenca del río Guayubín\label{cuencavectorial}](cuenca extraida.png){width=50%}
 
-![Cuenca del río Guayubín delimitada\label{cuenca delimitada}](cuenca delimitada.png){width=50%}
+![Cuenca del río Guayubín delimitada\label{cuenca delimitada}](cuenca delimitada.png){width=70%}
 
-En cuanto a la red de drenaje extraida con `r.stream.extract` se generó un raster y un vector con redes fluviales formadas a partir de un umbral de 80 celdas, denominados `guayubin-stream-de-rstr` y `guayubin_stream_de_rstr`, respectivamente. Estos productos tras ser llevados a R, como `guayu_net` para el vector y `guayu_net_r` para el raster. Estos pueden ser visualizados con `leaflet` (ver figura\ref{red de drenaje extraida}).
+En cuanto a la red de drenaje extraída con `r.stream.extract`, se generó un ráster y un vector con redes fluviales formadas a partir de un umbral de 80 celdas, denominados `guayubin-stream-de-rstr` y `guayubin_stream_de_rstr`, respectivamente. Estos productos tras ser llevados a R, como `guayu_net` para el vector y `guayu_net_r` para el ráster (ver figura\ref{red de drenaje extraida}).
 
 ![Red de drenaje del río Guayubín\label{red de drenaje extraida}](red de drenaje extraida.png){width=70%}
 
 ## Orden de red analisis hortoniano
 
-Con el addon `r.stream.extract` se creó un mapa raster de direccion de flujos de nombre `drainage-dir-de-rstr`. Mientras que con el addons `r.stream.order` se generaró un vector que contiene los atributos de la red (`order_all`), y mapas rasters de ordenes de red basados en las clasificaciones de Strahler, Horton, Shreve, Hack y Topo (@streamorder). Aqui visualizada la capa vectorial de todos los ordenes con simbologia unica, en `leaflet` (ver figura\ref{unica}). Aqui visualizada en `leaflet` con simbologia que aplica grosor segun su orden de red (ver figura\ref{grosor}).
+Con el addon `r.stream.extract` se creó un mapa ráster de dirección de flujos de nombre `drainage-dir-de-rstr`. Mientras que, con el addons `r.stream.order` se generaró un vector que contiene los atributos de la red (`order_all`), y mapas rásters de ordenes de red basados en las clasificaciones de Strahler, Horton, Shreve, Hack y Topo (@streamorder). Aqui visualizada la capa vectorial de todos los ordenes con simbología unica, (ver figura\ref{unica}). Y con simbología que aplica grosor según su orden de red (ver figura\ref{grosor}).
 
-![Ordenes de red del rio Guayubin con simbologia unica\label{unica}](ordenes de red.png){width=50%}
+![Ordenes de red del río Guayubín con simbología única\label{unica}](ordenes de red.png){width=100%}
 
-![Ordenes de red del rio Guayubin con simbologia aplicando grosor segun su orden\label{grosor}](orden de red mapa 2.png){width=50%}
+![Ordenes de red del río Guayubín con simbología aplicando grosor según su orden\label{grosor}](orden de red mapa 2.png){width=80%}
 
-Se ordenó y clasificó cada tramo fluvial de la cuenca según Strahler donde usando el addon `r.info`, se obtuvo el orden de red máximo es 5 y el minimo es de 1 . Despues de delimitar las cuencas con `r.basin`, se genero un raster que se transformo a vectorial.
-Aqui se visualizan las cuencas delimitadas y los ordenes de red (ver figura\ref{subcuencas}).
+Se ordenó y clasificó cada tramo fluvial de la cuenca según Strahler, donde usando el addon `r.info` se obtuvó el orden de red máximo (5) y el minimo (1) . Después de delimitar las cuencas con `r.basin`, se generó un ráster que se transformó a vectorial luego (ver figura\ref{subcuencas}).
 
-![Subcuencas y ordenes de red del rio Guayubin\label{subcuencas}](cuencas delimitadas y ordenes de red.png){width=70%}
+![Subcuencas y ordenes de red del río Guayubín\label{subcuencas}](cuencas delimitadas y ordenes de red.png){width=70%}
 
-Las estadísticas de red resumidas por orden de red según la clasificación de Strahler, obtenidas con `r.stream.stats`, se produjo un documento resumido de sobre los ordenes de red, con esto mismo fue posible calcular la razon de bifurcacion (4.064346). (ver figura\ref {grafnumero}).
+Las estadísticas de red resumidas por orden de red según la clasificación de Strahler, obtenidas con `r.stream.stats`, produjeron un documento resumido de sobre los ordenes de red, y con el que se calculó la razón de bifurcación, equivalente a 4.064346 (ver figura\ref {grafnumero}).
 
-![Número de redes segun su orden y Razon de bifurcacion por medio de coeficientes de regresion\label{grafnumero}](Numero de red segun su orden.png){width=80%}
+![Número de redes según su orden y Razón de bifurcación\label{grafnumero}](Numero de red segun su orden.png){width=80%}
 
-Asi tambien se obtuvieron con el mismo addon `r.stream.stats`, estadisticas mas amplias sobre la red.
+Así mismo, se obtuvieron con el mismo addon `r.stream.stats`, estadísticas más amplias sobre la red.
 
 Summary:
 
@@ -209,25 +208,25 @@ Averaged stream ratios with standard deviations:
 
 ## Índices de concavidad y perfiles longitudinales
 
-Con la función `LfpNetwork` obtuvieron los cursos mas largos de la red de drenaje en formato vectorial y raster, con el sufijo de sálida `Gyb`. Para representarlo con `leaflet` se uso el archivo vectorial resultante de la operación anterior (ver figura\ref{lfpnet}).
+Con la función `LfpNetwork` se obtuvieron los cursos más largos de la red de drenaje en formato vectorial y ráster, con el sufijo de salida `Gyb`. Para representarlo con `leaflet` se usó el archivo vectorial resultante de la operación anterior (ver figura\ref{lfpnet}).
 
-![Cursos fluviales mas largos de la cuenca del rio Guayubin\label{lfpnet}](cursos mas largos.png){width=60%}
+![Cursos fluviales mas largos de la cuenca del río Guayubín\label{lfpnet}](cursos mas largos.png){width=100%}
 
-Mientras tanto, el producto de aplicar la funcion `LfpProfilesConcavity` fueron los perfiles longitudinales (ver figura\ref{plongitudinal}), y sus indices de concavidad, bajo el prefijo `Gyb` (ver figura\ref{indicec}).
+Mientras tanto, el producto obtenido de aplicar la función `LfpProfilesConcavity` fueron los perfiles longitudinales (ver figura\ref{plongitudinal}), y sus índices de concavidad, bajo el prefijo `Gyb` (ver figura\ref{indicec}).
 
-![Perfiles longitudinales de los cursos mas largos en la cuenca Guayubin\label{plongitudinal}](perfiles longitudinales.png){width=100%}
+![Perfiles longitudinales de los cursos más largos en la cuenca del río Guayubín\label{plongitudinal}](perfiles longitudinales.png){width=100%}
 
-![Perfiles longitudinales e indices de concavidad de los cursos mas largos en la cuenca del rio Guayubin\label{indicec}](Indices de concavidad.png){width=100%}
+![Perfiles longitudinales e índices de concavidad de los cursos más largos en la cuenca del río Guayubín\label{indicec}](Indices de concavidad.png){width=100%}
 
-## Morfometria de cuenca
+## Morfometría de cuenca
 
-El calculo morfometrico de la cuenca fue realizado con el addon `r.basin`, generando vectoriales y raster de la cuenca y de su red de drenaje. Luego, los vectoriales fueron transformados a `EPSG: 4326` (ver figura\ref{vectoresrbasin}).
+El cálculo morfométrico de la cuenca fue realizado con el addon `r.basin`, generando archivos en formato vectorial y ráster de la cuenca y de su red de drenaje. Luego, los vectores fueron transformados a `EPSG: 4326` (ver figura\ref{vectoresrbasin}).
 
-![Cuenca del rio Guayubin con su red de drenaje y su curso mas largo\label{vectoresrbasin}](cuenca-red de drenaje-curso mas largo.png){width=50%}
+![Cuenca del río Guayubín con su red de drenaje y su curso más largo\label{vectoresrbasin}](cuenca-red de drenaje-curso mas largo.png){width=60%}
 
-Parametros morfometricos de la cuenca
+Parámetros morfométricos de la cuenca del río Guayubín
 
-|                           Parametros                          	|          Valores          	|
+|                           Parámetros                          	|          Valores          	|
 |:-------------------------------------------------------------:	|:-------------------------:	|
 |                    Easting Centroid of basin                  	|       246465.00       	|
 |                   Northing Centroid of basin                  	|       2151675.00      	|
@@ -262,7 +261,146 @@ Parametros morfometricos de la cuenca
 |                       Area ratio (Horton)                     	|         4.3704        	|
 |                      Slope ratio (Horton)                     	|         1.4689        	|
 
-Y en el calculo de la curva e integral hysometrica, realizados con la funcion `HypsoIntCurve`, las informaciones generadas fueron 
+Para la curva e integral hipsométrica, calculada con la función `HypsoIntCurve`, se obtuvieron los datos para las cuencas de red de drenaje de orden 2 (ver figura\ref{hypsob2} y figura\ref{hypb2}), y cuencas de red de drenaje de orden 3 (ver figura\ref{hypsob3} y figura\ref{hypb3}).
+
+Integral hipsométrica en las cuencas de red de orden 2. 
+
+| Categoría 	| Integral hipsométrica 	|
+|:---------:	|:---------------------:	|
+|     1     	|      1 0.23784092     	|
+|     2     	|      2 0.29691935     	|
+|     3     	|      3 0.31478851     	|
+|     4     	|      4 0.25845620     	|
+|     5     	|      5 0.18914104     	|
+|     6     	|      6 0.38449116     	|
+|     7     	|      7 0.25087104     	|
+|     8     	|      9 0.26943542     	|
+|     9     	|     10 0.19779399     	|
+|     10    	|     11 0.19287436     	|
+|     11    	|     12 0.17808813     	|
+|     12    	|     13 0.22437828     	|
+|     13    	|     14 0.40595651     	|
+|     14    	|     15 0.25477715     	|
+|     15    	|     16 0.19777159     	|
+|     16    	|     17 0.25313336     	|
+|     17    	|     18 0.22679929     	|
+|     18    	|     19 0.30597060     	|
+|     19    	|     20 0.30564285     	|
+|     20    	|     21 0.24773997     	|
+|     21    	|     22 0.21800099     	|
+|     22    	|     23 0.33229314     	|
+|     23    	|     24 0.40758028     	|
+|     24    	|     25 0.27096759     	|
+|     25    	|     26 0.17485732     	|
+|     26    	|     28 0.25721054     	|
+|     27    	|     29 0.27907973     	|
+|     28    	|     30 0.23545394     	|
+|     29    	|     32 0.24544610     	|
+|     30    	|     33 0.18990261     	|
+|     31    	|     34 0.22303577     	|
+|     32    	|     35 0.14436574     	|
+|     33    	|     36 0.30229714     	|
+|     34    	|     37 0.30742281     	|
+|     35    	|     38 0.34876647     	|
+|     36    	|     39 0.39371293     	|
+|     37    	|     40 0.14419677     	|
+|     38    	|     41 0.36397062     	|
+|     39    	|     42 0.45795809     	|
+|     40    	|     43 0.07642614     	|
+|     41    	|     45 0.48672629     	|
+|     42    	|     46 0.29182502     	|
+|     43    	|     47 0.47300056     	|
+|     44    	|     48 0.22892086     	|
+|     45    	|     49 0.50910119     	|
+|     46    	|     50 0.16011357     	|
+|     47    	|     51 0.14325914     	|
+|     48    	|     52 0.30243670     	|
+|     49    	|     53 0.22622911     	|
+|     50    	|     54 0.27985062     	|
+|     51    	|     55 0.16980308     	|
+|     52    	|     57 0.38363564     	|
+|     53    	|     58 0.29000326     	|
+|     54    	|     59 0.23691203     	|
+|     55    	|     60 0.30564446     	|
+|     56    	|     61 0.30401039     	|
+|     57    	|     62 0.25939942     	|
+|     58    	|     63 0.16711030     	|
+|     59    	|     64 0.14693431     	|
+|     60    	|     65 0.19359746     	|
+|     61    	|     66 0.17854689     	|
+
+Integral hipsométrica en las cuencas de red de orden 3.
+
+| Categoría 	| Integral hipsométrica 	|
+|:---------:	|:---------------------:	|
+|     1     	|      1 0.28106607     	|
+|     2     	|      2 0.24855493     	|
+|     3     	|      4 0.12697883     	|
+|     4     	|      5 0.21021494     	|
+|     5     	|      6 0.18586633     	|
+|     6     	|      8 0.40849637     	|
+|     7     	|      9 0.33264116     	|
+|     8     	|     10 0.15880640     	|
+|     9     	|     11 0.34507681     	|
+|     10    	|     12 0.32371339     	|
+|     11    	|     13 0.33707592     	|
+|     12    	|     15 0.32319904     	|
+|     13    	|     16 0.06673204     	|
+|     14    	|     17 0.15091492     	|
+|     15    	|     18 0.14111015     	|
+|     16    	|     19 0.29051932     	|
+|     17    	|     20 0.15859746     	|
+|     19    	|     20 0.30564285     	|
+|     20    	|     21 0.24773997     	|
+|     21    	|     22 0.21800099     	|
+|     22    	|     23 0.33229314     	|
+|     23    	|     24 0.40758028     	|
+|     24    	|     25 0.27096759     	|
+|     25    	|     26 0.17485732     	|
+|     26    	|     28 0.25721054     	|
+|     27    	|     29 0.27907973     	|
+|     28    	|     30 0.23545394     	|
+|     29    	|     32 0.24544610     	|
+|     30    	|     33 0.18990261     	|
+|     31    	|     34 0.22303577     	|
+|     32    	|     35 0.14436574     	|
+|     33    	|     36 0.30229714     	|
+|     34    	|     37 0.30742281     	|
+|     35    	|     38 0.34876647     	|
+|     36    	|     39 0.39371293     	|
+|     37    	|     40 0.14419677     	|
+|     38    	|     41 0.36397062     	|
+|     39    	|     42 0.45795809     	|
+|     40    	|     43 0.07642614     	|
+|     41    	|     45 0.48672629     	|
+|     42    	|     46 0.29182502     	|
+|     43    	|     47 0.47300056     	|
+|     44    	|     48 0.22892086     	|
+|     45    	|     49 0.50910119     	|
+|     46    	|     50 0.16011357     	|
+|     47    	|     51 0.14325914     	|
+|     48    	|     52 0.30243670     	|
+|     49    	|     53 0.22622911     	|
+|     50    	|     54 0.27985062     	|
+|     51    	|     55 0.16980308     	|
+|     52    	|     57 0.38363564     	|
+|     53    	|     58 0.29000326     	|
+|     54    	|     59 0.23691203     	|
+|     55    	|     60 0.30564446     	|
+|     56    	|     61 0.30401039     	|
+|     57    	|     62 0.25939942     	|
+|     58    	|     63 0.16711030     	|
+|     59    	|     64 0.14693431     	|
+|     60    	|     65 0.19359746     	|
+|     61    	|     66 0.17854689     	|
+
+![Curva e integral hipsométrica para las cuencas de orden 2\label{hypsob2}](HypsoBasinOrder2.png){width=100%}
+
+![Cuencas de red de drenaje orden 2\label{hypb2}](Mapview_hypsobasinorder2.png){width=90%}
+
+![Curva e integral hipsométrica para las cuencas de orden 3\label{hysob3}](HypsoBasinOrder3.png){width=100%}
+
+![Cuencas de red de drenaje orden 3\label{hypb2}](Mapview_hypsobasinorder3.png){width=90%}
 
 # Discusión
 
@@ -271,7 +409,7 @@ Y en el calculo de la curva e integral hysometrica, realizados con la funcion `H
 # Agradecimientos
 A Dios por la fuerza y la salud que me ha dado durante todo este tiempo, sin dejarme caer.
 
-A mi maestro `Jose Martinez Battle` por el apoyo incondicional, tanto emocional como tecnico, por servir de guia durante todo el trayecto y ser paciente.
+A mi maestro `Jose Martinez Battle` por el apoyo incondicional, tanto emocional como tecnico, por ser guia durante todo el trayecto, por  ser paciente, y sobre todo por su disponibilidad para colaborar.
 
 A mi companero de carrera y amigo `Welifer Lebron` por su asesoramiento.
 
@@ -288,908 +426,6 @@ A mis amistades por el apoyo, comprension y motivacion para que continue mis pro
 
 # *Script* reproducible
 
-# Intro a Grass, video no. 3 ----
-## Parte reutilizable del script ----
-## Cargar paquetes
-library(rgrass7)
-library(sp)
-use_sp()
-library(sf)
-library(raster)
-library(leaflet)
-library(leafem)
-library(mapview)
-library(readr)
-
-gisdbase <- 'grass-data-test' #Base de datos de GRASS GIS
-wd <- getwd() #Directorio de trabajo
-wd
-loc <- initGRASS(gisBase = "/usr/lib/grass78/",
-                 home = wd,
-                 gisDbase = paste(wd, gisdbase, sep = '/'),
-                 location = 'guayubin',
-                 mapset = "PERMANENT",
-                 override = TRUE)
-
-## Imprimir fuentes en la region
-execGRASS(
-  'g.list',
-  flags = 't',
-  parameters = list(
-    type = c('raster', 'vector')
-  )
-)
-
-## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
-unlink_.gislock()
-
-## Fin de la parte reutilizable
-
-# Video no. 4, Definir proyección de la región de GRASS GIS, importar fuente y utilizarla para definir extensión y resolución. Cómo ver la ayuda de las funciones ----
-## Muestra la definición de la región
-gmeta()
-
-## Definir ruta del DEM
-dem <- 'datos-fuente/srtm_dem_cuenca_guayubin.tif'
-execGRASS(
-  cmd = 'g.proj',
-  flags = c('t','c'),
-  georef = dem)
-
-## Muestra la definición de la región modificada
-gmeta()
-
-## r.in.gdal importa la fuente a GRASS
-execGRASS(
-  cmd = 'r.in.gdal',
-  flags=c('overwrite','quiet'),
-  parameters=list(
-    input=dem,
-    output='dem'
-  )
-)
-
-## Actualizar la extensión de la región al DEM, sólo por precaución
-execGRASS(
-  cmd = 'g.region',
-  parameters=list(
-    raster = 'dem',
-    align = 'dem'
-  )
-)
-
-## Muestra la región de Grass again
-gmeta()
-
-## Importar vectorial a la región de Grass
-demext <- 'datos-fuente/srtm_dem_cuenca_guayubin.geojson'
-execGRASS(
-  cmd = 'v.in.ogr',
-  flags=c('overwrite','quiet'),
-  parameters=list(
-    input = demext,
-    output = 'dem_extent'
-  )
-)
-
-## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa
-execGRASS(
-  'g.list',
-  flags = 't',
-  parameters = list(
-    type = c('raster', 'vector')
-  )
-)
-
-## Ver los addons disponibles en el repositorio oficial de GRASS GIS, incluyendo descripción
-execGRASS(
-  cmd = 'g.extension',
-  flags = 'c'
-)
-
-## Consultar la ayuda de una función
-parseGRASS("r.in.gdal")
-
-## Consultar la ayuda de una función. Segunda alternativa
-system('r.in.gdal --help')
-
-## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
-unlink_.gislock()
-
-# Video no. 5, Explorar datos espaciales básicos entre GRASS y R ----
-## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa
-execGRASS(
-  'g.list',
-  flags = 't',
-  parameters = list(
-    type = c('raster', 'vector')
-  )
-)
-
-## Cargar en R el DEM (mapa ráster)
-library(sp)
-use_sp()
-dem_sp <- readRAST('dem')
-op <- par()
-plot(dem_sp)
-
-## Cargar a R el mapa vectorial de una cuenca que se encuentra alojado fuera de GRASS, hacer el plot y representar la cuenca del rio Guayubin superpuesta
-library(sf)
-rutaguayubin <- 'datos-fuente/cuenca_guayubin.geojson'
-guayubin <- st_read(rutaguayubin)
-plot(dem_sp)
-plot(guayubin, add=T, col='transparent', border='black', lwd=5);par(op[c('mfrow','mar')])
-
-## Analizar el DEM dentro de la cuenca de guayubin
-library(raster)
-dem_r0 <- raster(dem_sp)
-dem_r1 <- crop(dem_r0, guayubin)
-dem_guayu <- mask(dem_r1, guayubin)
-plot(dem_guayu)
-summary(dem_guayu)
-hist(dem_guayu)
-
-## Obtener variables de terreno básicas con el paquete raster dentro de R
-pend_guayu <- terrain(x = dem_guayu, opt = 'slope', unit = 'degrees')
-plot(pend_guayu)
-summary(pend_guayu)
-hist(pend_guayu)
-
-## Obtener la misma variable de terreno con GRASS GIS
-writeVECT(as_Spatial(guayubin), 'guayubin', v.in.ogr_flags='quiet')
-execGRASS(
-  "g.region",
-  parameters=list(
-    vector = "guayubin"
-  )
-)
-
-execGRASS(
-  "r.mask",
-  flags = c('verbose','overwrite','quiet'),
-  parameters = list(
-    vector = 'guayubin'
-  )
-)
-
-execGRASS(
-  cmd = 'r.slope.aspect',
-  flags = c('overwrite','quiet'),
-  parameters = list(
-    elevation='dem',
-    slope='slope',
-    aspect='aspect',
-    pcurvature='pcurv',
-    tcurvature='tcurv')
-)
-
-pend_guayu_g <- readRAST('slope')
-plot(pend_guayu_g);par(op[c('mfrow','mar')])
-summary(pend_guayu_g)
-summary(pend_guayu)
-gmeta()
-
-execGRASS(
-  "g.region",
-  parameters=list(
-    raster = "dem"
-  )
-)
-
-execGRASS(
-  "r.mask",
-  flags = c('r','quiet')
-)
-
-gmeta()
-
-## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
-unlink_.gislock()
-
-# Video 6. Calcular parámetros hidrográficos con r.watershed. Visualizar con leaflet ----
-
-## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa 
-## Está en el archivo reusable como (# Imprimir fuentes en la region)
-execGRASS(
-  'g.list',
-  flags = 't',
-  parameters = list(
-    type = c('raster', 'vector')
-  )
-)
-## Calcular parámetros hidrográficos de interés usando r.watershed
-execGRASS(
-  "r.watershed",
-  flags = c('overwrite','quiet'),
-  parameters = list(
-    elevation = "dem",
-    accumulation = "accum-de-rwshed",
-    stream = "stream-de-rwshed",
-    drainage = "drainage-dir-de-rwshed",
-    basin = 'basins',
-    half_basin = 'half-basins',
-    threshold = 80
-  )
-)
-
-## Traer capas a R
-
-## Usar Spatial*
-library(sp)
-use_sp()
-## Paquete manejo de los raster
-library(raster)
-## DEM
-dem <- raster(readRAST('dem'))
-## Basins
-basins <- raster(readRAST('basins'))
-## Stream network
-stream <- raster(readRAST('stream-de-rwshed'))
-stream3857 <- projectRaster(stream, crs = CRS("+init=epsg:3857"), method = 'ngb')
-## Generar un vectorial de extensión de capa en EPSG:4326
-e <- extent(stream)
-e <- as(e, 'SpatialPolygons')
-proj4string(e) <- CRS("+init=epsg:32619")
-e <- spTransform(e, CRSobj = CRS("+init=epsg:4326"))
-
-## Visualizar capas con leaflet
-library(leaflet)
-library(leafem)
-leaflet() %>%
-  addProviderTiles(providers$Stamen.Terrain, group = 'terrain') %>%
-  addRasterImage(dem, group='DEM', opacity = 0.5) %>%
-  addRasterImage(
-    ratify(basins),
-    group='basins', opacity = 0.7,
-    colors = sample(rep(RColorBrewer::brewer.pal(12, 'Set3'),1000))) %>% 
-  addRasterImage(stream3857, project = F, group='str', opacity = 0.7, method = 'ngb', colors = 'blue') %>% 
-  addLayersControl(
-    overlayGroups = c('terrain','DEM','basins','str'),
-    options = layersControlOptions(collapsed=FALSE)) %>% 
-  addHomeButton(extent(e), 'Ver todo')
-
-## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
-unlink_.gislock()
-
-# Video 7, Extraer una cuenca con r.water.outlet. Visualizar con mapview y leaflet ----
-## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa (está en el reproducible)
-execGRASS(
-  'g.list',
-  flags = 't',
-  parameters = list(
-    type = c('raster', 'vector')
-  )
-)
-
-## Obtener las coordenadas de la desembocadura de la cuenca de interés
-library(mapview)
-mapview(
-  stream3857, method='ngb', col.regions = 'blue',
-  legend = FALSE, label = FALSE, maxpixels =  910425
-)
-
-## Convertir las coordenadas lat/lon a EPSG:32619
-my_trans <- function(coords = NULL) {
-  require(sp)
-  pt <- SpatialPoints(matrix(coords, ncol = 2), CRS("+init=epsg:4326"))
-  foo <- spTransform(pt, CRSobj = CRS("+init=epsg:32619"))
-  bar <- as.vector(coordinates(foo))
-  return(bar)
-}
-guayu_out <- my_trans(coords = c(-71.40021,19.66387))
-guayu_out
-
-## Extraer la cuenca de interés
-execGRASS(
-  "r.water.outlet",
-  flags = c('overwrite','quiet'),
-  parameters = list(
-    input = 'drainage-dir-de-rwshed',
-    output = 'guayubin-basin',
-    coordinates = guayu_out
-  )
-)
-
-## Convertir la cuenca a vectorial en GRASS
-execGRASS(
-  "r.to.vect",
-  flags = c('overwrite','quiet'),
-  parameters = list(
-    input = 'guayubin-basin',
-    output = 'guayubin_basin',
-    type = 'area'
-  )
-)
-
-## Mostrar lista nuevamente
-execGRASS(
-  'g.list',
-  flags = 't',
-  parameters = list(
-    type = c('raster', 'vector')
-  )
-)
-
-## Traer a R la cuenca del rio guayubin
-guayu_bas <- readVECT('guayubin_basin')
-guayu_bas
-plot(guayu_bas)
-guayu_bas4326 <- spTransform(guayu_bas, CRSobj = CRS("+init=epsg:4326"))
-leaflet() %>% 
-  addProviderTiles(providers$Stamen.Terrain) %>%
-  addRasterImage(stream, opacity = 0.7, method = 'ngb', colors = 'blue') %>% 
-  addPolygons(data = guayu_bas4326) %>% 
-  leafem::addHomeButton(extent(guayu_bas4326), 'Ver cuenca')
-
-## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
-unlink_.gislock()
-
-# Video 8, Extraer una red drenaje con r.stream.extract. Visualizar con leaflet ----
-## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa
-execGRASS(
-  'g.list',
-  flags = 't',
-  parameters = list(
-    type = c('raster', 'vector')
-  )
-)
-
-## Usar la cuenca del rio guayubin como máscara
-execGRASS(
-  "r.mask",
-  flags = c('verbose','overwrite','quiet'),
-  parameters = list(
-    vector = 'guayubin_basin'
-  )
-)
-
-## Extraer la red de drenaje de la cuenca de interés
-execGRASS(
-  "r.stream.extract",
-  flags = c('overwrite','quiet'),
-  parameters = list(
-    elevation = 'dem',
-    threshold = 80,
-    stream_raster = 'guayubin-stream-de-rstr',
-    stream_vector = 'guayubin_stream_de_rstr'
-  )
-)
-
-## Mostrar lista nuevamente
-execGRASS(
-  'g.list',
-  flags = 't',
-  parameters = list(
-    type = c('raster', 'vector')
-  )
-)
-
-## Traer a R la red de drenaje del rio guayubin
-guayu_net <- readVECT('guayubin_stream_de_rstr', ignore.stderr = T)
-guayu_net
-plot(guayu_net)
-guayu_net4326 <- spTransform(guayu_net, CRSobj = CRS("+init=epsg:4326"))
-guayu_net4326
-guayu_centroid <- coordinates(rgeos::gCentroid(guayu_bas4326))
-guayu_centroid
-guayu_net_r <- raster(readRAST('guayubin-stream-de-rstr'))
-guayu_net_r
-guayu_net_r3857 <- projectRaster(guayu_net_r, crs = CRS("+init=epsg:3857"), method = 'ngb')
-guayu_net_r3857
-leaflet() %>% 
-  setView(lng = guayu_centroid[1], lat = guayu_centroid[2], zoom = 11) %>%
-  addProviderTiles(providers$Stamen.Terrain, group = 'terrain') %>%
-  addRasterImage(guayu_net_r3857, opacity = 0.7, method = 'ngb', colors = 'grey20', group = 'str_raster') %>% 
-  addPolylines(data = guayu_net4326, weight = 3, opacity = 0.7, group = 'str_vect') %>% 
-  leafem::addHomeButton(extent(guayu_net4326), 'Ver todo') %>% 
-  addLayersControl(
-    overlayGroups = c('terrain','str_vect','str_raster'),
-    options = layersControlOptions(collapsed=FALSE)) 
-## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
-unlink_.gislock()
-
-
-# Video 10,  Orden de red y análisis hortoniano usando r.stream*. Visualizar con leaflet ----
-## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa (está en el reproducible)
-execGRASS(
-  'g.list',
-  flags = 't',
-  parameters = list(
-    type = c('raster', 'vector')
-  )
-)
-
-## Crear mapa de dirección de flujo a partir de r.stream.extract
-execGRASS(
-  "r.stream.extract",
-  flags = c('overwrite','quiet'),
-  parameters = list(
-    elevation = 'dem',
-    threshold = 80,
-    direction = 'drainage-dir-de-rstr'
-  )
-)
-
-## Crear mapas de órdenes de red
-execGRASS(
-  "r.stream.order",
-  flags = c('overwrite','quiet'),
-  parameters = list(
-    stream_rast = 'guayubin-stream-de-rstr',
-    direction = 'drainage-dir-de-rstr',
-    elevation = 'dem',
-    accumulation = 'accum-de-rwshed',
-    stream_vect = 'order_all',
-    strahler = 'order-strahler',
-    horton = 'order-horton',
-    shreve = 'order-shreve',
-    hack = 'order-hack-gravelius',
-    topo = 'order-topology'
-  )
-)
-
-## Visualizar la red con leaflet
-## Simbología única
-order <- readVECT('order_all')
-order4326 <- spTransform(order, CRSobj = CRS("+init=epsg:4326"))
-leaflet() %>% 
-  addProviderTiles(providers$Stamen.Terrain, group = 'terrain') %>%
-  addPolylines(
-    data = order4326, weight = 3, opacity = 0.7, group = 'order',
-    label = ~as.character(strahler),
-    highlightOptions = highlightOptions(color = "white",
-                                        weight = 5, bringToFront = F, opacity = 1),
-    labelOptions = labelOptions(noHide = T,
-                                style = list(
-                                  "font-size" = "8px",
-                                  "background" = "rgba(255, 255, 255, 0.5)",
-                                  "background-clip" = "padding-box",
-                                  "padding" = "1px"))) %>% 
-  leafem::addHomeButton(extent(order4326), 'Ver todo') %>% 
-  addLayersControl(
-    overlayGroups = c('terrain','order'),
-    options = layersControlOptions(collapsed=FALSE))
-
-## Simbología aplicando grosor según orden de red
-leaflet() %>% 
-  addProviderTiles(providers$Stamen.Terrain, group = 'terrain') %>%
-  addPolylines(
-    data = order4326, weight = order4326$strahler*1.5, opacity = 0.7, group = 'order',
-    label = ~as.character(strahler),
-    highlightOptions = highlightOptions(color = "white",
-                                        weight = 5, bringToFront = F, opacity = 1),
-    labelOptions = labelOptions(noHide = F)) %>% 
-  leafem::addHomeButton(extent(order4326), 'Ver todo') %>% 
-  addLayersControl(
-    overlayGroups = c('terrain','order'),
-    options = layersControlOptions(collapsed=FALSE))
-
-## Delimitar cuencas según orden de red de Strahler
-
-## Obtener órdenes de red mínimo y máximo
-## Estadísticas para obtener los valores mínimo y máximo del orden de red de Strahler
-rinfo.ordstra <- execGRASS(
-  'r.info',
-  flags = 'r',
-  parameters = list(
-    map = 'order-strahler'
-  )
-)
-
-## Órdenes de red mínimo y máximo
-minmaxord <- as.numeric(
-  stringr::str_extract_all(
-    attributes(rinfo.ordstra)$resOut,
-    "[0-9]+"
-  )
-)
-minmaxord
-
-## Delimitar cuencas, convertirlas de ráster a vectorial
-sapply(
-  min(minmaxord):max(minmaxord),
-  function(x){
-    execGRASS(
-      "r.stream.basins",
-      flags = c('overwrite','c','quiet'),
-      parameters = list(
-        direction = 'drainage-dir-de-rstr',
-        stream_rast = 'order-strahler',
-        cats = as.character(x),
-        basins = paste0('r-stream-basins-',x)
-      )
-    )
-    execGRASS(
-      "r.to.vect",
-      flags=c('overwrite','quiet'),
-      parameters = list(
-        input = paste0('r-stream-basins-',x),
-        output = paste0('r_stream_basins_',x),
-        type = 'area'
-      )
-    )
-  }
-
-)
-## Representar las cuencas con leaflet
-sapply(
-  min(minmaxord):max(minmaxord),
-  function(x){
-    assign(
-      paste0('orden', x),
-      spTransform(readVECT(paste0('r_stream_basins_',x)), CRSobj = CRS("+init=epsg:4326")),
-      envir = .GlobalEnv)
-  }
-)
-
-paleta <- RColorBrewer::brewer.pal(12, 'Set3')
-leaflet() %>% 
-  addProviderTiles(providers$Stamen.Terrain, group = 'terrain') %>%
-  addPolygons(data = orden5, stroke = T, weight = 2,
-              color = ~paleta, fillOpacity = 0.4, group = 'O5') %>% 
-   addPolygons(data = orden4, stroke = T, weight = 2,
-              color = ~paleta, fillOpacity = 0.4, group = 'O4') %>% 
-  addPolygons(data = orden3, stroke = T, weight = 2,
-              color = ~paleta, fillOpacity = 0.4, group = 'O3') %>%
-  addPolygons(data = orden2, stroke = T, weight = 2,
-              color = ~paleta, fillOpacity = 0.4, group = 'O2') %>%
-  addPolygons(data = orden1, stroke = T, weight = 2,
-              color = ~paleta, fillOpacity = 0.4, group = 'O1') %>%
-  addPolylines(
-    data = order4326, weight = order4326$strahler*1.5,
-    opacity = 0.7, group = 'str_order') %>%
-  leafem::addHomeButton(extent(order4326), 'Ver todo') %>% 
-  addLayersControl(
-    overlayGroups = c('terrain','O1','O2','O3','O4','O5','str_order'),
-    options = layersControlOptions(collapsed=FALSE))
-
-## Estadísticas de red resumidas por orden de red
-execGRASS(
-  "r.stream.stats",
-  flags = c('overwrite','quiet','o'),
-  parameters = list(
-    stream_rast = 'order-strahler',
-    direction = 'drainage-dir-de-rstr',
-    elevation = 'dem',
-    output = 'guayu_stats.txt'
-  )
-)
-file.show('guayu_stats.txt')
-d <- read.csv("guayu_stats.txt", skip=1, header=TRUE)
-plot(num_of_streams~order, data=d, log="y")
-mod <- lm(log10(num_of_streams)~order, data=d)
-abline(mod)
-text(2, 20, 'logN=2.064-0.544u')
-rb <- 1/10^mod$coefficients[[2]]
-rb
-
-## Estadísticas de red ampliadas
-execGRASS(
-  "r.stream.stats",
-  flags = c('overwrite','quiet'),
-  parameters = list(
-    stream_rast = 'order-strahler',
-    direction = 'drainage-dir-de-rstr',
-    elevation = 'dem',
-    output = 'guayu_stats_expanded.txt'
-  )
-)
-file.show('guayu_stats_expanded.txt')
-
-## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
-unlink_.gislock()
-
-# Video 11, Calcular índices de concavidad y perfiles longitudinales de cursos fluviales----
-## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa
-execGRASS(
-  'g.list',
-  flags = 't',
-  parameters = list(
-    type = c('raster', 'vector')
-  )
-)
-
-## Obtener coordenada
-mapview(order, col.regions = 'blue', legend = FALSE)
-
-## Obtener cursos más largos (cargar función propia)
-devtools::source_url('https://raw.githubusercontent.com/geofis/rgrass/master/lfp_network.R') #Cargada como función "LfpNetwork"
-LfpNetwork(
-  xycoords = my_trans(c(-71.40047,19.66268)),
-  suffix = 'Gyb',
-  stream_vect = 'order_all',
-  direction = 'drainage-dir-de-rstr'
-)
-
-## Imprimir lista de mapas ráster y vectoriales
-execGRASS(
-  'g.list',
-  flags = 't',
-  parameters = list(
-    type = c('raster', 'vector')
-  )
-)
-
-## Representar con leaflet
-lfp <- readVECT('LfpNetwork_lfp_all_final_Gyb')
-lfp4326 <- spTransform(lfp, CRSobj = CRS("+init=epsg:4326"))
-leaflet() %>%
-  addProviderTiles(providers$Stamen.Terrain, group = 'terrain') %>%
-  addPolylines(
-    data = lfp4326, weight = 3, opacity = 0.7, group = 'order',
-    label = ~as.character(cat),
-    highlightOptions = highlightOptions(color = "white",
-                                        weight = 5, bringToFront = F, opacity = 1),
-    labelOptions = labelOptions(noHide = T,
-                                style = list(
-                                  "font-size" = "8px",
-                                  "background" = "rgba(255, 255, 255, 0.5)",
-                                  "background-clip" = "padding-box",
-                                  "padding" = "1px"))) %>% 
-  leafem::addHomeButton(extent(lfp4326), 'Ver todo')
-
-## Exportar a KML
-execGRASS(
-  'v.out.ogr',
-  flags = c('overwrite','quiet'),
-  parameters = list(
-    input = 'LfpNetwork_lfp_all_final_Gyb',
-    output = 'lfp_kml.kml',
-    format = 'KML',
-    dsco = 'NameField=cat'
-  )
-)
-
-## Obtención de perfiles longitudinales e índices de concavidad
-source('lfp_profiles_concavity.R') #Cargado como función "LfpProfilesConcavity"
-guayubin_conv_prof <- LfpProfilesConcavity(
-  xycoords = my_trans(c(-71.40047,19.6626)),
-  network = 'LfpNetwork_lfp_all_final_Gyb',
-  prefix = 'Gyb',
-  dem = 'dem',
-  direction = 'drainage-dir-de-rstr',
-  crs = '+init=epsg:32619',
-  smns = 0.5,
-  nrow = 5)
-
-## Mostrar resultados
-
-guayubin_conv_prof$profiles
-guayubin_conv_prof$concavityindex
-guayubin_conv_prof$dimensionlessprofiles
-
-## Tabla dx/dy, tanto en metros como adimensional. Útiles para construir perfiles por cuenta propia
-guayubin_conv_prof$lengthzdata %>% tibble::as.tibble()
-guayubin_conv_prof$lengthzdatadmnls %>% tibble::as.tibble()
-
-## Revisar en QGIS/Google Earth relación litología/concavidad
-## Descargar archivo lfp_kml.kml localmente, superponer al mapa geológico usando QGIS y GoogleEarth, evaluar los índices de concavidad y formas del perfil longitudinal de los cursos más largos en relación con la litología, las fallas, el orden de red, entre otras variables.
-
-## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
-unlink_.gislock()
-
-# Video 12, Parámetros de cuenca con r.basin ----
-library(rgrass7)
-gisdbase <- 'grass-data-test' #Base de datos de GRASS GIS
-wd <- getwd() #Directorio de trabajo
-wd
-loc <- initGRASS(gisBase = "/usr/lib/grass78/",
-                 home = wd,
-                 gisDbase = paste(wd, gisdbase, sep = '/'),
-                 location = 'guayubin',
-                 mapset = "PERMANENT",
-                 override = TRUE)
-gmeta()
-execGRASS(
-  'g.list',
-  flags = 't',
-  parameters = list(
-    type = c('raster', 'vector')
-  )
-)
-
-## Convertir a números enteros la extensión y la resolución del DEM
-library(raster)
-rutadem <- 'datos-fuente/srtm_dem_cuenca_guayubin.tif'
-rawextent <- extent(raster(rutadem))
-rawextent
-devtools::source_url('https://raw.githubusercontent.com/geofis/rgrass/master/integerextent.R')
-devtools::source_url('https://raw.githubusercontent.com/geofis/rgrass/master/xyvector.R')
-newextent <- intext(e = rawextent, r = 90, type = 'inner')
-newextent
-gdalUtils::gdalwarp(
-  srcfile = 'datos-fuente/srtm_dem_cuenca_guayubin.tif',
-  dstfile = 'demint.tif',
-  te = xyvector(newextent),
-  tr = c(90,90),
-  r = 'bilinear',
-  overwrite = T
-)
-
-## Importar a sesión de GRASS
-rutademint <- 'demint.tif'
-execGRASS(
-  "g.proj",
-  flags = c('t','c'),
-  georef=rutademint)
-gmeta()
-execGRASS(
-  "r.in.gdal",
-  flags='overwrite',
-  parameters=list(
-    input=rutademint,
-    output="demint"
-  )
-)
-
-execGRASS(
-  "g.region",
-  parameters=list(
-    raster = "demint",
-    align = "demint"
-  )
-)
-
-gmeta()
-
-execGRASS(
-  'g.list',
-  flags = 't',
-  parameters = list(
-    type = c('raster', 'vector')
-  )
-)
-
-## Generar red de drenaje para obtener coordenada posteriormente
-execGRASS(
-  "r.stream.extract",
-  flags = c('overwrite','quiet'),
-  parameters = list(
-    elevation = 'demint',
-    threshold = 80,
-    stream_raster = 'stream-de-rstr',
-    stream_vector = 'stream_de_rstr'
-  )
-)
-
-execGRASS(
-  'g.list',
-  flags = 't',
-  parameters = list(
-    type = c('raster', 'vector')
-  )
-)
-
-## Obtener coordenada
-library(sp)
-use_sp()
-library(mapview)
-netw <- spTransform(
-  readVECT('stream_de_rstr'),
-  CRSobj = CRS("+init=epsg:4326"))
-
-mapview(netw, col.regions = 'blue', legend = FALSE)
-
-## Transformar coordenada a EPSG:32619 como número entero
-source('my-trans.R')
-outlet <- as.integer(my_trans(c(-71.40009,19.66390)))
-
-## Ejecutar r.basin
-pref <- 'rbasin_guay'
-execGRASS(
-  "r.basin",
-  flags = 'overwrite',
-  parameters = list(
-    map = 'demint',
-    prefix = pref,
-    coordinates = outlet,
-    threshold = 80,
-    dir = 'salidas-rbasin/guayubin'
-  )
-)
-
-execGRASS(
-  'g.list',
-  flags = 't',
-  parameters = list(
-    type = c('raster', 'vector')
-  )
-)
-
-# Si r.basin arrojara error (sólo en el caso de error, no en caso de advertencia), ejecutar este bloque para borrar las salidas anteriores y reejecutar el r.basin:
-#  execGRASS(
-#    "g.remove",
-#    flags = 'f',
-#    parameters = list(
-#      type = c('raster','vector'),
-#      pattern = paste0(pref, '*')
-#    )
-#  )
-
-## Cargar los vectoriales transformados a EPSG:4326 para visualizar en leaflet
-  rbnetw <- spTransform(
-    readVECT('rbasin_guay_demint_network'),
-    CRSobj = CRS("+init=epsg:4326"))
-  rbnetw
-  rbmain <- spTransform(
-    readVECT('rbasin_guay_demint_mainchannel'),
-    CRSobj = CRS("+init=epsg:4326"))
-  rbmain
-  rbbasin <- spTransform(
-    readVECT('rbasin_guay_demint_basin'),
-    CRSobj = CRS("+init=epsg:4326"))
-  rbbasin
- 
-library(leaflet)
-leaflet() %>%
-    addProviderTiles(providers$Stamen.Terrain, group = 'terrain') %>%
-    addPolylines(data = rbnetw, weight = 3, opacity = 0.7) %>% 
-    addPolylines(data = rbmain, weight = 3, opacity = 0.7, color = 'red') %>% 
-    addPolygons(data = rbbasin) %>% 
-    leafem::addHomeButton(extent(rbbasin), 'Ver cuenca')
-  
-## Explorar los parámetros de cuenca
-library(readr)
-rbguaypar1 <- read_csv("salidas-rbasin/guayubin/rbasin_guay_demint_parametersT.csv")
-rbguaypar1 %>% tibble::as_tibble()
-# para vizualizar la tabla mejor traer a r, usar View(rbguaypar1)
-
-rbguaypar2 <- read_csv(
-  "salidas-rbasin/guayubin/rbasin_guay_demint_parameters.csv",
-  skip=2, col_names = c('Parameter', 'Value'))
-rbguaypar2 %>% print(n=Inf)
-
-## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
-unlink_.gislock()
-
-# Video 13, Curva e integral hipsométrica ----
-## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa
-execGRASS(
-  'g.list',
-  flags = 't',
-  parameters = list(
-    type = c('raster', 'vector')
-  )
-)
-
-## Representar cuencas
-library(sp)
-use_sp()
-library(mapview)
-bas2 <- readVECT('r_stream_basins_2')
-bas3 <- readVECT('r_stream_basins_3')
-
-## Curva e integral hipsométrica
-source('integral_hypsometric_curve.R') #Cargada como función "HypsoIntCurve"
-HypsoBasinsOrder2 <- HypsoIntCurve(
-  basins = 'r_stream_basins_2',
-  dem = 'dem',
-  labelfield = 'cat',
-  nrow = 5,
-  labelsize = 4
-)
-
-HypsoBasinsOrder2$HypsoInt
-HypsoBasinsOrder2$HypsoCurve
-mapview(bas2, zcol='cat', col.regions = 'blue', legend = FALSE) %>%
-  addStaticLabels(label = bas2$cat)
-
-HypsoBasinsOrder3 <- HypsoIntCurve(
-  basins = 'r_stream_basins_3',
-  dem = 'dem',
-  labelfield = 'cat',
-  nrow = 3,
-  labelsize = 4
-)
-
-HypsoBasinsOrder3$HypsoInt
-HypsoBasinsOrder3$HypsoCurve
-
-mapview(bas3, zcol='cat', col.regions = 'blue', legend = FALSE) %>%
-  addStaticLabels(label = bas3$cat)
-
-## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
-unlink_.gislock()
 
 
 # Referencia

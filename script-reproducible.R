@@ -396,6 +396,7 @@ leaflet() %>%
   addLayersControl(
     overlayGroups = c('terrain','str_vect','str_raster'),
     options = layersControlOptions(collapsed=FALSE)) 
+
 ## Limpiar archivo de bloqueo del conjunto de mapas de GRASS
 unlink_.gislock()
 
@@ -664,7 +665,6 @@ guayubin_conv_prof <- LfpProfilesConcavity(
   nrow = 5)
 
 ## Mostrar resultados
-
 guayubin_conv_prof$profiles
 guayubin_conv_prof$concavityindex
 guayubin_conv_prof$dimensionlessprofiles
