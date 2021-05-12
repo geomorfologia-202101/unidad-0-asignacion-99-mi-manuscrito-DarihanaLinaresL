@@ -8,12 +8,12 @@ output:
     template: svm-latex-ms.tex
     number_sections: true
 title: | 
-        | Título
-        | Subtítulo
-        | Subtítulo
+        | Estudio geomorfométrico fluvial
+        | Aplicado a la cuenca hidrógrafica del ríó Guayubín, en República Dominicana
+        | Sirviendose de SIGs de código abierto. 
 author:
 - name: Darihana Linares Laureano
-  affiliation: "Estudiante de Lic. en Geografía Mención Recursos Naturales y Ecoturismo, Universidad Autónoma de Santo Domingo (UASD)"
+  affiliation: "Estudiante de Lic. en Geografía Mención Recursos Naturales y Ecoturismo, en la Universidad Autónoma de Santo Domingo (UASD)"
 abstract: "Resumen del manuscrito"
 keywords: "Geomorfología fluvial, Morfometria de cuencas"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
@@ -38,32 +38,30 @@ Para los estudios en geomorfología fluvial, se hace uso del análisis morfomét
 En ese mismo orden es imprescindible conocer el concepto de cuenca fluvial o de drenaje, que no es más que el conjunto de cuerpos de agua con un área determinada que fluyen por distintos canales y escurren en un mismo desagüe. Según los autores Gregory y Walling, 1973; y Chorley, 1969 (como citó @gutierrez2008geomorfologia), una cuenca fluvial compone el espacio determinado en el que se suministran las aguas que discurren por la superficie, el mismo está delimitado tanto por su relieve y su hidrología. También considerada como una unidad imprescindible en geomorfológica.
 
 ## Revisión bibliográfica 
-Aspecto general de la cuenca y de la red
 
 El aspecto general de la cuenca y de la red se refiere a los parámetros hidrográficos que posee la cuenca (la acumulación de flujos y cálculo de su umbral, elevación, depresión, y otros). Según @castillo2015delimitacion, la acumulación de flujos señala a todas las celdas que desaguan en una en particular, la misma se adquiere partiendo de la dirección de la corriente o flujo. @venkatachalam2001automatic dicen que la acumulación de flujo de una celda se instituye de acuerdo con la sumatoria de los valores de la acumulación de flujo de las celdas próximas que drenan en ella. En cuanto al umbral, según @ESRI2012, se es necesario un ráster de acumulación de flujo y la `porción mínima de celdas que componen una corriente de agua. También se refiere a la forma que adquiere la cuenca y a la forma de su red de drenaje, según la conformación de sus ríos y el material rocoso que la compone (patrones de drenaje). Varios autores expresan que existe una conexión entre la estructura que posee la red de drenaje con el material rocoso (@pedraza1996geomorfologia, @gutierrez2008geomorfologia, @howard1967drainage, @gregory1973drainage). 
-
-Orden de red y análisis hortoniano
 
 El orden de red hace referencia al orden en el que se clasifican los cursos de agua, todo en base a su ramificación. Según @wikipedia2020stream, el orden de un curso de agua es siempre un número entero positivo que se usa tanto en Geomorfología como en Hidrología para denotar la magnitud de ramificación que posee una red fluvial.
 Para @bowden1964effect, el orden de red sostiene una relación entre las rocas con la configuración de la red fluvial y con los procesos tanto hidrológicos como erosivos.
 La clasificación de la red se hace de manera jerárquica. Hoy día existen múltiples normas para determinar la jerarquía de una red: Strahler (1952), Horton (1945), Shreve (1967), Scheidegger (1970), Leopold et al. (1964) Hack (1957) y Topological. 
 
-Dice @pinilla1993symposium que para los años 40 el análisis hortoniano había sentado las bases de lo que hoy es la morfometría fluvial; por lo que la aplicación del análisis hortoniano al estudio de cuencas hidrográficas son imprescindibles. Para @horton1945erosional, la razón de bifurcación resulta ser la conexión entre el número de redes fluviales de una jerarquía asignada entre el número de redes de jerarquía mayor próxima.
-
-Perfiles longitudinales e índice de concavidad de cursos más largos
+Dice @pinilla1993symposium que para los años 40 el análisis hortoniano había sentado las bases de lo que hoy es la morfometría fluvial; por lo que la aplicación del análisis hortoniano al estudio de cuencas hidrográficas son imprescindibles. Para @horton1945erosional, la razón de bifurcación resulta ser la conexión entre el número de redes fluviales de una jerarquía asignada entre el número de redes de jerarquía mayor próxima, y se;ala que esta casi siempre es constante para los ordenes de red de una cuenca.
 
 El perfil longitudinal de un curso de agua es una línea adquirida al representar las diversas alturas que se presentan desde el nacimiento de este hasta donde desagua (@gutierrez2008geomorfologia). Según @pedraza1996geomorfologia, por medio de los perfiles longitudinales es posible fundamentar definiciones en segmentos con geometría heterogénea (cóncavo, convexo y rectilíneo), o pendiente; las acomodaciones para cada parte a una función matemática; e incluso análisis geométricos basados en elementos físicos o evolutivos. @gutierrez2008geomorfologia, dice que el perfil longitudinal es generalmente cóncavo, aunque esta concavidad no está clara para muchos cursos fluviales. En cuanto al índice de concavidad, este no es más que un indicador que hace posible la evaluación del nivel de torcedura o curvatura del perfil longitudinal (@garzonmorfologia). Se calcula así, la superficie debajo del perfil longitudinal es extraída del total del área debajo del segmento que conecta los dos límites del perfil (@goldrick2007regional).
 
-Morfometría de cuenca
-
 El análisis morfométrico abarca un conjunto de índices morfológicos que apuntan a un análisis detallado y cuantitativo de cuencas hidrográficas (@morais2010geomorfologia). El análisis morfométrico de cuencas hidrográficas se inicia por la ordenación de canales fluviales, con la finalidad de establecer una jerarquía fluvial. Esta, a su vez, consiste en el proceso de establecer la clasificación de determinado curso de agua (o el área drenada que le pertenece) en el conjunto total de la cuenca hidrográfica en la que se encuentra. Aunque, según el autor, esto se logra con la función de facilitar y volver más objetivos los estudios morfométricos sobre las cuencas hidrográficas (@christofoletti1988geomorfologia). En cuanto a la curva hipsométrica de una cuenca @strahler1952hypsometric dice que el porcentaje de la curva hipsométrica no es más que la relación entre el área de la sección diagonal horizontal de una red de drenaje con una altitud relativa sobre la boca de la cuenca, e incluso estas curvas pueden ser explicadas y relacionadas a través del uso de parámetros bidimensionales. Y referente a la integral Hipsométrica, @fernandez2016analise expresa que el cálculo de este índice mide como está distribuida la altitud en una cuenca fluvial.
 
-Este estudio proporciona nueva información sobre la cuenca del río Guayubín en el campo de Morfometría fluvial, sabiendo que este es el primer estudio morfométrico que se realiza a la cuenca; y además este posee un script el cual permite su reproducción sin coste alguno.
-En específico, se indaga en el aspecto general de la cuenca y de la red, el umbral de acumulación de flujo en número de celdas, la forma que posee la cuenca y su red de drenaje, considerando la relación que tiene la forma de la cuenca y la forma de su red de drenaje con el material rocoso y el relieve (hidrología-topografía-litología). 
-También, en el orden de red y la implementación del análisis hortoniano se tiene interés en la forma en la que se organiza o clasifica el orden de red asignado a cada curso fluvial en la cuenca, así como la razón de bifurcación de los órdenes de red fluvial. 
-En cuanto a los perfiles longitudinales y sus índices de concavidad se estudia la geometría que posee cada segmento de los cursos, en este caso el de los más largos; tomando en consideración las diversas alturas presentes en el curso. Y, por último, nos interesa examinar la cuenca de forma cuantitativa, para conocer sus medidas básicas (área, perímetro, número de orden de redes, pendiente, etc.).
-El interés de este estudio es indagar e interpretar lo siguiente: rango de umbral de acumulación, forma de la cuenca, forma de su red de drenaje, fenómenos que pueden afectar a la cuenca, si existe un patrón en la cuenca acorde a su red drenaje, si existe la relación litología-perfil longitudinal e índice de concavidad de los cursos de aguas más largos, y, por último, conocer la relación de las características litológicas y estructurales de la cuenca. 
+Este estudio proporciona nueva información sobre la cuenca del río Guayubín en el campo de Morfometría fluvial, sabiendo que este es el primer estudio morfométrico que se le realiza a la cuenca; y además este posee un script el cual permite su reproducción sin coste alguno.
 
+Preguntas de Investigación: 
+ ¿Qué forma posee la cuenca y su red de drenaje?
+ ¿Cómo se organiza la red de drenaje?
+ ¿Existe algun pratrón en la forma de de cuenca y red de drenaje por ordenes?
+ ¿Se produce el fenómeno de constancia en la razón de bifurcación?
+ ¿Se produce la relación de perfiles longitudinales e índice de concavidad con la litología en la cuenca?
+ ¿Hay una relación entre los parámetros morfométricos con las características litológica y estructural de cuenca?
+ ¿Con qué factores se asocian la curva e integral hipsométricas de la cuenca?
+ 
 # Área de estudio
 La cuenca del río Guayubín se encuentra entre las morforegiones Cordillera Central y Valle del Cibao Occidental, en la República Dominicana (latitud 19.46$^\circ$N, longitud -71.41$^\circ$W), entre las provincias Santiago Rodríguez, Monte Cristi y Dajabón. En la provincia Dajabón engloba de forma completa el municipio El Pino, y de manera parcial los municipios Loma de Cabrera y Partido; en la provincia Monte Cristi contiene parcialmente los municipios Las Matas de Santa Cruz y Guayubín; y en la provincia Santiago Rodríguez comprende los municipios Villa Los Almácigos y San Ignacio de Sabaneta. Los municipios más poblados en el interior de la cuenca son Guayubín (35,923 hab.), San Ignacio de Sabaneta (34,540 hab), y Loma de Cabrera (15,624 hab). (Ver figura \ref {mapacuenca}).
 
@@ -75,7 +73,7 @@ De acuerdo con el mapa de @Mmar2015cuenca, la cabecera del rio Guayubín se ubic
 # Materiales y Metodología
 Para el estudio morfométrico de la cuenca Guayubín se usó softwares de código abierto como medio para procesar datos estadísticos y modelos digitales con la finalidad de generar las informaciones a analizar e interpretar.
 
-## Materiales
+Tabla 1. Materiales utilizados.
 
 |           Materiales          	|                                                                                                                      Uso                                                                                                                     	|
 |:-----------------------------:	|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:	|
@@ -120,58 +118,52 @@ Finalmente, para el cálculo de la curva y la integral hipsométrica, lo primero
 El fruto del estudio realizado a la cuenca del río Guayubín aplicando la metodología anterior, produce información que facilita el análisis y comprensión de la cuenca fluvial, tanto de manera agrupada, como de forma desagregada.
 
 ## Aspecto general de la cuenca y de la red de drenaje. 
-
-Tras cálcular los parámetros hidrográficos de la cuenca con `r.watershed` se obtuvó un ráster de tres grupos de capas (DEM, basins y str), que con la ayuda de `leaflet` se visualiza un mapa mostrando las subcuencas, las redes fluviales y el DEM, de la cuenca sin delimitar (Ver figura\ref{capas}).
-
-![Capas generadas al calcular los parámetros hidrográficos de la cuenca\label{capas}](capas.png){width=80%}
-
-La cuenca extraída con `r.water.outlet` produjo un ráster de cuenca delimitada denominado `guayubin-basin`, que luego, paso a ser un vector llamado `guayubin_basin` usando el addon `r.to.vect`. (Ver figura\ref{cuencavectorial}).  Tras la cuenca ser llevada  a R como vector, obtuvó el nombre `guayu_bas` (ver figura\ref{cuenca delimitada})
+Los resultados arrojados por el estudio muestran que la cuenca del río Guayubín tiene una área de 773.56 km\textsuperscript{2}, y un perímetro de 156.12 km. La cuenca tiene forma de pera (@tributary) y la forma de su red de drenaje es dendrítica (@gutierrez2008geomorfologia). La forma de la red de drenaje  no depende de un control estructural y litológico, la cuenca esta asentuada en rocas de tipo igneas o magmaticas y sedimentarias (@Mollat2004mapa). @howard1967drainage dice que los patrones denditrícos de una red de drenaje se caracteriza por sus sedimentos horizontales y resistencia uniforme. (ver figura\ref{cuencavectorial} y figura\ref{red de drenaje extraida}).
 
 ![Cuenca del río Guayubín\label{cuencavectorial}](cuenca extraida.png){width=50%}
-
-![Cuenca del río Guayubín delimitada\label{cuenca delimitada}](cuenca delimitada.png){width=70%}
-
-En cuanto a la red de drenaje extraída con `r.stream.extract`, se generó un ráster y un vector con redes fluviales formadas a partir de un umbral de 80 celdas, denominados `guayubin-stream-de-rstr` y `guayubin_stream_de_rstr`, respectivamente. Estos productos tras ser llevados a R, como `guayu_net` para el vector y `guayu_net_r` para el ráster (ver figura\ref{red de drenaje extraida}).
 
 ![Red de drenaje del río Guayubín\label{red de drenaje extraida}](red de drenaje extraida.png){width=70%}
 
 ## Orden de red analisis hortoniano
-
-Con el addon `r.stream.extract` se creó un mapa ráster de dirección de flujos de nombre `drainage-dir-de-rstr`. Mientras que, con el addons `r.stream.order` se generaró un vector que contiene los atributos de la red (`order_all`), y mapas rásters de ordenes de red basados en las clasificaciones de Strahler, Horton, Shreve, Hack y Topo (@streamorder). Aqui visualizada la capa vectorial de todos los ordenes con simbología unica, (ver figura\ref{unica}). Y con simbología que aplica grosor según su orden de red (ver figura\ref{grosor}).
+El orden de red de cada tramo fluvial de la cuenca según Strahler, indicó que el orden de red máximo (5) y el minimo (1). (ver figura\ref{unica}, y figura\ref{subcuencas}).
+La red de drenaje de la cuenca presenta signos de haber sufrido el fenómeno de reorganización captura fluvial, según @pastor2013capturas este fenomeno se puede identificar al observar la red de drenaje, donde se producen cambios abruptos en el recorrido del cauce que ha sido captura. Se ha observado que este fenómeno se produce en todas las redes desde orden uno a orden 5, en especial en las redes de orden mas bajo, 1 y 2, (ver figura\ref{grosor}).
 
 ![Ordenes de red del río Guayubín con simbología única\label{unica}](ordenes de red.png){width=100%}
 
 ![Ordenes de red del río Guayubín con simbología aplicando grosor según su orden\label{grosor}](orden de red mapa 2.png){width=80%}
 
-Se ordenó y clasificó cada tramo fluvial de la cuenca según Strahler, donde usando el addon `r.info` se obtuvó el orden de red máximo (5) y el minimo (1) . Después de delimitar las cuencas con `r.basin`, se generó un ráster que se transformó a vectorial luego (ver figura\ref{subcuencas}).
+
 
 ![Subcuencas y ordenes de red del río Guayubín\label{subcuencas}](cuencas delimitadas y ordenes de red.png){width=70%}
 
-Las estadísticas de red resumidas por orden de red según la clasificación de Strahler, obtenidas con `r.stream.stats`, produjeron un documento resumido de sobre los ordenes de red, y con el que se calculó la razón de bifurcación, equivalente a 4.064346 (ver figura\ref {grafnumero}).
+Las estadísticas por orden de red según la clasificación de Strahler, obtenidas con `r.stream.stats` indican que el numero total de redes en la cuenca es de 367, tambien se obtuvieron el total longitud por ordenes de red resultando en  693.61 km (ver tabla 2). De la misma manera se genreo el dato de la razon de bifurcacion para la red basada en el coeficiente de regresion es de 4.1, tambien se obtuvieron resultados de razon de bifurcacion para cada orden de red, para el redes de orden 1 (4.7), de orden 2 (3.6), orden 3 (4.3), para los de orden 4 (4), y para los de orden 5 (0), las otras estadisticas estan detalladas en la `Tabla 2` y sus derivadas en esta figura (ver figura\ref {grafnumero}). 
 
 ![Número de redes según su orden y Razón de bifurcación\label{grafnumero}](Numero de red segun su orden.png){width=80%}
 
-Así mismo, se obtuvieron con el mismo addon `r.stream.stats`, estadísticas más amplias sobre la red.
-
-Summary:
+Tablas 2. Estadísticas de los ordenes de red
 
 |Max order | Tot.N.str. | Tot.str.len. | Tot.area. | Dr.dens. | Str.freq.|
 |:--------:|:----------:|:------------:|:---------:|:--------:|:--------:|
 |  (num)   |    (num)   |     (km)     |   (km\textsuperscript{2})   | (km/km\textsuperscript{2}) | (num/km\textsuperscript{2})| 
 |    5     |     367    |   693.6069   |  773.2235 |  0.8970  |  0.4746  | 
 
-Stream ratios based on regression coefficient:
+Tabla 2_1. Stream ratios based on regression coefficient:
 
 | Bif.rt. | Len.rt. | Area.rt. | Slo.rt. | Grd.rt.|
 |:-------:|:-------:|:--------:|:-------:|:------:|
 |  4.0643 |  2.2928 |   4.5845 |  1.4798 |  1.8338|
 
-Averaged stream ratios with standard deviations:
+Tabla 2_2. Averaged stream ratios with standard deviations:
 
 | Bif.rt. | Len.rt. | Area.rt. | Slo.rt. | Grd.rt.|
 |:-------:|:-------:|:--------:|:-------:|:------:|
 |  4.1235 |  2.3822 |   3.3126 |  1.4938 |  1.9010|
 |  0.4476 |  0.6025 |   2.2153 |  0.0960 |  0.5050|
+
+Como se observa en las tablas 2_1 y 2_2 las razones de bifurcacion obtenidas se corresponden. Ambos valores coinciden con la razon de bifurcacion calculada con codigo en R, podemos concluir que mantienen una constancia.
+
+
+Tabla 2_3. 
 
 |Order num | Avg.len (km) | Avg.ar (km\textsuperscript{2}) | Avg.sl (m/m) | Avg.grad. (m/m) | Avg.el.dif (m) |
 |:--------:|:------------:|:------------------------------:|:------------:|:---------------:|:--------------:|
@@ -181,6 +173,8 @@ Averaged stream ratios with standard deviations:
 |    4 | 11.5356 | 147.7492 |  0.0120 |     0.0066 | 80.0000|
 |    5 | 36.4888 | 773.2235 |  0.0074 |     0.0025 | 91.0000|
 
+Tabla 2_4.
+
 |Order num | Std.len (km) |  Std.ar (km\textsuperscript{2}) | Std.sl (m/m) |  Std.grad. (m/m) | Std.el.dif (m) |
 |:--------:|:------------:|:-------------------------------:|:------------:|:----------------:|:--------------:|
 |    1 |  1.0274 |   1.0955 |  0.0379 |     0.0324 | 52.7742   |
@@ -189,6 +183,7 @@ Averaged stream ratios with standard deviations:
 |    4 |  5.8247 |  44.3177 |  0.0041 |     0.0032 | 57.0789   |
 |    5 | -0.0000 |   0.0000 |  0.0000 |     0.0000 |  0.0000   |
 
+Tabla 2_5.
 
 |Order | N.streams | Tot.len (km) | Tot.area (km\textsuperscript{2}) |
 |:----:|:---------:|:------------:|:--------------------------------:|
@@ -198,6 +193,8 @@ Averaged stream ratios with standard deviations:
 |    4 |         4 |      46.1425 | 590.9969|
 |    5 |         1 |      36.4888 | 773.2235|
 
+Tabla 2_6.
+
 |Order | Bif.rt. | Len.rt. | Area.rt. | Slo.rt. | Grd.rt. | d.dens. | str.freq.|
 |:----:|:-------:|:-------:|:--------:|:-------:|:-------:|:-------:|:--------:|
 |    1 |  4.6557 |  1.9898 |   0.0000 |  1.4930 |  1.4748 |  0.7235 |  0.5818|
@@ -206,25 +203,24 @@ Averaged stream ratios with standard deviations:
 |    4 |  4.0000 |  3.1631 |   4.6560 |  1.6122 |  2.6327 |  0.0781 |  0.0068|
 |    5 |  0.0000 |  0.0000 |   5.2334 |  0.0000 |  0.0000 |  0.0472 |  0.0013|
 
-## Índices de concavidad y perfiles longitudinales
+En esta tabla es visible como los valores para el ratio de bifurcacion en los ordenes de red difieren, los mas parecidos son los de los ordenes 1, 3 y 4.
 
-Con la función `LfpNetwork` se obtuvieron los cursos más largos de la red de drenaje en formato vectorial y ráster, con el sufijo de salida `Gyb`. Para representarlo con `leaflet` se usó el archivo vectorial resultante de la operación anterior (ver figura\ref{lfpnet}).
+## Índices de concavidad y perfiles longitudinales
+Los cursos mas largos de la red de drenaje que presentaron los mas altos indices de concavidad fueron los cursos 30, 48, 52, 55 y 56 (0.59; 0.51; 0.51; 0.54; y 0.47, respectivamente), lo que indica que hubo un cambio en el trayecto que recorren esos cursos de agua que este relacionado a la aparicion de una roca dura, tras haber comparado los resultados de los cursos mas largo en el mapa geologico nacional (@Mollat2004mapa), se comprueba que existe un cambio en la litologia presente en los cursos de agua, en el caso del curso 30 con un indice de 0.59 de concavidad, al pasar de estar sobre rocas tonalitas a estar sobre rocas sedimentarias y de originadas en arcos de islas. Tambien se vio afectado de los cursos de agua mas largos el 19, quien presenta un indice concavidad de 0.46 producto de que este flujo de agua se encuentra en una parte de su trayecto con una falla tectonica, provocando el cambio en su curso. Y los cursos mas rectilineos son los cursos de agua numero 15, 16, 23 y 38, con valores menores a 0.03 (ver figura\ref{lfpnet}, \ref{plongitudinal} y \ref{indicec}).
 
 ![Cursos fluviales mas largos de la cuenca del río Guayubín\label{lfpnet}](cursos mas largos.png){width=100%}
-
-Mientras tanto, el producto obtenido de aplicar la función `LfpProfilesConcavity` fueron los perfiles longitudinales (ver figura\ref{plongitudinal}), y sus índices de concavidad, bajo el prefijo `Gyb` (ver figura\ref{indicec}).
 
 ![Perfiles longitudinales de los cursos más largos en la cuenca del río Guayubín\label{plongitudinal}](perfiles longitudinales.png){width=100%}
 
 ![Perfiles longitudinales e índices de concavidad de los cursos más largos en la cuenca del río Guayubín\label{indicec}](Indices de concavidad.png){width=100%}
 
-## Morfometría de cuenca
 
-El cálculo morfométrico de la cuenca fue realizado con el addon `r.basin`, generando archivos en formato vectorial y ráster de la cuenca y de su red de drenaje. Luego, los vectores fueron transformados a `EPSG: 4326` (ver figura\ref{vectoresrbasin}).
+## Morfometría de cuenca
+Los parametros morfometricos obtenidos con `r.basin` (ver tabla 3) indican que la elevacion minima en la cuenca del rio Guayubin es 30.97 mslm y la maxima es 1396.73 mslm, por lo que existe una diferencia de elevacion en la cuenca de 1365.76 m; mientras que su elevacion media fue de 276.70. El parametro coeficiente de compacidad es 4.9 lo que indica que la forma de la superficie de la cuenca de acuerdo a su delimitacion, y su predominio en su escorrentia, es muy alargada (@lopez1986hidrologia); pero, el parametro forma de la cuenca genero un indice de 12.48 lo que indica que la cuenca ademas de ser muy alargada, esta bastantante ensanchada en las zonas de cuenca alta y cuenca media (@cordova2016parametros, y @perez1979fundamentos). El curso mas largo de la red de drenaje o curso principal en la cuenca  producido por `r.basin` tiene una longitud  61.96 km; segun una comparacion realizada entre el el vectorial de cursos mas largo (ver figura\ref{lfpnet}), y el curso que se obtuvo con `r.basin` (ver figura\ref{vectoresrbasin}), es el curso numero 30 obtenido con la funcion `LfpNetwork`.
 
 ![Cuenca del río Guayubín con su red de drenaje y su curso más largo\label{vectoresrbasin}](cuenca-red de drenaje-curso mas largo.png){width=60%}
 
-Parámetros morfométricos de la cuenca del río Guayubín
+Tabla 3. Parámetros morfométricos de la cuenca del río Guayubín
 
 |                           Parámetros                          	|          Valores          	|
 |:-------------------------------------------------------------:	|:-------------------------:	|
@@ -232,7 +228,7 @@ Parámetros morfométricos de la cuenca del río Guayubín
 |                   Northing Centroid of basin                  	|       2151675.00      	|
 |                 Rectangle containing basin N-W                	| ('230220', '2175930') 	|
 |                 Rectangle containing basin S-E                	| ('261000', '2131290') 	|
-|                      Area of basin [km^2]                     	|      773.5631625      	|
+|                      Area of basin [km\textsuperscript{2}]                     	|      773.5631625      	|
 |                     Perimeter of basin [km]                   	|    156.122652506552   	|
 |                    Max Elevation [m s.l.m.]                   	|    1396.72540740785   	|
 |                    Min Elevation [m s.l.m.]                   	|    30.9651954818271   	|
@@ -255,15 +251,18 @@ Parámetros morfométricos de la cuenca del río Guayubín
 |                        Number of streams                      	|          343          	|
 |                    Total Stream Length [km]                   	|        662.2185       	|
 |                  First order stream frequency                 	|   0.2882763952710843  	|
-|                   Drainage Density [km/km^2]                  	|   0.8560626101427108  	|
+|                   Drainage Density [km/km\textsuperscript{2}]                  	|   0.8560626101427108  	|
 |                   Bifurcation Ratio (Horton)                  	|         3.8876        	|
 |                      Length Ratio (Horton)                    	|         2.2966        	|
 |                       Area ratio (Horton)                     	|         4.3704        	|
 |                      Slope ratio (Horton)                     	|         1.4689        	|
 
-Para la curva e integral hipsométrica, calculada con la función `HypsoIntCurve`, se obtuvieron los datos para las cuencas de red de drenaje de orden 2 (ver figura\ref{hypsob2} y figura\ref{hypb2}), y cuencas de red de drenaje de orden 3 (ver figura\ref{hypsob3} y figura\ref{hypb3}).
 
-Integral hipsométrica en las cuencas de red de orden 2. 
+los datos generados sobre la curva y la integral hipsométrica muestran la reparticion de elevaciones en la cuenca (@batlle2019drainage). Para los cursos de agua pertenecientes a la cuenca de orden 2, los cursos con indices de concavidad e integral hipsometrica moderadamente alta fueron el 49, 42 y 14 (ver Tabla 3); mientras que los cursos con minimos valores de concavidad fueron 2, 10 y 16 (ver Tabla 3). Ver figuras\ref{hypsob2} y \ref{hypb2}.
+
+En cuanto a las cursos de agua de las cuencas de orden 3, los valores maximos presentados fueron 8,11 y 13 para los valores de curva e integral hipsomeytrica; y los mas bajos fueron los de los cursos 4 y 16 (ver Tabla 4). Ver figura\ref{hypsob3} y figura\ref{hypb3}.
+
+Tabla 3. Integral hipsométrica en las cuencas de orden 2. 
 
 | Categoría 	| Integral hipsométrica 	|
 |:---------:	|:---------------------:	|
@@ -329,7 +328,7 @@ Integral hipsométrica en las cuencas de red de orden 2.
 |     60    	|     65 0.19359746     	|
 |     61    	|     66 0.17854689     	|
 
-Integral hipsométrica en las cuencas de red de orden 3.
+Tabla 4. Integral hipsométrica en las cuencas de orden 3.
 
 | Categoría 	| Integral hipsométrica 	|
 |:---------:	|:---------------------:	|
@@ -394,7 +393,7 @@ Integral hipsométrica en las cuencas de red de orden 3.
 |     60    	|     65 0.19359746     	|
 |     61    	|     66 0.17854689     	|
 
-![Curva e integral hipsométrica para las cuencas de orden 2\label{hypsob2}](HypsoBasinOrder2.png){width=100%}
+![Curva e integral hipsométrica para las cuencas de orden 2\label{hypsob2}](HypsoBasinOrder2.png){width=110%}
 
 ![Cuencas de red de drenaje orden 2\label{hypb2}](Mapview_hypsobasinorder2.png){width=90%}
 
@@ -403,8 +402,8 @@ Integral hipsométrica en las cuencas de red de orden 3.
 ![Cuencas de red de drenaje orden 3\label{hypb2}](Mapview_hypsobasinorder3.png){width=90%}
 
 # Discusión
-
-
+Con los hallazgos producidos sobre la cuenca del rio Guayubin, es posible responder a las preguntas planteadas al inicio sobre la forma de la cuenca y de su red de drenaje, a que se deben sus patrones, la organizacion de la red de drenaje, la presecia de el fenomeno de constancia, la relacion de los perfiles longitudinales y su indice de concavidad con la litologia en la cuenca, la relacion de los parametros de cuenca con la litologia, al igual que la relacion de la curva hipsometrica y la integral con la litologia. Ademas es posible hacer comparaciones de eficacia del metodo empleado para extraer las redes de drenaje.  
+En los parametros de cuenca y las estadisticas de ordenes de, el area mostro mantener la 
 
 # Agradecimientos
 A Dios por la fuerza y la salud que me ha dado durante todo este tiempo, sin dejarme caer.
