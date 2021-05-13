@@ -50,10 +50,8 @@
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
-\title{Estudio geomorfométrico fluvial\\
-Aplicado a la cuenca hidrógrafica del ríó Guayubín, en República
-Dominicana\\
-Sirviendose de SIGs de código abierto.  }
+\title{Estudio morfométrico fluvial de la cuenca Guayubín, República
+Dominicana, en base a un modelo digital de elevación y algoritmos.  }
 
 
 
@@ -106,11 +104,10 @@ en la Universidad Autónoma de Santo Domingo (UASD)}  }
             bookmarks=true,
             pdfauthor={Darihana Linares Laureano (Estudiante de Lic. en Geografía Mención Recursos Naturales y Ecoturismo,
 en la Universidad Autónoma de Santo Domingo (UASD))},
-             pdfkeywords = {Geomorfología fluvial, Morfometria de cuencas},  
-            pdftitle={Estudio geomorfométrico fluvial\\
-Aplicado a la cuenca hidrógrafica del ríó Guayubín, en República
-Dominicana\\
-Sirviendose de SIGs de código abierto.},
+             pdfkeywords = {Geomorfología fluvial, Morfometria de cuencas, Análisis hortoniano,
+Índice de concavidad, Perfil longitudinal, Patrones de drenaje},  
+            pdftitle={Estudio morfométrico fluvial de la cuenca Guayubín, República
+Dominicana, en base a un modelo digital de elevación y algoritmos.},
             colorlinks=true,
             citecolor=blue,
             urlcolor=blue,
@@ -167,10 +164,24 @@ en la Universidad Autónoma de Santo Domingo (UASD)}
 
     \vskip 8.5pt % \small 
 
-\noindent Resumen del manuscrito
+\noindent El estudio morfométrico de cuencas fluviales son sumamente importantes
+para comprender la configuracion de la misma. A pesar de esto los
+estudios de esta categoria realizados en el pais son muy escasos, aun
+teniendo una hidrografía rica, esperando a ser explorada y analizada. El
+estudio morfométrico de la cuenca Guayubín (773.56 km
+extsuperscript\{2\}), señala la existencia de una relacion entre la red
+de drenaje con la litologia el el area de cuenca, que explica la forma
+peculiar d la primera. De la misma manera como a traves de indices es
+posible explicar los fenómenos descubiertos que se producen en la
+cuenca, en el caso de captura fluvial. Esta investigación evidencia la
+eficacia de la tecnologia geoespacial para el estudio cuantitavo de una
+cuenca hidrografica, independientemente del tamaño de la misma, asi
+como, que esta tecnica es posibe aplicarla en el pais a bajo costo y
+produciendo informacion de alta calidad.
 
 
-\vskip 8.5pt \noindent \emph{Keywords}: Geomorfología fluvial, Morfometria de cuencas \par
+\vskip 8.5pt \noindent \emph{Keywords}: Geomorfología fluvial, Morfometria de cuencas, Análisis hortoniano,
+Índice de concavidad, Perfil longitudinal, Patrones de drenaje \par
 
     \hbox{\vrule height .2pt width 39.14pc}
 
@@ -306,15 +317,25 @@ Guayubín en el campo de Morfometría fluvial, sabiendo que este es el
 primer estudio morfométrico que se le realiza a la cuenca; y además este
 posee un script el cual permite su reproducción sin coste alguno.
 
-Preguntas de Investigación: ¿Qué forma posee la cuenca y su red de
-drenaje? ¿Cómo se organiza la red de drenaje? ¿Existe algun pratrón en
-la forma de de cuenca y red de drenaje por ordenes? ¿Se produce el
-fenómeno de constancia en la razón de bifurcación? ¿Se produce la
-relación de perfiles longitudinales e índice de concavidad con la
-litología en la cuenca? ¿Hay una relación entre los parámetros
-morfométricos con las características litológica y estructural de
-cuenca? ¿Con qué factores se asocian la curva e integral hipsométricas
-de la cuenca?
+Preguntas de Investigación:
+
+¿Qué forma posee la cuenca y su red de drenaje?
+
+¿Cómo se organiza la red de drenaje?
+
+¿Existe algun pratrón en la forma de de cuenca y red de drenaje por
+ordenes?
+
+¿Se produce el fenómeno de constancia en la razón de bifurcación?
+
+¿Se produce la relación de perfiles longitudinales e índice de
+concavidad con la litología en la cuenca?
+
+¿Hay una relación entre los parámetros morfométricos con las
+características litológica y estructural de cuenca?
+
+¿Con qué factores se asocian la curva e integral hipsométricas de la
+cuenca?
 
 \section{Área de estudio}\label{uxe1rea-de-estudio}
 
@@ -344,16 +365,30 @@ el río Yaque del Norte, en la localidad Guayubín.
 \caption{Cuenca del río Guayubín\label{mapacuenca}}
 \end{figure}
 
+\begin{figure}
+\centering
+\includegraphics[width=0.60000\textwidth]{geologico.png}
+\caption{Mapa Geologico de la cuenca\label{magecu}}
+\end{figure}
+
 \section{Materiales y Metodología}\label{materiales-y-metodologuxeda}
 
 Para el estudio morfométrico de la cuenca Guayubín se usó softwares de
 código abierto como medio para procesar datos estadísticos y modelos
 digitales con la finalidad de generar las informaciones a analizar e
-interpretar.
-
-Tabla 1. Materiales utilizados.
+interpretar. Ver materiales en tabla\ref{tab:materiales}.
 
 \begin{longtable}[]{@{}cc@{}}
+\caption{\label{tab:materiales} Materiales utilizados en la
+investigacion.}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.11\columnwidth}\centering\strut
+Materiales\strut
+\end{minipage} & \begin{minipage}[b]{0.83\columnwidth}\centering\strut
+Uso\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
 \toprule
 \begin{minipage}[b]{0.11\columnwidth}\centering\strut
 Materiales\strut
@@ -443,7 +478,8 @@ relieve.\strut
 Mapa Geológico Nacional de RD\strut
 \end{minipage} & \begin{minipage}[t]{0.83\columnwidth}\centering\strut
 se usó para hacer comparaciones y obtener referencias sobre la
-composición rocosa y los años que datan estas.\strut
+composición rocosa y los años que datan estas (ver
+figura\ref{magecu}).\strut
 \end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}
@@ -567,14 +603,10 @@ drenaje.}\label{aspecto-general-de-la-cuenca-y-de-la-red-de-drenaje.}
 
 Los resultados arrojados por el estudio muestran que la cuenca del río
 Guayubín tiene una área de 773.56 km\textsuperscript{2}, y un perímetro
-de 156.12 km. La cuenca tiene forma de pera (Terrain Works (2014)) y la
-forma de su red de drenaje es dendrítica (Gutiérrez Elorza (2008)). La
-forma de la red de drenaje no depende de un control estructural y
-litológico, la cuenca esta asentuada en rocas de tipo igneas o
-magmaticas y sedimentarias (Mollat (2004)). Howard (1967) dice que los
-patrones denditrícos de una red de drenaje se caracteriza por sus
-sedimentos horizontales y resistencia uniforme. (ver
-figura\ref{cuencavectorial} y figura\ref{red de drenaje extraida}).
+de 156.12 km (Ver tablas \ref{tab:estadisticaor} y
+\ref{tab:parametrosm}). La cuenca tiene forma de pera y su red drenaje
+presenta patrones denditricos (ver figura\ref{cuencavectorial} y
+figura\ref{red de drenaje extraida}).
 
 \begin{figure}
 \centering
@@ -593,14 +625,28 @@ hortoniano}\label{orden-de-red-analisis-hortoniano}
 
 El orden de red de cada tramo fluvial de la cuenca según Strahler,
 indicó que el orden de red máximo (5) y el minimo (1). (ver
-figura\ref{unica}, y figura\ref{subcuencas}). La red de drenaje de la
-cuenca presenta signos de haber sufrido el fenómeno de reorganización
-captura fluvial, según Pastor (2013) este fenomeno se puede identificar
-al observar la red de drenaje, donde se producen cambios abruptos en el
-recorrido del cauce que ha sido captura. Se ha observado que este
-fenómeno se produce en todas las redes desde orden uno a orden 5, en
-especial en las redes de orden mas bajo, 1 y 2, (ver
-figura\ref{grosor}).
+figura\ref{unica}, y figura\ref{subcuencas}). Las estadísticas por orden
+de red según la clasificación de Strahler, obtenidas con
+\texttt{r.stream.stats} indican que el numero total de redes en la
+cuenca es de 367, tambien se obtuvieron el total longitud por ordenes de
+red resultando en 693.61 km (ver tabla \ref{tab:estadisticaor}). De la
+misma manera se genero el dato de la razon de bifurcacion para la red
+basada en el coeficiente de regresion es de 4.1, tambien se obtuvieron
+resultados de razon de bifurcacion para cada orden de red, para el redes
+de orden 1 (4.7), de orden 2 (3.6), orden 3 (4.3), para los de orden 4
+(4), y para los de orden 5 (0), las otras estadisticas estan detalladas
+en la tabla\ref{tab:estadisticaor} y sus derivadas en esta figura (ver
+figura\ref{grafnumero}). Como se observa en las tablas
+\ref{tab:regresionc} y ref\{tab:estandard\}, las razones de bifurcacion
+se obtuvieron razones de bifurcacion con criterios distintos. Otras
+estadisticas como la longitud promedio y area promedio para cada orden
+de red estas detalladas en la tabla \ref{promo}. Tambien, se obtuvieron
+las estadisticas de la desviacion estandar de ares y longitudes por
+orden de red, ver tabla \ref{estad}. De igual manera se generaron las
+estadisticas de los parametros hidrgograficos (numero de orden, longitud
+y areas), segun el orden de red (ver tabla \ref{parh}). En tabla
+\ref{razones}, se presentan los valores resultantes para la razon de
+bifurcacion.
 
 \begin{figure}
 \centering
@@ -622,18 +668,6 @@ según su orden\label{grosor}}
 \caption{Subcuencas y ordenes de red del río Guayubín\label{subcuencas}}
 \end{figure}
 
-Las estadísticas por orden de red según la clasificación de Strahler,
-obtenidas con \texttt{r.stream.stats} indican que el numero total de
-redes en la cuenca es de 367, tambien se obtuvieron el total longitud
-por ordenes de red resultando en 693.61 km (ver tabla 2). De la misma
-manera se genreo el dato de la razon de bifurcacion para la red basada
-en el coeficiente de regresion es de 4.1, tambien se obtuvieron
-resultados de razon de bifurcacion para cada orden de red, para el redes
-de orden 1 (4.7), de orden 2 (3.6), orden 3 (4.3), para los de orden 4
-(4), y para los de orden 5 (0), las otras estadisticas estan detalladas
-en la \texttt{Tabla\ 2} y sus derivadas en esta figura (ver
-figura\ref {grafnumero}).
-
 \begin{figure}
 \centering
 \includegraphics[width=0.80000\textwidth]{Numero de red segun su orden.png}
@@ -641,9 +675,14 @@ figura\ref {grafnumero}).
 bifurcación\label{grafnumero}}
 \end{figure}
 
-Tablas 2. Estadísticas de los ordenes de red
-
 \begin{longtable}[]{@{}cccccc@{}}
+\caption{\label{tab:estadisticaor} Estadisticas de los ordenes de red
+del rio Guayubin}\tabularnewline
+\toprule
+Max order & Tot.N.str. & Tot.str.len. & Tot.area. & Dr.dens. &
+Str.freq.\tabularnewline
+\midrule
+\endfirsthead
 \toprule
 Max order & Tot.N.str. & Tot.str.len. & Tot.area. & Dr.dens. &
 Str.freq.\tabularnewline
@@ -655,9 +694,13 @@ Str.freq.\tabularnewline
 \bottomrule
 \end{longtable}
 
-Tabla 2\_1. Stream ratios based on regression coefficient:
-
 \begin{longtable}[]{@{}ccccc@{}}
+\caption{\label{tab:regresionc} Razones de cursos basados en el
+coeficiente de regresion}\tabularnewline
+\toprule
+Bif.rt. & Len.rt. & Area.rt. & Slo.rt. & Grd.rt.\tabularnewline
+\midrule
+\endfirsthead
 \toprule
 Bif.rt. & Len.rt. & Area.rt. & Slo.rt. & Grd.rt.\tabularnewline
 \midrule
@@ -666,9 +709,13 @@ Bif.rt. & Len.rt. & Area.rt. & Slo.rt. & Grd.rt.\tabularnewline
 \bottomrule
 \end{longtable}
 
-Tabla 2\_2. Averaged stream ratios with standard deviations:
-
 \begin{longtable}[]{@{}ccccc@{}}
+\caption{\label{estandard} Relaciones de flujo promediadas con
+desviaciones estándar}\tabularnewline
+\toprule
+Bif.rt. & Len.rt. & Area.rt. & Slo.rt. & Grd.rt.\tabularnewline
+\midrule
+\endfirsthead
 \toprule
 Bif.rt. & Len.rt. & Area.rt. & Slo.rt. & Grd.rt.\tabularnewline
 \midrule
@@ -678,14 +725,25 @@ Bif.rt. & Len.rt. & Area.rt. & Slo.rt. & Grd.rt.\tabularnewline
 \bottomrule
 \end{longtable}
 
-Como se observa en las tablas 2\_1 y 2\_2 las razones de bifurcacion
-obtenidas se corresponden. Ambos valores coinciden con la razon de
-bifurcacion calculada con codigo en R, podemos concluir que mantienen
-una constancia.
-
-Tabla 2\_3.
-
 \begin{longtable}[]{@{}cccccc@{}}
+\caption{\label{promo} Variables promediadas para cada orden de
+red}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering\strut
+Order num\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering\strut
+Avg.len (km)\strut
+\end{minipage} & \begin{minipage}[b]{0.25\columnwidth}\centering\strut
+Avg.ar (km\textsuperscript{2})\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering\strut
+Avg.sl (m/m)\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+Avg.grad. (m/m)\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering\strut
+Avg.el.dif (m)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
 \toprule
 \begin{minipage}[b]{0.08\columnwidth}\centering\strut
 Order num\strut
@@ -770,9 +828,25 @@ Avg.el.dif (m)\strut
 \bottomrule
 \end{longtable}
 
-Tabla 2\_4.
-
 \begin{longtable}[]{@{}cccccc@{}}
+\caption{\label{estad} Desviacion estandar para las estadisticas segun
+orden de red}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.08\columnwidth}\centering\strut
+Order num\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering\strut
+Std.len (km)\strut
+\end{minipage} & \begin{minipage}[b]{0.26\columnwidth}\centering\strut
+Std.ar (km\textsuperscript{2})\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering\strut
+Std.sl (m/m)\strut
+\end{minipage} & \begin{minipage}[b]{0.14\columnwidth}\centering\strut
+Std.grad. (m/m)\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering\strut
+Std.el.dif (m)\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
 \toprule
 \begin{minipage}[b]{0.08\columnwidth}\centering\strut
 Order num\strut
@@ -857,9 +931,14 @@ Std.el.dif (m)\strut
 \bottomrule
 \end{longtable}
 
-Tabla 2\_5.
-
 \begin{longtable}[]{@{}cccc@{}}
+\caption{\label{parh} Estadisticas de parametros hidrgograficos segun el
+orden de red}\tabularnewline
+\toprule
+Order & N.streams & Tot.len (km) & Tot.area
+(km\textsuperscript{2})\tabularnewline
+\midrule
+\endfirsthead
 \toprule
 Order & N.streams & Tot.len (km) & Tot.area
 (km\textsuperscript{2})\tabularnewline
@@ -873,9 +952,14 @@ Order & N.streams & Tot.len (km) & Tot.area
 \bottomrule
 \end{longtable}
 
-Tabla 2\_6.
-
 \begin{longtable}[]{@{}cccccccc@{}}
+\caption{\label{razones} Razones de los parametros hidrograficos segun
+su orden de red}\tabularnewline
+\toprule
+Order & Bif.rt. & Len.rt. & Area.rt. & Slo.rt. & Grd.rt. & d.dens. &
+str.freq.\tabularnewline
+\midrule
+\endfirsthead
 \toprule
 Order & Bif.rt. & Len.rt. & Area.rt. & Slo.rt. & Grd.rt. & d.dens. &
 str.freq.\tabularnewline
@@ -894,29 +978,18 @@ str.freq.\tabularnewline
 \bottomrule
 \end{longtable}
 
-En esta tabla es visible como los valores para el ratio de bifurcacion
-en los ordenes de red difieren, los mas parecidos son los de los ordenes
-1, 3 y 4.
-
 \subsection{Índices de concavidad y perfiles
 longitudinales}\label{uxedndices-de-concavidad-y-perfiles-longitudinales}
 
-Los cursos mas largos de la red de drenaje que presentaron los mas altos
-indices de concavidad fueron los cursos 30, 48, 52, 55 y 56 (0.59; 0.51;
-0.51; 0.54; y 0.47, respectivamente), lo que indica que hubo un cambio
-en el trayecto que recorren esos cursos de agua que este relacionado a
-la aparicion de una roca dura, tras haber comparado los resultados de
-los cursos mas largo en el mapa geologico nacional (Mollat (2004)), se
-comprueba que existe un cambio en la litologia presente en los cursos de
-agua, en el caso del curso 30 con un indice de 0.59 de concavidad, al
-pasar de estar sobre rocas tonalitas a estar sobre rocas sedimentarias y
-de originadas en arcos de islas. Tambien se vio afectado de los cursos
-de agua mas largos el 19, quien presenta un indice concavidad de 0.46
-producto de que este flujo de agua se encuentra en una parte de su
-trayecto con una falla tectonica, provocando el cambio en su curso. Y
-los cursos mas rectilineos son los cursos de agua numero 15, 16, 23 y
-38, con valores menores a 0.03 (ver figura\ref{lfpnet},
-\ref{plongitudinal} y \ref{indicec}).
+Con la función \texttt{LfpNetwork} se obtuvieron los cursos más largos
+de la red de drenaje, siendo un total de 60 cursos. De los cuales los
+cursos 30, 48, 52, 55 y 56 (0.59; 0.51; 0.51; 0.54; y 0.47,
+respectivamente), presentaron los mas altos indices de concavidad;
+siendo el curso 30 el poseedor del indice de concavidad mas alto de
+todos los cursos. Mientras que los cursos de agua 15, 16, 23 y 38
+presentaron valores menores a 0.03, poseyendo los valores as bajos de
+todos los cursos (ver figura\ref{lfpnet}, \ref{plongitudinal} y
+\ref{indicec}).
 
 \begin{figure}
 \centering
@@ -941,23 +1014,15 @@ más largos en la cuenca del río Guayubín\label{indicec}}
 
 \subsection{Morfometría de cuenca}\label{morfometruxeda-de-cuenca}
 
-Los parametros morfometricos obtenidos con \texttt{r.basin} (ver tabla
-3) indican que la elevacion minima en la cuenca del rio Guayubin es
-30.97 mslm y la maxima es 1396.73 mslm, por lo que existe una diferencia
-de elevacion en la cuenca de 1365.76 m; mientras que su elevacion media
-fue de 276.70. El parametro coeficiente de compacidad es 4.9 lo que
-indica que la forma de la superficie de la cuenca de acuerdo a su
-delimitacion, y su predominio en su escorrentia, es muy alargada (López
-Cadenas de Llano \& Mintegui Aguirre (1986)); pero, el parametro forma
-de la cuenca genero un indice de 12.48 lo que indica que la cuenca
-ademas de ser muy alargada, esta bastantante ensanchada en las zonas de
-cuenca alta y cuenca media (Córdova (2016), y Pérez (1979)). El curso
-mas largo de la red de drenaje o curso principal en la cuenca producido
-por \texttt{r.basin} tiene una longitud 61.96 km; segun una comparacion
-realizada entre el el vectorial de cursos mas largo (ver
-figura\ref{lfpnet}), y el curso que se obtuvo con \texttt{r.basin} (ver
-figura\ref{vectoresrbasin}), es el curso numero 30 obtenido con la
-funcion \texttt{LfpNetwork}.
+Los parametros morfometricos obtenidos con \texttt{r.basin}, indicaron
+que la elevacion minima en la cuenca del rio Guayubin fue 30.97 mslm y
+la maxima fue 1396.73 mslm, mientras la diferencia de elevacion obtenida
+de los claculos fue de 1365.76 m. Asi mismo, se produjo el parametro de
+elevacion media (276.70). El parametro de coeficiente de compacidad
+obtenido fue de 4.9. El curso mas largo de la red de drenaje o curso
+principal en la cuenca producido por \texttt{r.basin} presento una
+longitud de 61.96 km. El resto de los parametros obtenidos estan
+resumidos en la tabla \ref{tab:parametrosm}.
 
 \begin{figure}
 \centering
@@ -966,9 +1031,17 @@ funcion \texttt{LfpNetwork}.
 largo\label{vectoresrbasin}}
 \end{figure}
 
-Tabla 3. Parámetros morfométricos de la cuenca del río Guayubín
-
 \begin{longtable}[]{@{}cc@{}}
+\caption{\label{tab:parametrosm}Parámetros morfométricos de la cuenca
+del río Guayubín.}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.65\columnwidth}\centering\strut
+Parámetros\strut
+\end{minipage} & \begin{minipage}[b]{0.29\columnwidth}\centering\strut
+Valores\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
 \toprule
 \begin{minipage}[b]{0.65\columnwidth}\centering\strut
 Parámetros\strut
@@ -1140,93 +1213,103 @@ Slope ratio (Horton)\strut
 \bottomrule
 \end{longtable}
 
-los datos generados sobre la curva y la integral hipsométrica muestran
-la reparticion de elevaciones en la cuenca (Jose Ramon Martinez Batlle
-(2019)). Para los cursos de agua pertenecientes a la cuenca de orden 2,
-los cursos con indices de concavidad e integral hipsometrica
-moderadamente alta fueron el 49, 42 y 14 (ver Tabla 3); mientras que los
-cursos con minimos valores de concavidad fueron 2, 10 y 16 (ver Tabla
-3). Ver figuras\ref{hypsob2} y \ref{hypb2}.
+Los estadisticas que se generaron sobre la curva y la integral
+hipsométrica se obtuvieron 60 resultados para los cursos de agua
+pertenecientes a la cuenca de orden 2. El valor minimo generado para la
+integral hipsometrica fue 0.08 en el curso 43. En tanto, el valor maximo
+para la integra fue de 0.48 en el curso 45 (ver tabla \ref{ihco2}). los
+curso mas curvos fuero 37, 18 y 15. Ver figuras\ref{hypsob2} y
+\ref{hypb2}.
 
-En cuanto a las cursos de agua de las cuencas de orden 3, los valores
-maximos presentados fueron 8,11 y 13 para los valores de curva e
-integral hipsomeytrica; y los mas bajos fueron los de los cursos 4 y 16
-(ver Tabla 4). Ver figura\ref{hypsob3} y figura\ref{hypb3}.
-
-Tabla 3. Integral hipsométrica en las cuencas de orden 2.
+En cuanto a las cursos de agua de las cuencas de orden 3, se produjeron
+17 resultados, donde los cursos 8 (0.40), 11 (0.34), y 13 (0.33),
+presentaron los valores de integral hipsometrica mas altos. Y los cursos
+con los valores mas bajos de la integral hipsometrica fueron 4 (0.12), y
+16 (0.06). Ver tabla \ref{ihco3}. y los cursos mas curvos obtenidos
+fueron 5, 10, 17, y 18. Ver figuras \ref{hysob3} y \ref{hypb3}.
 
 \begin{longtable}[]{@{}cc@{}}
+\caption{\label{ihco2} Integral hipsométrica en las cuencas de orden
+2}\tabularnewline
+\toprule
+Categoría & Integral hipsométrica\tabularnewline
+\midrule
+\endfirsthead
 \toprule
 Categoría & Integral hipsométrica\tabularnewline
 \midrule
 \endhead
-1 & 1 0.23784092\tabularnewline
-2 & 2 0.29691935\tabularnewline
-3 & 3 0.31478851\tabularnewline
-4 & 4 0.25845620\tabularnewline
-5 & 5 0.18914104\tabularnewline
-6 & 6 0.38449116\tabularnewline
-7 & 7 0.25087104\tabularnewline
-8 & 9 0.26943542\tabularnewline
-9 & 10 0.19779399\tabularnewline
-10 & 11 0.19287436\tabularnewline
-11 & 12 0.17808813\tabularnewline
-12 & 13 0.22437828\tabularnewline
-13 & 14 0.40595651\tabularnewline
-14 & 15 0.25477715\tabularnewline
-15 & 16 0.19777159\tabularnewline
-16 & 17 0.25313336\tabularnewline
-17 & 18 0.22679929\tabularnewline
-18 & 19 0.30597060\tabularnewline
-19 & 20 0.30564285\tabularnewline
-20 & 21 0.24773997\tabularnewline
-21 & 22 0.21800099\tabularnewline
-22 & 23 0.33229314\tabularnewline
-23 & 24 0.40758028\tabularnewline
-24 & 25 0.27096759\tabularnewline
-25 & 26 0.17485732\tabularnewline
-26 & 28 0.25721054\tabularnewline
-27 & 29 0.27907973\tabularnewline
-28 & 30 0.23545394\tabularnewline
-29 & 32 0.24544610\tabularnewline
-30 & 33 0.18990261\tabularnewline
-31 & 34 0.22303577\tabularnewline
-32 & 35 0.14436574\tabularnewline
-33 & 36 0.30229714\tabularnewline
-34 & 37 0.30742281\tabularnewline
-35 & 38 0.34876647\tabularnewline
-36 & 39 0.39371293\tabularnewline
-37 & 40 0.14419677\tabularnewline
-38 & 41 0.36397062\tabularnewline
-39 & 42 0.45795809\tabularnewline
-40 & 43 0.07642614\tabularnewline
-41 & 45 0.48672629\tabularnewline
-42 & 46 0.29182502\tabularnewline
-43 & 47 0.47300056\tabularnewline
-44 & 48 0.22892086\tabularnewline
-45 & 49 0.50910119\tabularnewline
-46 & 50 0.16011357\tabularnewline
-47 & 51 0.14325914\tabularnewline
-48 & 52 0.30243670\tabularnewline
-49 & 53 0.22622911\tabularnewline
-50 & 54 0.27985062\tabularnewline
-51 & 55 0.16980308\tabularnewline
-52 & 57 0.38363564\tabularnewline
-53 & 58 0.29000326\tabularnewline
-54 & 59 0.23691203\tabularnewline
-55 & 60 0.30564446\tabularnewline
-56 & 61 0.30401039\tabularnewline
-57 & 62 0.25939942\tabularnewline
-58 & 63 0.16711030\tabularnewline
-59 & 64 0.14693431\tabularnewline
-60 & 65 0.19359746\tabularnewline
-61 & 66 0.17854689\tabularnewline
+1 & 0.23784092\tabularnewline
+2 & 0.29691935\tabularnewline
+3 & 0.31478851\tabularnewline
+4 & 0.25845620\tabularnewline
+5 & 0.18914104\tabularnewline
+6 & 0.38449116\tabularnewline
+7 & 0.25087104\tabularnewline
+9 & 0.26943542\tabularnewline
+10 & 0.19779399\tabularnewline
+11 & 0.19287436\tabularnewline
+12 & 0.17808813\tabularnewline
+13 & 0.22437828\tabularnewline
+14 & 0.40595651\tabularnewline
+15 & 0.25477715\tabularnewline
+16 & 0.19777159\tabularnewline
+17 & 0.25313336\tabularnewline
+18 & 0.22679929\tabularnewline
+19 & 0.30597060\tabularnewline
+20 & 0.30564285\tabularnewline
+21 & 0.24773997\tabularnewline
+22 & 0.21800099\tabularnewline
+23 & 0.33229314\tabularnewline
+24 & 0.40758028\tabularnewline
+25 & 0.27096759\tabularnewline
+26 & 0.17485732\tabularnewline
+28 & 0.25721054\tabularnewline
+29 & 0.27907973\tabularnewline
+30 & 0.23545394\tabularnewline
+32 & 0.24544610\tabularnewline
+33 & 0.18990261\tabularnewline
+34 & 0.22303577\tabularnewline
+35 & 0.14436574\tabularnewline
+36 & 0.30229714\tabularnewline
+37 & 0.30742281\tabularnewline
+38 & 0.34876647\tabularnewline
+39 & 0.39371293\tabularnewline
+40 & 0.14419677\tabularnewline
+41 & 0.36397062\tabularnewline
+42 & 0.45795809\tabularnewline
+43 & 0.07642614\tabularnewline
+45 & 0.48672629\tabularnewline
+46 & 0.29182502\tabularnewline
+47 & 0.47300056\tabularnewline
+48 & 0.22892086\tabularnewline
+49 & 0.50910119\tabularnewline
+50 & 0.16011357\tabularnewline
+51 & 0.14325914\tabularnewline
+52 & 0.30243670\tabularnewline
+53 & 0.22622911\tabularnewline
+54 & 0.27985062\tabularnewline
+55 & 0.16980308\tabularnewline
+57 & 0.38363564\tabularnewline
+58 & 0.29000326\tabularnewline
+59 & 0.23691203\tabularnewline
+60 & 0.30564446\tabularnewline
+61 & 0.30401039\tabularnewline
+62 & 0.25939942\tabularnewline
+63 & 0.16711030\tabularnewline
+64 & 0.14693431\tabularnewline
+65 & 0.19359746\tabularnewline
+66 & 0.17854689\tabularnewline
 \bottomrule
 \end{longtable}
 
-Tabla 4. Integral hipsométrica en las cuencas de orden 3.
-
 \begin{longtable}[]{@{}cc@{}}
+\caption{\label{ihco3} Integral hipsométrica en las cuencas de orden
+3}\tabularnewline
+\toprule
+Categoría & Integral hipsométrica\tabularnewline
+\midrule
+\endfirsthead
 \toprule
 Categoría & Integral hipsométrica\tabularnewline
 \midrule
@@ -1317,23 +1400,123 @@ Categoría & Integral hipsométrica\tabularnewline
 \begin{figure}
 \centering
 \includegraphics[width=0.90000\textwidth]{Mapview_hypsobasinorder3.png}
-\caption{Cuencas de red de drenaje orden 3\label{hypb2}}
+\caption{Cuencas de red de drenaje orden 3\label{hypb3}}
 \end{figure}
 
 \section{Discusión}\label{discusiuxf3n}
 
 Con los hallazgos producidos sobre la cuenca del rio Guayubin, es
-posible responder a las preguntas planteadas al inicio sobre la forma de
-la cuenca y de su red de drenaje, a que se deben sus patrones, la
-organizacion de la red de drenaje, la presecia de el fenomeno de
-constancia, la relacion de los perfiles longitudinales y su indice de
-concavidad con la litologia en la cuenca, la relacion de los parametros
-de cuenca con la litologia, al igual que la relacion de la curva
-hipsometrica y la integral con la litologia. Ademas es posible hacer
-comparaciones de eficacia del metodo empleado para extraer las redes de
-drenaje.\\
-En los parametros de cuenca y las estadisticas de ordenes de, el area
-mostro mantener la
+posible responder a las preguntas planteadas sobre la forma de la cuenca
+y su red de drenaje, los patrones en la red de drenaje, la organizacion
+de la red de drenaje, el fenomeno de constancia, la relacion de los
+perfiles longitudinales y su indice de concavidad con la litologia en la
+cuenca, la relacion de los parametros de cuenca con la litologia, al
+igual que la relacion de la curva hipsometrica y la integral con la
+litologia. Ademas, es posible hacer comparaciones de eficacia del metodo
+empleado para extraer las redes de drenaje con el mapa topologico de
+Republica Dominicana (s.a. (s.f.)).
+
+En los parametros de cuenca y en las estadisticas de ordenes de red, el
+valor de area de cuenca se mantuvo sin cambios; pero comparandolos con
+las informaciones extraidas de Medio Ambiente y Recurso Naturales (2015)
+los valores que se obtuvieron no concuerdan, puesto que, la cuenca
+presentada por Medio Ambiente y Recurso Naturales (2015) es mas pequeña
+que la producida por los algoritmos en R (ver tablas
+\ref{tab:parametrosm} y \ref{tab:estadisticaor}.
+
+La cuenca tiene forma de pera (Terrain Works (2014)) y la forma de su
+red de drenaje es dendrítica (Gutiérrez Elorza (2008)). La forma de la
+red de drenaje se produce en zonas de relieve heterogeneo como se
+presenta la parte de cuenca alta; los cursos de agua se desarrollan
+libremente y no depende de un control estructurales (Ingeniero Civil
+(2018)); la cuenca esta asentuada en rocas de tipo igneas o magmaticas y
+sedimentarias (Mollat (2004)). Howard (1967) asegura que lospatrones
+denditricos los sedimentos tienen una resistencia uniforme.
+
+La red de drenaje de la cuenca presenta signos de haber sufrido el
+fenómeno de reorganización captura fluvial, según Pastor (2013) este
+fenomeno se puede identificar al observar la red de drenaje, donde se
+producen cambios abruptos en el recorrido del cauce que ha sido captura.
+Se ha observado que este fenómeno se produce en todas las redes desde
+orden 1 a orden 5, en especial en las redes de orden mas bajo, pero
+puede verse muy marcado en la red de orden cinco, donde se produce
+cambios del tipo de roca y relieve es ma heterogeneo (ver
+figura\ref{grosor} y \ref{magecu}).
+
+Según Summerfield (1991), la razon de bifurcacion que esta entre 3 y 5,
+indica que la litologia del lugar es homogenea. En tabla \ref{razones},
+es visible como los valores para la razon de bifurcacion en los ordenes
+de red difieren el uno del otro, los ordenes 1, 2, 3 y 4 mantienen una
+homogeneidad en su litogia. Como se observa en las tablas
+\ref{tab:regresionc} y ref\{tab:estandard\}, las razones de bifurcacion
+obtenidas se corresponden. Ambos valores coinciden con la razon de
+bifurcacion calculada con codigo en R (4.064346), podemos concluir que
+mantienen una constancia en el tipo de roca presente.
+
+Los cursos mas largos de la red de drenaje que tienen los mas altos
+indices de concavidad fueron los cursos 30, 48, 52, 55 y 56 (0.59; 0.51;
+0.51; 0.54; y 0.47, respectivamente), lo que indica que hubo un cambio
+en el trayecto que recorren esos cursos de agua que este relacionado a
+la aparicion de una roca dura, tras haber comparado los resultados de
+los cursos mas largo en el mapa geologico nacional (Mollat (2004)), se
+comprueba que existe un cambio en la litologia presente en los cursos de
+agua, en el caso del curso 30 con un indice de 0.59 de concavidad, al
+pasar de estar sobre rocas tonalitas a estar sobre rocas sedimentarias y
+de originadas en arcos de islas se produce un cambio en su trayectoria.
+Tambien se vio afectado el curso de agua 19, quien presenta un indice
+concavidad de 0.46 producto de que este flujo en su trayecto se
+encuentra con una falla tectonica, provocando el cambio en su curso. Y
+los cursos mas rectilineos con los indices de concavidad mas bajos son
+los cursos de agua numero 15, 16, 23 y 38, con valores menores a 0.03,
+estos cursos de agua realizan su reccorrido por un mismo tipo de roca
+por lo que no experimenta cambios bruscos en su curso (ver
+figura\ref{lfpnet}, \ref{plongitudinal} y \ref{indicec}).
+
+Los parametros morfometricos obtenidos con \texttt{r.basin} (ver tabla
+\ref{parametrosm}), indican que la elevacion minima en la cuenca del rio
+Guayubin es 30.97 mslm y la maxima es 1396.73 mslm, por lo que existe
+una diferencia de elevacion en la cuenca de 1365.76 m; mientras que su
+elevacion media fue de 276.70. El parametro coeficiente de compacidad es
+4.9 lo que indica que la forma de la superficie de la cuenca de acuerdo
+a su delimitacion, y el predominio en su escorrentia, es muy alargada
+(López Cadenas de Llano \& Mintegui Aguirre (1986)); pero, el parametro
+forma de la cuenca genero un indice de 12.48 lo que indica que la cuenca
+ademas de ser muy alargada, esta bastantante ensanchada en las zonas de
+cuenca alta y cuenca media (Córdova (2016), y Pérez (1979)). Segun los
+resultados de la razon de elongacion (0.50), se confirma que la cuenca
+es alargada (De Matauco (2004)). El curso mas largo de la red de drenaje
+o curso principal en la cuenca producido por \texttt{r.basin} tiene una
+longitud 61.96 km; segun una comparacion realizada entre el el vectorial
+de cursos mas largo (ver figura\ref{lfpnet}), y el curso que se obtuvo
+con \texttt{r.basin} (ver figura\ref{vectoresrbasin}), es el curso
+numero 30 obtenido con la funcion \texttt{LfpNetwork}. Por lo que la
+cabecera del rio Guayubin se localiza al sureste de la indicada por
+Medio Ambiente y Recurso Naturales (2015), bajo el nombre de Dajao.
+
+La curva y la integral hipsométrica muestran la reparticion de
+elevaciones en la cuenca (Jose Ramon Martinez Batlle (2019)). El valor
+minimo generado para la integral hipsometrica fue 0.08 en el curso 43.
+En tanto, el valor maximo para la integra fue de 0.48 en el curso 45
+(ver tabla \ref{ihco2}). Y los curso mas curvos fueron 37 y 18. El
+primero presenta signos de una evolucion lenta en su elevacion; y el
+segundo, presenta una evolucion media en su elevacion. Ver
+figuras\ref{hypsob2} y \ref{hypb2}. Los cursos 41 y 42 son los mas
+rectilineo y su integral hipsometrica es moderada por lo que estos
+cursos han experimentado poca evolucion rapida en su elevacion.
+
+Los cursos de agua pertenecientes a la cuencas de orden 3, los valores
+maximos presentes (8 y 13), tuvieron una evolucion media en la
+elevacion. Y los cursos 4 y 16, demuestran una lenta y estable evolucion
+en la elevacion (ver tabla \ref{ihco3}). Ver figuras \ref{hysob3} y
+\ref{hypb3}.
+
+Toda la informacion generada sobre la cuenca sirve como perdaño a
+futuras investigaciones sobre la misma u otras cuencas fluviales en el
+pais.
+
+El estudio esta limitado a los analisis cuantitativos, puesto que carece
+de la toma de muestras en campo para una mas precisa comprension de la
+cuenca.
 
 \section{Agradecimientos}\label{agradecimientos}
 
@@ -1428,6 +1611,12 @@ Córdova, M. (2016). \emph{Parámetros geomorfológicos de cuencas
 hidrográficas}. Obtenido de Prontubeam: http://www. prontubeam.
 com/articulos/articulos. php.
 
+\hypertarget{ref-de2004analisis}{}
+De Matauco, A. I. G. (2004). Análisis morfométrico de la cuenca y de la
+red de drenaje del río zadorra y sus afluentes aplicado a la
+peligrosidad de crecidas. \emph{Boletín de La Asociación de Geógrafos
+Españoles}, (38), 311--330.
+
 \hypertarget{ref-ESRI2012}{}
 ESRI, E. S. R. I. (2012). ArcGIS resources: Definir cuencas
 hidrográficas. Retrieved from
@@ -1470,6 +1659,11 @@ drainage basins; hydrophysical approach to quantitative morphology.
 \hypertarget{ref-howard1967drainage}{}
 Howard, A. D. (1967). Drainage analysis in geologic interpretation: A
 summation. \emph{AAPG Bulletin}, \emph{51}(11), 2246--2259.
+
+\hypertarget{ref-patron2018}{}
+Ingeniero Civil, team. (2018). Patrones de drenaje y su significado.
+Retrieved from
+\url{https://www.cuevadelcivil.com/2011/06/diseno-de-drenaje-y-su-significacion.html}
 
 \hypertarget{ref-streambasinsjareck}{}
 Jarek Jasiewicz, G., Adam Mickiewicz University, \& Institute, G.
@@ -1545,10 +1739,19 @@ Meteorología E Hidrología. Caracas. Venezuela}, 01--38.
 Pinilla, A. (1993). \emph{Symposium sobre la raña en españa y portugal}
 (Vol. 2). Editorial CSIC-CSIC Press.
 
+\hypertarget{ref-TopoMap}{}
+s.a. (s.f.). \emph{Topo map of the dominican republic 1:50k}.
+urlhttps://geofis.xyz/lm/index.php/view/map/?repository=mtnrd50k\&project=mtnrd50k.
+
 \hypertarget{ref-strahler1952hypsometric}{}
 Strahler, A. N. (1952). Hypsometric (area-altitude) analysis of
 erosional topography. \emph{Geological Society of America Bulletin},
 \emph{63}(11), 1117--1142.
+
+\hypertarget{ref-summerfield1991sub}{}
+Summerfield, M. (1991). Sub-aerial denudation of passive margins:
+Regional elevation versus local relief models. \emph{Earth and Planetary
+Science Letters}, \emph{102}(3-4), 460--469.
 
 \hypertarget{ref-tovect}{}
 Team, G. D. (2003--2021). \emph{Addon r.to.vect}. Retrieved from
