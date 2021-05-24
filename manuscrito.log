@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.17)  22 MAY 2021 20:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.17)  24 MAY 2021 00:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -703,228 +703,233 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 196.
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-LaTeX Font Info:    Try loading font information for OT1+ppl on input line 342.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 298.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 342
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 298
 .
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 342
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 298
 .
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 342
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 298
 .
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 342
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 298
 .
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
-) [3]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 377.
+) [2]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 325.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Overfull \hbox (7.36105pt too wide) in paragraph at lines 376--384
+Overfull \hbox (7.36105pt too wide) in paragraph at lines 329--334
 []\T1/ppl/m/n/10.95 Los parámet-ros de la cuenca fueron cal-cu-la-dos por medio
  del ad-don de GRASS GIS \T1/cmtt/m/n/10.95 r.watershed
  []
 
-[4] [5] [6] [7]
-
-LaTeX Warning: Reference `parametrosm' on page 8 undefined on input line 642.
-
-<Mapa final.png, id=180, 844.98083pt x 597.45609pt>
-File: Mapa final.png Graphic file (type png)
-<use Mapa final.png>
-Package pdftex.def Info: Mapa final.png  used on input line 719.
-(pdftex.def)             Requested size: 469.75641pt x 332.14815pt.
-[8]
-<geologico.png, id=187, 844.95676pt x 597.432pt>
-File: geologico.png Graphic file (type png)
-<use geologico.png>
-Package pdftex.def Info: geologico.png  used on input line 725.
-(pdftex.def)             Requested size: 281.85355pt x 199.28633pt.
-
-Overfull \hbox (1.84947pt too wide) in paragraph at lines 819--821
- \T1/ppl/m/n/10.95 Topológico 
+[3]
+Overfull \hbox (2.7116pt too wide) in paragraph at lines 383--388
+\T1/ppl/m/n/10.95 (Di Leo & Di Ste-fano, 2003--2021). Los vec-tores obtenidos s
+on trans-for-ma-dos a EPGS: 4326 (Lohmar,
  []
 
-[9 <./Mapa final.png>]
-<cuenca extraida.png, id=194, 1505.625pt x 777.65532pt>
-File: cuenca extraida.png Graphic file (type png)
-<use cuenca extraida.png>
-Package pdftex.def Info: cuenca extraida.png  used on input line 837.
-(pdftex.def)             Requested size: 234.86276pt x 121.30661pt.
-<red de drenaje extraida.png, id=195, 910.15031pt x 502.87875pt>
+[4] [5]
+
+LaTeX Warning: Reference `parametrosm' on page 6 undefined on input line 551.
+
+[6]
+<Mapa final.png, id=153, 845.04279pt x 597.46642pt>
+File: Mapa final.png Graphic file (type png)
+<use Mapa final.png>
+Package pdftex.def Info: Mapa final.png  used on input line 628.
+(pdftex.def)             Requested size: 469.75217pt x 332.12654pt.
+<geologico.png, id=155, 844.95676pt x 597.432pt>
+File: geologico.png Graphic file (type png)
+<use geologico.png>
+Package pdftex.def Info: geologico.png  used on input line 634.
+(pdftex.def)             Requested size: 281.85355pt x 199.28633pt.
+<red de drenaje extraida.png, id=156, 910.15031pt x 502.87875pt>
 File: red de drenaje extraida.png Graphic file (type png)
 <use red de drenaje extraida.png>
-Package pdftex.def Info: red de drenaje extraida.png  used on input line 843.
+Package pdftex.def Info: red de drenaje extraida.png  used on input line 640.
 (pdftex.def)             Requested size: 328.83432pt x 181.68843pt.
-<ordenes de red.png, id=196, 910.15031pt x 485.56406pt>
+<ordenes de red.png, id=157, 910.15031pt x 485.56406pt>
 File: ordenes de red.png Graphic file (type png)
 <use ordenes de red.png>
-Package pdftex.def Info: ordenes de red.png  used on input line 849.
+Package pdftex.def Info: ordenes de red.png  used on input line 646.
 (pdftex.def)             Requested size: 469.7534pt x 250.61284pt.
-<orden de red mapa 2.png, id=197, 911.65594pt x 486.31688pt>
+<orden de red mapa 2.png, id=158, 911.65594pt x 486.31688pt>
 File: orden de red mapa 2.png Graphic file (type png)
 <use orden de red mapa 2.png>
-Package pdftex.def Info: orden de red mapa 2.png  used on input line 856.
+Package pdftex.def Info: orden de red mapa 2.png  used on input line 653.
 (pdftex.def)             Requested size: 375.81232pt x 200.47461pt.
-<cuencas delimitadas y ordenes de red.png, id=198, 1027.58907pt x 516.42938pt>
+<cuencas delimitadas y ordenes de red.png, id=159, 1027.58907pt x 516.42938pt>
 File: cuencas delimitadas y ordenes de red.png Graphic file (type png)
 <use cuencas delimitadas y ordenes de red.png>
 Package pdftex.def Info: cuencas delimitadas y ordenes de red.png  used on inpu
-t line 863.
+t line 660.
 (pdftex.def)             Requested size: 328.81953pt x 165.2529pt.
-<Numero de red segun su orden.png, id=199, 602.25pt x 400.49625pt>
+<Numero de red segun su orden.png, id=160, 602.25pt x 400.49625pt>
 File: Numero de red segun su orden.png Graphic file (type png)
 <use Numero de red segun su orden.png>
-Package pdftex.def Info: Numero de red segun su orden.png  used on input line 8
-69.
+Package pdftex.def Info: Numero de red segun su orden.png  used on input line 6
+66.
 (pdftex.def)             Requested size: 375.81718pt x 249.91843pt.
-<cursos mas largos.png, id=200, 1023.07219pt x 517.18219pt>
+<cursos mas largos.png, id=161, 1023.07219pt x 517.18219pt>
 File: cursos mas largos.png Graphic file (type png)
 <use cursos mas largos.png>
-Package pdftex.def Info: cursos mas largos.png  used on input line 876.
+Package pdftex.def Info: cursos mas largos.png  used on input line 673.
 (pdftex.def)             Requested size: 469.74472pt x 237.46477pt.
-<perfiles longitudinales.png, id=201, 1204.5pt x 657.2053pt>
+<perfiles longitudinales.png, id=162, 1204.5pt x 657.2053pt>
 File: perfiles longitudinales.png Graphic file (type png)
 <use perfiles longitudinales.png>
-Package pdftex.def Info: perfiles longitudinales.png  used on input line 883.
+Package pdftex.def Info: perfiles longitudinales.png  used on input line 680.
 (pdftex.def)             Requested size: 469.75311pt x 256.30904pt.
-<Indices de concavidad.png, id=202, 1505.625pt x 822.07124pt>
+<Indices de concavidad.png, id=163, 1505.625pt x 822.07124pt>
 File: Indices de concavidad.png Graphic file (type png)
 <use Indices de concavidad.png>
-Package pdftex.def Info: Indices de concavidad.png  used on input line 890.
+Package pdftex.def Info: Indices de concavidad.png  used on input line 687.
 (pdftex.def)             Requested size: 469.74852pt x 256.48268pt.
-<cuenca-red de drenaje-curso mas largo.png, id=203, 1028.34187pt x 514.17094pt>
+<cuenca-red de drenaje-curso mas largo.png, id=164, 1028.34187pt x 514.17094pt>
 
 File: cuenca-red de drenaje-curso mas largo.png Graphic file (type png)
 <use cuenca-red de drenaje-curso mas largo.png>
 Package pdftex.def Info: cuenca-red de drenaje-curso mas largo.png  used on inp
-ut line 897.
+ut line 694.
 (pdftex.def)             Requested size: 281.86127pt x 140.93063pt.
-<HypsoBasinOrder2.png, id=204, 1505.625pt x 616.55344pt>
+<HypsoBasinOrder2.png, id=165, 1505.625pt x 616.55344pt>
 File: HypsoBasinOrder2.png Graphic file (type png)
 <use HypsoBasinOrder2.png>
-Package pdftex.def Info: HypsoBasinOrder2.png  used on input line 904.
+Package pdftex.def Info: HypsoBasinOrder2.png  used on input line 701.
 (pdftex.def)             Requested size: 516.75323pt x 211.61044pt.
 
-Overfull \hbox (46.99821pt too wide) in paragraph at lines 904--906
+Overfull \hbox (46.99821pt too wide) in paragraph at lines 701--703
  [][] 
  []
 
-<Mapview_hypsobasinorder2.png, id=205, 1028.34187pt x 514.17094pt>
+<Mapview_hypsobasinorder2.png, id=166, 1028.34187pt x 514.17094pt>
 File: Mapview_hypsobasinorder2.png Graphic file (type png)
 <use Mapview_hypsobasinorder2.png>
-Package pdftex.def Info: Mapview_hypsobasinorder2.png  used on input line 911.
+Package pdftex.def Info: Mapview_hypsobasinorder2.png  used on input line 708.
 (pdftex.def)             Requested size: 422.78406pt x 211.39203pt.
-<HypsoBasinOrder3.png, id=206, 1129.21875pt x 462.22687pt>
+<HypsoBasinOrder3.png, id=167, 1129.21875pt x 462.22687pt>
 File: HypsoBasinOrder3.png Graphic file (type png)
 <use HypsoBasinOrder3.png>
-Package pdftex.def Info: HypsoBasinOrder3.png  used on input line 917.
+Package pdftex.def Info: HypsoBasinOrder3.png  used on input line 714.
 (pdftex.def)             Requested size: 469.75426pt x 192.28607pt.
-<Mapview_hypsobasinorder3.png, id=207, 1028.34187pt x 514.92375pt>
+<Mapview_hypsobasinorder3.png, id=168, 1028.34187pt x 514.92375pt>
 File: Mapview_hypsobasinorder3.png Graphic file (type png)
 <use Mapview_hypsobasinorder3.png>
-Package pdftex.def Info: Mapview_hypsobasinorder3.png  used on input line 924.
+Package pdftex.def Info: Mapview_hypsobasinorder3.png  used on input line 721.
 (pdftex.def)             Requested size: 422.78406pt x 211.70152pt.
-[10] [11 <./geologico.png> <./cuenca extraida.png> <./red de drenaje extraida.p
-ng>] [12 <./ordenes de red.png> <./orden de red mapa 2.png>] [13 <./cuencas del
-imitadas y ordenes de red.png> <./Numero de red segun su orden.png>] [14 <./cur
-sos mas largos.png> <./perfiles longitudinales.png (PNG copy)>] [15 <./Indices 
-de concavidad.png (PNG copy)> <./cuenca-red de drenaje-curso mas largo.png>] [1
-6 <./HypsoBasinOrder2.png (PNG copy)> <./Mapview_hypsobasinorder2.png>] [17 <./
-HypsoBasinOrder3.png (PNG copy)> <./Mapview_hypsobasinorder3.png>] [18] [19] [2
-0]
+
+LaTeX Warning: Reference `MDE' on page 7 undefined on input line 747.
+
+
+Overfull \hbox (1.84947pt too wide) in paragraph at lines 812--814
+ \T1/ppl/m/n/10.95 Topológico 
+ []
+
+[7] [8] [9 <./Mapa final.png> <./geologico.png>] [10 <./red de drenaje extraida
+.png> <./ordenes de red.png>] [11 <./orden de red mapa 2.png> <./cuencas delimi
+tadas y ordenes de red.png>] [12 <./Numero de red segun su orden.png> <./cursos
+ mas largos.png>] [13 <./perfiles longitudinales.png (PNG copy)> <./Indices de 
+concavidad.png (PNG copy)>] [14 <./cuenca-red de drenaje-curso mas largo.png> <
+./HypsoBasinOrder2.png (PNG copy)>] [15 <./Mapview_hypsobasinorder2.png> <./Hyp
+soBasinOrder3.png (PNG copy)>]
+Overfull \vbox (231.3711pt too high) has occurred while \output is active []
+
+[16 <./Mapview_hypsobasinorder3.png>] [17] [18]
 LaTeX Font Info:    Font shape `T1/ppl/bx/it' in size <10.95> not available
-(Font)              Font shape `T1/ppl/b/it' tried instead on input line 1520.
-[21]
-Overfull \hbox (6.94301pt too wide) in paragraph at lines 1649--1651
+(Font)              Font shape `T1/ppl/b/it' tried instead on input line 1419.
+[19]
+Overfull \hbox (6.94301pt too wide) in paragraph at lines 1542--1544
 []\T1/ppl/m/n/10.95 Jasiewicz, J. (2003--2021). \T1/ppl/m/it/10.95 Ad-don r.str
 eam.order\T1/ppl/m/n/10.95 . Re-trieved from [][]$https : / / grass . osgeo . o
 rg / grass78 /
  []
 
 
-Overfull \hbox (13.06339pt too wide) in paragraph at lines 1653--1656
+Overfull \hbox (13.06339pt too wide) in paragraph at lines 1546--1549
 []\T1/ppl/m/n/10.95 Jasiewicz, j., Uni-ver-sity, A. M., & Geoin-for-ma-tion In-
 sti-tute, G. &. (2003--2021). \T1/ppl/m/it/10.95 Ad-don r.stream.stats\T1/ppl/m
 /n/10.95 .
  []
 
-[22]
-Overfull \hbox (0.15443pt too wide) in paragraph at lines 1663--1665
+
+Overfull \hbox (0.15443pt too wide) in paragraph at lines 1556--1558
 []\T1/ppl/m/n/10.95 Kelly, P. (2003--2021). \T1/ppl/m/it/10.95 Ad-don g.proj\T1
 /ppl/m/n/10.95 . Re-trieved from [][]$https : / / grass . osgeo . org / grass79
  / manuals /
  []
 
 
-Overfull \hbox (253.66466pt too wide) in paragraph at lines 1667--1669
+Overfull \hbox (253.66466pt too wide) in paragraph at lines 1560--1562
 []\T1/ppl/m/n/10.95 Lizmap. (s.f.). \T1/ppl/m/it/10.95 Topo map of the do-mini-
 can re-pub-lic 1:50k\T1/ppl/m/n/10.95 . url-https://geofis.xyz/lm/index.php/vie
 w/map/?repository=mtnrd50k&project=mtnrd50k. 
  []
 
-
-Overfull \hbox (36.43541pt too wide) in paragraph at lines 1675--1678
+[20]
+Overfull \hbox (36.43541pt too wide) in paragraph at lines 1573--1576
 \T1/ppl/m/n/10.95 urlhttp://ambiente.gob.do/wp-content/uploads/2016/11/Yaque-de
 l-Norte-Subcuencas-Hidrograficas-
  []
 
 
-Overfull \hbox (0.9426pt too wide) in paragraph at lines 1680--1682
+Overfull \hbox (0.9426pt too wide) in paragraph at lines 1578--1580
 []\T1/ppl/m/n/10.95 Metz, M. (2003--2021). \T1/ppl/m/it/10.95 Ad-don r.stream.e
 xtract\T1/ppl/m/n/10.95 . Re-trieved from [][]$https : / / grass . osgeo . org 
 / grass78 /
  []
 
 
-Overfull \hbox (151.83585pt too wide) in paragraph at lines 1684--1687
+Overfull \hbox (151.83585pt too wide) in paragraph at lines 1582--1585
 \T1/ppl/m/it/10.95 dp-mini-cana: Es-cala 1:250,000\T1/ppl/m/n/10.95 . url-https
 ://geofis.xyz/lm/index.php/view/map/?repository=geo250krd&project=geologico_gpk
 g. 
  []
 
 
-Overfull \hbox (25.23985pt too wide) in paragraph at lines 1732--1734
+Overfull \hbox (25.23985pt too wide) in paragraph at lines 1631--1633
 []\T1/ppl/m/n/10.95 Terrain Works Team. (2014). Trib-u-tary con-flu-ence ef-fec
 ts. Re-trieved from [][]$http : / / www . netmaptools .
  []
 
-[23]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1759.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1759.
+[21]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1651.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1651.
 (./manuscrito.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1759.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1759.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1651.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1651.
 
 Package rerunfilecheck Info: File `manuscrito.out' has not changed.
-(rerunfilecheck)             Checksum: 335FF2AF41952D0C9952E25B082FD0A5;3369.
+(rerunfilecheck)             Checksum: AA0690B0E4E68A666BCAF510F301E905;2164.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1759.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1651.
  ) 
 Here is how much of TeX's memory you used:
- 10477 strings out of 492982
- 147789 string characters out of 6134896
- 239729 words of memory out of 5000000
- 13792 multiletter control sequences out of 15000+600000
+ 10449 strings out of 492982
+ 147158 string characters out of 6134896
+ 240337 words of memory out of 5000000
+ 13773 multiletter control sequences out of 15000+600000
  26627 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,9n,31p,398b,428s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,9n,31p,397b,430s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/
 fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-supe
@@ -933,10 +938,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/urw/palatino/uplri8a.pfb>
-Output written on manuscrito.pdf (23 pages, 28713535 bytes).
+Output written on manuscrito.pdf (21 pages, 18469917 bytes).
 PDF statistics:
- 430 PDF objects out of 1000 (max. 8388607)
- 366 compressed objects within 4 object streams
- 118 named destinations out of 1000 (max. 500000)
- 225 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 390 PDF objects out of 1000 (max. 8388607)
+ 330 compressed objects within 4 object streams
+ 109 named destinations out of 1000 (max. 500000)
+ 180 words of extra memory for PDF output out of 10000 (max. 10000000)
 
