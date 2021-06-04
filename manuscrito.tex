@@ -280,16 +280,16 @@ aplica a la cuenca del río Guayubín, proporciona nueva información de la
 misma sobre su configuración y modelado, y además, puede ser reproducida
 sin coste alguno. Por medio de parámetros morfométricos se busca
 identificar qué forma tienen la cuenca y su red de drenaje. De igual
-manera, se trata de comprender como se organiza la red de drenaje y si
-esta tiene algún patrón según sea su clasificación. Tras, estudiar la
-cuenca y su red de drenaje, se indaga si se producen fenómenos de
-reorganización en ellas, como captura fluvial o la constancia en la
-razón de bifurcación. También, se inquiere sobre la existencia de una
-relación entre: los perfiles longitudinales e índice de concavidad con
-la litología de la cuenca; la relación entre los parámetros
-morfométricos con las características litológica y estructural de
-cuenca; y si hay factores que se asocien con la curva e integral
-hipsométricas de la cuenca.
+manera, se trata de comprender como se organiza la red de drenaje; y,
+tras el estudio de la cuenca y su red de drenaje, se indaga si se
+producen fenómenos de reorganización en ellas, como captura fluvial o la
+constancia en la razón de bifurcación.
+
+También, se inquiere sobre la existencia de una relación entre: los
+perfiles longitudinales e índice de concavidad con la litología de la
+cuenca; la relación entre los parámetros morfométricos con las
+características litológica y estructural de cuenca; y si hay factores
+que se asocien con la curva e integral hipsométricas de la cuenca.
 
 \section{Área de estudio}\label{uxe1rea-de-estudio}
 
@@ -313,6 +313,18 @@ rio Guayubín se ubica en la vertiente noroeste del Cerro La Pelada, en
 un paraje denominado Palo Amarillo; mientras que sus aguas se vierten en
 el río Yaque del Norte, en la localidad Guayubín.
 
+\begin{figure}
+\centering
+\includegraphics[width=1.00000\textwidth]{Mapa final.png}
+\caption{Cuenca del río Guayubín\label{mapacuenca}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1.00000\textwidth]{geologico.png}
+\caption{Mapa Geologico de la cuenca\label{magecu}}
+\end{figure}
+
 \section{Materiales y Metodología}\label{materiales-y-metodologuxeda}
 
 Para este estudio se utilizaron operaciones de análisis morfométrico de
@@ -322,50 +334,49 @@ medio de entorno de programación R (Allaire, 2012). Todos los análisis
 de carácter estádisticos y las figuras de los resultados, fueron
 realizadas en R usando diversos paquetes (ver tabla
 \ref{tab:materiales}). Se utilizó un modelo digital de elevaciones (en
-lo adelante, \texttt{MDE}), de la misión tadar del transbordador
-espacial Shttle (Farr et al., 2007), a 90 metros de resolución, para
-extraer los datos a analizar e interpretar.
+lo adelante, \texttt{MDE}) de la misión radar del transbordador espacial
+Shuttle (Farr et al., 2007), a 90 metros de resolución, para extraer los
+datos a analizar e interpretar.
 
-Los parámetros de la cuenca fueron calculados por medio del addon de
-GRASS GIS \texttt{r.watershed} (Ehlschlaeger \& Laboratory,
-2003--2021b), utilizando un Dem. Las capas generadas fueron ingresadas a
-R con la librería \texttt{sp} y manejadas con la librería
-\texttt{raster}.
+Los parámetros de la cuenca acumulación de flujo, elevación, drenaje,
+cuenca y otros más, fueron calculados por medio del addon de GRASS GIS
+\texttt{r.watershed} (Ehlschlaeger \& Laboratory, 2003--2021b), con un
+umbral de acumulación de 80 celdas, utilizando un Dem. Las capas
+generadas fueron ingresadas a R con la librería \texttt{sp} y manejadas
+con la librería \texttt{raster}.
 
-Se usó el addon \texttt{r.water.outlet} (Ehlschlaeger \& Laboratory,
-2003--2021a) para la extracción de la cuenca. Así mismo, se usó el addon
-\texttt{r.to.vect} (GRASS Development Team, 2003--2021), para convertir
-el ráster resultante en vectorial; todos los resultados, generados por
-estos dos addons, fueron llevados a R.
-
-Para extraer la red de drenaje se aplicó el addon
-\texttt{r.stream.extract} (Metz, 2003--2021), y luego, fueron llevados a
-R.
+Para extraer la cuenca se usó el addon \texttt{r.water.outlet}
+(Ehlschlaeger \& Laboratory, 2003--2021a), también, se usó el addon
+\texttt{r.to.vect} (GRASS Development Team, 2003--2021) para convertir
+el ráster resultante en vectorial, que luego se llevó a R. Así mismo, se
+aplicó el addon \texttt{r.stream.extract} (Metz, 2003--2021) para poder
+extraer la red de drenaje, donde se llevaron a R los resultados
+obtenidos.
 
 En cuanto al orden de red y el análisis hortoniano, se usó el addon
-\texttt{r.stream.extract} (Metz, 2003--2021), para producir un mapa de
-dirección de flujo. Para la creación de mapas de ordenes de redes se
-utilizó el addon \texttt{r.stream.order} (J. Jasiewicz, 2003--2021).
+\texttt{r.stream.extract} (Metz, 2003--2021) para producir un mapa de
+dirección de flujo. Mientras que, para la creación de mapas de ordenes
+de red se utilizó el addon \texttt{r.stream.order} (J. Jasiewicz,
+2003--2021), donde se usó la clasificación de Strahler para analizar el
+orden de red de la cuenca.
 
-Para analizar el orden de red de la cuenca se utilizó la clasificación
-de Strahler, generada con (J. Jasiewicz, 2003--2021). Mientras que, se
-usaron los addons \texttt{r.info} (O'Shea \& Laboratory, 2003--2021),
-para obtener los valores mínimos y máximos del orden de red según
-Strahler a partir de un ráster.
-
-Para delimitar la cuenca a través de la red de drenaje se utilizó
-\texttt{r.stream.basins} (J. Jasiewicz, University, Geoecology, \&
-Institute, 2003--2021). En cuanto a las estadísticas según orden de red
-de Horton para las redes de Strahler y Horton, se usó el addon
-\texttt{r.stream.stats} (j. Jasiewicz, University, \& Geoinformation
-Institute, 2003--2021), para resumir las estadísticas.
+También, se usaron los addons \texttt{r.info} (O'Shea \& Laboratory,
+2003--2021), para obtener los valores mínimos y máximos del orden de red
+según Strahler a partir de un ráster, y, se delimito la cuenca a través
+de la red de drenaje con \texttt{r.stream.basins} (J. Jasiewicz,
+University, Geoecology, \& Institute, 2003--2021). En cuanto a las
+estadísticas según orden de red de Horton para las redes de Strahler y
+Horton, se usó el addon \texttt{r.stream.stats} (j. Jasiewicz,
+University, \& Geoinformation Institute, 2003--2021) que resume las
+estadísticas.
 
 Para calcular los índices de concavidad y los perfiles longitudinales,
 primero, se obtuvieron los cursos más largos de la cuenca a través de la
-función \texttt{LfpNetwork} (José Ramón Martínez Batlle, 2018b). Y
-segundo, para producir los perfiles longitudinales e índices de
-concavidad se empleó la función \texttt{LfpProfilesConcavity} (José
-Ramón Martínez Batlle, 2018c).
+función \texttt{LfpNetwork} (José Ramón Martínez Batlle, 2018b). Y,
+luego, se empleó la función \texttt{LfpProfilesConcavity} (José Ramón
+Martínez Batlle, 2018c), con la que se obtuvieron los índices de
+concavidad para los cursos más largos, y, así mismo, sus perfiles
+longitudinales.
 
 Tras crear una nueva región de GRASS en R, se convirtieron a números
 enteros la extensión y la resolución del DEM con las funciones
@@ -375,10 +386,10 @@ la herramienta \texttt{gdalwarp} (Warmerdam, Rouault, \& others,
 1998--2021), para reproyectar y deformar ráster. Se utilizaron los
 addons \texttt{g.proj} (Kelly, 2003--2021), y \texttt{r.in.gdal}
 (Warmerdam, 2003--2021), para importar a la sesión de GRASS. Se usó el
-addon \texttt{r.stream.extract} (Metz, 2003--2021), para generar una red
-de drenaje y obtener coordenadas a continuación, y que serían, luego,
-transformadas a EPSG: 4326 (Lohmar, 1988), como número entero con la
-función \texttt{My\_Trans} (José Ramón Martínez Batlle, 2020b).
+addon \texttt{r.stream.extract} (Metz, 2003--2021) para generar una red
+de drenaje y obtener coordenadas que serían transformadas a EPSG: 4326
+(Lohmar, 1988), como número entero con la función \texttt{My\_Trans}
+(José Ramón Martínez Batlle, 2020b).
 
 En cuanto a la obtención de los parámetros morfométricos de la cuenca se
 usa el addon \texttt{r.basin} (Di Leo \& Di Stefano, 2003--2021). Los
@@ -394,48 +405,55 @@ Batlle, 2018a).
 
 \section{Resultados}\label{resultados}
 
-El fruto del estudio realizado a la cuenca del río Guayubín aplicando la
-metodología anterior, produce información que facilita el análisis y
-comprensión de la cuenca fluvial, tanto de manera agrupada, como de
-forma desagregada.
+El fruto del estudio realizado a la cuenca del río Guayubín usando el
+\texttt{script\ reproducible}, produce información que facilita el
+análisis y comprensión de la cuenca fluvial, tanto de manera agrupada,
+como de forma desagregada. A continuación se presentan, de manera
+resumida, las características morfologicas principales de la cuenca y su
+red de drenaje.
 
 \subsection{Aspecto general de la cuenca y de la red de
 drenaje.}\label{aspecto-general-de-la-cuenca-y-de-la-red-de-drenaje.}
 
-Los resultados arrojados por el estudio muestran que la cuenca del río
-Guayubín tiene una área de 773.56 km\textsuperscript{2}, y un perímetro
-de 156.12 km (Ver tablas \ref{tab:estadisticaor} y
-\ref{tab:parametrosm}). La cuenca tiene forma de pera y su red drenaje
-presenta patrones dendríticos (ver figura
-\ref{red de drenaje extraida}).
+La cuenca del río Guayubín muestra una área de 773.56
+km\textsuperscript{2} y un perímetro de 156.12 km, siendo la tercera más
+grande de la cuenca del Yaque del Norte por su extensión; la misma
+alcanza una elevación, aproximada, máxima de 1396.73 m, media de 276.70
+m y una mínima de 30.97 m, por lo que se puede decir que su relieve es
+muy heterogéneo (ver tablas \ref{tab:estadisticaor} y
+\ref{tab:parametrosm}).
 
-\subsection{Orden de red analisis
-hortoniano}\label{orden-de-red-analisis-hortoniano}
+Al observarse la figura \ref{forma} la forma de la cuenca es alargada de
+sur a norte, además, es ancha, siendo la parte sur más ancha que la
+norte de la misma, dando lugar a una cuenca en forma de pera. En ese
+mismo contexto, los parámetros de coeficiente de compacidad, forma de la
+cuenca y razón de elongación, indican, de igual manera, que la cuenca es
+alargada y ancha (ver tabla \ref{tab:parametrosm}. En cuanto a la red de
+drenaje de la cuenca, se presentan patrones de drenaje dendríticos,
+siendo bastante densa con ramificaciones muy regulares principalmente en
+la cuenca alta, al sur (ver figura \ref{red de drenaje extraida}); esto
+se debe a que el relive es medianamente accidentado, y a que la
+composición o material rocoso existente como la arenisca, rocas
+calcareas, limolita, conglomerado y otros (ver figura \ref{magecu}).
 
-El orden de red de cada tramo fluvial de la cuenca según Strahler,
-indicó que el orden de red máximo (5) y el mínimo (1). (ver figura
-\ref{unica}, y figura \ref{subcuencas}). Las estadísticas por orden de
-red según la clasificación de Strahler, obtenidas con
-\texttt{r.stream.stats} indican que el número total de redes en la
-cuenca es de 367, tambien se obtuvieron el total longitud por órdenes de
-red resultando en 693.61 km (ver tabla \ref{tab:estadisticaor}). De la
-misma manera se generó el dato de la razón de bifurcación para la red
-basada en el coeficiente de regresión es de 4.1, también se obtuvieron
-resultados de razón de bifurcación para cada orden de red, para el redes
-de orden 1 (4.7), de orden 2 (3.6), orden 3 (4.3), para los de orden 4
-(4), y para los de orden 5 (0), las otras estadísticas están detalladas
-en la tabla \ref{tab:estadisticaor} y sus derivadas en esta figura (ver
-figura \ref{grafnumero}). Como se observa en las tablas
-\ref{tab:regresionc} y ref \{tab:estandard\}, las razones de bifurcación
-se obtuvieron razones de bifurcación con criterios distintos. Otras
-estadísticas como la longitud promedio y area promedio para cada orden
-de red estas detalladas en la tabla \ref{promo}. También, se obtuvieron
-las estadísticas de la desviación estándar de ares y longitudes por
-orden de red, ver tabla \ref{estad}. De igual manera se generaron las
-estadísticas de los parámetros hidrográficos (número de orden, longitud
-y áreas), según el orden de red (ver tabla \ref{parh}). En tabla
-\ref{razones}, se presentan los valores resultantes para la razón de
-bifurcación.
+\subsection{Orden de red y análisis
+hortoniano}\label{orden-de-red-y-anuxe1lisis-hortoniano}
+
+La red de drenaje de la cuenca, según Strahler, presenta un total de 367
+redes (ver tabla \ref{tab:estadisticaor}) y se organiza por ordenes de
+red desde orden uno hasta orden cinco (ver figura \ref{unica}, y figura
+\ref{subcuencas}). Donde las redes de drenaje de orden uno suman un
+total de 284, siendo los primeros, tributarios de la red y poseen una
+longitud corta, pues depositan sus aguas y alimentando a otro curso de
+agua que pasaría a tener una jerarquía mayor (repitiendose el proceso
+hasta llegar al curso principal); las redes de orden 2 que se producidas
+fueron un total de 61, en este clasificación se ve una reducción en el
+número de redes, presentando un aumento en el orden y un descenso en las
+redes de drenaje que lo integran; para el orden 3 un total de 17 redes
+de drenaje; para el orden 4 se produjeron 4 redes; y para el orden 5 se
+produjo una sola red, siendo este el principal curso de agua de toda la
+cuenca, que recibe las aguas de las redes de drenaje anteriores (ver
+figura \ref{grafnumero}, y tabla \{tab:parh\}).
 
 \subsection{Índices de concavidad y perfiles
 longitudinales}\label{uxedndices-de-concavidad-y-perfiles-longitudinales}
@@ -466,9 +484,9 @@ Las estadísticas que se generaron sobre la curva y la integral
 hipsométrica se obtuvieron 60 resultados para los cursos de agua
 pertenecientes a la cuenca de orden 2. El valor mínimo generado para la
 integral hipsométrica fue 0.08 en el curso 43. En tanto, el valor máximo
-para la integra fue de 0.48 en el curso 45 (ver tabla \ref{ihco2}). los
-cursos más curvos fuero 37, 18 y 15. Ver figuras\ref{hypsob2} y
-\ref{hypb2}.
+para la integra fue de 0.48 en el curso 45 (ver tabla \ref{ihco2}). Y
+los cursos más curvos fuero 37, 18 y 15 (ver figuras \ref{hypsob2} y
+\ref{hypb2}).
 
 En cuanto a las cursos de agua de las cuencas de orden 3, se produjeron
 17 resultados, donde los cursos 8 (0.40), 11 (0.34), y 13 (0.33),
@@ -479,34 +497,34 @@ fueron 5, 10, 17, y 18. Ver figuras \ref{hysob3} y \ref{hypb3}.
 
 \section{Discusión}\label{discusiuxf3n}
 
-Con los hallazgos producidos sobre la cuenca del rio Guayubín, es
-posible responder a las preguntas planteadas sobre la forma de la cuenca
-y su red de drenaje, los patrones en la red de drenaje, la organización
-de la red de drenaje, el fenómeno de constancia, la relación de los
-perfiles longitudinales y su índice de concavidad con la litología en la
-cuenca, la relación de los parámetros de cuenca con la litología, al
-igual que la relación de la curva hipsométrica y la integral con la
-litología. Además, es posible hacer comparaciones de eficacia del método
-empleado para extraer las redes de drenaje con el mapa topológico de
-República Dominicana (Lizmap, s.f.).
+Con los hallazgos producidos sobre la cuenca del rio Guayubín, se
+responden las preguntas planteadas sobre la forma de la cuenca y su red
+de drenaje, los patrones en la red de drenaje, la organización de la red
+de drenaje, el fenómeno de constancia, la relación de los perfiles
+longitudinales y su índice de concavidad con la litología en la cuenca,
+la relación de los parámetros de cuenca con la litología, al igual que
+la relación de la curva hipsométrica y la integral con la litología.
+Además, es posible hacer comparaciones de eficacia del método empleado
+para extraer las redes de drenaje con el mapa topológico de República
+Dominicana (Lizmap, s.f.).
 
 En los parámetros de cuenca y en las estadísticas de ordenes de red, el
 valor de área de cuenca se mantuvo sin cambios; pero comparándolos con
-las informaciones extraídas de Medio Ambiente y Recurso Naturales (2015)
-los valores que se obtuvieron no concuerdan, puesto que, la cuenca
-presentada por Medio Ambiente y Recurso Naturales (2015) es más pequeña
-que la producida por los algoritmos en R (ver tablas
-\ref{tab:parametrosm} y \ref{tab:estadisticaor}.
+las informaciones extraídas de Medio Ambiente y Recurso Naturales
+(2015), los valores que se obtuvieron no concuerdan, puesto que, la
+cuenca presentada por Medio Ambiente y Recurso Naturales (2015), es más
+pequeña que la producida por los algoritmos en R (ver tablas
+\ref{tab:parametrosm} y \ref{tab:estadisticaor}).
 
-La cuenca tiene forma de pera (Terrain Works Team, 2014) y la forma de
+La cuenca tiene forma de pera (Terrain Works Team, 2014), y la forma de
 su red de drenaje es dendrítica (Gutiérrez Elorza, 2008). La forma de la
 red de drenaje se produce en zonas de relieve heterogéneo como se
 presenta la parte de cuenca alta; los cursos de agua se desarrollan
 libremente y no depende de un control estructurales (Ingeniero Civil
-Team, 2018); la cuenca esta acentuada en rocas de tipo ígneas o
+Team, 2018); la cuenca está asentada en rocas de tipo ígneas o
 magmáticas y sedimentarias (Mollat, Wagner, Cepek, \& Weiss, 2004).
-Howard (1967) asegura que los patrones dendríticos los sedimentos tienen
-una resistencia uniforme.
+Howard (1967), asegura que en los patrones dendríticos los sedimentos
+tienen una resistencia uniforme.
 
 La red de drenaje de la cuenca presenta signos de haber sufrido el
 fenómeno de reorganización captura fluvial, según Pastor (2013) este
@@ -555,7 +573,7 @@ elevación media fue de 276.70. El parámetro coeficiente de compacidad es
 4.9 lo que indica que la forma de la superficie de la cuenca de acuerdo
 con su delimitación, y el predominio en su escorrentía, es muy alargada
 (López Cadenas de Llano \& Mintegui Aguirre (1986)); pero, el parámetro
-forma de la cuenca genero un índice de 12.48 lo que indica que la cuenca
+forma de la cuenca generó un índice de 12.48 lo que indica que la cuenca
 además de ser muy alargada está bastante ensanchada en las zonas de
 cuenca alta y cuenca media (Córdova, 2016; Pérez, 1979). Según los
 resultados de la razón de elongación (0.50), se confirma que la cuenca
@@ -597,8 +615,8 @@ cuenca.
 
 \section{Agradecimientos}\label{agradecimientos}
 
-A Dios por la fuerza y la salud que me ha dado durante todo este tiempo,
-sin dejarme caer.
+A Dios por la fuerza y la salud que me ha otorgado todo este tiempo, sin
+dejarme caer.
 
 A mi maestro \texttt{Jose\ Martínez\ Batlle} por el apoyo incondicional,
 tanto emocional como técnico, por ser guía durante todo el trayecto, por
@@ -609,9 +627,8 @@ asesoramiento.
 
 A mis compañeros
 \texttt{Saderis\ Carmona,\ Franklin\ Gomez,\ Randy\ Mueses,\ Frank\ de\ la\ Cruz\ y\ Cinthia\ Vandepool}
-quienes estuvieron presente en este nuevo reto en el que nos embarcamos
-tres meses atrás, y de los cuales he recibido apoyo emocional y técnico,
-también por sus maneras de ayudarnos entre si a liberar estrés.
+con los que me embarqué en este nuevo reto, tres meses atrás, y de los
+cuales recibí apoyo emocional y técnico.
 
 A mi madre \texttt{Denny\ Laureano}, mis hermanos
 \texttt{Darleny\ Linares,\ Diana\ Carolina\ Linares\ y\ Jose\ Daniel\ Linares}
@@ -619,20 +636,14 @@ por la comprensión y el apoyo tanto moral como emocional durante este
 tiempo.
 
 A mis amistades por el apoyo, comprensión y motivación para que continúe
-mis proyectos.
+y finalice mis proyectos.
 
 \section{Información de soporte}\label{informaciuxf3n-de-soporte}
 
 \begin{figure}
 \centering
-\includegraphics[width=1.00000\textwidth]{Mapa final.png}
-\caption{Cuenca del río Guayubín\label{mapacuenca}}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=0.60000\textwidth]{geologico.png}
-\caption{Mapa Geologico de la cuenca\label{magecu}}
+\includegraphics[width=0.50000\textwidth]{cuenca extraida.png}
+\caption{Forma de la cuenca del río Guayubín\label{forma}}
 \end{figure}
 
 \begin{figure}
@@ -744,8 +755,8 @@ Uso\strut
 \begin{minipage}[t]{0.11\columnwidth}\centering\strut
 RStudio\strut
 \end{minipage} & \begin{minipage}[t]{0.83\columnwidth}\centering\strut
-Redacción del manuscrito, procesamiento de datos extraídos del \ref{MDE}
-de la cuenca a través de un script.\strut
+Redacción del manuscrito, procesamiento de datos extraídos del MDE de la
+cuenca a través de un script.\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.11\columnwidth}\centering\strut
 library rgrass7\strut
@@ -825,8 +836,8 @@ rocosa y los años que datan estas (ver figura\ref{magecu}).\strut
 \end{longtable}
 
 \begin{longtable}[]{@{}cccccc@{}}
-\caption{\label{tab:estadisticaor} Estadisticas de los ordenes de red
-del rio Guayubin}\tabularnewline
+\caption{\label{tab:estadisticaor} Estadísticas de los ordenes de red
+del río Guayubín}\tabularnewline
 \toprule
 Max order & Tot.N.str. & Tot.str.len. & Tot.area. & Dr.dens. &
 Str.freq.\tabularnewline
@@ -1081,7 +1092,7 @@ Std.el.dif (m)\strut
 \end{longtable}
 
 \begin{longtable}[]{@{}cccc@{}}
-\caption{\label{parh} Estadisticas de parametros hidrgograficos segun el
+\caption{\label{parh} Estadisticas de parámetros hidrgográficos según el
 orden de red}\tabularnewline
 \toprule
 Order & N.streams & Tot.len (km) & Tot.area
@@ -1102,7 +1113,7 @@ Order & N.streams & Tot.len (km) & Tot.area
 \end{longtable}
 
 \begin{longtable}[]{@{}cccccccc@{}}
-\caption{\label{razones} Razones de los parametros hidrograficos segun
+\caption{\label{razones} Razones de los parámetros hidrográficos según
 su orden de red}\tabularnewline
 \toprule
 Order & Bif.rt. & Len.rt. & Area.rt. & Slo.rt. & Grd.rt. & d.dens. &
