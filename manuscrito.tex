@@ -38,6 +38,46 @@
 
 \setcounter{secnumdepth}{3}
 
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
 \usepackage{longtable,booktabs}
 
 \usepackage{graphicx,grffile}
@@ -181,7 +221,7 @@ relación entre perfiles longitudinales e índice de concavidad con la
 litología; si existe relación entre los parámetros morfométricos con la
 litolgía, así como, una asociación entre factores y curva e integral
 hipsométrica. El estudio realizado a la cuenca del río Guayubín (773.56
-km extsuperscript\{2\}), localizada al noroeste de la República
+kilómetros cuadrados), localizada al noroeste de la República
 Dominicana, denotan que esta tiene una forma alargada y ancha, en forma
 de pera y que su red de drenaje es muy ramificada por lo que su forma es
 dendrítica y describe patrones dendrítricos. Se comprueba la existencia
@@ -199,9 +239,10 @@ hidrográfica, independientemente del tamaño de la misma, así como, la
 posibilidad de aplicarla en el país a bajo costo y produciendo
 información de alta calidad. Fernández (2002), afirma que la
 geomorfoloía puede servir para entender y tratar poblemas ambientales,
-generados por el clima u otros. Autores como Ruíz (2001) y Chow, et. all
-(1994) consideran que la utilidad de la morfometría de cuencas esta en
-que permite la comparación de sus resultados sin importar la escala.
+generados por el clima u otros. Autores como Ruíz (2001) y Chow
+\emph{et. al} (1994) consideran que la utilidad de la morfometría de
+cuencas esta en que permite la comparación de sus resultados sin
+importar la escala.
 
 
 \vskip 8.5pt \noindent \emph{Keywords}: Geomorfología fluvial, morfometría de cuencas, Análisis hortoniano,
@@ -1508,8 +1549,923 @@ Categoría & Integral hipsométrico\tabularnewline
 \section{\texorpdfstring{\emph{Script}
 reproducible}{Script reproducible}}\label{script-reproducible}
 
-\section*{Referencia}\label{referencia}
-\addcontentsline{toc}{section}{Referencia}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Intro a Grass, video no. 3 ----}
+\NormalTok{## Parte reutilizable del script ----}
+\NormalTok{## Cargar paquetes}
+\KeywordTok{library}\NormalTok{(rgrass7)}
+\KeywordTok{library}\NormalTok{(sp)}
+\KeywordTok{use_sp}\NormalTok{()}
+\KeywordTok{library}\NormalTok{(sf)}
+\KeywordTok{library}\NormalTok{(raster)}
+\KeywordTok{library}\NormalTok{(leaflet)}
+\KeywordTok{library}\NormalTok{(leafem)}
+\KeywordTok{library}\NormalTok{(mapview)}
+\KeywordTok{library}\NormalTok{(readr)}
+
+\NormalTok{gisdbase <-}\StringTok{ 'grass-data-test'} \CommentTok{#Base de datos de GRASS GIS}
+\NormalTok{wd <-}\StringTok{ }\KeywordTok{getwd}\NormalTok{() }\CommentTok{#Directorio de trabajo}
+\NormalTok{wd}
+\NormalTok{loc <-}\StringTok{ }\KeywordTok{initGRASS}\NormalTok{(}\DataTypeTok{gisBase =} \StringTok{"/usr/lib/grass78/"}\NormalTok{,}
+                 \DataTypeTok{home =}\NormalTok{ wd,}
+                 \DataTypeTok{gisDbase =} \KeywordTok{paste}\NormalTok{(wd, gisdbase, }\DataTypeTok{sep =} \StringTok{'/'}\NormalTok{),}
+                 \DataTypeTok{location =} \StringTok{'guayubin'}\NormalTok{,}
+                 \DataTypeTok{mapset =} \StringTok{"PERMANENT"}\NormalTok{,}
+                 \DataTypeTok{override =} \OtherTok{TRUE}\NormalTok{)}
+
+\NormalTok{## Imprimir fuentes en la region}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{'g.list'}\NormalTok{,}
+  \DataTypeTok{flags =} \StringTok{'t'}\NormalTok{,}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{type =} \KeywordTok{c}\NormalTok{(}\StringTok{'raster'}\NormalTok{, }\StringTok{'vector'}\NormalTok{)}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Limpiar archivo de bloqueo del conjunto de mapas de GRASS}
+\KeywordTok{unlink_.gislock}\NormalTok{()}
+
+\NormalTok{## Fin de la parte reutilizable}
+
+\CommentTok{# Video no. 4, Definir proyección de la región de GRASS GIS, importar fuente y utilizarla para definir extensión y resolución. Cómo ver la ayuda de las funciones ----}
+\NormalTok{## Muestra la definición de la región}
+\KeywordTok{gmeta}\NormalTok{()}
+
+\NormalTok{## Definir ruta del DEM}
+\NormalTok{dem <-}\StringTok{ 'datos-fuente/srtm_dem_cuenca_guayubin.tif'}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \DataTypeTok{cmd =} \StringTok{'g.proj'}\NormalTok{,}
+  \DataTypeTok{flags =} \KeywordTok{c}\NormalTok{(}\StringTok{'t'}\NormalTok{,}\StringTok{'c'}\NormalTok{),}
+  \DataTypeTok{georef =}\NormalTok{ dem)}
+
+\NormalTok{## Muestra la definición de la región modificada}
+\KeywordTok{gmeta}\NormalTok{()}
+
+\NormalTok{## r.in.gdal importa la fuente a GRASS}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \DataTypeTok{cmd =} \StringTok{'r.in.gdal'}\NormalTok{,}
+  \DataTypeTok{flags=}\KeywordTok{c}\NormalTok{(}\StringTok{'overwrite'}\NormalTok{,}\StringTok{'quiet'}\NormalTok{),}
+  \DataTypeTok{parameters=}\KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{input=}\NormalTok{dem,}
+    \DataTypeTok{output=}\StringTok{'dem'}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Actualizar la extensión de la región al DEM, sólo por precaución}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \DataTypeTok{cmd =} \StringTok{'g.region'}\NormalTok{,}
+  \DataTypeTok{parameters=}\KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{raster =} \StringTok{'dem'}\NormalTok{,}
+    \DataTypeTok{align =} \StringTok{'dem'}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Muestra la región de Grass again}
+\KeywordTok{gmeta}\NormalTok{()}
+
+\NormalTok{## Importar vectorial a la región de Grass}
+\NormalTok{demext <-}\StringTok{ 'datos-fuente/srtm_dem_cuenca_guayubin.geojson'}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \DataTypeTok{cmd =} \StringTok{'v.in.ogr'}\NormalTok{,}
+  \DataTypeTok{flags=}\KeywordTok{c}\NormalTok{(}\StringTok{'overwrite'}\NormalTok{,}\StringTok{'quiet'}\NormalTok{),}
+  \DataTypeTok{parameters=}\KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{input =}\NormalTok{ demext,}
+    \DataTypeTok{output =} \StringTok{'dem_extent'}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{'g.list'}\NormalTok{,}
+  \DataTypeTok{flags =} \StringTok{'t'}\NormalTok{,}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{type =} \KeywordTok{c}\NormalTok{(}\StringTok{'raster'}\NormalTok{, }\StringTok{'vector'}\NormalTok{)}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Ver los addons disponibles en el repositorio oficial de GRASS GIS, incluyendo descripción}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \DataTypeTok{cmd =} \StringTok{'g.extension'}\NormalTok{,}
+  \DataTypeTok{flags =} \StringTok{'c'}
+\NormalTok{)}
+
+\NormalTok{## Consultar la ayuda de una función}
+\KeywordTok{parseGRASS}\NormalTok{(}\StringTok{"r.in.gdal"}\NormalTok{)}
+
+\NormalTok{## Consultar la ayuda de una función. Segunda alternativa}
+\KeywordTok{system}\NormalTok{(}\StringTok{'r.in.gdal --help'}\NormalTok{)}
+
+\NormalTok{## Limpiar archivo de bloqueo del conjunto de mapas de GRASS}
+\KeywordTok{unlink_.gislock}\NormalTok{()}
+
+\CommentTok{# Video no. 5, Explorar datos espaciales básicos entre GRASS y R ----}
+\NormalTok{## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{'g.list'}\NormalTok{,}
+  \DataTypeTok{flags =} \StringTok{'t'}\NormalTok{,}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{type =} \KeywordTok{c}\NormalTok{(}\StringTok{'raster'}\NormalTok{, }\StringTok{'vector'}\NormalTok{)}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Cargar en R el DEM (mapa ráster)}
+\KeywordTok{library}\NormalTok{(sp)}
+\KeywordTok{use_sp}\NormalTok{()}
+\NormalTok{dem_sp <-}\StringTok{ }\KeywordTok{readRAST}\NormalTok{(}\StringTok{'dem'}\NormalTok{)}
+\NormalTok{op <-}\StringTok{ }\KeywordTok{par}\NormalTok{()}
+\KeywordTok{plot}\NormalTok{(dem_sp)}
+
+\NormalTok{## Cargar a R el mapa vectorial de una cuenca que se encuentra alojado fuera de GRASS, hacer el plot y representar la cuenca del rio Guayubin superpuesta}
+\KeywordTok{library}\NormalTok{(sf)}
+\NormalTok{rutaguayubin <-}\StringTok{ 'datos-fuente/cuenca_guayubin.geojson'}
+\NormalTok{guayubin <-}\StringTok{ }\KeywordTok{st_read}\NormalTok{(rutaguayubin)}
+\KeywordTok{plot}\NormalTok{(dem_sp)}
+\KeywordTok{plot}\NormalTok{(guayubin, }\DataTypeTok{add=}\NormalTok{T, }\DataTypeTok{col=}\StringTok{'transparent'}\NormalTok{, }\DataTypeTok{border=}\StringTok{'black'}\NormalTok{, }\DataTypeTok{lwd=}\DecValTok{5}\NormalTok{);}\KeywordTok{par}\NormalTok{(op[}\KeywordTok{c}\NormalTok{(}\StringTok{'mfrow'}\NormalTok{,}\StringTok{'mar'}\NormalTok{)])}
+
+\NormalTok{## Analizar el DEM dentro de la cuenca de guayubin}
+\KeywordTok{library}\NormalTok{(raster)}
+\NormalTok{dem_r0 <-}\StringTok{ }\KeywordTok{raster}\NormalTok{(dem_sp)}
+\NormalTok{dem_r1 <-}\StringTok{ }\KeywordTok{crop}\NormalTok{(dem_r0, guayubin)}
+\NormalTok{dem_guayu <-}\StringTok{ }\KeywordTok{mask}\NormalTok{(dem_r1, guayubin)}
+\KeywordTok{plot}\NormalTok{(dem_guayu)}
+\KeywordTok{summary}\NormalTok{(dem_guayu)}
+\KeywordTok{hist}\NormalTok{(dem_guayu)}
+
+\NormalTok{## Obtener variables de terreno básicas con el paquete raster dentro de R}
+\NormalTok{pend_guayu <-}\StringTok{ }\KeywordTok{terrain}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ dem_guayu, }\DataTypeTok{opt =} \StringTok{'slope'}\NormalTok{, }\DataTypeTok{unit =} \StringTok{'degrees'}\NormalTok{)}
+\KeywordTok{plot}\NormalTok{(pend_guayu)}
+\KeywordTok{summary}\NormalTok{(pend_guayu)}
+\KeywordTok{hist}\NormalTok{(pend_guayu)}
+
+\NormalTok{## Obtener la misma variable de terreno con GRASS GIS}
+\KeywordTok{writeVECT}\NormalTok{(}\KeywordTok{as_Spatial}\NormalTok{(guayubin), }\StringTok{'guayubin'}\NormalTok{, }\DataTypeTok{v.in.ogr_flags=}\StringTok{'quiet'}\NormalTok{)}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{"g.region"}\NormalTok{,}
+  \DataTypeTok{parameters=}\KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{vector =} \StringTok{"guayubin"}
+\NormalTok{  )}
+\NormalTok{)}
+
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{"r.mask"}\NormalTok{,}
+  \DataTypeTok{flags =} \KeywordTok{c}\NormalTok{(}\StringTok{'verbose'}\NormalTok{,}\StringTok{'overwrite'}\NormalTok{,}\StringTok{'quiet'}\NormalTok{),}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{vector =} \StringTok{'guayubin'}
+\NormalTok{  )}
+\NormalTok{)}
+
+\KeywordTok{execGRASS}\NormalTok{(}
+  \DataTypeTok{cmd =} \StringTok{'r.slope.aspect'}\NormalTok{,}
+  \DataTypeTok{flags =} \KeywordTok{c}\NormalTok{(}\StringTok{'overwrite'}\NormalTok{,}\StringTok{'quiet'}\NormalTok{),}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{elevation=}\StringTok{'dem'}\NormalTok{,}
+    \DataTypeTok{slope=}\StringTok{'slope'}\NormalTok{,}
+    \DataTypeTok{aspect=}\StringTok{'aspect'}\NormalTok{,}
+    \DataTypeTok{pcurvature=}\StringTok{'pcurv'}\NormalTok{,}
+    \DataTypeTok{tcurvature=}\StringTok{'tcurv'}\NormalTok{)}
+\NormalTok{)}
+
+\NormalTok{pend_guayu_g <-}\StringTok{ }\KeywordTok{readRAST}\NormalTok{(}\StringTok{'slope'}\NormalTok{)}
+\KeywordTok{plot}\NormalTok{(pend_guayu_g);}\KeywordTok{par}\NormalTok{(op[}\KeywordTok{c}\NormalTok{(}\StringTok{'mfrow'}\NormalTok{,}\StringTok{'mar'}\NormalTok{)])}
+\KeywordTok{summary}\NormalTok{(pend_guayu_g)}
+\KeywordTok{summary}\NormalTok{(pend_guayu)}
+\KeywordTok{gmeta}\NormalTok{()}
+
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{"g.region"}\NormalTok{,}
+  \DataTypeTok{parameters=}\KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{raster =} \StringTok{"dem"}
+\NormalTok{  )}
+\NormalTok{)}
+
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{"r.mask"}\NormalTok{,}
+  \DataTypeTok{flags =} \KeywordTok{c}\NormalTok{(}\StringTok{'r'}\NormalTok{,}\StringTok{'quiet'}\NormalTok{)}
+\NormalTok{)}
+
+\KeywordTok{gmeta}\NormalTok{()}
+
+\NormalTok{## Limpiar archivo de bloqueo del conjunto de mapas de GRASS}
+\KeywordTok{unlink_.gislock}\NormalTok{()}
+
+\CommentTok{# Video 6. Calcular parámetros hidrográficos con r.watershed. Visualizar con leaflet ----}
+
+\NormalTok{## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa }
+\NormalTok{## Está en el archivo reusable como (# Imprimir fuentes en la region)}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{'g.list'}\NormalTok{,}
+  \DataTypeTok{flags =} \StringTok{'t'}\NormalTok{,}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{type =} \KeywordTok{c}\NormalTok{(}\StringTok{'raster'}\NormalTok{, }\StringTok{'vector'}\NormalTok{)}
+\NormalTok{  )}
+\NormalTok{)}
+\NormalTok{## Calcular parámetros hidrográficos de interés usando r.watershed}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{"r.watershed"}\NormalTok{,}
+  \DataTypeTok{flags =} \KeywordTok{c}\NormalTok{(}\StringTok{'overwrite'}\NormalTok{,}\StringTok{'quiet'}\NormalTok{),}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{elevation =} \StringTok{"dem"}\NormalTok{,}
+    \DataTypeTok{accumulation =} \StringTok{"accum-de-rwshed"}\NormalTok{,}
+    \DataTypeTok{stream =} \StringTok{"stream-de-rwshed"}\NormalTok{,}
+    \DataTypeTok{drainage =} \StringTok{"drainage-dir-de-rwshed"}\NormalTok{,}
+    \DataTypeTok{basin =} \StringTok{'basins'}\NormalTok{,}
+    \DataTypeTok{half_basin =} \StringTok{'half-basins'}\NormalTok{,}
+    \DataTypeTok{threshold =} \DecValTok{80}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Traer capas a R}
+
+\NormalTok{## Usar Spatial*}
+\KeywordTok{library}\NormalTok{(sp)}
+\KeywordTok{use_sp}\NormalTok{()}
+\NormalTok{## Paquete manejo de los raster}
+\KeywordTok{library}\NormalTok{(raster)}
+\NormalTok{## DEM}
+\NormalTok{dem <-}\StringTok{ }\KeywordTok{raster}\NormalTok{(}\KeywordTok{readRAST}\NormalTok{(}\StringTok{'dem'}\NormalTok{))}
+\NormalTok{## Basins}
+\NormalTok{basins <-}\StringTok{ }\KeywordTok{raster}\NormalTok{(}\KeywordTok{readRAST}\NormalTok{(}\StringTok{'basins'}\NormalTok{))}
+\NormalTok{## Stream network}
+\NormalTok{stream <-}\StringTok{ }\KeywordTok{raster}\NormalTok{(}\KeywordTok{readRAST}\NormalTok{(}\StringTok{'stream-de-rwshed'}\NormalTok{))}
+\NormalTok{stream3857 <-}\StringTok{ }\KeywordTok{projectRaster}\NormalTok{(stream, }\DataTypeTok{crs =} \KeywordTok{CRS}\NormalTok{(}\StringTok{"+init=epsg:3857"}\NormalTok{), }\DataTypeTok{method =} \StringTok{'ngb'}\NormalTok{)}
+\NormalTok{## Generar un vectorial de extensión de capa en EPSG:4326}
+\NormalTok{e <-}\StringTok{ }\KeywordTok{extent}\NormalTok{(stream)}
+\NormalTok{e <-}\StringTok{ }\KeywordTok{as}\NormalTok{(e, }\StringTok{'SpatialPolygons'}\NormalTok{)}
+\KeywordTok{proj4string}\NormalTok{(e) <-}\StringTok{ }\KeywordTok{CRS}\NormalTok{(}\StringTok{"+init=epsg:32619"}\NormalTok{)}
+\NormalTok{e <-}\StringTok{ }\KeywordTok{spTransform}\NormalTok{(e, }\DataTypeTok{CRSobj =} \KeywordTok{CRS}\NormalTok{(}\StringTok{"+init=epsg:4326"}\NormalTok{))}
+
+\NormalTok{## Visualizar capas con leaflet}
+\KeywordTok{library}\NormalTok{(leaflet)}
+\KeywordTok{library}\NormalTok{(leafem)}
+\KeywordTok{leaflet}\NormalTok{() }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{addProviderTiles}\NormalTok{(providers}\OperatorTok{$}\NormalTok{Stamen.Terrain, }\DataTypeTok{group =} \StringTok{'terrain'}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{addRasterImage}\NormalTok{(dem, }\DataTypeTok{group=}\StringTok{'DEM'}\NormalTok{, }\DataTypeTok{opacity =} \FloatTok{0.5}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{addRasterImage}\NormalTok{(}
+    \KeywordTok{ratify}\NormalTok{(basins),}
+    \DataTypeTok{group=}\StringTok{'basins'}\NormalTok{, }\DataTypeTok{opacity =} \FloatTok{0.7}\NormalTok{,}
+    \DataTypeTok{colors =} \KeywordTok{sample}\NormalTok{(}\KeywordTok{rep}\NormalTok{(RColorBrewer}\OperatorTok{::}\KeywordTok{brewer.pal}\NormalTok{(}\DecValTok{12}\NormalTok{, }\StringTok{'Set3'}\NormalTok{),}\DecValTok{1000}\NormalTok{))) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{addRasterImage}\NormalTok{(stream3857, }\DataTypeTok{project =}\NormalTok{ F, }\DataTypeTok{group=}\StringTok{'str'}\NormalTok{, }\DataTypeTok{opacity =} \FloatTok{0.7}\NormalTok{, }\DataTypeTok{method =} \StringTok{'ngb'}\NormalTok{, }\DataTypeTok{colors =} \StringTok{'blue'}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{addLayersControl}\NormalTok{(}
+    \DataTypeTok{overlayGroups =} \KeywordTok{c}\NormalTok{(}\StringTok{'terrain'}\NormalTok{,}\StringTok{'DEM'}\NormalTok{,}\StringTok{'basins'}\NormalTok{,}\StringTok{'str'}\NormalTok{),}
+    \DataTypeTok{options =} \KeywordTok{layersControlOptions}\NormalTok{(}\DataTypeTok{collapsed=}\OtherTok{FALSE}\NormalTok{)) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{addHomeButton}\NormalTok{(}\KeywordTok{extent}\NormalTok{(e), }\StringTok{'Ver todo'}\NormalTok{)}
+
+\NormalTok{## Limpiar archivo de bloqueo del conjunto de mapas de GRASS}
+\KeywordTok{unlink_.gislock}\NormalTok{()}
+
+\CommentTok{# Video 7, Extraer una cuenca con r.water.outlet. Visualizar con mapview y leaflet ----}
+\NormalTok{## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa (está en el reproducible)}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{'g.list'}\NormalTok{,}
+  \DataTypeTok{flags =} \StringTok{'t'}\NormalTok{,}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{type =} \KeywordTok{c}\NormalTok{(}\StringTok{'raster'}\NormalTok{, }\StringTok{'vector'}\NormalTok{)}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Obtener las coordenadas de la desembocadura de la cuenca de interés}
+\KeywordTok{library}\NormalTok{(mapview)}
+\KeywordTok{mapview}\NormalTok{(}
+\NormalTok{  stream3857, }\DataTypeTok{method=}\StringTok{'ngb'}\NormalTok{, }\DataTypeTok{col.regions =} \StringTok{'blue'}\NormalTok{,}
+  \DataTypeTok{legend =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{label =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{maxpixels =}  \DecValTok{910425}
+\NormalTok{)}
+
+\NormalTok{## Convertir las coordenadas lat/lon a EPSG:32619}
+\NormalTok{my_trans <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(}\DataTypeTok{coords =} \OtherTok{NULL}\NormalTok{) \{}
+  \KeywordTok{require}\NormalTok{(sp)}
+\NormalTok{  pt <-}\StringTok{ }\KeywordTok{SpatialPoints}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(coords, }\DataTypeTok{ncol =} \DecValTok{2}\NormalTok{), }\KeywordTok{CRS}\NormalTok{(}\StringTok{"+init=epsg:4326"}\NormalTok{))}
+\NormalTok{  foo <-}\StringTok{ }\KeywordTok{spTransform}\NormalTok{(pt, }\DataTypeTok{CRSobj =} \KeywordTok{CRS}\NormalTok{(}\StringTok{"+init=epsg:32619"}\NormalTok{))}
+\NormalTok{  bar <-}\StringTok{ }\KeywordTok{as.vector}\NormalTok{(}\KeywordTok{coordinates}\NormalTok{(foo))}
+  \KeywordTok{return}\NormalTok{(bar)}
+\NormalTok{\}}
+\NormalTok{guayu_out <-}\StringTok{ }\KeywordTok{my_trans}\NormalTok{(}\DataTypeTok{coords =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{71.40021}\NormalTok{,}\FloatTok{19.66387}\NormalTok{))}
+\NormalTok{guayu_out}
+
+\NormalTok{## Extraer la cuenca de interés}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{"r.water.outlet"}\NormalTok{,}
+  \DataTypeTok{flags =} \KeywordTok{c}\NormalTok{(}\StringTok{'overwrite'}\NormalTok{,}\StringTok{'quiet'}\NormalTok{),}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{input =} \StringTok{'drainage-dir-de-rwshed'}\NormalTok{,}
+    \DataTypeTok{output =} \StringTok{'guayubin-basin'}\NormalTok{,}
+    \DataTypeTok{coordinates =}\NormalTok{ guayu_out}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Convertir la cuenca a vectorial en GRASS}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{"r.to.vect"}\NormalTok{,}
+  \DataTypeTok{flags =} \KeywordTok{c}\NormalTok{(}\StringTok{'overwrite'}\NormalTok{,}\StringTok{'quiet'}\NormalTok{),}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{input =} \StringTok{'guayubin-basin'}\NormalTok{,}
+    \DataTypeTok{output =} \StringTok{'guayubin_basin'}\NormalTok{,}
+    \DataTypeTok{type =} \StringTok{'area'}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Mostrar lista nuevamente}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{'g.list'}\NormalTok{,}
+  \DataTypeTok{flags =} \StringTok{'t'}\NormalTok{,}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{type =} \KeywordTok{c}\NormalTok{(}\StringTok{'raster'}\NormalTok{, }\StringTok{'vector'}\NormalTok{)}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Traer a R la cuenca del rio guayubin}
+\NormalTok{guayu_bas <-}\StringTok{ }\KeywordTok{readVECT}\NormalTok{(}\StringTok{'guayubin_basin'}\NormalTok{)}
+\NormalTok{guayu_bas}
+\KeywordTok{plot}\NormalTok{(guayu_bas)}
+\NormalTok{guayu_bas4326 <-}\StringTok{ }\KeywordTok{spTransform}\NormalTok{(guayu_bas, }\DataTypeTok{CRSobj =} \KeywordTok{CRS}\NormalTok{(}\StringTok{"+init=epsg:4326"}\NormalTok{))}
+\KeywordTok{leaflet}\NormalTok{() }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{addProviderTiles}\NormalTok{(providers}\OperatorTok{$}\NormalTok{Stamen.Terrain) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{addRasterImage}\NormalTok{(stream, }\DataTypeTok{opacity =} \FloatTok{0.7}\NormalTok{, }\DataTypeTok{method =} \StringTok{'ngb'}\NormalTok{, }\DataTypeTok{colors =} \StringTok{'blue'}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{addPolygons}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ guayu_bas4326) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\NormalTok{leafem}\OperatorTok{::}\KeywordTok{addHomeButton}\NormalTok{(}\KeywordTok{extent}\NormalTok{(guayu_bas4326), }\StringTok{'Ver cuenca'}\NormalTok{)}
+
+\NormalTok{## Limpiar archivo de bloqueo del conjunto de mapas de GRASS}
+\KeywordTok{unlink_.gislock}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Video 8, Extraer una red drenaje con r.stream.extract. Visualizar con leaflet ----}
+\NormalTok{## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{'g.list'}\NormalTok{,}
+  \DataTypeTok{flags =} \StringTok{'t'}\NormalTok{,}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{type =} \KeywordTok{c}\NormalTok{(}\StringTok{'raster'}\NormalTok{, }\StringTok{'vector'}\NormalTok{)}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Usar la cuenca del rio guayubin como máscara}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{"r.mask"}\NormalTok{,}
+  \DataTypeTok{flags =} \KeywordTok{c}\NormalTok{(}\StringTok{'verbose'}\NormalTok{,}\StringTok{'overwrite'}\NormalTok{,}\StringTok{'quiet'}\NormalTok{),}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{vector =} \StringTok{'guayubin_basin'}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Extraer la red de drenaje de la cuenca de interés}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{"r.stream.extract"}\NormalTok{,}
+  \DataTypeTok{flags =} \KeywordTok{c}\NormalTok{(}\StringTok{'overwrite'}\NormalTok{,}\StringTok{'quiet'}\NormalTok{),}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{elevation =} \StringTok{'dem'}\NormalTok{,}
+    \DataTypeTok{threshold =} \DecValTok{80}\NormalTok{,}
+    \DataTypeTok{stream_raster =} \StringTok{'guayubin-stream-de-rstr'}\NormalTok{,}
+    \DataTypeTok{stream_vector =} \StringTok{'guayubin_stream_de_rstr'}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Mostrar lista nuevamente}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{'g.list'}\NormalTok{,}
+  \DataTypeTok{flags =} \StringTok{'t'}\NormalTok{,}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{type =} \KeywordTok{c}\NormalTok{(}\StringTok{'raster'}\NormalTok{, }\StringTok{'vector'}\NormalTok{)}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Traer a R la red de drenaje del rio guayubin}
+\NormalTok{guayu_net <-}\StringTok{ }\KeywordTok{readVECT}\NormalTok{(}\StringTok{'guayubin_stream_de_rstr'}\NormalTok{, }\DataTypeTok{ignore.stderr =}\NormalTok{ T)}
+\NormalTok{guayu_net}
+\KeywordTok{plot}\NormalTok{(guayu_net)}
+\NormalTok{guayu_net4326 <-}\StringTok{ }\KeywordTok{spTransform}\NormalTok{(guayu_net, }\DataTypeTok{CRSobj =} \KeywordTok{CRS}\NormalTok{(}\StringTok{"+init=epsg:4326"}\NormalTok{))}
+\NormalTok{guayu_net4326}
+\NormalTok{guayu_centroid <-}\StringTok{ }\KeywordTok{coordinates}\NormalTok{(rgeos}\OperatorTok{::}\KeywordTok{gCentroid}\NormalTok{(guayu_bas4326))}
+\NormalTok{guayu_centroid}
+\NormalTok{guayu_net_r <-}\StringTok{ }\KeywordTok{raster}\NormalTok{(}\KeywordTok{readRAST}\NormalTok{(}\StringTok{'guayubin-stream-de-rstr'}\NormalTok{))}
+\NormalTok{guayu_net_r}
+\NormalTok{guayu_net_r3857 <-}\StringTok{ }\KeywordTok{projectRaster}\NormalTok{(guayu_net_r, }\DataTypeTok{crs =} \KeywordTok{CRS}\NormalTok{(}\StringTok{"+init=epsg:3857"}\NormalTok{), }\DataTypeTok{method =} \StringTok{'ngb'}\NormalTok{)}
+\NormalTok{guayu_net_r3857}
+\KeywordTok{leaflet}\NormalTok{() }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{setView}\NormalTok{(}\DataTypeTok{lng =}\NormalTok{ guayu_centroid[}\DecValTok{1}\NormalTok{], }\DataTypeTok{lat =}\NormalTok{ guayu_centroid[}\DecValTok{2}\NormalTok{], }\DataTypeTok{zoom =} \DecValTok{11}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{addProviderTiles}\NormalTok{(providers}\OperatorTok{$}\NormalTok{Stamen.Terrain, }\DataTypeTok{group =} \StringTok{'terrain'}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{addRasterImage}\NormalTok{(guayu_net_r3857, }\DataTypeTok{opacity =} \FloatTok{0.7}\NormalTok{, }\DataTypeTok{method =} \StringTok{'ngb'}\NormalTok{, }\DataTypeTok{colors =} \StringTok{'grey20'}\NormalTok{, }\DataTypeTok{group =} \StringTok{'str_raster'}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{addPolylines}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ guayu_net4326, }\DataTypeTok{weight =} \DecValTok{3}\NormalTok{, }\DataTypeTok{opacity =} \FloatTok{0.7}\NormalTok{, }\DataTypeTok{group =} \StringTok{'str_vect'}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\NormalTok{leafem}\OperatorTok{::}\KeywordTok{addHomeButton}\NormalTok{(}\KeywordTok{extent}\NormalTok{(guayu_net4326), }\StringTok{'Ver todo'}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{addLayersControl}\NormalTok{(}
+    \DataTypeTok{overlayGroups =} \KeywordTok{c}\NormalTok{(}\StringTok{'terrain'}\NormalTok{,}\StringTok{'str_vect'}\NormalTok{,}\StringTok{'str_raster'}\NormalTok{),}
+    \DataTypeTok{options =} \KeywordTok{layersControlOptions}\NormalTok{(}\DataTypeTok{collapsed=}\OtherTok{FALSE}\NormalTok{)) }
+
+\NormalTok{## Limpiar archivo de bloqueo del conjunto de mapas de GRASS}
+\KeywordTok{unlink_.gislock}\NormalTok{()}
+
+
+\CommentTok{# Video 10,  Orden de red y análisis hortoniano usando r.stream*. Visualizar con leaflet ----}
+\NormalTok{## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa (está en el reproducible)}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{'g.list'}\NormalTok{,}
+  \DataTypeTok{flags =} \StringTok{'t'}\NormalTok{,}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{type =} \KeywordTok{c}\NormalTok{(}\StringTok{'raster'}\NormalTok{, }\StringTok{'vector'}\NormalTok{)}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Crear mapa de dirección de flujo a partir de r.stream.extract}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{"r.stream.extract"}\NormalTok{,}
+  \DataTypeTok{flags =} \KeywordTok{c}\NormalTok{(}\StringTok{'overwrite'}\NormalTok{,}\StringTok{'quiet'}\NormalTok{),}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{elevation =} \StringTok{'dem'}\NormalTok{,}
+    \DataTypeTok{threshold =} \DecValTok{80}\NormalTok{,}
+    \DataTypeTok{direction =} \StringTok{'drainage-dir-de-rstr'}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Crear mapas de órdenes de red}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{"r.stream.order"}\NormalTok{,}
+  \DataTypeTok{flags =} \KeywordTok{c}\NormalTok{(}\StringTok{'overwrite'}\NormalTok{,}\StringTok{'quiet'}\NormalTok{),}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{stream_rast =} \StringTok{'guayubin-stream-de-rstr'}\NormalTok{,}
+    \DataTypeTok{direction =} \StringTok{'drainage-dir-de-rstr'}\NormalTok{,}
+    \DataTypeTok{elevation =} \StringTok{'dem'}\NormalTok{,}
+    \DataTypeTok{accumulation =} \StringTok{'accum-de-rwshed'}\NormalTok{,}
+    \DataTypeTok{stream_vect =} \StringTok{'order_all'}\NormalTok{,}
+    \DataTypeTok{strahler =} \StringTok{'order-strahler'}\NormalTok{,}
+    \DataTypeTok{horton =} \StringTok{'order-horton'}\NormalTok{,}
+    \DataTypeTok{shreve =} \StringTok{'order-shreve'}\NormalTok{,}
+    \DataTypeTok{hack =} \StringTok{'order-hack-gravelius'}\NormalTok{,}
+    \DataTypeTok{topo =} \StringTok{'order-topology'}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Visualizar la red con leaflet}
+\NormalTok{## Simbología única}
+\NormalTok{order <-}\StringTok{ }\KeywordTok{readVECT}\NormalTok{(}\StringTok{'order_all'}\NormalTok{)}
+\NormalTok{order4326 <-}\StringTok{ }\KeywordTok{spTransform}\NormalTok{(order, }\DataTypeTok{CRSobj =} \KeywordTok{CRS}\NormalTok{(}\StringTok{"+init=epsg:4326"}\NormalTok{))}
+\KeywordTok{leaflet}\NormalTok{() }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{addProviderTiles}\NormalTok{(providers}\OperatorTok{$}\NormalTok{Stamen.Terrain, }\DataTypeTok{group =} \StringTok{'terrain'}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{addPolylines}\NormalTok{(}
+    \DataTypeTok{data =}\NormalTok{ order4326, }\DataTypeTok{weight =} \DecValTok{3}\NormalTok{, }\DataTypeTok{opacity =} \FloatTok{0.7}\NormalTok{, }\DataTypeTok{group =} \StringTok{'order'}\NormalTok{,}
+    \DataTypeTok{label =} \OperatorTok{~}\KeywordTok{as.character}\NormalTok{(strahler),}
+    \DataTypeTok{highlightOptions =} \KeywordTok{highlightOptions}\NormalTok{(}\DataTypeTok{color =} \StringTok{"white"}\NormalTok{,}
+                                        \DataTypeTok{weight =} \DecValTok{5}\NormalTok{, }\DataTypeTok{bringToFront =}\NormalTok{ F, }\DataTypeTok{opacity =} \DecValTok{1}\NormalTok{),}
+    \DataTypeTok{labelOptions =} \KeywordTok{labelOptions}\NormalTok{(}\DataTypeTok{noHide =}\NormalTok{ T,}
+                                \DataTypeTok{style =} \KeywordTok{list}\NormalTok{(}
+                                  \StringTok{"font-size"}\NormalTok{ =}\StringTok{ "8px"}\NormalTok{,}
+                                  \StringTok{"background"}\NormalTok{ =}\StringTok{ "rgba(255, 255, 255, 0.5)"}\NormalTok{,}
+                                  \StringTok{"background-clip"}\NormalTok{ =}\StringTok{ "padding-box"}\NormalTok{,}
+                                  \StringTok{"padding"}\NormalTok{ =}\StringTok{ "1px"}\NormalTok{))) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\NormalTok{leafem}\OperatorTok{::}\KeywordTok{addHomeButton}\NormalTok{(}\KeywordTok{extent}\NormalTok{(order4326), }\StringTok{'Ver todo'}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{addLayersControl}\NormalTok{(}
+    \DataTypeTok{overlayGroups =} \KeywordTok{c}\NormalTok{(}\StringTok{'terrain'}\NormalTok{,}\StringTok{'order'}\NormalTok{),}
+    \DataTypeTok{options =} \KeywordTok{layersControlOptions}\NormalTok{(}\DataTypeTok{collapsed=}\OtherTok{FALSE}\NormalTok{))}
+
+\NormalTok{## Simbología aplicando grosor según orden de red}
+\KeywordTok{leaflet}\NormalTok{() }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{addProviderTiles}\NormalTok{(providers}\OperatorTok{$}\NormalTok{Stamen.Terrain, }\DataTypeTok{group =} \StringTok{'terrain'}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{addPolylines}\NormalTok{(}
+    \DataTypeTok{data =}\NormalTok{ order4326, }\DataTypeTok{weight =}\NormalTok{ order4326}\OperatorTok{$}\NormalTok{strahler}\OperatorTok{*}\FloatTok{1.5}\NormalTok{, }\DataTypeTok{opacity =} \FloatTok{0.7}\NormalTok{, }\DataTypeTok{group =} \StringTok{'order'}\NormalTok{,}
+    \DataTypeTok{label =} \OperatorTok{~}\KeywordTok{as.character}\NormalTok{(strahler),}
+    \DataTypeTok{highlightOptions =} \KeywordTok{highlightOptions}\NormalTok{(}\DataTypeTok{color =} \StringTok{"white"}\NormalTok{,}
+                                        \DataTypeTok{weight =} \DecValTok{5}\NormalTok{, }\DataTypeTok{bringToFront =}\NormalTok{ F, }\DataTypeTok{opacity =} \DecValTok{1}\NormalTok{),}
+    \DataTypeTok{labelOptions =} \KeywordTok{labelOptions}\NormalTok{(}\DataTypeTok{noHide =}\NormalTok{ F)) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\NormalTok{leafem}\OperatorTok{::}\KeywordTok{addHomeButton}\NormalTok{(}\KeywordTok{extent}\NormalTok{(order4326), }\StringTok{'Ver todo'}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{addLayersControl}\NormalTok{(}
+    \DataTypeTok{overlayGroups =} \KeywordTok{c}\NormalTok{(}\StringTok{'terrain'}\NormalTok{,}\StringTok{'order'}\NormalTok{),}
+    \DataTypeTok{options =} \KeywordTok{layersControlOptions}\NormalTok{(}\DataTypeTok{collapsed=}\OtherTok{FALSE}\NormalTok{))}
+
+\NormalTok{## Delimitar cuencas según orden de red de Strahler}
+
+\NormalTok{## Obtener órdenes de red mínimo y máximo}
+\NormalTok{## Estadísticas para obtener los valores mínimo y máximo del orden de red de Strahler}
+\NormalTok{rinfo.ordstra <-}\StringTok{ }\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{'r.info'}\NormalTok{,}
+  \DataTypeTok{flags =} \StringTok{'r'}\NormalTok{,}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{map =} \StringTok{'order-strahler'}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Órdenes de red mínimo y máximo}
+\NormalTok{minmaxord <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(}
+\NormalTok{  stringr}\OperatorTok{::}\KeywordTok{str_extract_all}\NormalTok{(}
+    \KeywordTok{attributes}\NormalTok{(rinfo.ordstra)}\OperatorTok{$}\NormalTok{resOut,}
+    \StringTok{"[0-9]+"}
+\NormalTok{  )}
+\NormalTok{)}
+\NormalTok{minmaxord}
+
+\NormalTok{## Delimitar cuencas, convertirlas de ráster a vectorial}
+\KeywordTok{sapply}\NormalTok{(}
+  \KeywordTok{min}\NormalTok{(minmaxord)}\OperatorTok{:}\KeywordTok{max}\NormalTok{(minmaxord),}
+  \ControlFlowTok{function}\NormalTok{(x)\{}
+    \KeywordTok{execGRASS}\NormalTok{(}
+      \StringTok{"r.stream.basins"}\NormalTok{,}
+      \DataTypeTok{flags =} \KeywordTok{c}\NormalTok{(}\StringTok{'overwrite'}\NormalTok{,}\StringTok{'c'}\NormalTok{,}\StringTok{'quiet'}\NormalTok{),}
+      \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+        \DataTypeTok{direction =} \StringTok{'drainage-dir-de-rstr'}\NormalTok{,}
+        \DataTypeTok{stream_rast =} \StringTok{'order-strahler'}\NormalTok{,}
+        \DataTypeTok{cats =} \KeywordTok{as.character}\NormalTok{(x),}
+        \DataTypeTok{basins =} \KeywordTok{paste0}\NormalTok{(}\StringTok{'r-stream-basins-'}\NormalTok{,x)}
+\NormalTok{      )}
+\NormalTok{    )}
+    \KeywordTok{execGRASS}\NormalTok{(}
+      \StringTok{"r.to.vect"}\NormalTok{,}
+      \DataTypeTok{flags=}\KeywordTok{c}\NormalTok{(}\StringTok{'overwrite'}\NormalTok{,}\StringTok{'quiet'}\NormalTok{),}
+      \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+        \DataTypeTok{input =} \KeywordTok{paste0}\NormalTok{(}\StringTok{'r-stream-basins-'}\NormalTok{,x),}
+        \DataTypeTok{output =} \KeywordTok{paste0}\NormalTok{(}\StringTok{'r_stream_basins_'}\NormalTok{,x),}
+        \DataTypeTok{type =} \StringTok{'area'}
+\NormalTok{      )}
+\NormalTok{    )}
+\NormalTok{  \}}
+
+\NormalTok{)}
+\NormalTok{## Representar las cuencas con leaflet}
+\KeywordTok{sapply}\NormalTok{(}
+  \KeywordTok{min}\NormalTok{(minmaxord)}\OperatorTok{:}\KeywordTok{max}\NormalTok{(minmaxord),}
+  \ControlFlowTok{function}\NormalTok{(x)\{}
+    \KeywordTok{assign}\NormalTok{(}
+      \KeywordTok{paste0}\NormalTok{(}\StringTok{'orden'}\NormalTok{, x),}
+      \KeywordTok{spTransform}\NormalTok{(}\KeywordTok{readVECT}\NormalTok{(}\KeywordTok{paste0}\NormalTok{(}\StringTok{'r_stream_basins_'}\NormalTok{,x)), }\DataTypeTok{CRSobj =} \KeywordTok{CRS}\NormalTok{(}\StringTok{"+init=epsg:4326"}\NormalTok{)),}
+      \DataTypeTok{envir =}\NormalTok{ .GlobalEnv)}
+\NormalTok{  \}}
+\NormalTok{)}
+
+\NormalTok{paleta <-}\StringTok{ }\NormalTok{RColorBrewer}\OperatorTok{::}\KeywordTok{brewer.pal}\NormalTok{(}\DecValTok{12}\NormalTok{, }\StringTok{'Set3'}\NormalTok{)}
+\KeywordTok{leaflet}\NormalTok{() }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{addProviderTiles}\NormalTok{(providers}\OperatorTok{$}\NormalTok{Stamen.Terrain, }\DataTypeTok{group =} \StringTok{'terrain'}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{addPolygons}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ orden5, }\DataTypeTok{stroke =}\NormalTok{ T, }\DataTypeTok{weight =} \DecValTok{2}\NormalTok{,}
+              \DataTypeTok{color =} \OperatorTok{~}\NormalTok{paleta, }\DataTypeTok{fillOpacity =} \FloatTok{0.4}\NormalTok{, }\DataTypeTok{group =} \StringTok{'O5'}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{   }\KeywordTok{addPolygons}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ orden4, }\DataTypeTok{stroke =}\NormalTok{ T, }\DataTypeTok{weight =} \DecValTok{2}\NormalTok{,}
+              \DataTypeTok{color =} \OperatorTok{~}\NormalTok{paleta, }\DataTypeTok{fillOpacity =} \FloatTok{0.4}\NormalTok{, }\DataTypeTok{group =} \StringTok{'O4'}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{addPolygons}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ orden3, }\DataTypeTok{stroke =}\NormalTok{ T, }\DataTypeTok{weight =} \DecValTok{2}\NormalTok{,}
+              \DataTypeTok{color =} \OperatorTok{~}\NormalTok{paleta, }\DataTypeTok{fillOpacity =} \FloatTok{0.4}\NormalTok{, }\DataTypeTok{group =} \StringTok{'O3'}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{addPolygons}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ orden2, }\DataTypeTok{stroke =}\NormalTok{ T, }\DataTypeTok{weight =} \DecValTok{2}\NormalTok{,}
+              \DataTypeTok{color =} \OperatorTok{~}\NormalTok{paleta, }\DataTypeTok{fillOpacity =} \FloatTok{0.4}\NormalTok{, }\DataTypeTok{group =} \StringTok{'O2'}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{addPolygons}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ orden1, }\DataTypeTok{stroke =}\NormalTok{ T, }\DataTypeTok{weight =} \DecValTok{2}\NormalTok{,}
+              \DataTypeTok{color =} \OperatorTok{~}\NormalTok{paleta, }\DataTypeTok{fillOpacity =} \FloatTok{0.4}\NormalTok{, }\DataTypeTok{group =} \StringTok{'O1'}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{addPolylines}\NormalTok{(}
+    \DataTypeTok{data =}\NormalTok{ order4326, }\DataTypeTok{weight =}\NormalTok{ order4326}\OperatorTok{$}\NormalTok{strahler}\OperatorTok{*}\FloatTok{1.5}\NormalTok{,}
+    \DataTypeTok{opacity =} \FloatTok{0.7}\NormalTok{, }\DataTypeTok{group =} \StringTok{'str_order'}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\NormalTok{leafem}\OperatorTok{::}\KeywordTok{addHomeButton}\NormalTok{(}\KeywordTok{extent}\NormalTok{(order4326), }\StringTok{'Ver todo'}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{addLayersControl}\NormalTok{(}
+    \DataTypeTok{overlayGroups =} \KeywordTok{c}\NormalTok{(}\StringTok{'terrain'}\NormalTok{,}\StringTok{'O1'}\NormalTok{,}\StringTok{'O2'}\NormalTok{,}\StringTok{'O3'}\NormalTok{,}\StringTok{'O4'}\NormalTok{,}\StringTok{'O5'}\NormalTok{,}\StringTok{'str_order'}\NormalTok{),}
+    \DataTypeTok{options =} \KeywordTok{layersControlOptions}\NormalTok{(}\DataTypeTok{collapsed=}\OtherTok{FALSE}\NormalTok{))}
+
+\NormalTok{## Estadísticas de red resumidas por orden de red}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{"r.stream.stats"}\NormalTok{,}
+  \DataTypeTok{flags =} \KeywordTok{c}\NormalTok{(}\StringTok{'overwrite'}\NormalTok{,}\StringTok{'quiet'}\NormalTok{,}\StringTok{'o'}\NormalTok{),}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{stream_rast =} \StringTok{'order-strahler'}\NormalTok{,}
+    \DataTypeTok{direction =} \StringTok{'drainage-dir-de-rstr'}\NormalTok{,}
+    \DataTypeTok{elevation =} \StringTok{'dem'}\NormalTok{,}
+    \DataTypeTok{output =} \StringTok{'guayu_stats.txt'}
+\NormalTok{  )}
+\NormalTok{)}
+\KeywordTok{file.show}\NormalTok{(}\StringTok{'guayu_stats.txt'}\NormalTok{)}
+\NormalTok{d <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"guayu_stats.txt"}\NormalTok{, }\DataTypeTok{skip=}\DecValTok{1}\NormalTok{, }\DataTypeTok{header=}\OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{plot}\NormalTok{(num_of_streams}\OperatorTok{~}\NormalTok{order, }\DataTypeTok{data=}\NormalTok{d, }\DataTypeTok{log=}\StringTok{"y"}\NormalTok{)}
+\NormalTok{mod <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(}\KeywordTok{log10}\NormalTok{(num_of_streams)}\OperatorTok{~}\NormalTok{order, }\DataTypeTok{data=}\NormalTok{d)}
+\KeywordTok{abline}\NormalTok{(mod)}
+\KeywordTok{text}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{20}\NormalTok{, }\StringTok{'logN=2.064-0.544u'}\NormalTok{)}
+\NormalTok{rb <-}\StringTok{ }\DecValTok{1}\OperatorTok{/}\DecValTok{10}\OperatorTok{^}\NormalTok{mod}\OperatorTok{$}\NormalTok{coefficients[[}\DecValTok{2}\NormalTok{]]}
+\NormalTok{rb}
+
+\NormalTok{## Estadísticas de red ampliadas}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{"r.stream.stats"}\NormalTok{,}
+  \DataTypeTok{flags =} \KeywordTok{c}\NormalTok{(}\StringTok{'overwrite'}\NormalTok{,}\StringTok{'quiet'}\NormalTok{),}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{stream_rast =} \StringTok{'order-strahler'}\NormalTok{,}
+    \DataTypeTok{direction =} \StringTok{'drainage-dir-de-rstr'}\NormalTok{,}
+    \DataTypeTok{elevation =} \StringTok{'dem'}\NormalTok{,}
+    \DataTypeTok{output =} \StringTok{'guayu_stats_expanded.txt'}
+\NormalTok{  )}
+\NormalTok{)}
+\KeywordTok{file.show}\NormalTok{(}\StringTok{'guayu_stats_expanded.txt'}\NormalTok{)}
+
+\NormalTok{## Limpiar archivo de bloqueo del conjunto de mapas de GRASS}
+\KeywordTok{unlink_.gislock}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Video 11, Calcular índices de concavidad y perfiles longitudinales de cursos fluviales----}
+\NormalTok{## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{'g.list'}\NormalTok{,}
+  \DataTypeTok{flags =} \StringTok{'t'}\NormalTok{,}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{type =} \KeywordTok{c}\NormalTok{(}\StringTok{'raster'}\NormalTok{, }\StringTok{'vector'}\NormalTok{)}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Obtener coordenada}
+\KeywordTok{mapview}\NormalTok{(order, }\DataTypeTok{col.regions =} \StringTok{'blue'}\NormalTok{, }\DataTypeTok{legend =} \OtherTok{FALSE}\NormalTok{)}
+
+\NormalTok{## Obtener cursos más largos (cargar función propia)}
+\NormalTok{devtools}\OperatorTok{::}\KeywordTok{source_url}\NormalTok{(}\StringTok{'https://raw.githubusercontent.com/geofis/rgrass/master/lfp_network.R'}\NormalTok{) }\CommentTok{#Cargada como función "LfpNetwork"}
+\KeywordTok{LfpNetwork}\NormalTok{(}
+  \DataTypeTok{xycoords =} \KeywordTok{my_trans}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{71.40047}\NormalTok{,}\FloatTok{19.66268}\NormalTok{)),}
+  \DataTypeTok{suffix =} \StringTok{'Gyb'}\NormalTok{,}
+  \DataTypeTok{stream_vect =} \StringTok{'order_all'}\NormalTok{,}
+  \DataTypeTok{direction =} \StringTok{'drainage-dir-de-rstr'}
+\NormalTok{)}
+
+\NormalTok{## Imprimir lista de mapas ráster y vectoriales}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{'g.list'}\NormalTok{,}
+  \DataTypeTok{flags =} \StringTok{'t'}\NormalTok{,}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{type =} \KeywordTok{c}\NormalTok{(}\StringTok{'raster'}\NormalTok{, }\StringTok{'vector'}\NormalTok{)}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Representar con leaflet}
+\NormalTok{lfp <-}\StringTok{ }\KeywordTok{readVECT}\NormalTok{(}\StringTok{'LfpNetwork_lfp_all_final_Gyb'}\NormalTok{)}
+\NormalTok{lfp4326 <-}\StringTok{ }\KeywordTok{spTransform}\NormalTok{(lfp, }\DataTypeTok{CRSobj =} \KeywordTok{CRS}\NormalTok{(}\StringTok{"+init=epsg:4326"}\NormalTok{))}
+\KeywordTok{leaflet}\NormalTok{() }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{addProviderTiles}\NormalTok{(providers}\OperatorTok{$}\NormalTok{Stamen.Terrain, }\DataTypeTok{group =} \StringTok{'terrain'}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{addPolylines}\NormalTok{(}
+    \DataTypeTok{data =}\NormalTok{ lfp4326, }\DataTypeTok{weight =} \DecValTok{3}\NormalTok{, }\DataTypeTok{opacity =} \FloatTok{0.7}\NormalTok{, }\DataTypeTok{group =} \StringTok{'order'}\NormalTok{,}
+    \DataTypeTok{label =} \OperatorTok{~}\KeywordTok{as.character}\NormalTok{(cat),}
+    \DataTypeTok{highlightOptions =} \KeywordTok{highlightOptions}\NormalTok{(}\DataTypeTok{color =} \StringTok{"white"}\NormalTok{,}
+                                        \DataTypeTok{weight =} \DecValTok{5}\NormalTok{, }\DataTypeTok{bringToFront =}\NormalTok{ F, }\DataTypeTok{opacity =} \DecValTok{1}\NormalTok{),}
+    \DataTypeTok{labelOptions =} \KeywordTok{labelOptions}\NormalTok{(}\DataTypeTok{noHide =}\NormalTok{ T,}
+                                \DataTypeTok{style =} \KeywordTok{list}\NormalTok{(}
+                                  \StringTok{"font-size"}\NormalTok{ =}\StringTok{ "8px"}\NormalTok{,}
+                                  \StringTok{"background"}\NormalTok{ =}\StringTok{ "rgba(255, 255, 255, 0.5)"}\NormalTok{,}
+                                  \StringTok{"background-clip"}\NormalTok{ =}\StringTok{ "padding-box"}\NormalTok{,}
+                                  \StringTok{"padding"}\NormalTok{ =}\StringTok{ "1px"}\NormalTok{))) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\NormalTok{leafem}\OperatorTok{::}\KeywordTok{addHomeButton}\NormalTok{(}\KeywordTok{extent}\NormalTok{(lfp4326), }\StringTok{'Ver todo'}\NormalTok{)}
+
+\NormalTok{## Exportar a KML}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{'v.out.ogr'}\NormalTok{,}
+  \DataTypeTok{flags =} \KeywordTok{c}\NormalTok{(}\StringTok{'overwrite'}\NormalTok{,}\StringTok{'quiet'}\NormalTok{),}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{input =} \StringTok{'LfpNetwork_lfp_all_final_Gyb'}\NormalTok{,}
+    \DataTypeTok{output =} \StringTok{'lfp_kml.kml'}\NormalTok{,}
+    \DataTypeTok{format =} \StringTok{'KML'}\NormalTok{,}
+    \DataTypeTok{dsco =} \StringTok{'NameField=cat'}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Obtención de perfiles longitudinales e índices de concavidad}
+\KeywordTok{source}\NormalTok{(}\StringTok{'lfp_profiles_concavity.R'}\NormalTok{) }\CommentTok{#Cargado como función "LfpProfilesConcavity"}
+\NormalTok{guayubin_conv_prof <-}\StringTok{ }\KeywordTok{LfpProfilesConcavity}\NormalTok{(}
+  \DataTypeTok{xycoords =} \KeywordTok{my_trans}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{71.40047}\NormalTok{,}\FloatTok{19.6626}\NormalTok{)),}
+  \DataTypeTok{network =} \StringTok{'LfpNetwork_lfp_all_final_Gyb'}\NormalTok{,}
+  \DataTypeTok{prefix =} \StringTok{'Gyb'}\NormalTok{,}
+  \DataTypeTok{dem =} \StringTok{'dem'}\NormalTok{,}
+  \DataTypeTok{direction =} \StringTok{'drainage-dir-de-rstr'}\NormalTok{,}
+  \DataTypeTok{crs =} \StringTok{'+init=epsg:32619'}\NormalTok{,}
+  \DataTypeTok{smns =} \FloatTok{0.5}\NormalTok{,}
+  \DataTypeTok{nrow =} \DecValTok{5}\NormalTok{)}
+
+\NormalTok{## Mostrar resultados}
+\NormalTok{guayubin_conv_prof}\OperatorTok{$}\NormalTok{profiles}
+\NormalTok{guayubin_conv_prof}\OperatorTok{$}\NormalTok{concavityindex}
+\NormalTok{guayubin_conv_prof}\OperatorTok{$}\NormalTok{dimensionlessprofiles}
+
+\NormalTok{## Tabla dx/dy, tanto en metros como adimensional. Útiles para construir perfiles por cuenta propia}
+\NormalTok{guayubin_conv_prof}\OperatorTok{$}\NormalTok{lengthzdata }\OperatorTok{%>%}\StringTok{ }\NormalTok{tibble}\OperatorTok{::}\KeywordTok{as.tibble}\NormalTok{()}
+\NormalTok{guayubin_conv_prof}\OperatorTok{$}\NormalTok{lengthzdatadmnls }\OperatorTok{%>%}\StringTok{ }\NormalTok{tibble}\OperatorTok{::}\KeywordTok{as.tibble}\NormalTok{()}
+
+\NormalTok{## Revisar en QGIS/Google Earth relación litología/concavidad}
+\NormalTok{## Descargar archivo lfp_kml.kml localmente, superponer al mapa geológico usando QGIS y GoogleEarth, evaluar los índices de concavidad y formas del perfil longitudinal de los cursos más largos en relación con la litología, las fallas, el orden de red, entre otras variables.}
+
+\NormalTok{## Limpiar archivo de bloqueo del conjunto de mapas de GRASS}
+\KeywordTok{unlink_.gislock}\NormalTok{()}
+
+\CommentTok{# Video 12, Parámetros de cuenca con r.basin ----}
+\KeywordTok{library}\NormalTok{(rgrass7)}
+\NormalTok{gisdbase <-}\StringTok{ 'grass-data-test'} \CommentTok{#Base de datos de GRASS GIS}
+\NormalTok{wd <-}\StringTok{ }\KeywordTok{getwd}\NormalTok{() }\CommentTok{#Directorio de trabajo}
+\NormalTok{wd}
+\NormalTok{loc <-}\StringTok{ }\KeywordTok{initGRASS}\NormalTok{(}\DataTypeTok{gisBase =} \StringTok{"/usr/lib/grass78/"}\NormalTok{,}
+                 \DataTypeTok{home =}\NormalTok{ wd,}
+                 \DataTypeTok{gisDbase =} \KeywordTok{paste}\NormalTok{(wd, gisdbase, }\DataTypeTok{sep =} \StringTok{'/'}\NormalTok{),}
+                 \DataTypeTok{location =} \StringTok{'guayubin'}\NormalTok{,}
+                 \DataTypeTok{mapset =} \StringTok{"PERMANENT"}\NormalTok{,}
+                 \DataTypeTok{override =} \OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{gmeta}\NormalTok{()}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{'g.list'}\NormalTok{,}
+  \DataTypeTok{flags =} \StringTok{'t'}\NormalTok{,}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{type =} \KeywordTok{c}\NormalTok{(}\StringTok{'raster'}\NormalTok{, }\StringTok{'vector'}\NormalTok{)}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Convertir a números enteros la extensión y la resolución del DEM}
+\KeywordTok{library}\NormalTok{(raster)}
+\NormalTok{rutadem <-}\StringTok{ 'datos-fuente/srtm_dem_cuenca_guayubin.tif'}
+\NormalTok{rawextent <-}\StringTok{ }\KeywordTok{extent}\NormalTok{(}\KeywordTok{raster}\NormalTok{(rutadem))}
+\NormalTok{rawextent}
+\NormalTok{devtools}\OperatorTok{::}\KeywordTok{source_url}\NormalTok{(}\StringTok{'https://raw.githubusercontent.com/geofis/rgrass/master/integerextent.R'}\NormalTok{)}
+\NormalTok{devtools}\OperatorTok{::}\KeywordTok{source_url}\NormalTok{(}\StringTok{'https://raw.githubusercontent.com/geofis/rgrass/master/xyvector.R'}\NormalTok{)}
+\NormalTok{newextent <-}\StringTok{ }\KeywordTok{intext}\NormalTok{(}\DataTypeTok{e =}\NormalTok{ rawextent, }\DataTypeTok{r =} \DecValTok{90}\NormalTok{, }\DataTypeTok{type =} \StringTok{'inner'}\NormalTok{)}
+\NormalTok{newextent}
+\NormalTok{gdalUtils}\OperatorTok{::}\KeywordTok{gdalwarp}\NormalTok{(}
+  \DataTypeTok{srcfile =} \StringTok{'datos-fuente/srtm_dem_cuenca_guayubin.tif'}\NormalTok{,}
+  \DataTypeTok{dstfile =} \StringTok{'demint.tif'}\NormalTok{,}
+  \DataTypeTok{te =} \KeywordTok{xyvector}\NormalTok{(newextent),}
+  \DataTypeTok{tr =} \KeywordTok{c}\NormalTok{(}\DecValTok{90}\NormalTok{,}\DecValTok{90}\NormalTok{),}
+  \DataTypeTok{r =} \StringTok{'bilinear'}\NormalTok{,}
+  \DataTypeTok{overwrite =}\NormalTok{ T}
+\NormalTok{)}
+
+\NormalTok{## Importar a sesión de GRASS}
+\NormalTok{rutademint <-}\StringTok{ 'demint.tif'}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{"g.proj"}\NormalTok{,}
+  \DataTypeTok{flags =} \KeywordTok{c}\NormalTok{(}\StringTok{'t'}\NormalTok{,}\StringTok{'c'}\NormalTok{),}
+  \DataTypeTok{georef=}\NormalTok{rutademint)}
+\KeywordTok{gmeta}\NormalTok{()}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{"r.in.gdal"}\NormalTok{,}
+  \DataTypeTok{flags=}\StringTok{'overwrite'}\NormalTok{,}
+  \DataTypeTok{parameters=}\KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{input=}\NormalTok{rutademint,}
+    \DataTypeTok{output=}\StringTok{"demint"}
+\NormalTok{  )}
+\NormalTok{)}
+
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{"g.region"}\NormalTok{,}
+  \DataTypeTok{parameters=}\KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{raster =} \StringTok{"demint"}\NormalTok{,}
+    \DataTypeTok{align =} \StringTok{"demint"}
+\NormalTok{  )}
+\NormalTok{)}
+
+\KeywordTok{gmeta}\NormalTok{()}
+
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{'g.list'}\NormalTok{,}
+  \DataTypeTok{flags =} \StringTok{'t'}\NormalTok{,}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{type =} \KeywordTok{c}\NormalTok{(}\StringTok{'raster'}\NormalTok{, }\StringTok{'vector'}\NormalTok{)}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Generar red de drenaje para obtener coordenada posteriormente}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{"r.stream.extract"}\NormalTok{,}
+  \DataTypeTok{flags =} \KeywordTok{c}\NormalTok{(}\StringTok{'overwrite'}\NormalTok{,}\StringTok{'quiet'}\NormalTok{),}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{elevation =} \StringTok{'demint'}\NormalTok{,}
+    \DataTypeTok{threshold =} \DecValTok{80}\NormalTok{,}
+    \DataTypeTok{stream_raster =} \StringTok{'stream-de-rstr'}\NormalTok{,}
+    \DataTypeTok{stream_vector =} \StringTok{'stream_de_rstr'}
+\NormalTok{  )}
+\NormalTok{)}
+
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{'g.list'}\NormalTok{,}
+  \DataTypeTok{flags =} \StringTok{'t'}\NormalTok{,}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{type =} \KeywordTok{c}\NormalTok{(}\StringTok{'raster'}\NormalTok{, }\StringTok{'vector'}\NormalTok{)}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Obtener coordenada}
+\KeywordTok{library}\NormalTok{(sp)}
+\KeywordTok{use_sp}\NormalTok{()}
+\KeywordTok{library}\NormalTok{(mapview)}
+\NormalTok{netw <-}\StringTok{ }\KeywordTok{spTransform}\NormalTok{(}
+  \KeywordTok{readVECT}\NormalTok{(}\StringTok{'stream_de_rstr'}\NormalTok{),}
+  \DataTypeTok{CRSobj =} \KeywordTok{CRS}\NormalTok{(}\StringTok{"+init=epsg:4326"}\NormalTok{))}
+
+\KeywordTok{mapview}\NormalTok{(netw, }\DataTypeTok{col.regions =} \StringTok{'blue'}\NormalTok{, }\DataTypeTok{legend =} \OtherTok{FALSE}\NormalTok{)}
+
+\NormalTok{## Transformar coordenada a EPSG:32619 como número entero}
+\KeywordTok{source}\NormalTok{(}\StringTok{'my-trans.R'}\NormalTok{)}
+\NormalTok{outlet <-}\StringTok{ }\KeywordTok{as.integer}\NormalTok{(}\KeywordTok{my_trans}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{71.40009}\NormalTok{,}\FloatTok{19.66390}\NormalTok{)))}
+
+\NormalTok{## Ejecutar r.basin}
+\NormalTok{pref <-}\StringTok{ 'rbasin_guay'}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{"r.basin"}\NormalTok{,}
+  \DataTypeTok{flags =} \StringTok{'overwrite'}\NormalTok{,}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{map =} \StringTok{'demint'}\NormalTok{,}
+    \DataTypeTok{prefix =}\NormalTok{ pref,}
+    \DataTypeTok{coordinates =}\NormalTok{ outlet,}
+    \DataTypeTok{threshold =} \DecValTok{80}\NormalTok{,}
+    \DataTypeTok{dir =} \StringTok{'salidas-rbasin/guayubin'}
+\NormalTok{  )}
+\NormalTok{)}
+
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{'g.list'}\NormalTok{,}
+  \DataTypeTok{flags =} \StringTok{'t'}\NormalTok{,}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{type =} \KeywordTok{c}\NormalTok{(}\StringTok{'raster'}\NormalTok{, }\StringTok{'vector'}\NormalTok{)}
+\NormalTok{  )}
+\NormalTok{)}
+
+\CommentTok{# Si r.basin arrojara error (sólo en el caso de error, no en caso de advertencia), ejecutar este bloque para borrar las salidas anteriores y reejecutar el r.basin:}
+\CommentTok{#  execGRASS(}
+\CommentTok{#    "g.remove",}
+\CommentTok{#    flags = 'f',}
+\CommentTok{#    parameters = list(}
+\CommentTok{#      type = c('raster','vector'),}
+\CommentTok{#      pattern = paste0(pref, '*')}
+\CommentTok{#    )}
+\CommentTok{#  )}
+
+\NormalTok{## Cargar los vectoriales transformados a EPSG:4326 para visualizar en leaflet}
+\NormalTok{  rbnetw <-}\StringTok{ }\KeywordTok{spTransform}\NormalTok{(}
+    \KeywordTok{readVECT}\NormalTok{(}\StringTok{'rbasin_guay_demint_network'}\NormalTok{),}
+    \DataTypeTok{CRSobj =} \KeywordTok{CRS}\NormalTok{(}\StringTok{"+init=epsg:4326"}\NormalTok{))}
+\NormalTok{  rbnetw}
+\NormalTok{  rbmain <-}\StringTok{ }\KeywordTok{spTransform}\NormalTok{(}
+    \KeywordTok{readVECT}\NormalTok{(}\StringTok{'rbasin_guay_demint_mainchannel'}\NormalTok{),}
+    \DataTypeTok{CRSobj =} \KeywordTok{CRS}\NormalTok{(}\StringTok{"+init=epsg:4326"}\NormalTok{))}
+\NormalTok{  rbmain}
+\NormalTok{  rbbasin <-}\StringTok{ }\KeywordTok{spTransform}\NormalTok{(}
+    \KeywordTok{readVECT}\NormalTok{(}\StringTok{'rbasin_guay_demint_basin'}\NormalTok{),}
+    \DataTypeTok{CRSobj =} \KeywordTok{CRS}\NormalTok{(}\StringTok{"+init=epsg:4326"}\NormalTok{))}
+\NormalTok{  rbbasin}
+ 
+\KeywordTok{library}\NormalTok{(leaflet)}
+\KeywordTok{leaflet}\NormalTok{() }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{addProviderTiles}\NormalTok{(providers}\OperatorTok{$}\NormalTok{Stamen.Terrain, }\DataTypeTok{group =} \StringTok{'terrain'}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{addPolylines}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ rbnetw, }\DataTypeTok{weight =} \DecValTok{3}\NormalTok{, }\DataTypeTok{opacity =} \FloatTok{0.7}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\KeywordTok{addPolylines}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ rbmain, }\DataTypeTok{weight =} \DecValTok{3}\NormalTok{, }\DataTypeTok{opacity =} \FloatTok{0.7}\NormalTok{, }\DataTypeTok{color =} \StringTok{'red'}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\KeywordTok{addPolygons}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ rbbasin) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\NormalTok{leafem}\OperatorTok{::}\KeywordTok{addHomeButton}\NormalTok{(}\KeywordTok{extent}\NormalTok{(rbbasin), }\StringTok{'Ver cuenca'}\NormalTok{)}
+  
+\NormalTok{## Explorar los parámetros de cuenca}
+\KeywordTok{library}\NormalTok{(readr)}
+\NormalTok{rbguaypar1 <-}\StringTok{ }\KeywordTok{read_csv}\NormalTok{(}\StringTok{"salidas-rbasin/guayubin/rbasin_guay_demint_parametersT.csv"}\NormalTok{)}
+\NormalTok{rbguaypar1 }\OperatorTok{%>%}\StringTok{ }\NormalTok{tibble}\OperatorTok{::}\KeywordTok{as_tibble}\NormalTok{()}
+\CommentTok{# para vizualizar la tabla mejor traer a r, usar View(rbguaypar1)}
+
+\NormalTok{rbguaypar2 <-}\StringTok{ }\KeywordTok{read_csv}\NormalTok{(}
+  \StringTok{"salidas-rbasin/guayubin/rbasin_guay_demint_parameters.csv"}\NormalTok{,}
+  \DataTypeTok{skip=}\DecValTok{2}\NormalTok{, }\DataTypeTok{col_names =} \KeywordTok{c}\NormalTok{(}\StringTok{'Parameter'}\NormalTok{, }\StringTok{'Value'}\NormalTok{))}
+\NormalTok{rbguaypar2 }\OperatorTok{%>%}\StringTok{ }\KeywordTok{print}\NormalTok{(}\DataTypeTok{n=}\OtherTok{Inf}\NormalTok{)}
+
+\NormalTok{## Limpiar archivo de bloqueo del conjunto de mapas de GRASS}
+\KeywordTok{unlink_.gislock}\NormalTok{()}
+
+\CommentTok{# Video 13, Curva e integral hipsométrica ----}
+\NormalTok{## Imprimir lista de mapas ráster y vectoriales dentro en la región/localización activa}
+\KeywordTok{execGRASS}\NormalTok{(}
+  \StringTok{'g.list'}\NormalTok{,}
+  \DataTypeTok{flags =} \StringTok{'t'}\NormalTok{,}
+  \DataTypeTok{parameters =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{type =} \KeywordTok{c}\NormalTok{(}\StringTok{'raster'}\NormalTok{, }\StringTok{'vector'}\NormalTok{)}
+\NormalTok{  )}
+\NormalTok{)}
+
+\NormalTok{## Representar cuencas}
+\KeywordTok{library}\NormalTok{(sp)}
+\KeywordTok{use_sp}\NormalTok{()}
+\KeywordTok{library}\NormalTok{(mapview)}
+\NormalTok{bas2 <-}\StringTok{ }\KeywordTok{readVECT}\NormalTok{(}\StringTok{'r_stream_basins_2'}\NormalTok{)}
+\NormalTok{bas3 <-}\StringTok{ }\KeywordTok{readVECT}\NormalTok{(}\StringTok{'r_stream_basins_3'}\NormalTok{)}
+
+\NormalTok{## Curva e integral hipsométrica}
+\KeywordTok{source}\NormalTok{(}\StringTok{'integral_hypsometric_curve.R'}\NormalTok{) }\CommentTok{#Cargada como función "HypsoIntCurve"}
+\NormalTok{HypsoBasinsOrder2 <-}\StringTok{ }\KeywordTok{HypsoIntCurve}\NormalTok{(}
+  \DataTypeTok{basins =} \StringTok{'r_stream_basins_2'}\NormalTok{,}
+  \DataTypeTok{dem =} \StringTok{'dem'}\NormalTok{,}
+  \DataTypeTok{labelfield =} \StringTok{'cat'}\NormalTok{,}
+  \DataTypeTok{nrow =} \DecValTok{5}\NormalTok{,}
+  \DataTypeTok{labelsize =} \DecValTok{4}
+\NormalTok{)}
+
+\NormalTok{HypsoBasinsOrder2}\OperatorTok{$}\NormalTok{HypsoInt}
+\NormalTok{HypsoBasinsOrder2}\OperatorTok{$}\NormalTok{HypsoCurve}
+\KeywordTok{mapview}\NormalTok{(bas2, }\DataTypeTok{zcol=}\StringTok{'cat'}\NormalTok{, }\DataTypeTok{col.regions =} \StringTok{'blue'}\NormalTok{, }\DataTypeTok{legend =} \OtherTok{FALSE}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{addStaticLabels}\NormalTok{(}\DataTypeTok{label =}\NormalTok{ bas2}\OperatorTok{$}\NormalTok{cat)}
+
+\NormalTok{HypsoBasinsOrder3 <-}\StringTok{ }\KeywordTok{HypsoIntCurve}\NormalTok{(}
+  \DataTypeTok{basins =} \StringTok{'r_stream_basins_3'}\NormalTok{,}
+  \DataTypeTok{dem =} \StringTok{'dem'}\NormalTok{,}
+  \DataTypeTok{labelfield =} \StringTok{'cat'}\NormalTok{,}
+  \DataTypeTok{nrow =} \DecValTok{3}\NormalTok{,}
+  \DataTypeTok{labelsize =} \DecValTok{4}
+\NormalTok{)}
+
+\NormalTok{HypsoBasinsOrder3}\OperatorTok{$}\NormalTok{HypsoInt}
+\NormalTok{HypsoBasinsOrder3}\OperatorTok{$}\NormalTok{HypsoCurve}
+
+\KeywordTok{mapview}\NormalTok{(bas3, }\DataTypeTok{zcol=}\StringTok{'cat'}\NormalTok{, }\DataTypeTok{col.regions =} \StringTok{'blue'}\NormalTok{, }\DataTypeTok{legend =} \OtherTok{FALSE}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{addStaticLabels}\NormalTok{(}\DataTypeTok{label =}\NormalTok{ bas3}\OperatorTok{$}\NormalTok{cat)}
+
+\NormalTok{## Limpiar archivo de bloqueo del conjunto de mapas de GRASS}
+\KeywordTok{unlink_.gislock}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\section*{Referencias}\label{referencias}
+\addcontentsline{toc}{section}{Referencias}
 
 \hypertarget{refs}{}
 \hypertarget{ref-allaire2012rstudio}{}
